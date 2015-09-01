@@ -1,0 +1,25 @@
+platform :ios, '8.4'
+use_frameworks!
+pod 'MBProgressHUD'
+#pod 'CocoaLumberjack'
+pod 'SDWebImage'
+#pod 'Google/Analytics', '~> 1.0.0'
+pod 'RealmSwift'
+#pod 'Sleipnir'
+pod 'DGActivityIndicatorView'
+pod 'KYDrawerController'
+pod 'BFKit-Swift'
+pod 'MarqueeLabel'
+pod 'RDImageViewerController'
+pod 'SVProgressHUD'
+
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+
+pod 'CNPPopupController'
+pod 'HMSegmentedControl'
+
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+pod 'Alamofire', '~> 1.2'
