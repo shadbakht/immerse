@@ -1,16 +1,10 @@
-platform :ios, '8.4'
+platform :ios, '9.0'
 use_frameworks!
-pod 'MBProgressHUD'
-#pod 'CocoaLumberjack'
 pod 'SDWebImage'
-#pod 'Google/Analytics', '~> 1.0.0'
 pod 'RealmSwift'
 #pod 'Sleipnir'
-pod 'DGActivityIndicatorView'
 pod 'KYDrawerController'
 pod 'BFKit-Swift'
-pod 'MarqueeLabel'
-pod 'RDImageViewerController'
 pod 'SVProgressHUD'
 
 pod 'FBSDKCoreKit'
