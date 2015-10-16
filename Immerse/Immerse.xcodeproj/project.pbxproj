@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BC1BD0CAAF0062FAFB /* NotesView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BE1BD0CAC20062FAFB /* CrossRefView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C01BD0CAD10062FAFB /* SettingsView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C21BD0CB140062FAFB /* ReaderView.swift */; settings = {ASSET_TAGS = (); }; };
+		546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C41BD0CB760062FAFB /* HomePresenter.swift */; settings = {ASSET_TAGS = (); }; };
+		546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C61BD0CB800062FAFB /* HomeInteractor.swift */; settings = {ASSET_TAGS = (); }; };
 		5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED01B95FAA70037359C /* AppDelegate.swift */; };
 		5483BED31B95FAA70037359C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED21B95FAA70037359C /* ViewController.swift */; };
 		5483BED61B95FAA70037359C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED41B95FAA70037359C /* Main.storyboard */; };
@@ -29,6 +38,15 @@
 /* Begin PBXFileReference section */
 		0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		546794BC1BD0CAAF0062FAFB /* NotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		546794BE1BD0CAC20062FAFB /* CrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRefView.swift; sourceTree = "<group>"; };
+		546794C01BD0CAD10062FAFB /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		546794C21BD0CB140062FAFB /* ReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		546794C41BD0CB760062FAFB /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		546794C61BD0CB800062FAFB /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		5483BECB1B95FAA70037359C /* Immerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BECF1B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BED01B95FAA70037359C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +87,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		546794C81BD0CB850062FAFB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
+				546794C41BD0CB760062FAFB /* HomePresenter.swift */,
+				546794C61BD0CB800062FAFB /* HomeInteractor.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		5483BEC21B95FAA70037359C = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +122,13 @@
 			children = (
 				5483BED01B95FAA70037359C /* AppDelegate.swift */,
 				5483BED21B95FAA70037359C /* ViewController.swift */,
+				546794C81BD0CB850062FAFB /* Home */,
+				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
+				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
+				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
+				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
+				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
+				546794C21BD0CB140062FAFB /* ReaderView.swift */,
 				5483BED41B95FAA70037359C /* Main.storyboard */,
 				5483BED71B95FAA70037359C /* Images.xcassets */,
 				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
@@ -288,6 +323,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */,
+				546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */,
+				546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */,
+				546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */,
+				546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */,
+				546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */,
+				546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */,
+				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
+				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				5483BED31B95FAA70037359C /* ViewController.swift in Sources */,
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
 			);
