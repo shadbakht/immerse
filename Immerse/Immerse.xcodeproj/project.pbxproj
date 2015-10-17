@@ -269,6 +269,7 @@
 				546795051BD0CFF20062FAFB /* NavTray.swift */,
 				546795071BD0D00E0062FAFB /* Util.swift */,
 				5483BED41B95FAA70037359C /* Main.storyboard */,
+				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
 				546794C81BD0CB850062FAFB /* Home */,
 				546794CD1BD0CBB20062FAFB /* Library */,
 				546794D21BD0CBCD0062FAFB /* Tags */,
@@ -279,7 +280,6 @@
 				546794F31BD0CC9E0062FAFB /* Services */,
 				546794FE1BD0CD180062FAFB /* Entities */,
 				5483BED71B95FAA70037359C /* Images.xcassets */,
-				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
 				5483BECE1B95FAA70037359C /* Supporting Files */,
 			);
 			path = Immerse;
