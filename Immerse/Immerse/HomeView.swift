@@ -19,7 +19,7 @@ class HomeView: UIViewController {
     super.didReceiveMemoryWarning()
   }
 
-  @IBAction func didTapOpenButton(sender: UIBarButtonItem) {
+  @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
       drawerController.setDrawerState(.Opened, animated: true)
     }

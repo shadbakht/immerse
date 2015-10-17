@@ -24,18 +24,28 @@ class NavTray: UITableViewController {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     
-    if let drawerController = navigationController?.parentViewController as? KYDrawerController {
+    if let drawerController = self.parentViewController as? KYDrawerController {
       let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
-      let backgroundColor: UIColor
       switch indexPath.row {
       case 0:
-        backgroundColor = UIColor.redColor()
+        mainNavigation.popToRootViewControllerAnimated(true)
       case 1:
-        backgroundColor = UIColor.blueColor()
+        mainNavigation.popToRootViewControllerAnimated(true)
+      case 2:
+        mainNavigation.performSegueWithIdentifier("showLibrary", sender: self)
+      case 3:
+        mainNavigation.performSegueWithIdentifier("showTags", sender: self)
+      case 4:
+        mainNavigation.performSegueWithIdentifier("showNotes", sender: self)
+      case 5:
+        mainNavigation.performSegueWithIdentifier("showCrossRefs", sender: self)
+      case 6:
+        mainNavigation.performSegueWithIdentifier("showSettings", sender: self)
+      case 8:
+        mainNavigation.performSegueWithIdentifier("showReader", sender: self)
       default:
-        backgroundColor = UIColor.whiteColor()
+        mainNavigation.popToRootViewControllerAnimated(true)
       }
-      mainNavigation.topViewController?.view.backgroundColor = backgroundColor
       drawerController.mainViewController = mainNavigation
       drawerController.setDrawerState(.Closed, animated: true)
     }
