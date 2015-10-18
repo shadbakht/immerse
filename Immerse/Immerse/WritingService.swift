@@ -10,4 +10,16 @@ import UIKit
 
 class WritingService: NSObject {
 
+  /**
+  setup
+  1. Find all the bundled files in app
+  2. Process each bundled file and record the meta data
+  */
+  class func setup() {
+    
+  }
+  class func processWritings() {
+    
+  }
+  
 }

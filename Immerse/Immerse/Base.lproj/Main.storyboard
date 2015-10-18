@@ -84,16 +84,29 @@
                                                     <rect key="frame" x="16" y="60" width="584" height="2"/>
                                                     <animations/>
                                                 </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZw-1s-jdg">
+                                                    <rect key="frame" x="16" y="25" width="42" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="cnT-uM-tZK"/>
+                                                        <constraint firstAttribute="height" constant="21" id="osa-Co-IVh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="yRf-EH-Gdc" secondAttribute="top" id="FpR-5c-Rvu"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="yRf-EH-Gdc" secondAttribute="leading" id="HXo-wK-2ID"/>
+                                                <constraint firstItem="EZw-1s-jdg" firstAttribute="centerY" secondItem="7oB-EI-Z06" secondAttribute="centerY" id="Kes-db-c7d"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="yRf-EH-Gdc" secondAttribute="trailing" id="TkR-bX-wEO"/>
                                                 <constraint firstItem="4Z5-10-Wah" firstAttribute="top" secondItem="7oB-EI-Z06" secondAttribute="topMargin" constant="52" id="XZB-H8-AKf"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Uyt-95-eOf" secondAttribute="leading" id="Zud-H2-YGN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Uyt-95-eOf" secondAttribute="trailing" id="bxP-DV-MBM"/>
                                                 <constraint firstItem="Uyt-95-eOf" firstAttribute="top" secondItem="7oB-EI-Z06" secondAttribute="topMargin" constant="23" id="iXn-2U-lFH"/>
+                                                <constraint firstItem="EZw-1s-jdg" firstAttribute="leading" secondItem="7oB-EI-Z06" secondAttribute="leadingMargin" constant="8" id="pg2-hL-qfj"/>
                                                 <constraint firstItem="4Z5-10-Wah" firstAttribute="leading" secondItem="7oB-EI-Z06" secondAttribute="leadingMargin" constant="8" id="rWG-Hh-ycV"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4Z5-10-Wah" secondAttribute="trailing" constant="-8" id="sKW-ks-E88"/>
                                             </constraints>
