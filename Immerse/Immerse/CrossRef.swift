@@ -10,9 +10,10 @@ import RealmSwift
 
 class CrossRef: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+  dynamic var xref_id : String = ""
+  dynamic var writing_id_start : String = ""
+  dynamic var writing_id_end : String = ""
+  dynamic var start_position : Int = 0
+  dynamic var end_position : Int = 0
+
 }

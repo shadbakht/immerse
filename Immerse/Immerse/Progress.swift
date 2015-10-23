@@ -10,9 +10,6 @@ import RealmSwift
 
 class Progress: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+  dynamic var writing_id : String = ""
+  dynamic var current_paragraph : Int = 0
 }

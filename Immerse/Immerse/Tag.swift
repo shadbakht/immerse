@@ -8,11 +8,18 @@
 
 import RealmSwift
 
+class TagTypes : Object {
+  dynamic var tag_type_id : String = ""
+  dynamic var tag_type_name : String = ""
+  dynamic var tag_parent_id : String = ""
+}
+
 class Tag: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+  dynamic var tag_id : String = ""
+  dynamic var tag_type_id : String = ""
+  dynamic var writing_id : String = ""
+  dynamic var start_position : Int = 0
+  dynamic var end_position : Int = 0
+
 }

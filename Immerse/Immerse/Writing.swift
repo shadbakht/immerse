@@ -9,10 +9,11 @@
 import RealmSwift
 
 class Writing: Object {
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+  
+  dynamic var writing_id : String = ""
+  dynamic var writing_title : String = ""
+  dynamic var writing_author : String = ""
+  dynamic var writing_category : String = ""
+  dynamic var writing_filepath : String = ""
+  dynamic var writing_paragraph_count : Int = 0
 }
