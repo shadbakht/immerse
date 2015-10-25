@@ -7,58 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BC1BD0CAAF0062FAFB /* NotesView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BE1BD0CAC20062FAFB /* CrossRefView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C01BD0CAD10062FAFB /* SettingsView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C21BD0CB140062FAFB /* ReaderView.swift */; settings = {ASSET_TAGS = (); }; };
-		546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C41BD0CB760062FAFB /* HomePresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C61BD0CB800062FAFB /* HomeInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794CA1BD0CBA40062FAFB /* LibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794CC1BD0CBAE0062FAFB /* LibraryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794CF1BD0CBBF0062FAFB /* TagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794CE1BD0CBBF0062FAFB /* TagsPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794D11BD0CBC80062FAFB /* TagsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D01BD0CBC80062FAFB /* TagsInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794D41BD0CBD90062FAFB /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D31BD0CBD90062FAFB /* NotesPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794D61BD0CBE20062FAFB /* NotesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D51BD0CBE20062FAFB /* NotesInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794D91BD0CBF20062FAFB /* CrossRefPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D81BD0CBF20062FAFB /* CrossRefPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794DB1BD0CBFD0062FAFB /* CrossRefInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DA1BD0CBFD0062FAFB /* CrossRefInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794DE1BD0CC0E0062FAFB /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DD1BD0CC0E0062FAFB /* SettingsPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794E01BD0CC180062FAFB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DF1BD0CC180062FAFB /* SettingsInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E21BD0CC280062FAFB /* ReaderPresenter.swift */; settings = {ASSET_TAGS = (); }; };
-		546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E41BD0CC330062FAFB /* ReaderInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		546794E81BD0CC490062FAFB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E71BD0CC490062FAFB /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
-		546794EA1BD0CC620062FAFB /* WritingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E91BD0CC620062FAFB /* WritingService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EB1BD0CC6F0062FAFB /* TagService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794ED1BD0CC780062FAFB /* NotesService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794F01BD0CC830062FAFB /* CrossRefService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EF1BD0CC830062FAFB /* CrossRefService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F11BD0CC9A0062FAFB /* UserService.swift */; settings = {ASSET_TAGS = (); }; };
-		546794F51BD0CCBE0062FAFB /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F41BD0CCBE0062FAFB /* Writing.swift */; settings = {ASSET_TAGS = (); }; };
-		546794F71BD0CCCA0062FAFB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F61BD0CCCA0062FAFB /* Note.swift */; settings = {ASSET_TAGS = (); }; };
-		546794F91BD0CCD40062FAFB /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F81BD0CCD40062FAFB /* Tag.swift */; settings = {ASSET_TAGS = (); }; };
-		546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FA1BD0CCDE0062FAFB /* CrossRef.swift */; settings = {ASSET_TAGS = (); }; };
-		546794FD1BD0CD130062FAFB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FC1BD0CD130062FAFB /* Progress.swift */; settings = {ASSET_TAGS = (); }; };
-		546795001BD0CD370062FAFB /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FF1BD0CD370062FAFB /* ShareService.swift */; settings = {ASSET_TAGS = (); }; };
-		546795021BD0CD4F0062FAFB /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795011BD0CD4F0062FAFB /* Activity.swift */; settings = {ASSET_TAGS = (); }; };
-		546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795031BD0CD5B0062FAFB /* AnalyticsService.swift */; settings = {ASSET_TAGS = (); }; };
-		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; settings = {ASSET_TAGS = (); }; };
-		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; settings = {ASSET_TAGS = (); }; };
-		5467950A1BD1EC9E0062FAFB /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 546795091BD1EC9E0062FAFB /* menu.png */; settings = {ASSET_TAGS = (); }; };
-		546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */ = {isa = PBXBuildFile; fileRef = 5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */; settings = {ASSET_TAGS = (); }; };
-		546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */ = {isa = PBXBuildFile; fileRef = 5467950F1BD32F6B0062FAFB /* 2 - Buddhist */; settings = {ASSET_TAGS = (); }; };
-		546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */ = {isa = PBXBuildFile; fileRef = 546795101BD32F6B0062FAFB /* 4 - Hindu */; settings = {ASSET_TAGS = (); }; };
-		546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */ = {isa = PBXBuildFile; fileRef = 546795111BD32F6B0062FAFB /* 5 - Islamic */; settings = {ASSET_TAGS = (); }; };
-		546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */ = {isa = PBXBuildFile; fileRef = 546795121BD32F6B0062FAFB /* 6 - Jewish */; settings = {ASSET_TAGS = (); }; };
-		5467951A1BD32F6B0062FAFB /* 7 - Zoroastrian in Resources */ = {isa = PBXBuildFile; fileRef = 546795131BD32F6B0062FAFB /* 7 - Zoroastrian */; settings = {ASSET_TAGS = (); }; };
-		5467951B1BD32F6B0062FAFB /* 8 - More in Resources */ = {isa = PBXBuildFile; fileRef = 546795141BD32F6B0062FAFB /* 8 - More */; settings = {ASSET_TAGS = (); }; };
+		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
+		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
+		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
+		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
+		546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BC1BD0CAAF0062FAFB /* NotesView.swift */; };
+		546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BE1BD0CAC20062FAFB /* CrossRefView.swift */; };
+		546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C01BD0CAD10062FAFB /* SettingsView.swift */; };
+		546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C21BD0CB140062FAFB /* ReaderView.swift */; };
+		546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C41BD0CB760062FAFB /* HomePresenter.swift */; };
+		546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C61BD0CB800062FAFB /* HomeInteractor.swift */; };
+		546794CA1BD0CBA40062FAFB /* LibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */; };
+		546794CC1BD0CBAE0062FAFB /* LibraryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */; };
+		546794CF1BD0CBBF0062FAFB /* TagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794CE1BD0CBBF0062FAFB /* TagsPresenter.swift */; };
+		546794D11BD0CBC80062FAFB /* TagsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D01BD0CBC80062FAFB /* TagsInteractor.swift */; };
+		546794D41BD0CBD90062FAFB /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D31BD0CBD90062FAFB /* NotesPresenter.swift */; };
+		546794D61BD0CBE20062FAFB /* NotesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D51BD0CBE20062FAFB /* NotesInteractor.swift */; };
+		546794D91BD0CBF20062FAFB /* CrossRefPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794D81BD0CBF20062FAFB /* CrossRefPresenter.swift */; };
+		546794DB1BD0CBFD0062FAFB /* CrossRefInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DA1BD0CBFD0062FAFB /* CrossRefInteractor.swift */; };
+		546794DE1BD0CC0E0062FAFB /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DD1BD0CC0E0062FAFB /* SettingsPresenter.swift */; };
+		546794E01BD0CC180062FAFB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794DF1BD0CC180062FAFB /* SettingsInteractor.swift */; };
+		546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E21BD0CC280062FAFB /* ReaderPresenter.swift */; };
+		546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E41BD0CC330062FAFB /* ReaderInteractor.swift */; };
+		546794E81BD0CC490062FAFB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E71BD0CC490062FAFB /* DataManager.swift */; };
+		546794EA1BD0CC620062FAFB /* WritingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E91BD0CC620062FAFB /* WritingService.swift */; };
+		546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EB1BD0CC6F0062FAFB /* TagService.swift */; };
+		546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794ED1BD0CC780062FAFB /* NotesService.swift */; };
+		546794F01BD0CC830062FAFB /* CrossRefService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EF1BD0CC830062FAFB /* CrossRefService.swift */; };
+		546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F11BD0CC9A0062FAFB /* UserService.swift */; };
+		546794F51BD0CCBE0062FAFB /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F41BD0CCBE0062FAFB /* Writing.swift */; };
+		546794F71BD0CCCA0062FAFB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F61BD0CCCA0062FAFB /* Note.swift */; };
+		546794F91BD0CCD40062FAFB /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F81BD0CCD40062FAFB /* Tag.swift */; };
+		546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FA1BD0CCDE0062FAFB /* CrossRef.swift */; };
+		546794FD1BD0CD130062FAFB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FC1BD0CD130062FAFB /* Progress.swift */; };
+		546795001BD0CD370062FAFB /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FF1BD0CD370062FAFB /* ShareService.swift */; };
+		546795021BD0CD4F0062FAFB /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795011BD0CD4F0062FAFB /* Activity.swift */; };
+		546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795031BD0CD5B0062FAFB /* AnalyticsService.swift */; };
+		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; };
+		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; };
+		5467950A1BD1EC9E0062FAFB /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 546795091BD1EC9E0062FAFB /* menu.png */; };
+		546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */ = {isa = PBXBuildFile; fileRef = 5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */; };
+		546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */ = {isa = PBXBuildFile; fileRef = 5467950F1BD32F6B0062FAFB /* 2 - Buddhist */; };
+		546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */ = {isa = PBXBuildFile; fileRef = 546795101BD32F6B0062FAFB /* 4 - Hindu */; };
+		546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */ = {isa = PBXBuildFile; fileRef = 546795111BD32F6B0062FAFB /* 5 - Islamic */; };
+		546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */ = {isa = PBXBuildFile; fileRef = 546795121BD32F6B0062FAFB /* 6 - Jewish */; };
+		5467951A1BD32F6B0062FAFB /* 7 - Zoroastrian in Resources */ = {isa = PBXBuildFile; fileRef = 546795131BD32F6B0062FAFB /* 7 - Zoroastrian */; };
+		5467951B1BD32F6B0062FAFB /* 8 - More in Resources */ = {isa = PBXBuildFile; fileRef = 546795141BD32F6B0062FAFB /* 8 - More */; };
 		5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED01B95FAA70037359C /* AppDelegate.swift */; };
 		5483BED31B95FAA70037359C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED21B95FAA70037359C /* ViewController.swift */; };
 		5483BED61B95FAA70037359C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED41B95FAA70037359C /* Main.storyboard */; };
 		5483BED81B95FAA70037359C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED71B95FAA70037359C /* Images.xcassets */; };
 		5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED91B95FAA70037359C /* LaunchScreen.xib */; };
 		5483BEE71B95FAA70037359C /* ImmerseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BEE61B95FAA70037359C /* ImmerseTests.swift */; };
+		54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7451BDD6930009F3665 /* Icon-40.png */; };
+		54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7461BDD6930009F3665 /* Icon-40@2x.png */; };
+		54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7471BDD6930009F3665 /* Icon-40@3x.png */; };
+		54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7481BDD6930009F3665 /* Icon-60@2x.png */; };
+		54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7491BDD6930009F3665 /* Icon-60@3x.png */; };
+		54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74A1BDD6930009F3665 /* Icon-76.png */; };
+		54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74B1BDD6930009F3665 /* Icon-76@2x.png */; };
+		54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74C1BDD6930009F3665 /* Icon-Small.png */; };
+		54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74D1BDD6930009F3665 /* Icon-Small@2x.png */; };
+		54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74E1BDD6930009F3665 /* Icon-Small@3x.png */; };
 		E91A37593168B2754A6BC431 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9104F0529718EC07A125BDFE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +141,16 @@
 		5483BEE01B95FAA70037359C /* ImmerseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImmerseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BEE51B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BEE61B95FAA70037359C /* ImmerseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmerseTests.swift; sourceTree = "<group>"; };
+		54E5D7451BDD6930009F3665 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		54E5D7461BDD6930009F3665 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		54E5D7471BDD6930009F3665 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
+		54E5D7481BDD6930009F3665 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		54E5D7491BDD6930009F3665 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		54E5D74A1BDD6930009F3665 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		54E5D74B1BDD6930009F3665 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		54E5D74C1BDD6930009F3665 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		54E5D74D1BDD6930009F3665 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		54E5D74E1BDD6930009F3665 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
 		9104F0529718EC07A125BDFE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -329,6 +349,16 @@
 		5483BECE1B95FAA70037359C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54E5D7451BDD6930009F3665 /* Icon-40.png */,
+				54E5D7461BDD6930009F3665 /* Icon-40@2x.png */,
+				54E5D7471BDD6930009F3665 /* Icon-40@3x.png */,
+				54E5D7481BDD6930009F3665 /* Icon-60@2x.png */,
+				54E5D7491BDD6930009F3665 /* Icon-60@3x.png */,
+				54E5D74A1BDD6930009F3665 /* Icon-76.png */,
+				54E5D74B1BDD6930009F3665 /* Icon-76@2x.png */,
+				54E5D74C1BDD6930009F3665 /* Icon-Small.png */,
+				54E5D74D1BDD6930009F3665 /* Icon-Small@2x.png */,
+				54E5D74E1BDD6930009F3665 /* Icon-Small@3x.png */,
 				5467951C1BD32F710062FAFB /* Writings */,
 				5467950B1BD210D50062FAFB /* Assets */,
 				5483BECF1B95FAA70037359C /* Info.plist */,
@@ -415,6 +445,7 @@
 				TargetAttributes = {
 					5483BECA1B95FAA70037359C = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = CUYMUDSGA4;
 					};
 					5483BEDF1B95FAA70037359C = {
 						CreatedOnToolsVersion = 6.4;
@@ -454,8 +485,18 @@
 				546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */,
 				546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */,
 				546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */,
+				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
+				54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */,
+				54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */,
+				54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */,
+				54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */,
+				54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */,
+				54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */,
 				546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */,
+				54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */,
+				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
+				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
 				546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +661,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -666,6 +708,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -692,11 +735,14 @@
 			baseConfigurationReference = 4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Immerse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "IM.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -705,11 +751,14 @@
 			baseConfigurationReference = 0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Immerse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "IM.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
