@@ -8,9 +8,50 @@
 
 import UIKit
 
+extension NSFileManager {
+  
+  class func localPath() -> String {
+    
+    let path = NSBundle.mainBundle().resourcePath!
+    return path
+    
+  }
+  
+  class func localPathForItem(item:String) -> String {
+    return self.localPath() + "/" + item
+  }
+  
+  func recursivePathsForResources(type type: String) -> [String] {
+    
+    let path = NSBundle.mainBundle().resourcePath!
+
+    // Enumerators are recursive
+    let enumerator = self.enumeratorAtPath(path)
+    var filePaths = [String]()
+    
+    while let filePath = enumerator?.nextObject() as? String {
+      
+      if NSURL(fileURLWithPath: filePath).pathExtension == type {
+        filePaths.append(filePath)
+      }
+    }
+    
+    return filePaths
+  }
+}
 class Util: NSObject {
   
+  //MARK: Traverse Bundle
+  
   //MARK: Default Handlers
+  class func notify(name:String) {
+    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil)
+  }
+  
+  class func notifyData(name:String, data:NSDictionary) {
+    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil, userInfo: data as [NSObject : AnyObject])
+  }
+
   class func storeDefault(key:String, value:AnyObject?) {
     NSUserDefaults.standardUserDefaults().setObject(value, forKey: key)
     NSUserDefaults.standardUserDefaults().synchronize()
@@ -23,6 +64,11 @@ class Util: NSObject {
   class func removeDefaultWithKey(key:String) {
     NSUserDefaults.standardUserDefaults().removeObjectForKey(key)
     NSUserDefaults.standardUserDefaults().synchronize()
+  }
+  
+  //MARK: Unique IDs
+  class func uniqueString() -> String {
+    return NSUUID().UUIDString
   }
 
   //MARK: Observer Handlers

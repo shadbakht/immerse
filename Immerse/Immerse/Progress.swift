@@ -12,4 +12,5 @@ class Progress: Object {
     
   dynamic var writing_id : String = ""
   dynamic var current_paragraph : Int = 0
+  
 }

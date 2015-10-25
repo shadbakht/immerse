@@ -10,4 +10,7 @@ import UIKit
 
 class HomeInteractor: NSObject {
 
+  static let sharedInstance = HomeInteractor()
+  var presenter : HomePresenter? = nil
+  
 }

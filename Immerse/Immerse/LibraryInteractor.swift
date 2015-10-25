@@ -10,4 +10,16 @@ import UIKit
 
 class LibraryInteractor: NSObject {
 
+  static let sharedInstance : LibraryInteractor = LibraryInteractor()
+  var presenter : LibraryPresenter? = nil
+  
+  func getTopLevelFolders() -> NSArray {
+    return DataManager.topLevelItems()
+  }
+  
+  func childrenForPath(name:String) -> NSArray {
+    let matches = DataManager.childrenForPath(name)
+    let keys = matches.allKeys
+    return keys
+  }
 }

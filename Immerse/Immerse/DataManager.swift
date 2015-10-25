@@ -10,4 +10,19 @@ import UIKit
 
 class DataManager: NSObject {
 
+  class func setup() {
+    WritingService.setup()
+  }
+  
+  class func topLevelItems() -> NSArray {
+    return WritingService.topLevelFolders()
+  }
+  
+  class func childrenForPath(path:String) -> NSDictionary {
+    let paths = WritingService.contentsOfSubFolder(path, isTop: WritingService.isTopLevel(path))
+    if paths == nil {
+      return [:]
+    }
+    return paths!
+  }
 }

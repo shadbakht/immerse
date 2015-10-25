@@ -12,6 +12,7 @@ import KYDrawerController
 class NavTray: UITableViewController {
 
   override func viewDidLoad() {
+    Util.observe(self, action: "goToLibrary", named: "ShowLibrary")
     super.viewDidLoad()
   }
 
@@ -19,6 +20,14 @@ class NavTray: UITableViewController {
     super.didReceiveMemoryWarning()
   }
 
+  func goToLibrary() {
+    if let drawerController = self.parentViewController as? KYDrawerController {
+      let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
+      mainNavigation.performSegueWithIdentifier("showLibrary", sender: self)
+      drawerController.mainViewController = mainNavigation
+      drawerController.setDrawerState(.Closed, animated: true)
+    }
+  }
   // MARK: - Table view data source
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

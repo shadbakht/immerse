@@ -9,9 +9,23 @@
 import UIKit
 import KYDrawerController
 
-class LibraryView: UIViewController {
+class LibraryViewCell : UITableViewCell {
+  
+}
 
+class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+  var presenter : LibraryPresenter? = nil
+  
   override func viewDidLoad() {
+    
+    // Setup VIPER Stack
+    presenter = LibraryPresenter.sharedInstance
+    presenter?.view = self
+    presenter?.interactor = LibraryInteractor.sharedInstance
+    LibraryInteractor.sharedInstance.presenter = presenter
+    LibraryPresenter.sharedInstance.setup()
+
     super.viewDidLoad()
   }
 
@@ -25,4 +39,23 @@ class LibraryView: UIViewController {
     }
   }
 
+  //MARK: UITableView Delegate / DataSource
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = presenter?.cellForRow(tableView, indexPath:indexPath)
+    return cell!
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // Something
+  }
+  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return presenter?.titleForSection(section)
+  }
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return (presenter?.numberOfSections())!
+  }
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return (presenter?.numberOfRowsForSection(section))!
+  }
 }
