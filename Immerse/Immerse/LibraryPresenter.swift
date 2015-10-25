@@ -24,6 +24,15 @@ class LibraryPresenter: NSObject {
     }
   }
   
+  func selectCell(indexPath:NSIndexPath) {
+    let section = indexPath.section
+    let row = indexPath.row
+    let sectionName = topLevel.objectAtIndex(section)
+    let list = mapping.objectForKey(sectionName)
+    let pathName : String = (sectionName as! String) + "/" + (list!.objectAtIndex(row) as! String)
+    interactor?.selectWritingNamed(pathName) // Select the first one for now.
+  }
+  
   func cellForRow(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
     let section = indexPath.section
     let sectionName = topLevel.objectAtIndex(section)
@@ -46,8 +55,11 @@ class LibraryPresenter: NSObject {
     return topLevel.objectAtIndex(section) as! String
   }
   func numberOfRowsForSection(section:Int) -> Int {
+    print("Populating...")
     let name = topLevel.objectAtIndex(section) as! String
-    let children = interactor?.childrenForPath(name )
+    print(name)
+    let children = interactor?.childrenForPath(name)
+    print(children)
     mapping[name] = children
     return children!.count
   }

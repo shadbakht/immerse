@@ -13,6 +13,7 @@ class NavTray: UITableViewController {
 
   override func viewDidLoad() {
     Util.observe(self, action: "goToLibrary", named: "ShowLibrary")
+    Util.observe(self, action: "goToReader", named: "ShowReader")
     super.viewDidLoad()
   }
 
@@ -28,6 +29,16 @@ class NavTray: UITableViewController {
       drawerController.setDrawerState(.Closed, animated: true)
     }
   }
+  
+  func goToReader() {
+    if let drawerController = self.parentViewController as? KYDrawerController {
+      let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
+      mainNavigation.performSegueWithIdentifier("showReader", sender: self)
+      drawerController.mainViewController = mainNavigation
+      drawerController.setDrawerState(.Closed, animated: true)
+    }
+  }
+  
   // MARK: - Table view data source
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

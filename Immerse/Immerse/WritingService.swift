@@ -10,6 +10,8 @@ import UIKit
 
 class WritingService: NSObject {
 
+  static var current_writing : String = ""
+  static var current_writing_object : Writing? = nil
   /**
   setup
   1. Find all the bundled files in app
@@ -79,6 +81,16 @@ class WritingService: NSObject {
     return nil
   }
   
+  class func selectWriting(name:String) {
+    print("selected:")
+    print(name)
+    WritingService.current_writing = name
+    let query = "writing_filepath CONTAINS '" + name + "'"
+    let results = RealmService.objectsForQuery(Writing.self, query: query)
+    print(results.count)
+    WritingService.current_writing_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
+  }
+  
   class func processWritings() {
     
     // Create the Realm Objects
@@ -110,4 +122,13 @@ class WritingService: NSObject {
     return writing
   }
   
+  class func getCurrentBody() -> String {
+    if current_writing_object != nil {
+      let genericPath = current_writing_object?.writing_filepath
+      let absolutePath = NSFileManager.localPathForItem(genericPath!)
+      let body = try! NSString(contentsOfFile: absolutePath, encoding: NSUTF8StringEncoding)
+      return body as String
+    }
+    return ""
+  }
 }

@@ -7,29 +7,80 @@
 //
 
 import UIKit
+import KYDrawerController
+
+class ImmerseTextView : UITextView {
+
+  var parent : ReaderView? = nil
+  
+  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    if action == "createTag" || action == "createNote" || action == "createXRef" {
+      return true
+    }
+    return false
+  }
+
+  func createTag() {
+    parent?.createTag(self)
+  }
+  
+  func createNote() {
+    parent?.createNote(self)
+  }
+  
+  func createXRef() {
+    parent?.createXRef(self)
+  }
+}
 
 class ReaderView: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  var presenter : ReaderPresenter? = nil
+  @IBOutlet weak var writingBody: ImmerseTextView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    // SETUP VIPER
+    presenter = ReaderPresenter.sharedInstance
+    presenter?.view = self
+    presenter?.interactor = ReaderInteractor.sharedInstance
+    ReaderInteractor.sharedInstance.presenter = presenter
+    presenter?.setup()
+    
+    // Custom Menu Items & Behaviors
+    // Setup the Delegation Pattern
+    writingBody.parent = self
+    let tagItem = UIMenuItem(title: "TAG", action: "createTag")
+    let noteItem = UIMenuItem(title: "NOTE", action: "createNote")
+    let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
+    UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
+    UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
+  }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  @IBAction func menuOpen(sender: UIBarButtonItem) {
+    if let drawerController = navigationController?.parentViewController as? KYDrawerController {
+      drawerController.setDrawerState(.Opened, animated: true)
     }
-    */
-
+  }
+  
+  //MARK: Text Annotations Delegate Methods
+  func createNote(tv:ImmerseTextView) {
+    let range = tv.selectedRange
+    presenter?.createNote(range)
+  }
+  
+  func createTag(tv: ImmerseTextView) {
+    let range = tv.selectedRange
+    presenter?.createTag(range)
+  }
+  
+  func createXRef(tv: ImmerseTextView) {
+    let range = tv.selectedRange
+    presenter?.createRef(range)
+  }
 }

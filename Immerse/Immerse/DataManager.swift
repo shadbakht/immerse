@@ -14,6 +14,11 @@ class DataManager: NSObject {
     WritingService.setup()
   }
   
+  class func selectWriting(name:String) {
+    WritingService.selectWriting(name)
+    Util.notify("ShowReader")
+  }
+  
   class func topLevelItems() -> NSArray {
     return WritingService.topLevelFolders()
   }
@@ -24,5 +29,9 @@ class DataManager: NSObject {
       return [:]
     }
     return paths!
+  }
+  
+  class func getCurrentBody() -> String {
+    return WritingService.getCurrentBody()
   }
 }

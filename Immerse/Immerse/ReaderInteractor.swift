@@ -10,4 +10,10 @@ import UIKit
 
 class ReaderInteractor: NSObject {
 
+  static let sharedInstance : ReaderInteractor = ReaderInteractor()
+  var presenter : ReaderPresenter? = nil
+  
+  func getCurrentBody() -> String {
+    return DataManager.getCurrentBody()
+  }
 }

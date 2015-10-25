@@ -47,6 +47,7 @@ class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate 
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     // Something
+    presenter?.selectCell(indexPath)
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -58,4 +59,5 @@ class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return (presenter?.numberOfRowsForSection(section))!
   }
+
 }
