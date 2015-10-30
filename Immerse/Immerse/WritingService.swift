@@ -127,7 +127,8 @@ class WritingService: NSObject {
       let genericPath = current_writing_object?.writing_filepath
       let absolutePath = NSFileManager.localPathForItem(genericPath!)
       let body = try! NSString(contentsOfFile: absolutePath, encoding: NSUTF8StringEncoding)
-      return body as String
+      let bodyProcessed = body.stringByReplacingOccurrencesOfString("\n", withString: "\n\n")
+      return bodyProcessed as String
     }
     return ""
   }
