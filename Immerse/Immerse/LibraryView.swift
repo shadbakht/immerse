@@ -8,12 +8,15 @@
 
 import UIKit
 import KYDrawerController
+import RATreeView
 
 class LibraryViewCell : UITableViewCell {
   
 }
 
-class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
+  
+  @IBOutlet weak var treeView: RATreeView!
 
   var presenter : LibraryPresenter? = nil
   
@@ -26,6 +29,10 @@ class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate 
     LibraryInteractor.sharedInstance.presenter = presenter
     LibraryPresenter.sharedInstance.setup()
 
+    // Setup the RATreeView
+    treeView.delegate = self
+    treeView.dataSource = self
+    
     super.viewDidLoad()
   }
 
@@ -38,26 +45,25 @@ class LibraryView: UIViewController, UITableViewDataSource, UITableViewDelegate 
       drawerController.setDrawerState(.Opened, animated: true)
     }
   }
+  
+  //MARK: RATreeView Delegate / DataSource
+  func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
+    return 3
+  }
+  
+  func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
+    let a = UITableViewCell()
+    a.textLabel!.text = "Moo Moo"
+    return  a
+  }
+  
+  func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
+    return index
+  }
+  
+  func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
+    print("Hello!")
+  }
 
-  //MARK: UITableView Delegate / DataSource
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = presenter?.cellForRow(tableView, indexPath:indexPath)
-    return cell!
-  }
-  
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    // Something
-    presenter?.selectCell(indexPath)
-  }
-  
-  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return presenter?.titleForSection(section)
-  }
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return (presenter?.numberOfSections())!
-  }
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (presenter?.numberOfRowsForSection(section))!
-  }
 
 }
