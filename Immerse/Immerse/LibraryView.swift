@@ -48,13 +48,22 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   //MARK: RATreeView Delegate / DataSource
   func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
-    return 3
+    if item == nil {
+      return presenter!.numberOfSections()
+    } else {
+      let itemCount = item as! Int
+      return presenter!.numberOfRowsForSection(itemCount)
+    }
   }
   
   func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
     let a = UITableViewCell()
-    a.textLabel!.text = "Moo Moo"
-    return  a
+    if item == nil {
+      a.textLabel!.text = "Paarent"
+      return a
+    } else {
+      return presenter!.cellForRow(treeView, row: (item as! Int))
+    }
   }
   
   func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
@@ -63,6 +72,7 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
     print("Hello!")
+    presenter!.selectCell((item as! Int), row: (item as! Int))
   }
 
 

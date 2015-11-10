@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RATreeView
 
 class LibraryPresenter: NSObject {
 
@@ -24,25 +25,27 @@ class LibraryPresenter: NSObject {
     }
   }
   
-  func selectCell(indexPath:NSIndexPath) {
-    let section = indexPath.section
-    let row = indexPath.row
+  func selectCell(section:Int, row: Int) {
+    let section = section
+    let row = row
     let sectionName = topLevel.objectAtIndex(section)
     let list = mapping.objectForKey(sectionName)
     let pathName : String = (sectionName as! String) + "/" + (list!.objectAtIndex(row) as! String)
     interactor?.selectWritingNamed(pathName) // Select the first one for now.
   }
   
-  func cellForRow(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
-    let section = indexPath.section
+  func cellForRow(tableView:RATreeView, row:Int) -> UITableViewCell {
+    let section = row
     let sectionName = topLevel.objectAtIndex(section)
+    print(topLevel)
+    print(mapping)
     let list = mapping.objectForKey(sectionName)
     
     var title = "Hello"
-    if indexPath.row < list!.count {
-      title = (list?.objectAtIndex(indexPath.row))! as! String
+    if (list != nil) && (row < list!.count) {
+      title = (list?.objectAtIndex(row))! as! String
     }
-    let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("LibraryCell", forIndexPath: indexPath)
+    let cell : UITableViewCell = UITableViewCell()
     cell.textLabel!.text = title
     return cell
   }
