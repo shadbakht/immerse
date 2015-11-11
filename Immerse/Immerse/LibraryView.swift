@@ -9,7 +9,6 @@
 import UIKit
 import KYDrawerController
 import RATreeView
-import RADataObject
 
 class LibraryViewCell : UITableViewCell {
   
@@ -67,7 +66,6 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
     print("DECIDE CHILD")
     print(index)
-    RADa
     return index
   }
   

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5416DA821BF2F97900EA28B8 /* Library.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5416DA811BF2F97900EA28B8 /* Library.plist */; };
+		5416DA841BF3051C00EA28B8 /* RAObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416DA831BF3051C00EA28B8 /* RAObject.swift */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
@@ -87,6 +88,7 @@
 		0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5416DA811BF2F97900EA28B8 /* Library.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Library.plist; sourceTree = "<group>"; };
+		5416DA831BF3051C00EA28B8 /* RAObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAObject.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				546794FA1BD0CCDE0062FAFB /* CrossRef.swift */,
 				546794FC1BD0CD130062FAFB /* Progress.swift */,
 				546795011BD0CD4F0062FAFB /* Activity.swift */,
+				5416DA831BF3051C00EA28B8 /* RAObject.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 			files = (
 				546794F91BD0CCD40062FAFB /* Tag.swift in Sources */,
 				54E5D75C1BE33463009F3665 /* Test.m in Sources */,
+				5416DA841BF3051C00EA28B8 /* RAObject.swift in Sources */,
 				546794D41BD0CBD90062FAFB /* NotesPresenter.swift in Sources */,
 				546794E81BD0CC490062FAFB /* DataManager.swift in Sources */,
 				546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */,
