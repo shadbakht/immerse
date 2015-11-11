@@ -18,8 +18,8 @@ class LibraryInteractor: NSObject {
     
   }
   
-  func getTopLevelFolders() -> NSArray {
-    return DataManager.topLevelItems()
+  func loadFolderMappings() -> NSDictionary {
+    return DataManager.getFolderMapping()
   }
   
   func childrenForPath(name:String) -> NSArray {

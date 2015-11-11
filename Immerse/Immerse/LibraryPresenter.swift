@@ -16,54 +16,47 @@ class LibraryPresenter: NSObject {
   var interactor : LibraryInteractor? = nil
   
   var isSetup : Bool = false
-  var topLevel : NSArray = []
-  var mapping : NSMutableDictionary = [:]
+  var mapping : NSDictionary = [:]
+  var folder : NSDictionary = [:]
+  
   func setup() {
     if !isSetup {
-      topLevel = (interactor?.getTopLevelFolders())!
+      mapping = interactor!.loadFolderMappings()
       isSetup = true
     }
   }
-  
-  func selectCell(section:Int, row: Int) {
-    let section = section
-    let row = row
-    let sectionName = topLevel.objectAtIndex(section)
-    let list = mapping.objectForKey(sectionName)
-    let pathName : String = (sectionName as! String) + "/" + (list!.objectAtIndex(row) as! String)
-    interactor?.selectWritingNamed(pathName) // Select the first one for now.
-  }
-  
-  func cellForRow(tableView:RATreeView, row:Int) -> UITableViewCell {
-    let section = row
-    let sectionName = topLevel.objectAtIndex(section)
-    print(topLevel)
-    print(mapping)
-    let list = mapping.objectForKey(sectionName)
-    
-    var title = "Hello"
-    if (list != nil) && (row < list!.count) {
-      title = (list?.objectAtIndex(row))! as! String
+
+  func numberOfChildren(tree:RATreeView, index:AnyObject?) -> Int {
+    if mapping.count == 0 { return 0 }
+    if folder.count != 0 {
+      return folder.count
     }
-    let cell : UITableViewCell = UITableViewCell()
-    cell.textLabel!.text = title
+    if index == nil { // Library View Launch - Parents Only
+      return mapping.count
+    }
+    // Library Children
+    let key = mapping.allKeys[index as! Int]
+    return (mapping.objectForKey(key)?.count)!
+  }
+
+  func selectRowForTree(tree:RATreeView, index:AnyObject?) {
+    let key = (mapping.allKeys as NSArray)[index as! Int] as! String
+    folder = mapping.objectForKey(key) as! NSDictionary
+  }
+
+  func cellForTree(tree:RATreeView, index:AnyObject?) -> UITableViewCell {
+    if folder.count > 0 {
+      let cell = UITableViewCell()
+      let text = (folder.allKeys as NSArray)[index as! Int]
+      cell.textLabel!.text = text as! String
+      return cell
+    }
+    
+    let cell = UITableViewCell()
+    let text = (mapping.allKeys as NSArray).firstObject
+    cell.textLabel!.text = text as! String
+    print("Fetching cell")
+    print(index)
     return cell
-  }
-  
-  func numberOfSections() -> Int {
-    return topLevel.count
-  }
-  
-  func titleForSection(section:Int) -> String {
-    return topLevel.objectAtIndex(section) as! String
-  }
-  func numberOfRowsForSection(section:Int) -> Int {
-    print("Populating...")
-    let name = topLevel.objectAtIndex(section) as! String
-    print(name)
-    let children = interactor?.childrenForPath(name)
-    print(children)
-    mapping[name] = children
-    return children!.count
   }
 }

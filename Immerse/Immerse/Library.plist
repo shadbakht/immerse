@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1 - Bahá’í</key>
+	<dict>
+		<key>2 - Bahá’u’lláh</key>
+		<dict>
+			<key>Contents</key>
+			<array>
+				<string>Epistle to the Son of the Wolf</string>
+				<string>Four Valleys</string>
+				<string>Gems of Divine Mysteries</string>
+				<string>Gleanings</string>
+				<string>Hidden Words</string>
+				<string>Kitáb-i-Aqdas</string>
+				<string>Kitáb-i-Íqán</string>
+				<string>Prayers and Meditations</string>
+				<string>Proclamation of Bahá’u’lláh</string>
+				<string>Seven Valleys</string>
+				<string>Summons of the Lord of Hosts</string>
+				<string>Tabernacle of Unity</string>
+				<string>Tablets of Bahá’u’lláh Revealed After the Kitáb-i-Aqdas</string>
+			</array>
+		</dict>
+		<key>1 - The Báb</key>
+		<dict>
+			<key>Contents</key>
+			<array>
+				<string>Selections from the Writings of The Báb</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -14,13 +14,12 @@ class DataManager: NSObject {
     WritingService.setup()
   }
   
+  class func getFolderMapping() -> NSDictionary {
+    return WritingService.getFolderMapping()
+  }
   class func selectWriting(name:String) {
     WritingService.selectWriting(name)
     Util.notify("ShowReader")
-  }
-  
-  class func topLevelItems() -> NSArray {
-    return WritingService.topLevelFolders()
   }
   
   class func childrenForPath(path:String) -> NSDictionary {

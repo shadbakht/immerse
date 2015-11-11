@@ -9,6 +9,7 @@
 import UIKit
 import KYDrawerController
 import RATreeView
+import RADataObject
 
 class LibraryViewCell : UITableViewCell {
   
@@ -19,6 +20,8 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   @IBOutlet weak var treeView: RATreeView!
 
   var presenter : LibraryPresenter? = nil
+  
+  // MARK: Setup
   
   override func viewDidLoad() {
     
@@ -39,7 +42,9 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-    
+  
+  // MARK: Navigation
+  
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
       drawerController.setDrawerState(.Opened, animated: true)
@@ -47,32 +52,28 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   }
   
   //MARK: RATreeView Delegate / DataSource
+
   func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
-    if item == nil {
-      return presenter!.numberOfSections()
-    } else {
-      let itemCount = item as! Int
-      return presenter!.numberOfRowsForSection(itemCount)
-    }
+    print("Get NUMBE ROF CHILDREN")
+    return (presenter?.numberOfChildren(treeView, index: item))!
   }
   
   func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
-    let a = UITableViewCell()
-    if item == nil {
-      a.textLabel!.text = "Paarent"
-      return a
-    } else {
-      return presenter!.cellForRow(treeView, row: (item as! Int))
-    }
+    print("GET CELL")
+    let cell = presenter?.cellForTree(treeView, index: item)
+    return cell
   }
   
   func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
+    print("DECIDE CHILD")
+    print(index)
+    RADa
     return index
   }
   
   func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
-    print("Hello!")
-    presenter!.selectCell((item as! Int), row: (item as! Int))
+    print("I GOT SELECTED")
+    presenter?.selectRowForTree(treeView, index: item)
   }
 
 

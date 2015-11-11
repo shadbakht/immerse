@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5416DA821BF2F97900EA28B8 /* Library.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5416DA811BF2F97900EA28B8 /* Library.plist */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
@@ -54,7 +55,6 @@
 		5467951A1BD32F6B0062FAFB /* 7 - Zoroastrian in Resources */ = {isa = PBXBuildFile; fileRef = 546795131BD32F6B0062FAFB /* 7 - Zoroastrian */; };
 		5467951B1BD32F6B0062FAFB /* 8 - More in Resources */ = {isa = PBXBuildFile; fileRef = 546795141BD32F6B0062FAFB /* 8 - More */; };
 		5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED01B95FAA70037359C /* AppDelegate.swift */; };
-		5483BED31B95FAA70037359C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED21B95FAA70037359C /* ViewController.swift */; };
 		5483BED61B95FAA70037359C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED41B95FAA70037359C /* Main.storyboard */; };
 		5483BED81B95FAA70037359C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED71B95FAA70037359C /* Images.xcassets */; };
 		5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED91B95FAA70037359C /* LaunchScreen.xib */; };
@@ -86,6 +86,7 @@
 /* Begin PBXFileReference section */
 		0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5416DA811BF2F97900EA28B8 /* Library.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Library.plist; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		5483BECB1B95FAA70037359C /* Immerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BECF1B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BED01B95FAA70037359C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5483BED21B95FAA70037359C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5483BED51B95FAA70037359C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5483BED71B95FAA70037359C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5483BEDA1B95FAA70037359C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -295,6 +295,7 @@
 		5467951C1BD32F710062FAFB /* Writings */ = {
 			isa = PBXGroup;
 			children = (
+				5416DA811BF2F97900EA28B8 /* Library.plist */,
 				5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */,
 				5467950F1BD32F6B0062FAFB /* 2 - Buddhist */,
 				546795101BD32F6B0062FAFB /* 4 - Hindu */,
@@ -330,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				5483BED01B95FAA70037359C /* AppDelegate.swift */,
-				5483BED21B95FAA70037359C /* ViewController.swift */,
 				546795051BD0CFF20062FAFB /* NavTray.swift */,
 				546795071BD0D00E0062FAFB /* Util.swift */,
 				5483BED41B95FAA70037359C /* Main.storyboard */,
@@ -504,6 +504,7 @@
 				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
 				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
+				5416DA821BF2F97900EA28B8 /* Library.plist in Resources */,
 				546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,7 +603,6 @@
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
-				5483BED31B95FAA70037359C /* ViewController.swift in Sources */,
 				546794F51BD0CCBE0062FAFB /* Writing.swift in Sources */,
 				546794E01BD0CC180062FAFB /* SettingsInteractor.swift in Sources */,
 				546794CA1BD0CBA40062FAFB /* LibraryPresenter.swift in Sources */,

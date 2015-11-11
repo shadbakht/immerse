@@ -30,6 +30,15 @@ class RealmService: NSObject {
     }
     
   }
+  
+  class func allObjectsForType(objectType:AnyObject.Type) -> NSArray {
+    let realm = try! Realm()
+    if objectType == Writing.self {
+      let results = realm.objects(Writing)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    return []
+  }
 
   class func objectsForQuery(objectType:AnyObject.Type, query : String) -> NSArray {
     let realm = try! Realm()

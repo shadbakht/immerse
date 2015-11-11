@@ -12,19 +12,23 @@ class WritingService: NSObject {
 
   static var current_writing : String = ""
   static var current_writing_object : Writing? = nil
-  /**
-  setup
-  1. Find all the bundled files in app
-  2. Process each bundled file and record the meta data
-  */
+  static var folderMapping : NSDictionary? = nil
+  
   class func setup() {
-    
-    let processed = RealmService.numberOfObjectsOfType(Writing.self)
-    if processed == 0 {
-      processWritings()
-    } else {
-      print("Already Processed")
+    /**
+     setup
+     */
+    processWritings()
+
+  }
+  
+  class func getFolderMapping() -> NSDictionary {
+    if WritingService.folderMapping == nil {
+      let filePath = NSBundle.mainBundle().pathForResource("Library", ofType: "plist")
+      let dictionary = NSDictionary(contentsOfFile: filePath!)
+      WritingService.folderMapping = dictionary
     }
+    return WritingService.folderMapping!
   }
   
   class func topLevelFolders() -> NSArray {
@@ -82,8 +86,6 @@ class WritingService: NSObject {
   }
   
   class func selectWriting(name:String) {
-    print("selected:")
-    print(name)
     WritingService.current_writing = name
     let query = "writing_filepath CONTAINS '" + name + "'"
     let results = RealmService.objectsForQuery(Writing.self, query: query)
@@ -91,11 +93,12 @@ class WritingService: NSObject {
     WritingService.current_writing_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
   }
   
-  class func processWritings() {
+  private class func processWritings() {
     
     // Create the Realm Objects
     let items = NSFileManager.defaultManager().recursivePathsForResources(type: "txt")
     for item in items {
+      print(item)
       let writing = createWriting(item)
       RealmService.createObject(writing)
     }
@@ -113,12 +116,6 @@ class WritingService: NSObject {
     // Get ID
     let id = Util.uniqueString()
     writing.writing_id = id
-    
-    // Author
-    // Category
-    // Etc.
-    // @jtan: Need to standardize the meta data of these docs
-    
     return writing
   }
   
