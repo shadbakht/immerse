@@ -12,6 +12,7 @@ class DataManager: NSObject {
 
   class func setup() {
     WritingService.setup()
+    RAService.recursivelyBuildMapping()
   }
   
   class func getFolderMapping() -> NSDictionary {
