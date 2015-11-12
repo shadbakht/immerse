@@ -50,28 +50,46 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     }
   }
   
-  //MARK: RATreeView Delegate / DataSource
+  //MARK: RATreeView Delegate
+  
+  func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
+  }
+
+  // MARK: RATreeView DataSource
+  
+  func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
+    if item == nil {
+      return presenter!.mapping.objectAtIndex(index)
+    }
+    let data : RAObject = item as! RAObject
+    return data.children.objectAtIndex(index)
+  }
 
   func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
-
-    return 0
+    if item == nil {
+      return presenter!.mapping.count
+    } else {
+      let data : RAObject = item as! RAObject
+      return data.children.count
+    }
   }
   
   func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
-    print("GET CELL")
-    let cell = presenter?.cellForTree(treeView, index: item)
+    let dataObject : RAObject = item as! RAObject
+    let level = self.treeView.levelForCellForItem(item)
+    let numberOfChildren = dataObject.children.count
+    let detailText = "TEST"
+    let expanded = self.treeView.isCellForItemExpanded(item)
+    
+    //
+    print(level)
+    print(numberOfChildren)
+    print(detailText)
+    print(expanded)
+    
+    let cell = UITableViewCell()
+    cell.textLabel!.text = dataObject.displayName
     return cell
-  }
-  
-  func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
-    print("DECIDE CHILD")
-    print(index)
-    return index
-  }
-  
-  func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
-    print("I GOT SELECTED")
-    presenter?.selectRowForTree(treeView, index: item)
   }
 
 
