@@ -16,29 +16,35 @@ class RAService: NSObject {
     let path = NSBundle.mainBundle().resourcePath!
     let enumerator = NSFileManager.defaultManager().enumeratorAtPath(path)
     var filePaths = [String]()
+    
+    var currentParent : String = ""
+    var currentChild : String = ""
+    
+    var currentParentObj : RAObject? = nil
+    let completedTrees : NSMutableArray = []
+    
+    
+    
     while let filePath = enumerator?.nextObject() as? String {
-
-      print(filePath)
-      print(enumerator?.nextObject() as? String)
-      if NSURL(fileURLWithPath: filePath).pathExtension == "txt" {
+      let path = NSURL(fileURLWithPath: filePath)
+      let array : NSArray = filePath.componentsSeparatedByString("/")
+      
+      if array.count == 1 && path.pathExtension != "txt" {
+        currentParent = array.firstObject as! String
+        currentParentObj = createFolder(currentParent, path: currentParent)
+        print(currentParent)
+      }
+      if array.count == 2 && path.pathExtension != "txt" {
+        currentChild = array.objectAtIndex(1) as! String
+        print(currentChild)
+      }
+      if path.pathExtension == "txt" {
         filePaths.append(filePath)
       }
       
     }
   }
-  
-//  class func seedData() {
-//    
-//    let folder = createFolder("Baha'i", path: "1 - Baha'i")
-//    let folder2 = createFolder("The Bab", path: "1 - The Bab")
-//    let doc = createWriting("Epistle")
-//    folder2.children = [doc]
-//    let folder3 = createFolder("Bahaulla", path: "2 - Baha'ullah")
-//    
-//    folder.children = [folder2, folder3]
-//    
-//  }
-  
+
   private class func createFolder(display:String, path:String, children:NSArray = [] ) -> RAObject {
     let object = RAObject()
     object.configure(display, pathName: path, children: children as! [RAObject])

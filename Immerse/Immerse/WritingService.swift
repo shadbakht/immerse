@@ -89,7 +89,6 @@ class WritingService: NSObject {
     WritingService.current_writing = name
     let query = "writing_filepath CONTAINS '" + name + "'"
     let results = RealmService.objectsForQuery(Writing.self, query: query)
-    print(results.count)
     WritingService.current_writing_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
   }
   
@@ -98,7 +97,6 @@ class WritingService: NSObject {
     // Create the Realm Objects
     let items = NSFileManager.defaultManager().recursivePathsForResources(type: "txt")
     for item in items {
-      print(item)
       let writing = createWriting(item)
       RealmService.createObject(writing)
     }
