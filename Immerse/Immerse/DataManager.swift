@@ -15,8 +15,8 @@ class DataManager: NSObject {
     RAService.recursivelyBuildMapping()
   }
   
-  class func getFolderMapping() -> NSDictionary {
-    return WritingService.getFolderMapping()
+  class func getFolderMapping() -> NSArray {
+    return RAService.mapping
   }
   class func selectWriting(name:String) {
     WritingService.selectWriting(name)

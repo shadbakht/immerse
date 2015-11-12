@@ -16,7 +16,7 @@ class LibraryPresenter: NSObject {
   var interactor : LibraryInteractor? = nil
   
   var isSetup : Bool = false
-  var mapping : NSDictionary = [:]
+  var mapping : NSArray = []
   var folder : NSDictionary = [:]
   
   func setup() {

@@ -18,7 +18,7 @@ class LibraryInteractor: NSObject {
     
   }
   
-  func loadFolderMappings() -> NSDictionary {
+  func loadFolderMappings() -> NSArray {
     return DataManager.getFolderMapping()
   }
   

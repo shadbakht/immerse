@@ -53,8 +53,8 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   //MARK: RATreeView Delegate / DataSource
 
   func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
-    print("Get NUMBE ROF CHILDREN")
-    return (presenter?.numberOfChildren(treeView, index: item))!
+
+    return 0
   }
   
   func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
