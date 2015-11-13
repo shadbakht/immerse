@@ -307,7 +307,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-T6-KZz" customClass="RATreeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-T6-KZz" customClass="RATreeView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -315,6 +315,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ndb-T6-KZz" firstAttribute="top" secondItem="QWd-Qg-CEf" secondAttribute="bottom" id="AXP-aP-qYW"/>
+                            <constraint firstItem="ndb-T6-KZz" firstAttribute="leading" secondItem="2R2-ep-gxe" secondAttribute="leading" id="CPp-Vc-b5a"/>
+                            <constraint firstItem="h1h-hA-u7n" firstAttribute="top" secondItem="ndb-T6-KZz" secondAttribute="bottom" id="kf2-Hv-wwg"/>
+                            <constraint firstAttribute="trailing" secondItem="ndb-T6-KZz" secondAttribute="trailing" id="ls1-uJ-Ise"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="KUY-0v-nNT">

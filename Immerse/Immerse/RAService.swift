@@ -32,7 +32,13 @@ class RAService: NSObject {
     
     var parent : RAObject? = nil
     var parentName : String? = nil
+    
+    var lastFolder : RAObject? = nil
+    var lastFolderName : String? = nil
+    
     let folderCollections : NSMutableArray = []
+    
+    
     while let filePath = enumerator?.nextObject() as? String {
     
       let lastItem = filePath.componentsSeparatedByString("/").last
@@ -55,22 +61,37 @@ class RAService: NSObject {
         if !lastItem!.hasSuffix(".txt") {
           // Create the intermediate folder
           let folder = createFolder(lastItem!, path: lastItem!)
-          parent?.addChild(folder)
+
+          if lastFolderName != nil { // Handled intermediate folders
+            if filePath.containsString(lastFolderName!) {
+              lastFolder?.addChild(folder)
+              lastFolder = folder
+              lastFolderName = lastItem!
+              continue
+            }
+          }
+          if lastFolderName != lastItem {
+            lastFolderName = lastItem!
+            lastFolder = folder
+            parent?.addChild(folder)
+          }
           continue
         }
+        
         if lastItem!.hasSuffix(".txt") {
           // The enumerator drills down a folder before across. So we know with good certainty that the .txt
           // of interest lies at theend of the tree, so we can just add them to the latest parent child.
           // Can also add writings to the parent if there are no children nodes
           let file = createWriting(lastItem!)
-          if parent?.children.count != 0 {
+          if lastFolder != nil {
+            lastFolder?.addChild(file)
+          } else if parent?.children.count != 0 {
             (parent?.children.lastObject as! RAObject).addChild(file)
           } else {
             parent?.addChild(file)
           }
           continue
         }
-        
       }
       
     }
