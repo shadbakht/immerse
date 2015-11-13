@@ -43,7 +43,6 @@ class WritingService: NSObject {
         let castedName =  NSString(string:items.first!)
         if castedName.integerValue < 9 && castedName.integerValue > 0 {
           names.addObject(item)
-          print(item)
         }
       }
     }

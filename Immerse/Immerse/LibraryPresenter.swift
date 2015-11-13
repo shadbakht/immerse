@@ -25,4 +25,19 @@ class LibraryPresenter: NSObject {
       isSetup = true
     }
   }
+  
+  func cellForTreeView(tree:RATreeView, item: AnyObject!) -> UITableViewCell {
+    let data : RAObject = item as! RAObject
+    let level = tree.levelForCellForItem(item)
+//    let numberOfChildren = data.children.count
+//    let detailText = "TEST"
+//    let expanded = tree.isCellForItemExpanded(item)
+    
+    //
+    
+    let cell = tree.dequeueReusableCellWithIdentifier("LibraryCell") as! LibraryViewCell
+    cell.configure(level, name: data.displayName)
+    cell.selectionStyle = UITableViewCellSelectionStyle.None
+    return cell
+  }
 }

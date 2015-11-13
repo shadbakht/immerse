@@ -12,6 +12,30 @@ import RATreeView
 
 class LibraryViewCell : UITableViewCell {
   
+  @IBOutlet weak var constraint: NSLayoutConstraint!
+  @IBOutlet weak var title: UILabel!
+  @IBOutlet weak var indentBar: UIView!
+  var exists : Bool = false
+  
+  func configure(level:Int, name:String) {
+    
+    title.text = name
+    
+    
+    let leftIndent = CGFloat(11 + 20.0 * Float(level))
+    constraint.constant = leftIndent
+//    print(leftIndent)
+//    let titleFrame = title.frame
+//    title.frame = CGRectMake(leftIndent, titleFrame.origin.y,
+//      titleFrame.size.width, titleFrame.size.height)
+    
+//    if exists { return }
+//    let label = UILabel(frame: CGRectMake(leftIndent, titleFrame.origin.y,
+//      titleFrame.size.width, titleFrame.size.height))
+//    label.text = name
+//    self.addSubview(label)
+//    exists = true
+  }
 }
 
 class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
@@ -34,6 +58,11 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     // Setup the RATreeView
     treeView.delegate = self
     treeView.dataSource = self
+    
+    
+//    [self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([RATableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([RATableViewCell class])];
+
+    self.treeView.registerNib(UINib(nibName: "LibraryCell", bundle: nil), forCellReuseIdentifier: "LibraryCell")
     
     super.viewDidLoad()
   }
@@ -75,20 +104,7 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   }
   
   func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
-    let dataObject : RAObject = item as! RAObject
-    let level = self.treeView.levelForCellForItem(item)
-    let numberOfChildren = dataObject.children.count
-    let detailText = "TEST"
-    let expanded = self.treeView.isCellForItemExpanded(item)
-    
-    //
-    print(level)
-    print(numberOfChildren)
-    print(detailText)
-    print(expanded)
-    
-    let cell = UITableViewCell()
-    cell.textLabel!.text = dataObject.displayName
+    let cell = presenter!.cellForTreeView(self.treeView, item: item)
     return cell
   }
 

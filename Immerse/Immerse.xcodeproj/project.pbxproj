@@ -60,6 +60,7 @@
 		5483BED81B95FAA70037359C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED71B95FAA70037359C /* Images.xcassets */; };
 		5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED91B95FAA70037359C /* LaunchScreen.xib */; };
 		5483BEE71B95FAA70037359C /* ImmerseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BEE61B95FAA70037359C /* ImmerseTests.swift */; };
+		548476511BF66235004374B5 /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548476501BF66235004374B5 /* LibraryCell.xib */; };
 		54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7451BDD6930009F3665 /* Icon-40.png */; };
 		54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7461BDD6930009F3665 /* Icon-40@2x.png */; };
 		54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7471BDD6930009F3665 /* Icon-40@3x.png */; };
@@ -144,6 +145,7 @@
 		5483BEE01B95FAA70037359C /* ImmerseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImmerseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BEE51B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BEE61B95FAA70037359C /* ImmerseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmerseTests.swift; sourceTree = "<group>"; };
+		548476501BF66235004374B5 /* LibraryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
 		54E5D7451BDD6930009F3665 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		54E5D7461BDD6930009F3665 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		54E5D7471BDD6930009F3665 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		546794CD1BD0CBB20062FAFB /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				548476501BF66235004374B5 /* LibraryCell.xib */,
 				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
 				546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */,
 				546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */,
@@ -504,6 +507,7 @@
 				54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */,
 				546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */,
 				54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */,
+				548476511BF66235004374B5 /* LibraryCell.xib in Resources */,
 				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
 				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
