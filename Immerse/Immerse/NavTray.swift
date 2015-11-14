@@ -35,7 +35,7 @@ class NavTray: UITableViewController {
       let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
       mainNavigation.performSegueWithIdentifier("showReader", sender: self)
       drawerController.mainViewController = mainNavigation
-      drawerController.setDrawerState(.Closed, animated: true)
+      drawerController.setDrawerState(.Closed, animated: false)
     }
   }
   

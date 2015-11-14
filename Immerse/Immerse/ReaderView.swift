@@ -8,6 +8,7 @@
 
 import UIKit
 import KYDrawerController
+import CNPPopupController
 
 class ImmerseTextView : UITextView {
 
@@ -32,6 +33,11 @@ class ImmerseTextView : UITextView {
     parent?.createXRef(self)
   }
 }
+
+class ReaderTagAccessoryView : UIView {
+  
+}
+
 
 class ReaderView: UIViewController {
 
@@ -76,11 +82,23 @@ class ReaderView: UIViewController {
   func createNote(tv:ImmerseTextView) {
     let range = tv.selectedRange
     presenter?.createNote(range)
+    
   }
   
   func createTag(tv: ImmerseTextView) {
     let range = tv.selectedRange
     presenter?.createTag(range)
+    
+    //Create Popup
+    let nib = NSBundle.mainBundle().loadNibNamed("ReaderTagsAccessory", owner: nil, options: nil)
+    let view : ReaderTagAccessoryView = (nib as NSArray).objectAtIndex(0) as! ReaderTagAccessoryView
+    view.frame = CGRectMake(0, 0, self.view.frame.width, 250)
+    let popup = CNPPopupController(contents: [view]) as CNPPopupController
+    popup.theme.popupContentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    popup.theme.shouldDismissOnBackgroundTouch = true
+    popup.theme.popupStyle = CNPPopupStyle.ActionSheet
+    popup.presentPopupControllerAnimated(true)
+
   }
   
   func createXRef(tv: ImmerseTextView) {

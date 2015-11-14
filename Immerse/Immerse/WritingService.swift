@@ -18,7 +18,7 @@ class WritingService: NSObject {
     /**
      setup
      */
-//    processWritings()
+    processWritings()
 
   }
   
