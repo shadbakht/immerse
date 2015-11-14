@@ -57,7 +57,11 @@ class ReaderView: UIViewController {
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
   }
-
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    self.writingBody.setContentOffset(CGPointZero, animated: false)
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

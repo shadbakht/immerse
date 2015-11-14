@@ -102,7 +102,9 @@ class RAService: NSObject {
   }
   private class func createWriting(name:String) -> RAObject {
     let object = RAObject()
-    object.configure(name, pathName: name, children: [])
+    object.configure(name.stringByReplacingOccurrencesOfString(".txt", withString: ""),
+      pathName: name,
+      children: [])
     return object
   }
   private class func setChildren() -> RAObject {

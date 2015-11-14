@@ -14,10 +14,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-Av-vqu">
-                        <rect key="frame" x="0.0" y="0.0" width="10" height="49"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhV-Av-vqu">
+                        <rect key="frame" x="0.0" y="0.0" width="4" height="44"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.36470588235294116" green="0.47058823529411764" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQi-y0-H7M">
                         <rect key="frame" x="18" y="0.0" width="294" height="43"/>
@@ -29,10 +29,20 @@
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="zhV-Av-vqu" secondAttribute="bottom" constant="-9" id="9hQ-xZ-tci"/>
+                    <constraint firstItem="QQi-y0-H7M" firstAttribute="leading" secondItem="zhV-Av-vqu" secondAttribute="trailing" constant="14" id="Eou-EN-sfd"/>
+                    <constraint firstAttribute="bottom" secondItem="zhV-Av-vqu" secondAttribute="bottom" id="Mje-nk-xZE"/>
+                    <constraint firstItem="zhV-Av-vqu" firstAttribute="top" secondItem="wYn-4w-HEh" secondAttribute="top" id="PJU-Lt-gd4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="QQi-y0-H7M" secondAttribute="trailing" id="YLL-ss-jHO"/>
                     <constraint firstItem="QQi-y0-H7M" firstAttribute="top" secondItem="wYn-4w-HEh" secondAttribute="topMargin" constant="-8" id="ojh-YB-a0z"/>
                     <constraint firstItem="QQi-y0-H7M" firstAttribute="leading" secondItem="wYn-4w-HEh" secondAttribute="leadingMargin" constant="10" id="tMY-0c-CTD"/>
+                    <constraint firstItem="zhV-Av-vqu" firstAttribute="leading" secondItem="wYn-4w-HEh" secondAttribute="leading" id="zqB-sb-DJa"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Mje-nk-xZE"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <constraints>
