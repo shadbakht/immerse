@@ -22,6 +22,25 @@ class WritingService: NSObject {
 
   }
   
+  class func activityToWriting(array:NSArray) -> NSArray {
+    let writingObjects : NSMutableArray = []
+    for item in array {
+      let itemAct : Activity = item as! Activity
+      let id : String = itemAct.writing_id
+      let writing = writingForID(id)
+      writingObjects.addObject(writing!)
+    }
+    return writingObjects
+  }
+  
+  class func writingForID(id:String) -> Writing? {
+    let results = RealmService.objectsForQuery(Writing.self, query: "writing_id = '" + id + "'")
+    if results.count > 0 {
+      return results.firstObject as? Writing
+    }
+    return nil
+  }
+  
   class func getFolderMapping() -> NSDictionary {
     if WritingService.folderMapping == nil {
       let filePath = NSBundle.mainBundle().pathForResource("Library", ofType: "plist")

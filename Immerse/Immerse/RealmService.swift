@@ -20,6 +20,7 @@ class RealmService: NSObject {
   }
   
   class func createObject(object:AnyObject) {
+    
     let realm = try! Realm()
     
     // Create Writing
@@ -36,10 +37,19 @@ class RealmService: NSObject {
       })
     }
     
+    // Create Activity
+    if object is Activity {
+      try! realm.write({
+        realm.add(object as! Activity)
+      })
+    }
+    
   }
   
   class func allObjectsForType(objectType:AnyObject.Type) -> NSArray {
+    
     let realm = try! Realm()
+    
     if objectType == Writing.self {
       let results = realm.objects(Writing)
       return (results.valueForKey("self") as! NSArray)
@@ -48,11 +58,18 @@ class RealmService: NSObject {
       let results = realm.objects(Note)
       return (results.valueForKey("self") as! NSArray)
     }
+    if objectType == Activity.self{
+      let results = realm.objects(Activity)
+      return (results.valueForKey("self") as! NSArray)
+
+    }
     return []
   }
 
   class func objectsForQuery(objectType:AnyObject.Type, query : String) -> NSArray {
+    
     let realm = try! Realm()
+    
     if objectType == Writing.self {
       let results = realm.objects(Writing).filter(query)
       return (results.valueForKey("self") as! NSArray)
@@ -60,6 +77,11 @@ class RealmService: NSObject {
     
     if objectType == Note.self {
       let results = realm.objects(Note).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
+    if objectType == Activity.self {
+      let results = realm.objects(Activity).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
     

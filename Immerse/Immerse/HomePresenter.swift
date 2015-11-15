@@ -14,24 +14,33 @@ class HomePresenter: NSObject {
   var interactor : HomeInteractor? = nil
   var view : HomeView? = nil
   var isSetup : Bool = false
-  var recentlyViewedWritings : NSMutableArray = []
+  var recentlyViewedWritings : NSArray = []
   
   func setup() {
+    recentlyViewedWritings = interactor!.getRecent()
     if !isSetup {
       isSetup = true
     }
   }
   
   func numberOfRecentlyViewed() -> Int {
-    return 1
+    return recentlyViewedWritings.count
   }
 
+  func selectCell(indexPath:NSIndexPath) {
+    let row = indexPath.row
+    let writing = recentlyViewedWritings.objectAtIndex(row)
+    interactor!.selectWriting(writing as! Writing)
+  }
   func recentlyViewedCellForIndex(tableView:UITableView, indexPath: NSIndexPath) -> HomeViewCell? {
 //    let row = indexPath.row
 //    if row > (recentlyViewedWritings.count - 1) || row < 0 { return self.createEmptyCell() }
     
     let cell = tableView.dequeueReusableCellWithIdentifier("HomeViewCell", forIndexPath: indexPath) as? HomeViewCell
-    cell?.writingTitleLabel.text = "Hellow WOrld!"
+    let row = indexPath.row
+    let writing : Writing = recentlyViewedWritings.objectAtIndex(row) as! Writing
+    cell?.writingTitleLabel.text = writing.writing_title
+    
     return cell
     
   }

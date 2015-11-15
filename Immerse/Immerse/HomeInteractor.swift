@@ -13,4 +13,11 @@ class HomeInteractor: NSObject {
   static let sharedInstance = HomeInteractor()
   var presenter : HomePresenter? = nil
   
+  func getRecent() -> NSArray {
+    return DataManager.getLatestWritingsOpened(5)
+  }
+  
+  func selectWriting(writing:Writing) {
+    DataManager.selectWriting(writing.writing_filepath)
+  }
 }

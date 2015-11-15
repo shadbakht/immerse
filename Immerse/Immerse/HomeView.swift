@@ -25,12 +25,12 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   override func viewDidLoad() {
     
     // Setup VIPER Stack
-    HomePresenter.sharedInstance.setup()
     presenter = HomePresenter.sharedInstance
     presenter?.interactor = HomeInteractor.sharedInstance
     presenter?.view = self
     HomeInteractor.sharedInstance.presenter = presenter
-    
+    HomePresenter.sharedInstance.setup()
+
     super.viewDidLoad()
   }
 
@@ -57,6 +57,7 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    presenter?.selectCell(indexPath)
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

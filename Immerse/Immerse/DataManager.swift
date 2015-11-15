@@ -18,8 +18,16 @@ class DataManager: NSObject {
   class func getFolderMapping() -> NSArray {
     return RAService.mapping
   }
+  
+  class func getLatestWritingsOpened(count:Int) -> NSArray {
+    let activities = ActivityService.getLatestWritings(count)
+    let writings = WritingService.activityToWriting(activities)
+    return writings
+  }
+  
   class func selectWriting(name:String) {
     WritingService.selectWriting(name)
+    ActivityService.recordLastWriting(WritingService.current_writing_object!)
     Util.notify("ShowReader")
   }
   
