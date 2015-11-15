@@ -37,6 +37,9 @@
                     <state key="normal" title="ADD">
                         <color key="titleColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="add:" destination="iN0-l3-epB" eventType="touchUpInside" id="R6T-Ev-dzm"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6T-Z7-UXR">
                     <rect key="frame" x="270" y="8" width="64" height="21"/>
@@ -48,6 +51,9 @@
                     <state key="normal" title="EDIT">
                         <color key="titleColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="edit:" destination="iN0-l3-epB" eventType="touchUpInside" id="g4j-fc-Hy1"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bh-Pk-98u">
                     <rect key="frame" x="399" y="8" width="46" height="21"/>
@@ -58,6 +64,9 @@
                     </constraints>
                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
                     <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QC-ch-rJB"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
@@ -78,6 +87,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tagsTable" destination="xnU-lK-GkP" id="CUQ-Qm-eJ5"/>
+            </connections>
             <point key="canvasLocation" x="319.5" y="534"/>
         </view>
     </objects>

@@ -73,6 +73,9 @@
 		54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D74E1BDD6930009F3665 /* Icon-Small@3x.png */; };
 		54E5D75C1BE33463009F3665 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E5D75B1BE33463009F3665 /* Test.m */; };
 		54FFC3E01BF7C62B0041458D /* ReaderTagsAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */; };
+		54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */; };
+		54FFC3E41BF829540041458D /* ReaderXRefsAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */; };
+		54FFC3E61BF82C140041458D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FFC3E51BF82C140041458D /* QuartzCore.framework */; };
 		E91A37593168B2754A6BC431 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9104F0529718EC07A125BDFE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +164,9 @@
 		54E5D75A1BE33463009F3665 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		54E5D75B1BE33463009F3665 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderTagsAccessory.xib; sourceTree = "<group>"; };
+		54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderNotesAccessory.xib; sourceTree = "<group>"; };
+		54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderXRefsAccessory.xib; sourceTree = "<group>"; };
+		54FFC3E51BF82C140041458D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9104F0529718EC07A125BDFE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -169,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FFC3E61BF82C140041458D /* QuartzCore.framework in Frameworks */,
 				E91A37593168B2754A6BC431 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +193,7 @@
 		14B5686426E505E40FB7BDFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				54FFC3E51BF82C140041458D /* QuartzCore.framework */,
 				9104F0529718EC07A125BDFE /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -257,6 +265,8 @@
 			children = (
 				546794C21BD0CB140062FAFB /* ReaderView.swift */,
 				54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */,
+				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
+				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
 				546794E21BD0CC280062FAFB /* ReaderPresenter.swift */,
 				546794E41BD0CC330062FAFB /* ReaderInteractor.swift */,
 			);
@@ -502,6 +512,7 @@
 				546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */,
 				546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */,
 				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
+				54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */,
 				54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */,
 				54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */,
 				54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */,
@@ -513,6 +524,7 @@
 				548476511BF66235004374B5 /* LibraryCell.xib in Resources */,
 				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
+				54FFC3E41BF829540041458D /* ReaderXRefsAccessory.xib in Resources */,
 				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
 				54FFC3E01BF7C62B0041458D /* ReaderTagsAccessory.xib in Resources */,
 				546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */,

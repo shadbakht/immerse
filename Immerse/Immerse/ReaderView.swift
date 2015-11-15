@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import QuartzCore
 import KYDrawerController
 import CNPPopupController
 
@@ -35,7 +36,38 @@ class ImmerseTextView : UITextView {
 }
 
 class ReaderTagAccessoryView : UIView {
+  var parent : ReaderView? = nil
   
+  @IBOutlet weak var tagsTable: UITableView!
+  @IBAction func close(sender: AnyObject) {
+    parent?.closePopup()
+  }
+  
+  @IBAction func add(sender: AnyObject) {
+  }
+  @IBAction func edit(sender: AnyObject) {
+  }
+  
+}
+
+class ReaderNoteAccessoryView : UIView {
+  var parent : ReaderView? = nil
+  
+  
+  @IBAction func close(sender: AnyObject) {
+    parent?.closePopup()
+  }
+  
+  
+}
+
+class ReaderXRefAccessoryView : UIView {
+  var parent : ReaderView? = nil
+  
+  @IBAction func close(sender: AnyObject) {
+    parent?.closePopup()
+  }
+
 }
 
 
@@ -43,6 +75,7 @@ class ReaderView: UIViewController {
 
   var presenter : ReaderPresenter? = nil
   @IBOutlet weak var writingBody: ImmerseTextView!
+  var popup : CNPPopupController? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -78,11 +111,24 @@ class ReaderView: UIViewController {
     }
   }
   
+  //MARK: Accessory View Delegates
+  
+  func closePopup() {
+    popup?.dismissPopupControllerAnimated(true)
+  }
+  
+  
   //MARK: Text Annotations Delegate Methods
+  
   func createNote(tv:ImmerseTextView) {
     let range = tv.selectedRange
     presenter?.createNote(range)
     
+    // Create Popup
+    let view : ReaderNoteAccessoryView = createView("ReaderNotesAccessory") as! ReaderNoteAccessoryView
+    view.parent = self
+    createPopup(view)
+
   }
   
   func createTag(tv: ImmerseTextView) {
@@ -90,19 +136,36 @@ class ReaderView: UIViewController {
     presenter?.createTag(range)
     
     //Create Popup
-    let nib = NSBundle.mainBundle().loadNibNamed("ReaderTagsAccessory", owner: nil, options: nil)
-    let view : ReaderTagAccessoryView = (nib as NSArray).objectAtIndex(0) as! ReaderTagAccessoryView
-    view.frame = CGRectMake(0, 0, self.view.frame.width, 250)
-    let popup = CNPPopupController(contents: [view]) as CNPPopupController
-    popup.theme.popupContentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    popup.theme.shouldDismissOnBackgroundTouch = true
-    popup.theme.popupStyle = CNPPopupStyle.ActionSheet
-    popup.presentPopupControllerAnimated(true)
-
+    let view : ReaderTagAccessoryView = createView("ReaderTagsAccessory") as! ReaderTagAccessoryView
+    view.parent = self
+    createPopup(view)
   }
   
   func createXRef(tv: ImmerseTextView) {
     let range = tv.selectedRange
     presenter?.createRef(range)
+    
+    //Create Popup
+    let view : ReaderXRefAccessoryView = createView("ReaderXRefsAccessory") as! ReaderXRefAccessoryView
+    view.parent = self
+    createPopup(view)
+
+  }
+
+  func createView(nibName:String, index:Int = 0) -> UIView? {
+    let nib = NSBundle.mainBundle().loadNibNamed(nibName, owner: nil, options: nil)
+    let view = (nib as NSArray).objectAtIndex(index)
+    return (view as! UIView)
+  }
+  
+  func createPopup(view: UIView) {
+    view.frame = CGRectMake(0, 0, self.view.frame.width, 250)
+    popup = CNPPopupController(contents: [view]) as CNPPopupController
+    popup?.theme.popupContentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    popup?.theme.shouldDismissOnBackgroundTouch = true
+    popup?.theme.popupStyle = CNPPopupStyle.ActionSheet
+    popup?.theme.maskType = CNPPopupMaskType.Dimmed
+    popup?.presentPopupControllerAnimated(true)
+    
   }
 }
