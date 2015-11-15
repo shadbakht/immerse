@@ -27,4 +27,13 @@ class HomeInteractor: NSObject {
     let label = String(format: "%.1f %%", percent)
     return (val, label)
   }
+  
+  func getTagNoteRefCounts(writing:Writing) -> (notes:Int, tags:Int, refs:Int) {
+    let notes = DataManager.getNotesForText(writing.writing_id)
+    let tags = DataManager.getTagsForText(writing.writing_id)
+    let refs = DataManager.getRefsForText(writing.writing_id)
+    
+    return (notes.count, tags.count, refs.count)
+  }
+  
 }
