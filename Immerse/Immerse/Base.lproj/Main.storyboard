@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-eb-3Ck">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sYh-eb-3Ck">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="472"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,8 +81,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Z5-10-Wah">
-                                                    <rect key="frame" x="16" y="60" width="584" height="2"/>
+                                                    <rect key="frame" x="16" y="60" width="568" height="2"/>
                                                     <animations/>
+                                                    <color key="progressTintColor" red="0.36470588240000001" green="0.47058823529999999" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZw-1s-jdg">
                                                     <rect key="frame" x="16" y="25" width="42" height="21"/>
@@ -91,7 +92,7 @@
                                                         <constraint firstAttribute="width" constant="42" id="cnT-uM-tZK"/>
                                                         <constraint firstAttribute="height" constant="21" id="osa-Co-IVh"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                     <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -108,7 +109,7 @@
                                                 <constraint firstItem="Uyt-95-eOf" firstAttribute="top" secondItem="7oB-EI-Z06" secondAttribute="topMargin" constant="23" id="iXn-2U-lFH"/>
                                                 <constraint firstItem="EZw-1s-jdg" firstAttribute="leading" secondItem="7oB-EI-Z06" secondAttribute="leadingMargin" constant="8" id="pg2-hL-qfj"/>
                                                 <constraint firstItem="4Z5-10-Wah" firstAttribute="leading" secondItem="7oB-EI-Z06" secondAttribute="leadingMargin" constant="8" id="rWG-Hh-ycV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="4Z5-10-Wah" secondAttribute="trailing" constant="-8" id="sKW-ks-E88"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4Z5-10-Wah" secondAttribute="trailing" constant="8" id="sKW-ks-E88"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>

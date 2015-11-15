@@ -16,6 +16,8 @@ class ReaderPresenter: NSObject {
   
   var current_writing_body : String? = nil
   var current_writing_name : String? = nil
+  var current_progress : Float = 0.0
+  var current_offset : CGFloat = 0.0
   
   var isSetup : Bool = false
   
@@ -23,6 +25,8 @@ class ReaderPresenter: NSObject {
     
     current_writing_body = interactor?.getCurrentBody()
     view!.writingBody.text = current_writing_body
+    current_progress = (interactor?.getCurrentProgress())!
+    current_offset = CGFloat(current_progress * Float(view!.writingBody.contentSize.height))
     
     let notes = interactor!.getCurrentNotes()
     for note in notes {
@@ -31,6 +35,15 @@ class ReaderPresenter: NSObject {
     
     if !isSetup {
       isSetup = true
+    }
+  }
+  
+  func updateProgress(scroll:UIScrollView) {
+    let offsetY = scroll.contentOffset.y
+    let total = scroll.contentSize.height
+    let progress = Float(offsetY/total)
+    if interactor!.updateCurrentProgress(progress) {
+      current_progress = progress
     }
   }
   

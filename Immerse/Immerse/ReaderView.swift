@@ -93,7 +93,7 @@ class ReaderXRefAccessoryView : UIView {
 }
 
 
-class ReaderView: UIViewController {
+class ReaderView: UIViewController, UITextViewDelegate {
 
   var presenter : ReaderPresenter? = nil
   @IBOutlet weak var writingBody: ImmerseTextView!
@@ -112,6 +112,7 @@ class ReaderView: UIViewController {
     // Custom Menu Items & Behaviors
     // Setup the Delegation Pattern
     writingBody.parent = self
+    writingBody.delegate = self
     let tagItem = UIMenuItem(title: "TAG", action: "createTag")
     let noteItem = UIMenuItem(title: "NOTE", action: "createNote")
     let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
@@ -120,7 +121,7 @@ class ReaderView: UIViewController {
     
   }
   override func viewDidAppear(animated: Bool) {
-    self.writingBody.setContentOffset(CGPointZero, animated: false)
+    self.writingBody.setContentOffset(CGPointMake(0, presenter!.current_offset), animated: false)
   }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -130,6 +131,13 @@ class ReaderView: UIViewController {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
       drawerController.setDrawerState(.Opened, animated: true)
     }
+  }
+  
+  func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    presenter!.updateProgress(scrollView)
+  }
+  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    presenter!.updateProgress(scrollView)
   }
   
   //MARK: Accessory View Delegates

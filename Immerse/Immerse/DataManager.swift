@@ -31,6 +31,18 @@ class DataManager: NSObject {
     Util.notify("ShowReader")
   }
   
+  class func getCurrentTextProgress() -> Float {
+    return ProgressService.getProgressForText(WritingService.current_writing_object!)
+  }
+  
+  class func getTextProgressForText(writing_id:String) -> Float {
+    let writing = WritingService.writingForID(writing_id)
+    return ProgressService.getProgressForText(writing!)
+  }
+  class func updateCurrentTextProgress(progress:Float) {
+    ProgressService.createOrUpdateProgressForText(progress, text: WritingService.current_writing_object!)
+  }
+  
   class func childrenForPath(path:String) -> NSDictionary {
     let paths = WritingService.contentsOfSubFolder(path, isTop: WritingService.isTopLevel(path))
     if paths == nil {

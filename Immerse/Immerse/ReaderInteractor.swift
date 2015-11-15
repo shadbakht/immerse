@@ -22,9 +22,22 @@ class ReaderInteractor: NSObject {
     return notes
   }
   
+  func getCurrentProgress() -> Float {
+    return DataManager.getCurrentTextProgress()
+  }
+  
   func createNote(range:NSRange, text:String) {
     let start = range.location
     let length = range.length
     DataManager.createNoteForCurrentText(start, length:length, text:text)
+  }
+  
+  func updateCurrentProgress(progress:Float) -> Bool {
+    if progress > DataManager.getCurrentTextProgress() {
+      DataManager.updateCurrentTextProgress(progress)
+      return true
+    } else {
+      return false
+    }
   }
 }

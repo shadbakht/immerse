@@ -77,6 +77,7 @@
 		54FFC3E41BF829540041458D /* ReaderXRefsAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */; };
 		54FFC3E61BF82C140041458D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FFC3E51BF82C140041458D /* QuartzCore.framework */; };
 		54FFC3E81BF84A970041458D /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FFC3E71BF84A970041458D /* ActivityService.swift */; };
+		54FFC3EA1BF85E8D0041458D /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FFC3E91BF85E8D0041458D /* ProgressService.swift */; };
 		E91A37593168B2754A6BC431 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9104F0529718EC07A125BDFE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +170,7 @@
 		54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderXRefsAccessory.xib; sourceTree = "<group>"; };
 		54FFC3E51BF82C140041458D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		54FFC3E71BF84A970041458D /* ActivityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		54FFC3E91BF85E8D0041458D /* ProgressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
 		9104F0529718EC07A125BDFE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -286,6 +288,7 @@
 				546794EB1BD0CC6F0062FAFB /* TagService.swift */,
 				546794ED1BD0CC780062FAFB /* NotesService.swift */,
 				546794EF1BD0CC830062FAFB /* CrossRefService.swift */,
+				54FFC3E91BF85E8D0041458D /* ProgressService.swift */,
 				546794F11BD0CC9A0062FAFB /* UserService.swift */,
 				5425CD3F1BD9F4990047A8AD /* RealmService.swift */,
 				5416DA851BF30CB400EA28B8 /* RAService.swift */,
@@ -618,6 +621,7 @@
 				546794D91BD0CBF20062FAFB /* CrossRefPresenter.swift in Sources */,
 				546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */,
 				546794DB1BD0CBFD0062FAFB /* CrossRefInteractor.swift in Sources */,
+				54FFC3EA1BF85E8D0041458D /* ProgressService.swift in Sources */,
 				546795061BD0CFF20062FAFB /* NavTray.swift in Sources */,
 				546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */,
 				5416DA861BF30CB400EA28B8 /* RAService.swift in Sources */,

@@ -44,6 +44,14 @@ class RealmService: NSObject {
       })
     }
     
+    // Create Activity
+    if object is Progress {
+      try! realm.write({
+        realm.add(object as! Progress)
+      })
+    }
+
+    
   }
   
   class func allObjectsForType(objectType:AnyObject.Type) -> NSArray {
@@ -61,8 +69,13 @@ class RealmService: NSObject {
     if objectType == Activity.self{
       let results = realm.objects(Activity)
       return (results.valueForKey("self") as! NSArray)
-
     }
+    if objectType == Progress.self{
+      let results = realm.objects(Progress)
+      return (results.valueForKey("self") as! NSArray)
+      
+    }
+
     return []
   }
 
@@ -85,6 +98,26 @@ class RealmService: NSObject {
       return (results.valueForKey("self") as! NSArray)
     }
     
+    if objectType == Progress.self {
+      let results = realm.objects(Progress).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
     return []
   }
+  
+  class func updateObject(objectType:AnyObject.Type, keyIdentify : String, keyValue: String, keys: NSArray, values: NSArray) {
+
+    let realm = try! Realm()
+
+    if objectType == Progress.self {
+      let progress : Progress = objectsForQuery(Progress.self, query: keyIdentify + " = '" + keyValue + "'").firstObject as! Progress
+      let properties = NSDictionary(objects: values as [AnyObject], forKeys: keys as! [NSCopying])
+      try! realm.write({
+        progress.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
+      })
+
+    }
+  }
+
 }
