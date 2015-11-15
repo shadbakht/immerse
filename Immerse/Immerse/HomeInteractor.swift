@@ -14,7 +14,7 @@ class HomeInteractor: NSObject {
   var presenter : HomePresenter? = nil
   
   func getRecent() -> NSArray {
-    return DataManager.getLatestWritingsOpened(5)
+    return DataManager.getLatestWritingsOpened(8)
   }
   
   func selectWriting(writing:Writing) {

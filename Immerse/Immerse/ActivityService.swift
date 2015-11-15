@@ -19,15 +19,26 @@ class ActivityService: NSObject {
   
   class func getLatestWritings(count:Int) -> NSArray {
     let all = RealmService.allObjectsForType(Activity.self)
-    if count > all.count {
-      return all
+    let sort = NSSortDescriptor(key: "view_date", ascending: false)
+    let sorted = all.sortedArrayUsingDescriptors([sort]) as NSArray
+
+    
+    // Ugly way to fetch the unique items
+    let unique : NSMutableArray = []
+    let uniqueNames : NSMutableArray = []
+    for item in sorted {
+      let itemObj = item as! Activity
+      if !uniqueNames.containsObject(itemObj.writing_id) {
+        uniqueNames.addObject(itemObj.writing_id)
+        unique.addObject(item)
+      }
+    }
+
+    if count > unique.count {
+      return unique
     } else {
-      let unique = NSSet(array: all as [AnyObject])
-      let sort = NSSortDescriptor(key: "view_date", ascending: false)
-      let sorted = unique.sortedArrayUsingDescriptors([sort]) as NSArray
-      let subset : NSArray = sorted.subarrayWithRange(NSMakeRange(0, count))
-      
-      return subset.reverseObjectEnumerator().allObjects
+      let subset : NSArray = unique.subarrayWithRange(NSMakeRange(0, count))
+      return subset
     }
   }
 }
