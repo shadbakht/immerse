@@ -44,9 +44,14 @@ class ReaderTagAccessoryView : UIView {
     parent?.closePopup()
   }
   
+  @IBAction func apply(sender: AnyObject) {
+    
+  }
   @IBAction func add(sender: AnyObject) {
+    
   }
   @IBAction func edit(sender: AnyObject) {
+    
   }
 }
 
@@ -114,11 +119,9 @@ class ReaderView: UIViewController {
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
     
   }
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+  override func viewDidAppear(animated: Bool) {
     self.writingBody.setContentOffset(CGPointZero, animated: false)
   }
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

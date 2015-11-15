@@ -9,5 +9,6 @@
 import RealmSwift
 
 class Activity: Object {
-    
+  dynamic var writing_id : String = ""
+  dynamic var view_date : NSDate = NSDate()
 }

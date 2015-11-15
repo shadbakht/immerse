@@ -63,6 +63,16 @@ class ReaderPresenter: NSObject {
       attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.redColor(), range: range)
       view!.writingBody.attributedText = attributedString
     }
+    if item is Tag {
+      
+    }
+    if item is CrossRef {
+      
+    }
+  }
+  
+  func fetchAnnotationDetails() {
+    
   }
 
   //MARK: Detect Tap Gesture

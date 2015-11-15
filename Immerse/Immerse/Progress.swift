@@ -11,6 +11,7 @@ import RealmSwift
 class Progress: Object {
     
   dynamic var writing_id : String = ""
+  dynamic var current_offset : Float = 0.0
   dynamic var current_paragraph : Int = 0
   
 }
