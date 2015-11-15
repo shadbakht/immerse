@@ -27,7 +27,7 @@ class ProgressService: NSObject {
     let results = RealmService.objectsForQuery(Progress.self, query: "writing_id = '" + writing_id + "'")
     if results.count > 0 {
       // Update the Progress
-      RealmService.updateObject(Progress.self, keyIdentify: "writing_id", keyValue: writing_id, keys: ["current_offset"], values: [progress])
+      RealmService.updateObject(Progress.self, keyIdentify: "writing_id", keyValue: writing_id, keys: ["current_progress"], values: [progress])
     } else {
       // Create the Progress
       let progressObj = Progress()

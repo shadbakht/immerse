@@ -26,7 +26,10 @@ class ReaderPresenter: NSObject {
     current_writing_body = interactor?.getCurrentBody()
     view!.writingBody.text = current_writing_body
     current_progress = (interactor?.getCurrentProgress())!
-    current_offset = CGFloat(current_progress * Float(view!.writingBody.contentSize.height))
+    if current_progress > 0.0 {
+      current_offset = CGFloat(current_progress * Float(view!.writingBody.contentSize.height))
+      current_offset = 2 * view!.writingBody.frame.height + current_offset
+    }
     
     let notes = interactor!.getCurrentNotes()
     for note in notes {
