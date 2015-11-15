@@ -11,6 +11,7 @@ import KYDrawerController
 
 class HomeViewCell : UITableViewCell {
   
+  @IBOutlet weak var writingProgressLabel: UILabel!
   @IBOutlet weak var writingTitleLabel: UILabel!
   @IBOutlet weak var writingCompleteLabel: NSLayoutConstraint!
   @IBOutlet weak var writingSubTitleLabel: UILabel!

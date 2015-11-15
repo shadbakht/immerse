@@ -20,4 +20,11 @@ class HomeInteractor: NSObject {
   func selectWriting(writing:Writing) {
     DataManager.selectWriting(writing.writing_filepath)
   }
+  
+  func getProgressForWriting(writing:Writing) -> (progress:Float, text:String) {
+    let val = DataManager.getTextProgressForText(writing.writing_id)
+    let percent = 100 * val
+    let label = String(format: "%.1f %%", percent)
+    return (val, label)
+  }
 }

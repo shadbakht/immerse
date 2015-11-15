@@ -33,13 +33,16 @@ class HomePresenter: NSObject {
     interactor!.selectWriting(writing as! Writing)
   }
   func recentlyViewedCellForIndex(tableView:UITableView, indexPath: NSIndexPath) -> HomeViewCell? {
-//    let row = indexPath.row
-//    if row > (recentlyViewedWritings.count - 1) || row < 0 { return self.createEmptyCell() }
     
     let cell = tableView.dequeueReusableCellWithIdentifier("HomeViewCell", forIndexPath: indexPath) as? HomeViewCell
     let row = indexPath.row
     let writing : Writing = recentlyViewedWritings.objectAtIndex(row) as! Writing
+    let data = interactor!.getProgressForWriting(writing)
+
     cell?.writingTitleLabel.text = writing.writing_title
+    cell?.writingCompletedProgressBar.progress = data.progress
+    cell?.writingProgressLabel.text = data.text
+    
     
     return cell
     

@@ -116,6 +116,7 @@
                                         <connections>
                                             <outlet property="writingCompleteLabel" destination="Kes-db-c7d" id="oni-fm-ZLD"/>
                                             <outlet property="writingCompletedProgressBar" destination="4Z5-10-Wah" id="kXP-LS-ky3"/>
+                                            <outlet property="writingProgressLabel" destination="EZw-1s-jdg" id="FUF-py-Xaq"/>
                                             <outlet property="writingSubTitleLabel" destination="Uyt-95-eOf" id="Q0w-kx-v63"/>
                                             <outlet property="writingTitleLabel" destination="yRf-EH-Gdc" id="Pij-gG-kFN"/>
                                         </connections>
