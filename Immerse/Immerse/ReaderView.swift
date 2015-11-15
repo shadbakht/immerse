@@ -37,6 +37,7 @@ class ImmerseTextView : UITextView {
 
 class ReaderTagAccessoryView : UIView {
   var parent : ReaderView? = nil
+  var selectedRange : NSRange? = nil
   
   @IBOutlet weak var tagsTable: UITableView!
   @IBAction func close(sender: AnyObject) {
@@ -47,27 +48,43 @@ class ReaderTagAccessoryView : UIView {
   }
   @IBAction func edit(sender: AnyObject) {
   }
-  
 }
 
-class ReaderNoteAccessoryView : UIView {
+class ReaderNoteAccessoryView : UIView, UITextViewDelegate {
   var parent : ReaderView? = nil
-  
-  
+  var selectedRange : NSRange? = nil
+  @IBOutlet weak var notes: UITextView!
+  func config() {
+    notes.delegate = self
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+  }
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
   }
-  
-  
+  @IBAction func saveNote(sender: AnyObject) {
+    parent?.presenter!.createNote(selectedRange!)
+    parent?.closePopup()
+  }
+  func keyboardWillShow(sender: NSNotification) {
+    self.superview?.frame.origin.y = 30
+  }
+  func keyboardWillHide(sender: NSNotification) {
+    self.superview?.frame.origin.y = 30
+  }
+
+  func textViewDidBeginEditing(textView: UITextView) {
+    textView.text = ""
+  }
 }
 
 class ReaderXRefAccessoryView : UIView {
   var parent : ReaderView? = nil
-  
+  var selectedRange : NSRange? = nil
+
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
   }
-
 }
 
 
@@ -95,6 +112,7 @@ class ReaderView: UIViewController {
     let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
+    
   }
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
@@ -121,32 +139,24 @@ class ReaderView: UIViewController {
   //MARK: Text Annotations Delegate Methods
   
   func createNote(tv:ImmerseTextView) {
-    let range = tv.selectedRange
-    presenter?.createNote(range)
-    
-    // Create Popup
     let view : ReaderNoteAccessoryView = createView("ReaderNotesAccessory") as! ReaderNoteAccessoryView
+    view.selectedRange = tv.selectedRange
     view.parent = self
+    view.config()
     createPopup(view)
 
   }
   
   func createTag(tv: ImmerseTextView) {
-    let range = tv.selectedRange
-    presenter?.createTag(range)
-    
-    //Create Popup
     let view : ReaderTagAccessoryView = createView("ReaderTagsAccessory") as! ReaderTagAccessoryView
+    view.selectedRange = tv.selectedRange
     view.parent = self
     createPopup(view)
   }
   
   func createXRef(tv: ImmerseTextView) {
-    let range = tv.selectedRange
-    presenter?.createRef(range)
-    
-    //Create Popup
     let view : ReaderXRefAccessoryView = createView("ReaderXRefsAccessory") as! ReaderXRefAccessoryView
+    view.selectedRange = tv.selectedRange
     view.parent = self
     createPopup(view)
 
@@ -165,7 +175,10 @@ class ReaderView: UIViewController {
     popup?.theme.shouldDismissOnBackgroundTouch = true
     popup?.theme.popupStyle = CNPPopupStyle.ActionSheet
     popup?.theme.maskType = CNPPopupMaskType.Dimmed
+    popup?.theme.movesAboveKeyboard = true
     popup?.presentPopupControllerAnimated(true)
     
   }
+  
+  
 }

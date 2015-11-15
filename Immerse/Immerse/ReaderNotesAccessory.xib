@@ -33,17 +33,44 @@
                         <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="9Rt-gx-cwA"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Enter your note..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="49n-JF-JC3">
+                    <rect key="frame" x="0.0" y="37" width="453" height="199"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5z-Lb-NpE">
+                    <rect key="frame" x="344" y="4" width="37" height="30"/>
+                    <animations/>
+                    <state key="normal" title="SAVE">
+                        <color key="titleColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="saveNote:" destination="iN0-l3-epB" eventType="touchUpInside" id="epx-MW-Mel"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="49n-JF-JC3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4lK-8l-pnI"/>
+                <constraint firstItem="49n-JF-JC3" firstAttribute="top" secondItem="FZy-PS-Zdy" secondAttribute="bottom" constant="8" id="Aha-lE-p7s"/>
                 <constraint firstItem="FZy-PS-Zdy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Rn6-eW-ILe"/>
+                <constraint firstAttribute="trailing" secondItem="49n-JF-JC3" secondAttribute="trailing" id="VAU-LI-puN"/>
                 <constraint firstAttribute="trailing" secondItem="Wbh-q5-8rk" secondAttribute="trailing" constant="14" id="aBo-Sa-FDx"/>
                 <constraint firstItem="FZy-PS-Zdy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="bRV-DU-r5m"/>
+                <constraint firstAttribute="bottom" secondItem="49n-JF-JC3" secondAttribute="bottom" id="i32-aR-OlE"/>
+                <constraint firstItem="s5z-Lb-NpE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="pIg-vD-X6Y"/>
+                <constraint firstItem="Wbh-q5-8rk" firstAttribute="leading" secondItem="s5z-Lb-NpE" secondAttribute="trailing" constant="12" id="rPN-eg-L5N"/>
                 <constraint firstItem="Wbh-q5-8rk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="uXC-J6-eKb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="notes" destination="49n-JF-JC3" id="Ia4-Or-L48"/>
+            </connections>
         </view>
     </objects>
 </document>
