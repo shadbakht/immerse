@@ -16,4 +16,15 @@ class ReaderInteractor: NSObject {
   func getCurrentBody() -> String {
     return DataManager.getCurrentBody()
   }
+  
+  func getCurrentNotes() -> NSArray {
+    let notes = DataManager.getNotesForCurrentText()
+    return notes
+  }
+  
+  func createNote(range:NSRange, text:String) {
+    let start = range.location
+    let length = range.length
+    DataManager.createNoteForCurrentText(start, length:length, text:text)
+  }
 }

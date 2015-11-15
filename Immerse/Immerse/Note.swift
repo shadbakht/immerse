@@ -13,7 +13,8 @@ class Note: Object {
   dynamic var note_id : String = ""
   dynamic var writing_id : String = ""
   dynamic var start_position : Int = 0
-  dynamic var end_position : Int = 0
+  dynamic var length : Int = 0
   dynamic var note_comment : String = ""
+  dynamic var creation_date : NSDate = NSDate()
   
 }

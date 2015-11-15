@@ -16,7 +16,6 @@ class ReaderPresenter: NSObject {
   
   var current_writing_body : String? = nil
   var current_writing_name : String? = nil
-  var current_annotations : NSArray = []
   
   var isSetup : Bool = false
   
@@ -25,15 +24,22 @@ class ReaderPresenter: NSObject {
     current_writing_body = interactor?.getCurrentBody()
     view!.writingBody.text = current_writing_body
     
+    let notes = interactor!.getCurrentNotes()
+    for note in notes {
+      displayAnnotation(note)
+    }
+    
     if !isSetup {
       isSetup = true
     }
   }
   
-  func createNote(range:NSRange) {
-   let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
+  func createNote(range:NSRange, details:UITextView) {
+    let text = details.text
+    let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.redColor(), range: range)
     view!.writingBody.attributedText = attributedString
+    interactor!.createNote(range,text:text)
   }
   
   func createRef(range:NSRange) {
@@ -48,6 +54,17 @@ class ReaderPresenter: NSObject {
     view!.writingBody.attributedText = attributedString
   }
   
+  
+  func displayAnnotation(item:AnyObject?) {
+    if item is Note {
+      let noteObj = item as! Note
+      let range = NSMakeRange(noteObj.start_position, noteObj.length)
+      let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
+      attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.redColor(), range: range)
+      view!.writingBody.attributedText = attributedString
+    }
+  }
+
   //MARK: Detect Tap Gesture
   // from: http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
 //  - (void)textTapped:(UITapGestureRecognizer *)recognizer

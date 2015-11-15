@@ -29,12 +29,23 @@ class RealmService: NSObject {
       })
     }
     
+    // Create Note
+    if object is Note {
+      try! realm.write({
+        realm.add(object as! Note)
+      })
+    }
+    
   }
   
   class func allObjectsForType(objectType:AnyObject.Type) -> NSArray {
     let realm = try! Realm()
     if objectType == Writing.self {
       let results = realm.objects(Writing)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    if objectType == Note.self {
+      let results = realm.objects(Note)
       return (results.valueForKey("self") as! NSArray)
     }
     return []
@@ -46,6 +57,12 @@ class RealmService: NSObject {
       let results = realm.objects(Writing).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
+    
+    if objectType == Note.self {
+      let results = realm.objects(Note).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
     return []
   }
 }

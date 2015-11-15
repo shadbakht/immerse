@@ -63,7 +63,7 @@ class ReaderNoteAccessoryView : UIView, UITextViewDelegate {
     parent?.closePopup()
   }
   @IBAction func saveNote(sender: AnyObject) {
-    parent?.presenter!.createNote(selectedRange!)
+    parent?.presenter!.createNote(selectedRange!, details:notes)
     parent?.closePopup()
   }
   func keyboardWillShow(sender: NSNotification) {

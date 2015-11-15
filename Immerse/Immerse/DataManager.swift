@@ -34,4 +34,13 @@ class DataManager: NSObject {
   class func getCurrentBody() -> String {
     return WritingService.getCurrentBody()
   }
+  
+  class func createNoteForCurrentText(start:Int, length:Int, text:String) {
+    NotesService.createNoteForText(start, length:length,
+      text:text, currentWriting: WritingService.current_writing_object!)
+  }
+  
+  class func getNotesForCurrentText() -> NSArray {
+    return NotesService.getNotesForText(WritingService.current_writing_object!)
+  }
 }
