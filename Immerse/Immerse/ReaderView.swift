@@ -124,7 +124,9 @@ class ReaderView: UIViewController, UITextViewDelegate {
     print(presenter!.current_offset)
     print(self.writingBody.contentSize.height)
     self.writingBody.setContentOffset(CGPoint.zero, animated: false)
-    self.writingBody.setContentOffset(CGPointMake(0, presenter!.current_offset), animated: true)
+    if presenter!.current_progress != 0.0 {
+      self.writingBody.setContentOffset(CGPointMake(0, presenter!.current_offset), animated: true)
+    }
 
   }
   override func didReceiveMemoryWarning() {
