@@ -46,7 +46,6 @@ class HomePresenter: NSObject {
     cell?.writingProgressLabel.text = data.text
     cell?.writingSubTitleLabel.text = subtitle
     
-    
     return cell
     
   }
@@ -57,16 +56,13 @@ class HomePresenter: NSObject {
   
   func createSubtitleFromCount(notes:Int, tags:Int, refs:Int) -> String {
     let total : NSMutableArray = []
-    let noteString = String(format:"%d Notes,", notes)
+    let noteString = String(format:"%d Notes", notes)
     let tagString = String(format:"%d Tags", tags)
     let refString = String(format:"%d Refs", refs)
     
     if notes != 0 { total.addObject(noteString) }
     if tags != 0 { total.addObject(tagString) }
     if refs != 0 { total.addObject(refString) }
-    
-    let totalString = total.componentsJoinedByString(", ")
-    
-    return totalString
+    return total.componentsJoinedByString(", ")
   }
 }

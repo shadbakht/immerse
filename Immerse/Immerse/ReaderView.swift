@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import QuartzCore
 import KYDrawerController
 import CNPPopupController
 
@@ -36,10 +35,10 @@ class ImmerseTextView : UITextView {
 }
 
 class ReaderTagAccessoryView : UIView {
+  
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
-  
-  @IBOutlet weak var tagsTable: UITableView!
+
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
   }

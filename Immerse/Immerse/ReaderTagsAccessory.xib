@@ -10,13 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="453" height="236"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-lK-GkP">
-                    <rect key="frame" x="0.0" y="43" width="453" height="193"/>
-                    <animations/>
-                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="separatorColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="sectionIndexBackgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enW-9C-6BG">
                     <rect key="frame" x="14" y="8" width="83" height="21"/>
                     <animations/>
@@ -68,28 +61,26 @@
                         <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QC-ch-rJB"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-YB-6iw" customClass="RATreeView">
+                    <rect key="frame" x="0.0" y="37" width="453" height="199"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="leading" secondItem="R6T-Z7-UXR" secondAttribute="trailing" constant="8" id="0ZR-1p-XHV"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4jM-lz-QG0"/>
-                <constraint firstItem="xnU-lK-GkP" firstAttribute="top" secondItem="enW-9C-6BG" secondAttribute="bottom" constant="14" id="5kj-xX-J37"/>
-                <constraint firstAttribute="trailing" secondItem="xnU-lK-GkP" secondAttribute="trailing" id="9IZ-BH-chu"/>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AL5-RY-MMg"/>
                 <constraint firstItem="R6T-Z7-UXR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OcB-l8-nRw"/>
-                <constraint firstItem="xnU-lK-GkP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WSK-cW-NKm"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="kjG-1d-5ck"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="lbl-nv-dpJ"/>
                 <constraint firstAttribute="trailing" secondItem="7bh-Pk-98u" secondAttribute="trailing" constant="8" id="pVk-vj-m3e"/>
-                <constraint firstAttribute="bottom" secondItem="xnU-lK-GkP" secondAttribute="bottom" id="rBJ-ue-4Ds"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="leading" secondItem="LgD-po-1Ml" secondAttribute="trailing" constant="-7" id="w1Y-yw-vTP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="tagsTable" destination="xnU-lK-GkP" id="CUQ-Qm-eJ5"/>
-            </connections>
             <point key="canvasLocation" x="319.5" y="534"/>
         </view>
     </objects>
