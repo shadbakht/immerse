@@ -86,7 +86,9 @@ class DataManager: NSObject {
   }
   
   class func getTagsForText(writing_id:String) -> NSArray {
-    return []
+    let writing = WritingService.writingForID(writing_id)
+    let tags = TagService.getTagsForText(writing!)
+    return tags
   }
   
   class func getRefsForText(writing_id:String) -> NSArray {
