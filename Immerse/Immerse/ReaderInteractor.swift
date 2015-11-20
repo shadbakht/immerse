@@ -31,7 +31,16 @@ class ReaderInteractor: NSObject {
     let length = range.length
     DataManager.createNoteForCurrentText(start, length:length, text:text)
   }
-  
+  func createTag(range:NSRange, tags:NSArray) {
+    let tags = DataManager.tagsForNames(tags)
+    for tag in tags {
+      let tagObj = tag as! TagTypes
+      let tagID = tagObj.tag_type_id
+      let start = range.location
+      let length = range.length
+      DataManager.createTagForCurrentText(start, length: length, tagID: tagID)
+    }
+  }
   func createTagLabel(name:String) {
     DataManager.createTagName(name)
   }

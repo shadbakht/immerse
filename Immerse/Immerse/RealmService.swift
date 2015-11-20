@@ -58,6 +58,13 @@ class RealmService: NSObject {
       })
     }
 
+    // Create TagTypes
+    if object is Tag {
+      try! realm.write({
+        realm.add(object as! Tag)
+      })
+    }
+    
 
     
   }
@@ -85,8 +92,12 @@ class RealmService: NSObject {
     if objectType == TagTypes.self{
       let results = realm.objects(TagTypes)
       return (results.valueForKey("self") as! NSArray)
-      
     }
+    if objectType == Tag.self{
+      let results = realm.objects(Tag)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
 
     
 
@@ -119,6 +130,11 @@ class RealmService: NSObject {
     
     if objectType == TagTypes.self {
       let results = realm.objects(TagTypes).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
+    if objectType == Tag.self {
+      let results = realm.objects(Tag).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
 

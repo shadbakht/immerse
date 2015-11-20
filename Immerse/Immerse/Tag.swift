@@ -20,6 +20,6 @@ class Tag: Object {
   dynamic var tag_type_id : String = ""
   dynamic var writing_id : String = ""
   dynamic var start_position : Int = 0
-  dynamic var end_position : Int = 0
+  dynamic var length : Int = 0
 
 }

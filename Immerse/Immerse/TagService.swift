@@ -29,8 +29,22 @@ class TagService: NSObject {
   class func getTagTypes() -> NSArray {
     return RealmService.allObjectsForType(TagTypes.self)
   }
-  class func createTagObject(start:Int, end:Int, tagID:String, writingID:String) {
-    
+  class func tagTypesForNames(names:NSArray) -> NSArray {
+    let mutableResults : NSMutableArray = []
+    for name in names {
+      let results = RealmService.objectsForQuery(TagTypes.self, query: "tag_type_name = " + (name as! String))
+      if results.count > 0 { mutableResults.addObject(results.firstObject!) }
+    }
+    return mutableResults
+  }
+  class func createTagObject(start:Int, length:Int, tagID:String, currentWriting:Writing) {
+    let tagObj = Tag()
+    tagObj.tag_id = Util.uniqueString()
+    tagObj.start_position = start
+    tagObj.length = length
+    tagObj.tag_type_id = tagID
+    tagObj.writing_id = currentWriting.writing_id
+    RealmService.createObject(tagObj)
   }
   
 }

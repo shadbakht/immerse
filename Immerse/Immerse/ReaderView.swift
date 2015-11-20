@@ -35,17 +35,47 @@ class ImmerseTextView : UITextView {
 }
 
 /// MARK: Reader Tag View
-class ReaderTagAccessoryView : UIView, UIAlertViewDelegate {
+class ReaderTagAccessoryView : UIView, UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource {
   
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
   var textFieldCreate : UITextField? = nil
+  var tagTypeNames : NSMutableArray = []
   @IBOutlet weak var tagListing: UITableView!
+  @IBOutlet weak var applyButton: UIButton!
   
   func config() {
-    tagListing.delegate = parent!
-    tagListing.dataSource = parent!
+    applyButton.alpha = 0.0
+    applyButton.userInteractionEnabled = false
+    tagListing.delegate = self
+    tagListing.dataSource = self
   }
+  
+  // MARK: Tag Accessory TableView Delegate
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return (parent!.presenter?.tagTypes().count)!
+  }
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    return (parent!.presenter?.tagTypeCellForIndexPath(tableView, indexPath: indexPath))!
+  }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if applyButton.alpha == 0 {
+      UIView.animateWithDuration(0.3, animations: {
+        self.applyButton.alpha = 1.0
+        self.applyButton.userInteractionEnabled = true
+      })
+    }
+    let cell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+      cell.accessoryType = UITableViewCellAccessoryType.None
+      tagTypeNames.removeObject(cell.textLabel!.text!)
+    } else {
+      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+      tagTypeNames.addObject(cell.textLabel!.text!)
+    }
+  }
+
   
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
@@ -53,6 +83,9 @@ class ReaderTagAccessoryView : UIView, UIAlertViewDelegate {
   
   @IBAction func apply(sender: AnyObject) {
     
+    tagListing.reloadData()
+    parent!.presenter!.createTag(selectedRange!, tagTypes:tagTypeNames)
+    parent?.closePopup()
   }
   
   /**
@@ -131,7 +164,7 @@ class ReaderXRefAccessoryView : UIView {
 
 /// MARK: ReaderView
 
-class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class ReaderView: UIViewController, UITextViewDelegate {
 
   var presenter : ReaderPresenter? = nil
   @IBOutlet weak var writingBody: ImmerseTextView!
@@ -241,16 +274,5 @@ class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, U
     popup?.theme.movesAboveKeyboard = true
     popup?.presentPopupControllerAnimated(true)
     
-  }
-  
-  // MARK: Tag Accessory View Delegate
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (presenter?.tagTypes().count)!
-  }
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return (presenter?.tagTypeCellForIndexPath(tableView, indexPath: indexPath))!
-  }
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    presenter!.createTag()
   }
 }

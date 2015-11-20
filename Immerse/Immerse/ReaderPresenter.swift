@@ -64,10 +64,11 @@ class ReaderPresenter: NSObject {
     view!.writingBody.attributedText = attributedString
   }
   
-  func createTag(range:NSRange) {
+  func createTag(range:NSRange, tagTypes:NSArray) {
     let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.greenColor(), range: range)
     view!.writingBody.attributedText = attributedString
+    interactor!.createTag(range, tags:tagTypes)
   }
   
   func createTagLabel(name:String) {
