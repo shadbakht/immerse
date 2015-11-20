@@ -32,6 +32,9 @@ class ReaderInteractor: NSObject {
     DataManager.createNoteForCurrentText(start, length:length, text:text)
   }
   
+  func createTagLabel(name:String) {
+    DataManager.createTagName(name)
+  }
   func updateCurrentProgress(progress:Float) -> Bool {
     if progress > DataManager.getCurrentTextProgress() {
       DataManager.updateCurrentTextProgress(progress)

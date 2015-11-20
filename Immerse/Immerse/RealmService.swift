@@ -50,6 +50,14 @@ class RealmService: NSObject {
         realm.add(object as! Progress)
       })
     }
+    
+    // Create TagTypes
+    if object is TagTypes {
+      try! realm.write({
+        realm.add(object as! TagTypes)
+      })
+    }
+
 
     
   }
@@ -73,8 +81,14 @@ class RealmService: NSObject {
     if objectType == Progress.self{
       let results = realm.objects(Progress)
       return (results.valueForKey("self") as! NSArray)
+    }
+    if objectType == TagTypes.self{
+      let results = realm.objects(TagTypes)
+      return (results.valueForKey("self") as! NSArray)
       
     }
+
+    
 
     return []
   }
@@ -100,6 +114,11 @@ class RealmService: NSObject {
     
     if objectType == Progress.self {
       let results = realm.objects(Progress).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
+    if objectType == TagTypes.self {
+      let results = realm.objects(TagTypes).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
 

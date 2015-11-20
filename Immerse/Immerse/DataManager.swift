@@ -60,6 +60,10 @@ class DataManager: NSObject {
       text:text, currentWriting: WritingService.current_writing_object!)
   }
   
+  class func createTagName(name:String) {
+    TagService.createTagType(name)
+  }
+  
   class func getNotesForCurrentText() -> NSArray {
     return NotesService.getNotesForText(WritingService.current_writing_object!)
   }

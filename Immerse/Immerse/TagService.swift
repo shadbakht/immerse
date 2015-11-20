@@ -19,7 +19,11 @@ class TagService: NSObject {
   }
   
   class func createTagType(name:String) {
-    
+    let type = TagTypes()
+    type.tag_type_name = name
+    type.tag_parent_id = ""
+    type.tag_type_id = Util.uniqueString()
+    RealmService.createObject(type)
   }
   class func createTagObject(start:Int, end:Int, tagID:String, writingID:String) {
     

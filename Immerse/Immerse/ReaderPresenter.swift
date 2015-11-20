@@ -70,6 +70,10 @@ class ReaderPresenter: NSObject {
     view!.writingBody.attributedText = attributedString
   }
   
+  func createTagLabel(name:String) {
+    interactor!.createTagLabel(name)
+  }
+  
   
   func displayAnnotation(item:AnyObject?) {
     if item is Note {

@@ -34,10 +34,12 @@ class ImmerseTextView : UITextView {
   }
 }
 
-class ReaderTagAccessoryView : UIView {
+/// MARK: Reader Tag View
+class ReaderTagAccessoryView : UIView, UIAlertViewDelegate {
   
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
+  var textFieldCreate : UITextField? = nil
 
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
@@ -46,14 +48,43 @@ class ReaderTagAccessoryView : UIView {
   @IBAction func apply(sender: AnyObject) {
     
   }
+  
+  /**
+   add
+   Create a new tag label using a UIAlertViewController
+   - parameter sender: AnyObject
+   */
   @IBAction func add(sender: AnyObject) {
+    parent?.closePopup()
     
+    let alert = UIAlertController(title: "Adding a Tag Name", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addTextFieldWithConfigurationHandler({ textField in
+      (textField).placeholder = "Enter a tag name"
+      self.textFieldCreate = (textField)
+    })
+    let actionDone = UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: {
+      action in
+      self.parent?.createTagObject(self.textFieldCreate!.text!)
+      self.parent?.showTags()
+    })
+    let actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
+      action in
+    })
+    alert.addAction(actionCancel)
+    alert.addAction(actionDone)
+    parent?.presentViewController(alert, animated: true, completion: {
+    })
   }
+  
   @IBAction func edit(sender: AnyObject) {
     
   }
+  
+  
+  
 }
 
+/// MARK: Reader Note View
 class ReaderNoteAccessoryView : UIView, UITextViewDelegate {
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
@@ -151,6 +182,13 @@ class ReaderView: UIViewController, UITextViewDelegate {
     popup?.dismissPopupControllerAnimated(true)
   }
   
+  func showTags() {
+    createTag(writingBody)
+  }
+  
+  func createTagObject(name:String) {
+    
+  }
   
   //MARK: Text Annotations Delegate Methods
   
