@@ -35,6 +35,11 @@ class ReaderInteractor: NSObject {
   func createTagLabel(name:String) {
     DataManager.createTagName(name)
   }
+  
+  func tagTypes() -> NSArray {
+    return DataManager.getTagTypes()
+  }
+  
   func updateCurrentProgress(progress:Float) -> Bool {
     if progress > DataManager.getCurrentTextProgress() {
       DataManager.updateCurrentTextProgress(progress)

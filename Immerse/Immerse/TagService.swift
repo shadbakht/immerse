@@ -25,6 +25,10 @@ class TagService: NSObject {
     type.tag_type_id = Util.uniqueString()
     RealmService.createObject(type)
   }
+  
+  class func getTagTypes() -> NSArray {
+    return RealmService.allObjectsForType(TagTypes.self)
+  }
   class func createTagObject(start:Int, end:Int, tagID:String, writingID:String) {
     
   }

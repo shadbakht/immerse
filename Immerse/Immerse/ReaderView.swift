@@ -40,7 +40,13 @@ class ReaderTagAccessoryView : UIView, UIAlertViewDelegate {
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
   var textFieldCreate : UITextField? = nil
-
+  @IBOutlet weak var tagListing: UITableView!
+  
+  func config() {
+    tagListing.delegate = parent!
+    tagListing.dataSource = parent!
+  }
+  
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
   }
@@ -123,7 +129,9 @@ class ReaderXRefAccessoryView : UIView {
 }
 
 
-class ReaderView: UIViewController, UITextViewDelegate {
+/// MARK: ReaderView
+
+class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
   var presenter : ReaderPresenter? = nil
   @IBOutlet weak var writingBody: ImmerseTextView!
@@ -234,5 +242,11 @@ class ReaderView: UIViewController, UITextViewDelegate {
     
   }
   
-  
+  // MARK: Tag Accessory View Delegate
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return (presenter?.tagTypes().count)!
+  }
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    return (presenter?.tagTypeCellForIndexPath(tableView, indexPath: indexPath))!
+  }
 }

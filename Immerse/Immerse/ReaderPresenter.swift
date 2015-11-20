@@ -95,6 +95,18 @@ class ReaderPresenter: NSObject {
     
   }
 
+  func tagTypes() -> NSArray {
+    return interactor!.tagTypes()
+  }
+  
+  func tagTypeCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
+    let tags = interactor!.tagTypes()
+    let tagName : TagTypes = tags.objectAtIndex(indexPath.row) as! TagTypes
+    let cell : UITableViewCell = UITableViewCell()
+    cell.textLabel!.text = tagName.tag_type_name
+    return cell
+  }
+  
   //MARK: Detect Tap Gesture
   // from: http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
 //  - (void)textTapped:(UITapGestureRecognizer *)recognizer

@@ -61,26 +61,33 @@
                         <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QC-ch-rJB"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-YB-6iw" customClass="RATreeView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NcJ-Ac-avw">
                     <rect key="frame" x="0.0" y="37" width="453" height="199"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                </tableView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="leading" secondItem="R6T-Z7-UXR" secondAttribute="trailing" constant="8" id="0ZR-1p-XHV"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4jM-lz-QG0"/>
+                <constraint firstItem="NcJ-Ac-avw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ra-lu-UcS"/>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AL5-RY-MMg"/>
+                <constraint firstAttribute="trailing" secondItem="NcJ-Ac-avw" secondAttribute="trailing" id="FLQ-JV-W6a"/>
                 <constraint firstItem="R6T-Z7-UXR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OcB-l8-nRw"/>
+                <constraint firstAttribute="bottom" secondItem="NcJ-Ac-avw" secondAttribute="bottom" id="dQ3-oR-5Kv"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="kjG-1d-5ck"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="lbl-nv-dpJ"/>
+                <constraint firstItem="NcJ-Ac-avw" firstAttribute="top" secondItem="7bh-Pk-98u" secondAttribute="bottom" constant="8" id="mwa-x3-Pcr"/>
                 <constraint firstAttribute="trailing" secondItem="7bh-Pk-98u" secondAttribute="trailing" constant="8" id="pVk-vj-m3e"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="leading" secondItem="LgD-po-1Ml" secondAttribute="trailing" constant="-7" id="w1Y-yw-vTP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tagListing" destination="NcJ-Ac-avw" id="heJ-hM-LLb"/>
+            </connections>
             <point key="canvasLocation" x="319.5" y="534"/>
         </view>
     </objects>
