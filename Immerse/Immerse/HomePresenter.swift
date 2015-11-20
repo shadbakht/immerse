@@ -56,13 +56,13 @@ class HomePresenter: NSObject {
   
   func createSubtitleFromCount(notes:Int, tags:Int, refs:Int) -> String {
     let total : NSMutableArray = []
-    let noteString = String(format:"%d Notes", notes)
-    let tagString = String(format:"%d Tags", tags)
-    let refString = String(format:"%d Refs", refs)
+    let noteString = String(format:"%d Note", notes)
+    let tagString = String(format:"%d Tag", tags)
+    let refString = String(format:"%d Ref", refs)
     
-    if notes != 0 { total.addObject(noteString) }
-    if tags != 0 { total.addObject(tagString) }
-    if refs != 0 { total.addObject(refString) }
+    if notes != 0 { total.addObject((notes == 1) ? noteString : noteString + "s") }
+    if tags != 0 { total.addObject((tags == 1) ? tagString : tagString + "s") }
+    if refs != 0 { total.addObject((refs == 1) ? refString : refString + "s") }
     return total.componentsJoinedByString(", ")
   }
 }
