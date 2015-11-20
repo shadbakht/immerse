@@ -10,6 +10,10 @@ import UIKit
 
 class NotesService: NSObject {
 
+  class func getNotes() -> NSArray {
+    return RealmService.allObjectsForType(Note.self)
+  }
+  
   class func getNotesForText(currentWriting:Writing) -> NSArray {
     let writing_id = currentWriting.writing_id
     let results = RealmService.objectsForQuery(Note.self, query: "writing_id = '" + writing_id + "'")

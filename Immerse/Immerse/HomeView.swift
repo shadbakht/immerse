@@ -22,6 +22,9 @@ class HomeViewCell : UITableViewCell {
 class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var presenter : HomePresenter? = nil
+  @IBOutlet weak var countTagLabel: UILabel!
+  @IBOutlet weak var countNoteLabel: UILabel!
+  @IBOutlet weak var countXRefLabel: UILabel!
 
   override func viewDidLoad() {
     
@@ -31,7 +34,11 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     presenter?.view = self
     HomeInteractor.sharedInstance.presenter = presenter
     HomePresenter.sharedInstance.setup()
-
+    
+    countTagLabel.setTextForInt(presenter!.totalTagCount)
+    countNoteLabel.setTextForInt(presenter!.totalNoteCount)
+    countXRefLabel.setTextForInt(presenter!.totalXRefCount)
+    
     super.viewDidLoad()
   }
 

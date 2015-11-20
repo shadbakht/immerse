@@ -15,9 +15,17 @@ class HomePresenter: NSObject {
   var view : HomeView? = nil
   var isSetup : Bool = false
   var recentlyViewedWritings : NSArray = []
+  var totalTagCount = 0
+  var totalNoteCount = 0
+  var totalXRefCount = 0
   
   func setup() {
     recentlyViewedWritings = interactor!.getRecent()
+    let counts = interactor!.getObjectCounts()
+    totalTagCount = counts.tags
+    totalNoteCount = counts.notes
+    totalXRefCount = counts.xRefs
+
     if !isSetup {
       isSetup = true
     }

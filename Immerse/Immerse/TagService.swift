@@ -35,6 +35,10 @@ class TagService: NSObject {
   class func getTagTypes() -> NSArray {
     return RealmService.allObjectsForType(TagTypes.self)
   }
+  class func getTags() -> NSArray {
+    return RealmService.allObjectsForType(Tag.self)
+  }
+  
   class func tagTypesForNames(names:NSArray) -> NSArray {
     let mutableResults : NSMutableArray = []
     for name in names {
