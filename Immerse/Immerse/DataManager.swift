@@ -75,6 +75,9 @@ class DataManager: NSObject {
   class func getNotesForCurrentText() -> NSArray {
     return NotesService.getNotesForText(WritingService.current_writing_object!)
   }
+  class func getTagsForCurrentText() -> NSArray {
+    return TagService.getTagsForText(WritingService.current_writing_object!)
+  }
   
   class func getNotesForText(writing_id:String) -> NSArray {
     let writing = WritingService.writingForID(writing_id)

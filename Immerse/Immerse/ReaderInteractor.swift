@@ -21,7 +21,10 @@ class ReaderInteractor: NSObject {
     let notes = DataManager.getNotesForCurrentText()
     return notes
   }
-  
+  func getCurrentTags() -> NSArray {
+    let tags = DataManager.getTagsForCurrentText()
+    return tags
+  }
   func getCurrentProgress() -> Float {
     return DataManager.getCurrentTextProgress()
   }
