@@ -267,10 +267,10 @@
 		546794E61BD0CC370062FAFB /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				546794C21BD0CB140062FAFB /* ReaderView.swift */,
 				54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */,
 				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
+				546794C21BD0CB140062FAFB /* ReaderView.swift */,
 				546794E21BD0CC280062FAFB /* ReaderPresenter.swift */,
 				546794E41BD0CC330062FAFB /* ReaderInteractor.swift */,
 			);

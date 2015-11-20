@@ -195,7 +195,7 @@ class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, U
   }
   
   func createTagObject(name:String) {
-    
+    presenter!.createTagLabel(name)
   }
   
   //MARK: Text Annotations Delegate Methods
@@ -213,6 +213,7 @@ class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, U
     let view : ReaderTagAccessoryView = createView("ReaderTagsAccessory") as! ReaderTagAccessoryView
     view.selectedRange = tv.selectedRange
     view.parent = self
+    view.config()
     createPopup(view)
   }
   
@@ -248,5 +249,8 @@ class ReaderView: UIViewController, UITextViewDelegate, UITableViewDataSource, U
   }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     return (presenter?.tagTypeCellForIndexPath(tableView, indexPath: indexPath))!
+  }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    presenter!.createTag()
   }
 }

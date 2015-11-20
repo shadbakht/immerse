@@ -74,7 +74,6 @@ class ReaderPresenter: NSObject {
     interactor!.createTagLabel(name)
   }
   
-  
   func displayAnnotation(item:AnyObject?) {
     if item is Note {
       let noteObj = item as! Note
