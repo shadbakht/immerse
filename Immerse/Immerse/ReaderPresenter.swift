@@ -41,6 +41,11 @@ class ReaderPresenter: NSObject {
       displayAnnotation(tag)
     }
     
+    let refs = interactor!.getCurrentRefs()
+    for ref in refs {
+      displayAnnotation(ref)
+    }
+    
     if !isSetup {
       isSetup = true
     }
@@ -101,7 +106,12 @@ class ReaderPresenter: NSObject {
       view!.writingBody.attributedText = attributedString
     }
     if item is CrossRef {
-      
+      let refObj = item as! CrossRef
+      let range = NSMakeRange(refObj.start_position, refObj.length)
+      let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
+      attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: range)
+      view!.writingBody.attributedText = attributedString
+
     }
   }
   

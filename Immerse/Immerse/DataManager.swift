@@ -95,13 +95,16 @@ class DataManager: NSObject {
     return NotesService.getNotes()
   }
   class func getXRefs() -> NSArray {
-    return []
+    return CrossRefService.getRefs()
   }
   class func getNotesForCurrentText() -> NSArray {
     return NotesService.getNotesForText(WritingService.current_writing_object!)
   }
   class func getTagsForCurrentText() -> NSArray {
     return TagService.getTagsForText(WritingService.current_writing_object!)
+  }
+  class func getRefsForCurrentText() -> NSArray {
+    return CrossRefService.getRefsForText(WritingService.current_writing_object!)
   }
   
   class func getNotesForText(writing_id:String) -> NSArray {
@@ -117,6 +120,8 @@ class DataManager: NSObject {
   }
   
   class func getRefsForText(writing_id:String) -> NSArray {
-    return []
+    let writing = WritingService.writingForID(writing_id)
+    let refs = CrossRefService.getRefsForText(writing!)
+    return refs
   }
 }

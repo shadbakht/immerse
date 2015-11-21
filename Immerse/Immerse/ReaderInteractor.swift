@@ -25,6 +25,10 @@ class ReaderInteractor: NSObject {
     let tags = DataManager.getTagsForCurrentText()
     return tags
   }
+  func getCurrentRefs() -> NSArray {
+    let refs = DataManager.getRefsForCurrentText()
+    return refs
+  }
   func getCurrentProgress() -> Float {
     return DataManager.getCurrentTextProgress()
   }
