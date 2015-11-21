@@ -31,6 +31,10 @@ class DataManager: NSObject {
     Util.notify("ShowReader")
   }
   
+  class func selectWritingForXRef(name:String) {
+    WritingService.selectWritingForXRef(name)
+  }
+  
   class func getCurrentTextProgress() -> Float {
     return ProgressService.getProgressForText(WritingService.current_writing_object!)
   }
@@ -53,6 +57,10 @@ class DataManager: NSObject {
   
   class func getCurrentBody() -> String {
     return WritingService.getCurrentBody()
+  }
+  
+  class func getCurrentXRefBody() -> String {
+    return WritingService.getCurrentXRefBody()
   }
   
   class func createNoteForCurrentText(start:Int, length:Int, text:String) {

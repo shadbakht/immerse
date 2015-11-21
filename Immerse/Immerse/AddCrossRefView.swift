@@ -42,8 +42,8 @@ class AddCrossRefView: UIViewController, RATreeViewDataSource, RATreeViewDelegat
   func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
     let data : RAObject = item as! RAObject
     if data.pathName.containsString(".txt") {
+      presenter!.selectWritingForXRef(data)
       self.performSegueWithIdentifier("showAddXrefBook", sender: self)
-//      presenter!.selectWriting(data)
     }
   }
   

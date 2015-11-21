@@ -13,8 +13,8 @@ class AddCrossRefInteractor: NSObject {
   static let sharedInstance : AddCrossRefInteractor = AddCrossRefInteractor()
   var presenter : AddCrossRefPresenter? = nil
   
-  func selectWritingNamed(name:String) {
-    DataManager.selectWriting(name)
+  func selectWritingForXRef(name:String) {
+    DataManager.selectWritingForXRef(name)
     
   }
   

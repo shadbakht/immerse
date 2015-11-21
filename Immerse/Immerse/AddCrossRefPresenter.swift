@@ -25,8 +25,8 @@ class AddCrossRefPresenter: NSObject {
     }
   }
   
-  func selectWriting(data:RAObject) {
-    interactor!.selectWritingNamed(data.pathName)
+  func selectWritingForXRef(data:RAObject) {
+    interactor!.selectWritingForXRef(data.pathName)
   }
   
   func cellForTreeView(tree:RATreeView, item: AnyObject!) -> UITableViewCell {

@@ -12,6 +12,7 @@ class WritingService: NSObject {
 
   static var current_writing : String = ""
   static var current_writing_object : Writing? = nil
+  static var current_writing_xref_object : Writing? = nil
   static var folderMapping : NSDictionary? = nil
   
   class func setup() {
@@ -110,6 +111,12 @@ class WritingService: NSObject {
     WritingService.current_writing_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
   }
   
+  class func selectWritingForXRef(name:String) {
+    let query = "writing_filepath CONTAINS '" + name + "'"
+    let results = RealmService.objectsForQuery(Writing.self, query: query)
+    WritingService.current_writing_xref_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
+  }
+  
   private class func processWritings() {
     
     // Create the Realm Objects
@@ -138,6 +145,17 @@ class WritingService: NSObject {
   class func getCurrentBody() -> String {
     if current_writing_object != nil {
       let genericPath = current_writing_object?.writing_filepath
+      let absolutePath = NSFileManager.localPathForItem(genericPath!)
+      let body = try! NSString(contentsOfFile: absolutePath, encoding: NSUTF8StringEncoding)
+      let bodyProcessed = body.stringByReplacingOccurrencesOfString("\n", withString: "\n\n")
+      return bodyProcessed as String
+    }
+    return ""
+  }
+  
+  class func getCurrentXRefBody() -> String {
+    if current_writing_xref_object != nil {
+      let genericPath = current_writing_xref_object?.writing_filepath
       let absolutePath = NSFileManager.localPathForItem(genericPath!)
       let body = try! NSString(contentsOfFile: absolutePath, encoding: NSUTF8StringEncoding)
       let bodyProcessed = body.stringByReplacingOccurrencesOfString("\n", withString: "\n\n")
