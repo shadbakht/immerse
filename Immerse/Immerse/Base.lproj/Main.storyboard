@@ -94,8 +94,24 @@
                     <view key="view" contentMode="scaleToFill" id="l3j-H4-WiY">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BYy-oG-L3x" customClass="ImmerseXRefTextView" customModule="Immerse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BYy-oG-L3x" secondAttribute="trailing" id="1vA-Hr-hmL"/>
+                            <constraint firstItem="BYy-oG-L3x" firstAttribute="leading" secondItem="l3j-H4-WiY" secondAttribute="leading" id="T1k-z9-e0F"/>
+                            <constraint firstItem="BYy-oG-L3x" firstAttribute="top" secondItem="rSm-0C-vsQ" secondAttribute="bottom" id="Tv0-Zq-pQh"/>
+                            <constraint firstItem="vRT-C5-Iax" firstAttribute="top" secondItem="BYy-oG-L3x" secondAttribute="bottom" id="kXY-Gk-MWi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rZJ-su-gXZ">
                         <nil key="title"/>
@@ -115,6 +131,9 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textBody" destination="BYy-oG-L3x" id="DUx-wa-UaI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWq-0N-cfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
