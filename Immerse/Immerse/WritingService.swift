@@ -105,14 +105,23 @@ class WritingService: NSObject {
   }
   
   class func selectWriting(name:String) {
+    var nameCleaned = name
+    if name.containsString("'") {
+      nameCleaned = name.componentsSeparatedByString("/").last!
+    }
     WritingService.current_writing = name
-    let query = "writing_filepath CONTAINS '" + name + "'"
+    let query = "writing_filepath CONTAINS '" + nameCleaned + "'"
     let results = RealmService.objectsForQuery(Writing.self, query: query)
     WritingService.current_writing_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
   }
   
   class func selectWritingForXRef(name:String) {
-    let query = "writing_filepath CONTAINS '" + name + "'"
+    var nameCleaned = name
+    if name.containsString("'") {
+      nameCleaned = name.componentsSeparatedByString("/").last!
+    }
+
+    let query = "writing_filepath CONTAINS '" + nameCleaned + "'"
     let results = RealmService.objectsForQuery(Writing.self, query: query)
     WritingService.current_writing_xref_object = (results.firstObject as! Writing) // @jtan: TODO: Just for now
   }
