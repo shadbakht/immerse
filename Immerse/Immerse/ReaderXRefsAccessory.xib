@@ -69,6 +69,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="crossRefTable" destination="UNE-le-nbT" id="WkV-O0-Bql"/>
+            </connections>
         </view>
     </objects>
 </document>

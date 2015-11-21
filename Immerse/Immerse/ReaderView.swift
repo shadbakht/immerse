@@ -152,10 +152,17 @@ class ReaderNoteAccessoryView : UIView, UITextViewDelegate {
   }
 }
 
-class ReaderXRefAccessoryView : UIView {
+/// MARK: Reader CrossRef View
+class ReaderXRefAccessoryView : UIView, UITableViewDelegate, UITableViewDataSource {
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
-
+  @IBOutlet weak var crossRefTable: UITableView!
+  
+  func config() {
+    crossRefTable.delegate = self
+    crossRefTable.dataSource = self
+  }
+  
   @IBAction func addXRef(sender: AnyObject) {
     parent?.closePopup()
     parent?.performSegueWithIdentifier("showAddXref", sender: parent)
@@ -163,6 +170,19 @@ class ReaderXRefAccessoryView : UIView {
   
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
+  }
+  
+  //MARK: UITableViewDelegate
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    return (parent!.presenter?.refCellForIndexPath(tableView, indexPath: indexPath))!
+  }
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return (parent!.presenter?.refs().count)!
+  }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    // Go to that CrossReference
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    
   }
 }
 
@@ -211,6 +231,11 @@ class ReaderView: UIViewController, UITextViewDelegate {
     super.didReceiveMemoryWarning()
   }
   
+  /**
+   xRefCreated
+   Create a CrossRef after going through the flow.
+   - parameter notif: NSNotification : Has Int:Start, Int:Length, String:Writing_ID
+   */
   func xRefCreated(notif:NSNotification) {
     
     // Reset the Menu

@@ -119,6 +119,8 @@ class ReaderPresenter: NSObject {
     
   }
 
+  // MARK Delegates for the TagView
+  
   func tagTypes() -> NSArray {
     return interactor!.tagTypes()
   }
@@ -128,6 +130,19 @@ class ReaderPresenter: NSObject {
     let tagName : TagTypes = tags.objectAtIndex(indexPath.row) as! TagTypes
     let cell : UITableViewCell = UITableViewCell()
     cell.textLabel!.text = tagName.tag_type_name
+    return cell
+  }
+  
+  func refs() -> NSArray {
+    return interactor!.getCurrentRefs()
+  }
+  
+  func refCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
+    let cell : UITableViewCell = UITableViewCell()
+    let refs = interactor!.getCurrentRefs()
+    let ref : CrossRef = refs.objectAtIndex(indexPath.row) as! CrossRef
+    let text : String = "Reference: " + ref.writing_id_end + " to " + ref.writing_id_start
+    cell.textLabel.text = text
     return cell
   }
   
