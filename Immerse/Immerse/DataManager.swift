@@ -59,6 +59,9 @@ class DataManager: NSObject {
     return WritingService.getCurrentBody()
   }
   
+  class func getCurrentXRefWriting() -> Writing? {
+    return WritingService.current_writing_xref_object
+  }
   class func getCurrentXRefBody() -> String {
     return WritingService.getCurrentXRefBody()
   }
@@ -66,6 +69,11 @@ class DataManager: NSObject {
   class func createNoteForCurrentText(start:Int, length:Int, text:String) {
     NotesService.createNoteForText(start, length:length,
       text:text, currentWriting: WritingService.current_writing_object!)
+  }
+  class func createRefForCurrentText(start:Int, length:Int, writing:String) {
+    let writing = WritingService.writingForID(writing)
+    let current = WritingService.current_writing_object
+    CrossRefService.createRefForText(start, length:length, writing:writing!, reference:current!)
   }
   class func createTagForCurrentText(start:Int, length:Int, tagID:String) {
     TagService.createTagObject(start, length: length, tagID: tagID, currentWriting: WritingService.current_writing_object!)

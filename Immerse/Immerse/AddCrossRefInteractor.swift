@@ -15,7 +15,6 @@ class AddCrossRefInteractor: NSObject {
   
   func selectWritingForXRef(name:String) {
     DataManager.selectWritingForXRef(name)
-    
   }
   
   func loadFolderMappings() -> NSArray {

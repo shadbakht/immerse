@@ -65,6 +65,12 @@ class RealmService: NSObject {
       })
     }
     
+    // Create CrossRef
+    if object is CrossRef {
+      try! realm.write({
+        realm.add(object as! CrossRef)
+      })
+    }
 
     
   }
@@ -97,6 +103,11 @@ class RealmService: NSObject {
       let results = realm.objects(Tag)
       return (results.valueForKey("self") as! NSArray)
     }
+    if objectType == CrossRef.self{
+      let results = realm.objects(CrossRef)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
 
 
     
@@ -137,6 +148,13 @@ class RealmService: NSObject {
       let results = realm.objects(Tag).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
+    
+    if objectType == CrossRef.self {
+      let results = realm.objects(CrossRef).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
+
 
     return []
   }

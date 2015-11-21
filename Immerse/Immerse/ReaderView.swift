@@ -195,7 +195,7 @@ class ReaderView: UIViewController, UITextViewDelegate {
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
     
-    Util.observe(self, action: "xRefCreated", named: "CreateXRef")
+    Util.observe(self, action: "xRefCreated:", named: "CreateXRef")
     
   }
   override func viewDidAppear(animated: Bool) {
@@ -211,15 +211,20 @@ class ReaderView: UIViewController, UITextViewDelegate {
     super.didReceiveMemoryWarning()
   }
   
-  func xRefCreated() {
+  func xRefCreated(notif:NSNotification) {
     
+    // Reset the Menu
     let tagItem = UIMenuItem(title: "TAG", action: "createTag")
     let noteItem = UIMenuItem(title: "NOTE", action: "createNote")
     let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
 
+    // Return to this View
     self.navigationController?.popToViewController(self, animated: true)
+    
+    // Process Data
+    presenter!.createRef(notif.userInfo!)
   }
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {

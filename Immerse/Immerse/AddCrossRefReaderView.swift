@@ -46,7 +46,7 @@ class ImmerseXRefTextView : UITextView {
 class AddCrossRefReaderView: UIViewController {
 
   @IBOutlet weak var textBody: ImmerseXRefTextView!
-  
+  var writing : Writing? = nil
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -55,8 +55,12 @@ class AddCrossRefReaderView: UIViewController {
     UIMenuController.sharedMenuController().menuItems = [createXRef]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
 
+    // Breaks the patter, but is pretty convenient
+    writing = DataManager.getCurrentXRefWriting()
     let body = DataManager.getCurrentXRefBody()
     textBody.text = body
+    
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -64,7 +68,11 @@ class AddCrossRefReaderView: UIViewController {
   }
   
   func handleXRefCreation(range:NSRange) {
-//    Util.notifyData("CreateXRef", data: [])
-    Util.notify("CreateXRef")
+    Util.notifyData("CreateXRef",
+      data: [
+        "writing_id":writing!.writing_id,
+        "start":range.location,
+        "length":range.length
+      ])
   }
 }

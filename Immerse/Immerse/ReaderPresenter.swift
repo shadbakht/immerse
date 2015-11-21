@@ -63,10 +63,15 @@ class ReaderPresenter: NSObject {
     interactor!.createNote(range,text:text)
   }
   
-  func createRef(range:NSRange) {
+  func createRef(data:NSDictionary) {
+    let writing_id = data.objectForKey("writing_id") as! String
+    let start = data.objectForKey("start") as! Int
+    let length = data.objectForKey("length") as! Int
+    let range = NSMakeRange(start, length)
     let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.orangeColor(), range: range)
     view!.writingBody.attributedText = attributedString
+    interactor!.createRef(writing_id, range: range)
   }
   
   func createTag(range:NSRange, tagTypes:NSArray) {
