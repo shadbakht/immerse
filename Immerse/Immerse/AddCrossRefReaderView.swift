@@ -23,7 +23,9 @@ class ImmerseXRefTextView : UITextView {
     let alert = UIAlertController(title: "CONFIRM X-REF ", message: "Please confirm that you want to create this X-Ref. You will be taken back to your previous writing.", preferredStyle: UIAlertControllerStyle.Alert)
     let actionDone = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {
       action in
-      self.parent!.dismissViewControllerAnimated(true, completion: nil)
+      
+      
+      
     })
     let actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
       action in
