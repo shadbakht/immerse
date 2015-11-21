@@ -1,19 +1,19 @@
 //
-//  LibraryPresenter.swift
+//  AddCrossRefPresenter.swift
 //  Immerse
 //
-//  Created by James Tan on 10/15/15.
+//  Created by James Tan on 11/20/15.
 //  Copyright © 2015 Immerse. All rights reserved.
 //
 
 import UIKit
 import RATreeView
 
-class LibraryPresenter: NSObject {
+class AddCrossRefPresenter: NSObject {
 
-  static let sharedInstance : LibraryPresenter = LibraryPresenter()
-  var view : LibraryView? = nil
-  var interactor : LibraryInteractor? = nil
+  static let sharedInstance : AddCrossRefPresenter = AddCrossRefPresenter()
+  var view : AddCrossRefView? = nil
+  var interactor : AddCrossRefInteractor? = nil
   
   var isSetup : Bool = false
   var mapping : NSArray = []
@@ -38,4 +38,5 @@ class LibraryPresenter: NSObject {
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     return cell
   }
+
 }

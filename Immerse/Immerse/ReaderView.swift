@@ -156,6 +156,11 @@ class ReaderXRefAccessoryView : UIView {
   var parent : ReaderView? = nil
   var selectedRange : NSRange? = nil
 
+  @IBAction func addXRef(sender: AnyObject) {
+    parent?.closePopup()
+    parent?.performSegueWithIdentifier("showAddXref", sender: parent)
+  }
+  
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
   }

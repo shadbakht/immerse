@@ -5,6 +5,97 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Add Cross Ref View-->
+        <scene sceneID="niw-Ep-IiH">
+            <objects>
+                <viewController id="qjM-5n-ebG" customClass="AddCrossRefView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p9s-Rh-JaX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ovA-fw-HcQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zyW-bY-mN9">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwI-wX-hlw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REF: Some Writing Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu1-bQ-wCe">
+                                        <rect key="frame" x="8" y="5" width="584" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zu1-bQ-wCe" secondAttribute="bottom" constant="6" id="0yL-1t-EcW"/>
+                                    <constraint firstAttribute="height" constant="32" id="A0u-dN-Eu7"/>
+                                    <constraint firstItem="Zu1-bQ-wCe" firstAttribute="top" secondItem="jwI-wX-hlw" secondAttribute="top" constant="5" id="GFH-gT-QJq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zu1-bQ-wCe" secondAttribute="trailing" constant="8" id="HGA-Jb-V0c"/>
+                                    <constraint firstItem="Zu1-bQ-wCe" firstAttribute="leading" secondItem="jwI-wX-hlw" secondAttribute="leading" constant="8" id="mDe-JO-fTg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LM-rB-gAw" customClass="RATreeView">
+                                <rect key="frame" x="0.0" y="32" width="600" height="504"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7LM-rB-gAw" secondAttribute="trailing" id="Pf2-fV-Lx3"/>
+                            <constraint firstItem="jwI-wX-hlw" firstAttribute="top" secondItem="p9s-Rh-JaX" secondAttribute="bottom" id="Uhr-aT-21u"/>
+                            <constraint firstAttribute="trailing" secondItem="jwI-wX-hlw" secondAttribute="trailing" id="bJj-Zr-Iss"/>
+                            <constraint firstItem="7LM-rB-gAw" firstAttribute="top" secondItem="jwI-wX-hlw" secondAttribute="bottom" id="bwj-Bv-o0Y"/>
+                            <constraint firstItem="jwI-wX-hlw" firstAttribute="leading" secondItem="zyW-bY-mN9" secondAttribute="leading" id="pjO-j4-FwR"/>
+                            <constraint firstItem="ovA-fw-HcQ" firstAttribute="top" secondItem="7LM-rB-gAw" secondAttribute="bottom" id="pq4-uT-5qs"/>
+                            <constraint firstItem="7LM-rB-gAw" firstAttribute="leading" secondItem="zyW-bY-mN9" secondAttribute="leading" id="svc-8y-rBV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OQb-8h-sey">
+                        <view key="titleView" contentMode="scaleToFill" id="kL0-Qe-KCY">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD X-REF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctP-wB-4Hc">
+                                    <rect key="frame" x="67" y="6" width="106" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-iu-K54">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD X-REF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-yP-4jQ">
+                                            <rect key="frame" x="67" y="6" width="106" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refTitleLabel" destination="Zu1-bQ-wCe" id="NDc-aq-QHO"/>
+                        <outlet property="treeView" destination="7LM-rB-gAw" id="yD1-Vs-McN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQb-kQ-lMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="-621"/>
+        </scene>
         <!--Home View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -859,6 +950,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="writingBody" destination="7zl-aP-jo5" id="1ns-Lg-o9t"/>
+                        <segue destination="qjM-5n-ebG" kind="show" identifier="showAddXref" id="22U-6m-5lh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbP-ov-BjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
