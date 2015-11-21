@@ -24,11 +24,12 @@ class ImmerseXRefTextView : UITextView {
     let actionDone = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: {
       action in
       
-      
+      self.parent!.handleXRefCreation(self.selectedRange)
       
     })
     let actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
       action in
+      
     })
     alert.addAction(actionCancel)
     alert.addAction(actionDone)
@@ -60,5 +61,10 @@ class AddCrossRefReaderView: UIViewController {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  func handleXRefCreation(range:NSRange) {
+//    Util.notifyData("CreateXRef", data: [])
+    Util.notify("CreateXRef")
   }
 }
