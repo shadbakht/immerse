@@ -219,6 +219,7 @@ class ReaderView: UIViewController, UITextViewDelegate {
     
   }
   override func viewDidAppear(animated: Bool) {
+    presenter?.setup()
     print(presenter!.current_offset)
     print(self.writingBody.contentSize.height)
     self.writingBody.setContentOffset(CGPoint.zero, animated: false)
@@ -246,10 +247,10 @@ class ReaderView: UIViewController, UITextViewDelegate {
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
 
     // Return to this View
-    self.navigationController?.popToViewController(self, animated: true)
-    
+    self.navigationController?.popToViewController(self, animated: false)
     // Process Data
     presenter!.createRef(notif.userInfo!)
+    createXRef(writingBody)
   }
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
@@ -301,6 +302,7 @@ class ReaderView: UIViewController, UITextViewDelegate {
     let view : ReaderXRefAccessoryView = createView("ReaderXRefsAccessory") as! ReaderXRefAccessoryView
     view.selectedRange = tv.selectedRange
     view.parent = self
+    view.config()
     createPopup(view)
 
   }

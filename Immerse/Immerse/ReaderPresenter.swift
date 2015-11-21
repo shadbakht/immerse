@@ -142,7 +142,7 @@ class ReaderPresenter: NSObject {
     let refs = interactor!.getCurrentRefs()
     let ref : CrossRef = refs.objectAtIndex(indexPath.row) as! CrossRef
     let text : String = "Reference: " + ref.writing_id_end + " to " + ref.writing_id_start
-    cell.textLabel.text = text
+    cell.textLabel!.text = text
     return cell
   }
   

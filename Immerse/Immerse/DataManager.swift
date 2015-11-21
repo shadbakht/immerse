@@ -33,6 +33,8 @@ class DataManager: NSObject {
   
   class func selectWritingForXRef(name:String) {
     WritingService.selectWritingForXRef(name)
+    ActivityService.recordLastWriting(WritingService.current_writing_xref_object!)
+
   }
   
   class func getCurrentTextProgress() -> Float {
