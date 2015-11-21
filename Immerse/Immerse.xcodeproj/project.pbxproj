@@ -13,6 +13,7 @@
 		544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */; };
 		544CFCC01C0009DD00A41085 /* AddCrossRefPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */; };
 		544CFCC21C000A3B00A41085 /* AddCrossRefInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */; };
+		544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -103,6 +104,7 @@
 		544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefView.swift; sourceTree = "<group>"; };
 		544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefPresenter.swift; sourceTree = "<group>"; };
 		544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefInteractor.swift; sourceTree = "<group>"; };
+		544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefReaderView.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,14 @@
 				544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */,
 			);
 			name = AddCrossRef;
+			sourceTree = "<group>";
+		};
+		544CFCC61C000C7900A41085 /* AddCrossRefBook */ = {
+			isa = PBXGroup;
+			children = (
+				544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */,
+			);
+			name = AddCrossRefBook;
 			sourceTree = "<group>";
 		};
 		546794C81BD0CB850062FAFB /* Home */ = {
@@ -381,6 +391,7 @@
 				546794D21BD0CBCD0062FAFB /* Tags */,
 				546794D71BD0CBE60062FAFB /* Notes */,
 				544CFCC31C000AF400A41085 /* AddCrossRef */,
+				544CFCC61C000C7900A41085 /* AddCrossRefBook */,
 				546794DC1BD0CC010062FAFB /* CrossRef */,
 				546794E11BD0CC1C0062FAFB /* Settings */,
 				546794E61BD0CC370062FAFB /* Reader */,
@@ -652,6 +663,7 @@
 				546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */,
 				546794CC1BD0CBAE0062FAFB /* LibraryInteractor.swift in Sources */,
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
+				544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */,
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				54FFC3E81BF84A970041458D /* ActivityService.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
