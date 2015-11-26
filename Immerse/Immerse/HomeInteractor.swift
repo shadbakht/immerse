@@ -13,6 +13,13 @@ class HomeInteractor: NSObject {
   static let sharedInstance = HomeInteractor()
   var presenter : HomePresenter? = nil
   
+  func getObjectCounts() -> (tags:Int, notes:Int, xRefs:Int) {
+    let notesCount = DataManager.getNotes().count
+    let tagsCount = DataManager.getTags().count
+    let xrefsCount = DataManager.getXRefs().count
+    return (tagsCount, notesCount, xrefsCount)
+  }
+  
   func getRecent() -> NSArray {
     return DataManager.getLatestWritingsOpened(8)
   }

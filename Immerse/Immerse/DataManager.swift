@@ -31,6 +31,12 @@ class DataManager: NSObject {
     Util.notify("ShowReader")
   }
   
+  class func selectWritingForXRef(name:String) {
+    WritingService.selectWritingForXRef(name)
+    ActivityService.recordLastWriting(WritingService.current_writing_xref_object!)
+
+  }
+  
   class func getCurrentTextProgress() -> Float {
     return ProgressService.getProgressForText(WritingService.current_writing_object!)
   }
@@ -55,13 +61,52 @@ class DataManager: NSObject {
     return WritingService.getCurrentBody()
   }
   
+  class func getCurrentXRefWriting() -> Writing? {
+    return WritingService.current_writing_xref_object
+  }
+  class func getCurrentXRefBody() -> String {
+    return WritingService.getCurrentXRefBody()
+  }
+  
   class func createNoteForCurrentText(start:Int, length:Int, text:String) {
     NotesService.createNoteForText(start, length:length,
       text:text, currentWriting: WritingService.current_writing_object!)
   }
+  class func createRefForCurrentText(start:Int, length:Int, writing:String) {
+    let writing = WritingService.writingForID(writing)
+    let current = WritingService.current_writing_object
+    CrossRefService.createRefForText(start, length:length, writing:writing!, reference:current!)
+  }
+  class func createTagForCurrentText(start:Int, length:Int, tagID:String) {
+    TagService.createTagObject(start, length: length, tagID: tagID, currentWriting: WritingService.current_writing_object!)
+  }
+  class func createTagName(name:String) {
+    TagService.createTagType(name)
+  }
   
+  class func tagsForNames(names:NSArray) -> NSArray {
+    return TagService.tagTypesForNames(names)
+  }
+  class func getTagTypes() -> NSArray {
+    return TagService.getTagTypes()
+  }
+  class func getTags() -> NSArray {
+    return TagService.getTags()
+  }
+  class func getNotes() -> NSArray {
+    return NotesService.getNotes()
+  }
+  class func getXRefs() -> NSArray {
+    return CrossRefService.getRefs()
+  }
   class func getNotesForCurrentText() -> NSArray {
     return NotesService.getNotesForText(WritingService.current_writing_object!)
+  }
+  class func getTagsForCurrentText() -> NSArray {
+    return TagService.getTagsForText(WritingService.current_writing_object!)
+  }
+  class func getRefsForCurrentText() -> NSArray {
+    return CrossRefService.getRefsForText(WritingService.current_writing_object!)
   }
   
   class func getNotesForText(writing_id:String) -> NSArray {
@@ -71,10 +116,14 @@ class DataManager: NSObject {
   }
   
   class func getTagsForText(writing_id:String) -> NSArray {
-    return []
+    let writing = WritingService.writingForID(writing_id)
+    let tags = TagService.getTagsForText(writing!)
+    return tags
   }
   
   class func getRefsForText(writing_id:String) -> NSArray {
-    return []
+    let writing = WritingService.writingForID(writing_id)
+    let refs = CrossRefService.getRefsForText(writing!)
+    return refs
   }
 }

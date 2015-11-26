@@ -50,6 +50,27 @@ class RealmService: NSObject {
         realm.add(object as! Progress)
       })
     }
+    
+    // Create TagTypes
+    if object is TagTypes {
+      try! realm.write({
+        realm.add(object as! TagTypes)
+      })
+    }
+
+    // Create TagTypes
+    if object is Tag {
+      try! realm.write({
+        realm.add(object as! Tag)
+      })
+    }
+    
+    // Create CrossRef
+    if object is CrossRef {
+      try! realm.write({
+        realm.add(object as! CrossRef)
+      })
+    }
 
     
   }
@@ -73,8 +94,23 @@ class RealmService: NSObject {
     if objectType == Progress.self{
       let results = realm.objects(Progress)
       return (results.valueForKey("self") as! NSArray)
-      
     }
+    if objectType == TagTypes.self{
+      let results = realm.objects(TagTypes)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    if objectType == Tag.self{
+      let results = realm.objects(Tag)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    if objectType == CrossRef.self{
+      let results = realm.objects(CrossRef)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
+
+
+    
 
     return []
   }
@@ -102,6 +138,23 @@ class RealmService: NSObject {
       let results = realm.objects(Progress).filter(query)
       return (results.valueForKey("self") as! NSArray)
     }
+    
+    if objectType == TagTypes.self {
+      let results = realm.objects(TagTypes).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+
+    if objectType == Tag.self {
+      let results = realm.objects(Tag).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
+    if objectType == CrossRef.self {
+      let results = realm.objects(CrossRef).filter(query)
+      return (results.valueForKey("self") as! NSArray)
+    }
+    
+
 
     return []
   }

@@ -61,26 +61,56 @@
                         <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="3QC-ch-rJB"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgb-YB-6iw" customClass="RATreeView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NcJ-Ac-avw">
                     <rect key="frame" x="0.0" y="37" width="453" height="199"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2e-9s-3s3">
+                    <rect key="frame" x="194" y="3" width="64" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="X8p-98-yns"/>
+                        <constraint firstAttribute="height" constant="21" id="vUN-hi-aEG"/>
+                    </constraints>
+                    <state key="normal" title="APPLY">
+                        <color key="titleColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="vUN-hi-aEG"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="apply:" destination="iN0-l3-epB" eventType="touchUpInside" id="Tdc-Sf-Pmw"/>
+                        <action selector="edit:" destination="iN0-l3-epB" eventType="touchUpInside" id="WoH-GL-9lB"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="leading" secondItem="R6T-Z7-UXR" secondAttribute="trailing" constant="8" id="0ZR-1p-XHV"/>
+                <constraint firstItem="n2e-9s-3s3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="2y1-d9-egA"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="4jM-lz-QG0"/>
+                <constraint firstItem="NcJ-Ac-avw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6ra-lu-UcS"/>
                 <constraint firstItem="LgD-po-1Ml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="AL5-RY-MMg"/>
+                <constraint firstAttribute="trailing" secondItem="NcJ-Ac-avw" secondAttribute="trailing" id="FLQ-JV-W6a"/>
                 <constraint firstItem="R6T-Z7-UXR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="OcB-l8-nRw"/>
+                <constraint firstAttribute="bottom" secondItem="NcJ-Ac-avw" secondAttribute="bottom" id="dQ3-oR-5Kv"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="kjG-1d-5ck"/>
                 <constraint firstItem="enW-9C-6BG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="lbl-nv-dpJ"/>
+                <constraint firstItem="NcJ-Ac-avw" firstAttribute="top" secondItem="7bh-Pk-98u" secondAttribute="bottom" constant="8" id="mwa-x3-Pcr"/>
                 <constraint firstAttribute="trailing" secondItem="7bh-Pk-98u" secondAttribute="trailing" constant="8" id="pVk-vj-m3e"/>
+                <constraint firstItem="R6T-Z7-UXR" firstAttribute="leading" secondItem="n2e-9s-3s3" secondAttribute="trailing" constant="12" id="viB-Mr-mh0"/>
                 <constraint firstItem="7bh-Pk-98u" firstAttribute="leading" secondItem="LgD-po-1Ml" secondAttribute="trailing" constant="-7" id="w1Y-yw-vTP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="applyButton" destination="n2e-9s-3s3" id="6gE-aK-wsg"/>
+                <outlet property="tagListing" destination="NcJ-Ac-avw" id="heJ-hM-LLb"/>
+            </connections>
             <point key="canvasLocation" x="319.5" y="534"/>
         </view>
     </objects>

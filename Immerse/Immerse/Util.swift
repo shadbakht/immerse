@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UILabel {
+  func setTextForInt(int:Int) {
+    self.text = String(format: "%d", int)
+  }
+}
+
 extension NSFileManager {
   
   class func localPath() -> String {

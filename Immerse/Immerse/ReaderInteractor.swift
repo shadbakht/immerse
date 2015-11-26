@@ -21,7 +21,14 @@ class ReaderInteractor: NSObject {
     let notes = DataManager.getNotesForCurrentText()
     return notes
   }
-  
+  func getCurrentTags() -> NSArray {
+    let tags = DataManager.getTagsForCurrentText()
+    return tags
+  }
+  func getCurrentRefs() -> NSArray {
+    let refs = DataManager.getRefsForCurrentText()
+    return refs
+  }
   func getCurrentProgress() -> Float {
     return DataManager.getCurrentTextProgress()
   }
@@ -30,6 +37,28 @@ class ReaderInteractor: NSObject {
     let start = range.location
     let length = range.length
     DataManager.createNoteForCurrentText(start, length:length, text:text)
+  }
+  func createTag(range:NSRange, tags:NSArray) {
+    let tags = DataManager.tagsForNames(tags)
+    for tag in tags {
+      let tagObj = tag as! TagTypes
+      let tagID = tagObj.tag_type_id
+      let start = range.location
+      let length = range.length
+      DataManager.createTagForCurrentText(start, length: length, tagID: tagID)
+    }
+  }
+  func createRef(writingID:String, range:NSRange) {
+    let start = range.location
+    let length = range.length
+    DataManager.createRefForCurrentText(start, length:length, writing:writingID)
+  }
+  func createTagLabel(name:String) {
+    DataManager.createTagName(name)
+  }
+  
+  func tagTypes() -> NSArray {
+    return DataManager.getTagTypes()
   }
   
   func updateCurrentProgress(progress:Float) -> Bool {

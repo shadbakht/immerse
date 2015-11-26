@@ -33,6 +33,25 @@
                         <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="9Ql-Qx-eoV"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UNE-le-nbT">
+                    <rect key="frame" x="0.0" y="37" width="453" height="199"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFs-O1-9F7">
+                    <rect key="frame" x="307" y="4" width="78" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="65M-Qv-zmr"/>
+                        <constraint firstAttribute="height" constant="30" id="yyQ-0t-cY3"/>
+                    </constraints>
+                    <state key="normal" title="ADD X-REF">
+                        <color key="titleColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addXRef:" destination="iN0-l3-epB" eventType="touchUpInside" id="UdM-h5-sEr"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -40,10 +59,19 @@
                 <constraint firstItem="YMG-3C-eq1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="6Cd-iN-7yj"/>
                 <constraint firstItem="YMG-3C-eq1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="9g1-CV-fmG"/>
                 <constraint firstAttribute="trailing" secondItem="IGe-Xc-DFX" secondAttribute="trailing" constant="14" id="I0S-ZQ-RrX"/>
+                <constraint firstItem="UNE-le-nbT" firstAttribute="top" secondItem="TFs-O1-9F7" secondAttribute="bottom" constant="3" id="Jyx-Bn-Mi6"/>
+                <constraint firstItem="UNE-le-nbT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="U7h-ID-bD2"/>
+                <constraint firstAttribute="bottom" secondItem="UNE-le-nbT" secondAttribute="bottom" id="YYD-mh-Psk"/>
+                <constraint firstItem="IGe-Xc-DFX" firstAttribute="leading" secondItem="TFs-O1-9F7" secondAttribute="trailing" constant="8" id="eNd-QN-0cB"/>
+                <constraint firstItem="TFs-O1-9F7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="mIT-SW-LbR"/>
                 <constraint firstItem="IGe-Xc-DFX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oHb-Ft-R4N"/>
+                <constraint firstAttribute="trailing" secondItem="UNE-le-nbT" secondAttribute="trailing" id="rBK-lJ-uDU"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="crossRefTable" destination="UNE-le-nbT" id="WkV-O0-Bql"/>
+            </connections>
         </view>
     </objects>
 </document>

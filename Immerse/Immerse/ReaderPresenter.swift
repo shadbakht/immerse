@@ -36,6 +36,16 @@ class ReaderPresenter: NSObject {
       displayAnnotation(note)
     }
     
+    let tags = interactor!.getCurrentTags()
+    for tag in tags {
+      displayAnnotation(tag)
+    }
+    
+    let refs = interactor!.getCurrentRefs()
+    for ref in refs {
+      displayAnnotation(ref)
+    }
+    
     if !isSetup {
       isSetup = true
     }
@@ -58,18 +68,27 @@ class ReaderPresenter: NSObject {
     interactor!.createNote(range,text:text)
   }
   
-  func createRef(range:NSRange) {
+  func createRef(data:NSDictionary) {
+    let writing_id = data.objectForKey("writing_id") as! String
+    let start = data.objectForKey("start") as! Int
+    let length = data.objectForKey("length") as! Int
+    let range = NSMakeRange(start, length)
     let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.orangeColor(), range: range)
     view!.writingBody.attributedText = attributedString
+    interactor!.createRef(writing_id, range: range)
   }
   
-  func createTag(range:NSRange) {
+  func createTag(range:NSRange, tagTypes:NSArray) {
     let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.greenColor(), range: range)
     view!.writingBody.attributedText = attributedString
+    interactor!.createTag(range, tags:tagTypes)
   }
   
+  func createTagLabel(name:String) {
+    interactor!.createTagLabel(name)
+  }
   
   func displayAnnotation(item:AnyObject?) {
     if item is Note {
@@ -80,10 +99,19 @@ class ReaderPresenter: NSObject {
       view!.writingBody.attributedText = attributedString
     }
     if item is Tag {
-      
+      let tagObj = item as! Tag
+      let range = NSMakeRange(tagObj.start_position, tagObj.length)
+      let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
+      attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.greenColor(), range: range)
+      view!.writingBody.attributedText = attributedString
     }
     if item is CrossRef {
-      
+      let refObj = item as! CrossRef
+      let range = NSMakeRange(refObj.start_position, refObj.length)
+      let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
+      attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: range)
+      view!.writingBody.attributedText = attributedString
+
     }
   }
   
@@ -91,6 +119,33 @@ class ReaderPresenter: NSObject {
     
   }
 
+  // MARK Delegates for the TagView
+  
+  func tagTypes() -> NSArray {
+    return interactor!.tagTypes()
+  }
+  
+  func tagTypeCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
+    let tags = interactor!.tagTypes()
+    let tagName : TagTypes = tags.objectAtIndex(indexPath.row) as! TagTypes
+    let cell : UITableViewCell = UITableViewCell()
+    cell.textLabel!.text = tagName.tag_type_name
+    return cell
+  }
+  
+  func refs() -> NSArray {
+    return interactor!.getCurrentRefs()
+  }
+  
+  func refCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
+    let cell : UITableViewCell = UITableViewCell()
+    let refs = interactor!.getCurrentRefs()
+    let ref : CrossRef = refs.objectAtIndex(indexPath.row) as! CrossRef
+    let text : String = "Reference: " + ref.writing_id_end + " to " + ref.writing_id_start
+    cell.textLabel!.text = text
+    return cell
+  }
+  
   //MARK: Detect Tap Gesture
   // from: http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
 //  - (void)textTapped:(UITapGestureRecognizer *)recognizer
