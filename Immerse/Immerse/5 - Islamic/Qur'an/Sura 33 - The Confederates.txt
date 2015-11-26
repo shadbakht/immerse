@@ -1,367 +1,221 @@
 ﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
 IN THE NAME OF GOD, THE MERCIFUL, THE COMPASSIONATE
 1
-القرآن:
 يَا أَيُّهَا النَّبِيُّ اتَّقِ اللَّهَ وَلَا تُطِعِ الْكَافِرِينَ وَالْمُنَافِقِينَ ۗ إِنَّ اللَّهَ كَانَ عَلِيمًا حَكِيمًا
-ARTHUR JOHN ARBERRY:
 O Prophet, fear God, and obey not the unbelievers and the hypocrites. God is All-knowing, All-wise.
 2
-القرآن:
 وَاتَّبِعْ مَا يُوحَىٰ إِلَيْكَ مِنْ رَبِّكَ ۚ إِنَّ اللَّهَ كَانَ بِمَا تَعْمَلُونَ خَبِيرًا
-ARTHUR JOHN ARBERRY:
 And follow what is revealed to thee from thy Lord; surely God is aware of the things you do.
 3
-القرآن:
 وَتَوَكَّلْ عَلَى اللَّهِ ۚ وَكَفَىٰ بِاللَّهِ وَكِيلًا
-ARTHUR JOHN ARBERRY:
 And put thy trust in God; God suffices as a guardian.
 4
-القرآن:
 مَا جَعَلَ اللَّهُ لِرَجُلٍ مِنْ قَلْبَيْنِ فِي جَوْفِهِ ۚ وَمَا جَعَلَ أَزْوَاجَكُمُ اللَّائِي تُظَاهِرُونَ مِنْهُنَّ أُمَّهَاتِكُمْ ۚ وَمَا جَعَلَ أَدْعِيَاءَكُمْ أَبْنَاءَكُمْ ۚ ذَٰلِكُمْ قَوْلُكُمْ بِأَفْوَاهِكُمْ ۖ وَاللَّهُ يَقُولُ الْحَقَّ وَهُوَ يَهْدِي السَّبِيلَ
-ARTHUR JOHN ARBERRY:
 God has not assigned to any man two hearts within his breast; nor has He made your wives, when you divorce, saying, 'Be as my mother's back,' truly your mothers, neither has He made your adopted sons your sons in fact. That is your own saying, the words of your mouths; but God speaks the truth, and guides on the way.
 5
-القرآن:
 ادْعُوهُمْ لِآبَائِهِمْ هُوَ أَقْسَطُ عِنْدَ اللَّهِ ۚ فَإِنْ لَمْ تَعْلَمُوا آبَاءَهُمْ فَإِخْوَانُكُمْ فِي الدِّينِ وَمَوَالِيكُمْ ۚ وَلَيْسَ عَلَيْكُمْ جُنَاحٌ فِيمَا أَخْطَأْتُمْ بِهِ وَلَٰكِنْ مَا تَعَمَّدَتْ قُلُوبُكُمْ ۚ وَكَانَ اللَّهُ غَفُورًا رَحِيمًا
-ARTHUR JOHN ARBERRY:
 Call them after their true fathers; that is more equitable in the sight of God. If you know not who their fathers were, then they are your brothers in religion, and your clients. There is no fault in you if you make mistakes, but only in what your hearts premeditate. God is All-forgiving, All-compassionate.
 6
-القرآن:
 النَّبِيُّ أَوْلَىٰ بِالْمُؤْمِنِينَ مِنْ أَنْفُسِهِمْ ۖ وَأَزْوَاجُهُ أُمَّهَاتُهُمْ ۗ وَأُولُو الْأَرْحَامِ بَعْضُهُمْ أَوْلَىٰ بِبَعْضٍ فِي كِتَابِ اللَّهِ مِنَ الْمُؤْمِنِينَ وَالْمُهَاجِرِينَ إِلَّا أَنْ تَفْعَلُوا إِلَىٰ أَوْلِيَائِكُمْ مَعْرُوفًا ۚ كَانَ ذَٰلِكَ فِي الْكِتَابِ مَسْطُورًا
-ARTHUR JOHN ARBERRY:
 The Prophet is nearer to the believers than their selves; his wives are their mothers. Those who are bound by blood are nearer to one another in the Book of God than the believers and the emigrants; nevertheless you should act towards your friends honourably; that stands inscribed in the Book.
 7
-القرآن:
 وَإِذْ أَخَذْنَا مِنَ النَّبِيِّينَ مِيثَاقَهُمْ وَمِنْكَ وَمِنْ نُوحٍ وَإِبْرَاهِيمَ وَمُوسَىٰ وَعِيسَى ابْنِ مَرْيَمَ ۖ وَأَخَذْنَا مِنْهُمْ مِيثَاقًا غَلِيظًا
-ARTHUR JOHN ARBERRY:
 And when We took compact from the Prophets, and from thee, and from Noah, and Abraham, Moses, and Jesus, Mary's son; We took from them a solemn compact,
 8
-القرآن:
 لِيَسْأَلَ الصَّادِقِينَ عَنْ صِدْقِهِمْ ۚ وَأَعَدَّ لِلْكَافِرِينَ عَذَابًا أَلِيمًا
-ARTHUR JOHN ARBERRY:
 that He might question the truthful concerning their truthfulness; and He has prepared for the unbelievers a painful chastisement.
 9
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ إِذْ جَاءَتْكُمْ جُنُودٌ فَأَرْسَلْنَا عَلَيْهِمْ رِيحًا وَجُنُودًا لَمْ تَرَوْهَا ۚ وَكَانَ اللَّهُ بِمَا تَعْمَلُونَ بَصِيرًا
-ARTHUR JOHN ARBERRY:
 O believers, remember God's blessing upon you when hosts came against you, and We loosed against them a wind, and hosts you saw not; and God sees the things you do.
 10
-القرآن:
 إِذْ جَاءُوكُمْ مِنْ فَوْقِكُمْ وَمِنْ أَسْفَلَ مِنْكُمْ وَإِذْ زَاغَتِ الْأَبْصَارُ وَبَلَغَتِ الْقُلُوبُ الْحَنَاجِرَ وَتَظُنُّونَ بِاللَّهِ الظُّنُونَا
-ARTHUR JOHN ARBERRY:
 When they came against you from above you and from below you, and when your eyes swerved and your hearts reached your throats, while you thought thoughts about God;
 11
-القرآن:
 هُنَالِكَ ابْتُلِيَ الْمُؤْمِنُونَ وَزُلْزِلُوا زِلْزَالًا شَدِيدًا
-ARTHUR JOHN ARBERRY:
 there it was that the believers were tried, and shaken most mightily.
 12
-القرآن:
 وَإِذْ يَقُولُ الْمُنَافِقُونَ وَالَّذِينَ فِي قُلُوبِهِمْ مَرَضٌ مَا وَعَدَنَا اللَّهُ وَرَسُولُهُ إِلَّا غُرُورًا
-ARTHUR JOHN ARBERRY:
 And when tile hypocrites, and those in whose hearts is sickness, said, 'God and His Messenger promised us only delusion.'
 13
-القرآن:
 وَإِذْ قَالَتْ طَائِفَةٌ مِنْهُمْ يَا أَهْلَ يَثْرِبَ لَا مُقَامَ لَكُمْ فَارْجِعُوا ۚ وَيَسْتَأْذِنُ فَرِيقٌ مِنْهُمُ النَّبِيَّ يَقُولُونَ إِنَّ بُيُوتَنَا عَوْرَةٌ وَمَا هِيَ بِعَوْرَةٍ ۖ إِنْ يُرِيدُونَ إِلَّا فِرَارًا
-ARTHUR JOHN ARBERRY:
 And when a party of them said, 'O people of Yathrib, there is no abiding here for you, therefore return!' And a part of them Were asking leave of the Prophet, saying, 'Our houses are exposed'; yet they were not exposed; they desired only to flee.
 14
-القرآن:
 وَلَوْ دُخِلَتْ عَلَيْهِمْ مِنْ أَقْطَارِهَا ثُمَّ سُئِلُوا الْفِتْنَةَ لَآتَوْهَا وَمَا تَلَبَّثُوا بِهَا إِلَّا يَسِيرًا
-ARTHUR JOHN ARBERRY:
 And if entrance had been forced against them from those quarters, and then they had been asked to apostatise, they would have done so, and but tarried about it briefly.
 15
-القرآن:
 وَلَقَدْ كَانُوا عَاهَدُوا اللَّهَ مِنْ قَبْلُ لَا يُوَلُّونَ الْأَدْبَارَ ۚ وَكَانَ عَهْدُ اللَّهِ مَسْئُولًا
-ARTHUR JOHN ARBERRY:
 Yet they had made covenant with God before that, that they would not turn their backs; and covenants with God shall be questioned of
 16
-القرآن:
 قُلْ لَنْ يَنْفَعَكُمُ الْفِرَارُ إِنْ فَرَرْتُمْ مِنَ الْمَوْتِ أَوِ الْقَتْلِ وَإِذًا لَا تُمَتَّعُونَ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 Say: 'Flight will not profit you, if you flee from death or slaying; you will be given enjoyment of days then but little.'
 17
-القرآن:
 قُلْ مَنْ ذَا الَّذِي يَعْصِمُكُمْ مِنَ اللَّهِ إِنْ أَرَادَ بِكُمْ سُوءًا أَوْ أَرَادَ بِكُمْ رَحْمَةً ۚ وَلَا يَجِدُونَ لَهُمْ مِنْ دُونِ اللَّهِ وَلِيًّا وَلَا نَصِيرًا
-ARTHUR JOHN ARBERRY:
 Say: 'Who is he that shall defend you from God, if lie desires evil for you, or desires mercy for you?' They shall find for themselves, apart from God, neither protector nor helper.
 18
-القرآن:
 ۞ قَدْ يَعْلَمُ اللَّهُ الْمُعَوِّقِينَ مِنْكُمْ وَالْقَائِلِينَ لِإِخْوَانِهِمْ هَلُمَّ إِلَيْنَا ۖ وَلَا يَأْتُونَ الْبَأْسَ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 God would surely know those of you who hinder, and those who say to their brothers, 'Come to us,' and come to battle but little,
 19
-القرآن:
 أَشِحَّةً عَلَيْكُمْ ۖ فَإِذَا جَاءَ الْخَوْفُ رَأَيْتَهُمْ يَنْظُرُونَ إِلَيْكَ تَدُورُ أَعْيُنُهُمْ كَالَّذِي يُغْشَىٰ عَلَيْهِ مِنَ الْمَوْتِ ۖ فَإِذَا ذَهَبَ الْخَوْفُ سَلَقُوكُمْ بِأَلْسِنَةٍ حِدَادٍ أَشِحَّةً عَلَى الْخَيْرِ ۚ أُولَٰئِكَ لَمْ يُؤْمِنُوا فَأَحْبَطَ اللَّهُ أَعْمَالَهُمْ ۚ وَكَانَ ذَٰلِكَ عَلَى اللَّهِ يَسِيرًا
-ARTHUR JOHN ARBERRY:
 being niggardly towards you. When fear comes upon them, thou seest them looking at thee, their eyes rolling like one who swoons of death; but when the fear departs, they flay you with sharp tongues, being niggardly to possess the good things. Those have never believed; God has made their works to fail; and that is easy for God.
 20
-القرآن:
 يَحْسَبُونَ الْأَحْزَابَ لَمْ يَذْهَبُوا ۖ وَإِنْ يَأْتِ الْأَحْزَابُ يَوَدُّوا لَوْ أَنَّهُمْ بَادُونَ فِي الْأَعْرَابِ يَسْأَلُونَ عَنْ أَنْبَائِكُمْ ۖ وَلَوْ كَانُوا فِيكُمْ مَا قَاتَلُوا إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 They think the Confederates have not departed; and if the Confederates come, they will wish that they were desert-dwellers among the Bedoums asking for news of you. If they were among you, they would fight but little.
 21
-القرآن:
 لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ لِمَنْ كَانَ يَرْجُو اللَّهَ وَالْيَوْمَ الْآخِرَ وَذَكَرَ اللَّهَ كَثِيرًا
-ARTHUR JOHN ARBERRY:
 You have had a good example in God's Messenger for whosoever hopes for God and the Last Day, and remembers God oft.
 22
-القرآن:
 وَلَمَّا رَأَى الْمُؤْمِنُونَ الْأَحْزَابَ قَالُوا هَٰذَا مَا وَعَدَنَا اللَّهُ وَرَسُولُهُ وَصَدَقَ اللَّهُ وَرَسُولُهُ ۚ وَمَا زَادَهُمْ إِلَّا إِيمَانًا وَتَسْلِيمًا
-ARTHUR JOHN ARBERRY:
 When the believers saw the Confederates they said, 'This is what God and His Messenger promised us, and God and His Messenger have spoken truly.' And it only increased them in faith and surrender.
 23
-القرآن:
 مِنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ۖ فَمِنْهُمْ مَنْ قَضَىٰ نَحْبَهُ وَمِنْهُمْ مَنْ يَنْتَظِرُ ۖ وَمَا بَدَّلُوا تَبْدِيلًا
-ARTHUR JOHN ARBERRY:
 Among the believers are men who were true to their covenant with God; some of them have fulfilled their vow by death, and some are still awaiting, and they have not changed in the least;
 24
-القرآن:
 لِيَجْزِيَ اللَّهُ الصَّادِقِينَ بِصِدْقِهِمْ وَيُعَذِّبَ الْمُنَافِقِينَ إِنْ شَاءَ أَوْ يَتُوبَ عَلَيْهِمْ ۚ إِنَّ اللَّهَ كَانَ غَفُورًا رَحِيمًا
-ARTHUR JOHN ARBERRY:
 that God may recompense the truthful ones for their truthfulness, and chastise the hypocrites, if He will, or turn again unto them. Surely God is All-forgiving, All-compassionate.
 25
-القرآن:
 وَرَدَّ اللَّهُ الَّذِينَ كَفَرُوا بِغَيْظِهِمْ لَمْ يَنَالُوا خَيْرًا ۚ وَكَفَى اللَّهُ الْمُؤْمِنِينَ الْقِتَالَ ۚ وَكَانَ اللَّهُ قَوِيًّا عَزِيزًا
-ARTHUR JOHN ARBERRY:
 And God sent back those that were unbelievers in their rage, and they attained no good; God spared the believers of fighting. Surely God is All-strong, All-mighty.
 26
-القرآن:
 وَأَنْزَلَ الَّذِينَ ظَاهَرُوهُمْ مِنْ أَهْلِ الْكِتَابِ مِنْ صَيَاصِيهِمْ وَقَذَفَ فِي قُلُوبِهِمُ الرُّعْبَ فَرِيقًا تَقْتُلُونَ وَتَأْسِرُونَ فَرِيقًا
-ARTHUR JOHN ARBERRY:
 And He brought down those of the People of the Book who supported them from their fortresses and cast terror in their hearts; some you slew, some you made captive.
 27
-القرآن:
 وَأَوْرَثَكُمْ أَرْضَهُمْ وَدِيَارَهُمْ وَأَمْوَالَهُمْ وَأَرْضًا لَمْ تَطَئُوهَا ۚ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ قَدِيرًا
-ARTHUR JOHN ARBERRY:
 And He bequeathed upon you their lands, their habitations, and their possessions, and a land you never trod. God is powerful over everything.
 28
-القرآن:
 يَا أَيُّهَا النَّبِيُّ قُلْ لِأَزْوَاجِكَ إِنْ كُنْتُنَّ تُرِدْنَ الْحَيَاةَ الدُّنْيَا وَزِينَتَهَا فَتَعَالَيْنَ أُمَتِّعْكُنَّ وَأُسَرِّحْكُنَّ سَرَاحًا جَمِيلًا
-ARTHUR JOHN ARBERRY:
 O Prophet, say to thy wives: 'If you desire the present life and its adornment, come now, I will make you provision, and set you free with kindliness.
 29
-القرآن:
 وَإِنْ كُنْتُنَّ تُرِدْنَ اللَّهَ وَرَسُولَهُ وَالدَّارَ الْآخِرَةَ فَإِنَّ اللَّهَ أَعَدَّ لِلْمُحْسِنَاتِ مِنْكُنَّ أَجْرًا عَظِيمًا
-ARTHUR JOHN ARBERRY:
 But if you desire God and His Messenger and the Last Abode, surely God has prepared for those amongst you such as do good a mighty wage.
 30
-القرآن:
 يَا نِسَاءَ النَّبِيِّ مَنْ يَأْتِ مِنْكُنَّ بِفَاحِشَةٍ مُبَيِّنَةٍ يُضَاعَفْ لَهَا الْعَذَابُ ضِعْفَيْنِ ۚ وَكَانَ ذَٰلِكَ عَلَى اللَّهِ يَسِيرًا
-ARTHUR JOHN ARBERRY:
 Wives of the Prophet, whosoever among you commits a flagrant indecency, for her the chastisement shall be doubled; that is easy for God.
 31
-القرآن:
 ۞ وَمَنْ يَقْنُتْ مِنْكُنَّ لِلَّهِ وَرَسُولِهِ وَتَعْمَلْ صَالِحًا نُؤْتِهَا أَجْرَهَا مَرَّتَيْنِ وَأَعْتَدْنَا لَهَا رِزْقًا كَرِيمًا
-ARTHUR JOHN ARBERRY:
 But whosoever of you is obedient to God and His Messenger, and does righteousness, We shall pay her her wage twice over; We have prepared for her a generous provision.
 32
-القرآن:
 يَا نِسَاءَ النَّبِيِّ لَسْتُنَّ كَأَحَدٍ مِنَ النِّسَاءِ ۚ إِنِ اتَّقَيْتُنَّ فَلَا تَخْضَعْنَ بِالْقَوْلِ فَيَطْمَعَ الَّذِي فِي قَلْبِهِ مَرَضٌ وَقُلْنَ قَوْلًا مَعْرُوفًا
-ARTHUR JOHN ARBERRY:
 Wives of the Prophet, you are not as other women. If you are godfearing, be not abject in your speech, so that he in whose heart is sickness may be lustful; but speak honourable words.
 33
-القرآن:
 وَقَرْنَ فِي بُيُوتِكُنَّ وَلَا تَبَرَّجْنَ تَبَرُّجَ الْجَاهِلِيَّةِ الْأُولَىٰ ۖ وَأَقِمْنَ الصَّلَاةَ وَآتِينَ الزَّكَاةَ وَأَطِعْنَ اللَّهَ وَرَسُولَهُ ۚ إِنَّمَا يُرِيدُ اللَّهُ لِيُذْهِبَ عَنْكُمُ الرِّجْسَ أَهْلَ الْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا
-ARTHUR JOHN ARBERRY:
 Remain in your houses; and display not your finery, as did the pagans of old. And perform the prayer, and pay the alms, and obey God and His Messenger. People of the House, God only desires to put away from you abomination and to cleanse you.
 34
-القرآن:
 وَاذْكُرْنَ مَا يُتْلَىٰ فِي بُيُوتِكُنَّ مِنْ آيَاتِ اللَّهِ وَالْحِكْمَةِ ۚ إِنَّ اللَّهَ كَانَ لَطِيفًا خَبِيرًا
-ARTHUR JOHN ARBERRY:
 And remember that which is recited in your houses of the signs of God and the Wisdom; God is All-subtle, All-aware.
 35
-القرآن:
 إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَالْقَانِتِينَ وَالْقَانِتَاتِ وَالصَّادِقِينَ وَالصَّادِقَاتِ وَالصَّابِرِينَ وَالصَّابِرَاتِ وَالْخَاشِعِينَ وَالْخَاشِعَاتِ وَالْمُتَصَدِّقِينَ وَالْمُتَصَدِّقَاتِ وَالصَّائِمِينَ وَالصَّائِمَاتِ وَالْحَافِظِينَ فُرُوجَهُمْ وَالْحَافِظَاتِ وَالذَّاكِرِينَ اللَّهَ كَثِيرًا وَالذَّاكِرَاتِ أَعَدَّ اللَّهُ لَهُمْ مَغْفِرَةً وَأَجْرًا عَظِيمًا
-ARTHUR JOHN ARBERRY:
 Men and women who have surrendered, believing men and believing women, obedient men and obedient women, truthful men and truthful women, enduring men and enduring women, humble men and humble women, men and women who give in charity, men who fast and women who fast, men and women who guard their private parts, men and women who remember God oft -- for them God has prepared forgiveness and a mighty wage.
 36
-القرآن:
 وَمَا كَانَ لِمُؤْمِنٍ وَلَا مُؤْمِنَةٍ إِذَا قَضَى اللَّهُ وَرَسُولُهُ أَمْرًا أَنْ يَكُونَ لَهُمُ الْخِيَرَةُ مِنْ أَمْرِهِمْ ۗ وَمَنْ يَعْصِ اللَّهَ وَرَسُولَهُ فَقَدْ ضَلَّ ضَلَالًا مُبِينًا
-ARTHUR JOHN ARBERRY:
 It is not for any believer, man or woman, when God and His Messenger have decreed a matter, to have the choice in the affair. Whosoever disobeys God and His Messenger has gone astray into manifest error.
 37
-القرآن:
 وَإِذْ تَقُولُ لِلَّذِي أَنْعَمَ اللَّهُ عَلَيْهِ وَأَنْعَمْتَ عَلَيْهِ أَمْسِكْ عَلَيْكَ زَوْجَكَ وَاتَّقِ اللَّهَ وَتُخْفِي فِي نَفْسِكَ مَا اللَّهُ مُبْدِيهِ وَتَخْشَى النَّاسَ وَاللَّهُ أَحَقُّ أَنْ تَخْشَاهُ ۖ فَلَمَّا قَضَىٰ زَيْدٌ مِنْهَا وَطَرًا زَوَّجْنَاكَهَا لِكَيْ لَا يَكُونَ عَلَى الْمُؤْمِنِينَ حَرَجٌ فِي أَزْوَاجِ أَدْعِيَائِهِمْ إِذَا قَضَوْا مِنْهُنَّ وَطَرًا ۚ وَكَانَ أَمْرُ اللَّهِ مَفْعُولًا
-ARTHUR JOHN ARBERRY:
 When thou saidst to him whom God had blessed and thou hadst favoured, 'Keep thy wife to thyself, and fear God,' and thou wast concealing within thyself what God should reveal, fearing other men; and God has better right for thee to fear Him. So when Zaid had accomplished what he would of her, then We gave her in marriage to thee, so that there should not be any fault in the believers, touching the wives of their adopted sons, when they have accomplished what they would of them; and God's commandment must be performed.
 38
-القرآن:
 مَا كَانَ عَلَى النَّبِيِّ مِنْ حَرَجٍ فِيمَا فَرَضَ اللَّهُ لَهُ ۖ سُنَّةَ اللَّهِ فِي الَّذِينَ خَلَوْا مِنْ قَبْلُ ۚ وَكَانَ أَمْرُ اللَّهِ قَدَرًا مَقْدُورًا
-ARTHUR JOHN ARBERRY:
 There is no fault in the Prophet, touching what God has ordained for him -- God's wont with those who passed away before; and God's commandment is doom decreed;
 39
-القرآن:
 الَّذِينَ يُبَلِّغُونَ رِسَالَاتِ اللَّهِ وَيَخْشَوْنَهُ وَلَا يَخْشَوْنَ أَحَدًا إِلَّا اللَّهَ ۗ وَكَفَىٰ بِاللَّهِ حَسِيبًا
-ARTHUR JOHN ARBERRY:
 who were delivering the Messages of God, and were fearing Him, and fearing not any one except Him; and God suffices as a reckoner.
 40
-القرآن:
 مَا كَانَ مُحَمَّدٌ أَبَا أَحَدٍ مِنْ رِجَالِكُمْ وَلَٰكِنْ رَسُولَ اللَّهِ وَخَاتَمَ النَّبِيِّينَ ۗ وَكَانَ اللَّهُ بِكُلِّ شَيْءٍ عَلِيمًا
-ARTHUR JOHN ARBERRY:
 Muhammad is not the father of any one of your men, but the Messenger of God, and the Seal of the Prophets; God has knowledge of everything.
 41
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا
-ARTHUR JOHN ARBERRY:
 O believers, remember God oft,
 42
-القرآن:
 وَسَبِّحُوهُ بُكْرَةً وَأَصِيلًا
-ARTHUR JOHN ARBERRY:
 and give Him glory at the dawn and in the evening.
 43
-القرآن:
 هُوَ الَّذِي يُصَلِّي عَلَيْكُمْ وَمَلَائِكَتُهُ لِيُخْرِجَكُمْ مِنَ الظُّلُمَاتِ إِلَى النُّورِ ۚ وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا
-ARTHUR JOHN ARBERRY:
 It is He who blesses you, and His angels, to bring you forth from the shadows into the light. He is All-compassionate to the believers.
 44
-القرآن:
 تَحِيَّتُهُمْ يَوْمَ يَلْقَوْنَهُ سَلَامٌ ۚ وَأَعَدَّ لَهُمْ أَجْرًا كَرِيمًا
-ARTHUR JOHN ARBERRY:
 Their greeting, on the day when they shall meet Him, will be 'Peace!' And He has prepared for them a generous wage.
 45
-القرآن:
 يَا أَيُّهَا النَّبِيُّ إِنَّا أَرْسَلْنَاكَ شَاهِدًا وَمُبَشِّرًا وَنَذِيرًا
-ARTHUR JOHN ARBERRY:
 O Prophet, We have sent thee as a witness, and good tidings to bear and warning,
 46
-القرآن:
 وَدَاعِيًا إِلَى اللَّهِ بِإِذْنِهِ وَسِرَاجًا مُنِيرًا
-ARTHUR JOHN ARBERRY:
 calling unto God by His leave, and as a light-giving lamp.
 47
-القرآن:
 وَبَشِّرِ الْمُؤْمِنِينَ بِأَنَّ لَهُمْ مِنَ اللَّهِ فَضْلًا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 Give good tidings to the believers that there awaits them with God great bounty.
 48
-القرآن:
 وَلَا تُطِعِ الْكَافِرِينَ وَالْمُنَافِقِينَ وَدَعْ أَذَاهُمْ وَتَوَكَّلْ عَلَى اللَّهِ ۚ وَكَفَىٰ بِاللَّهِ وَكِيلًا
-ARTHUR JOHN ARBERRY:
 And obey not the unbelievers and the hypocrites; heed not their hurt, but put thy trust in God; God suffices as a guardian.
 49
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نَكَحْتُمُ الْمُؤْمِنَاتِ ثُمَّ طَلَّقْتُمُوهُنَّ مِنْ قَبْلِ أَنْ تَمَسُّوهُنَّ فَمَا لَكُمْ عَلَيْهِنَّ مِنْ عِدَّةٍ تَعْتَدُّونَهَا ۖ فَمَتِّعُوهُنَّ وَسَرِّحُوهُنَّ سَرَاحًا جَمِيلًا
-ARTHUR JOHN ARBERRY:
 O believers, when you marry believing women and then divorce them before you touch them, you have no period to reckon against them; so make provision for them, and set them free with kindliness.
 50
-القرآن:
 يَا أَيُّهَا النَّبِيُّ إِنَّا أَحْلَلْنَا لَكَ أَزْوَاجَكَ اللَّاتِي آتَيْتَ أُجُورَهُنَّ وَمَا مَلَكَتْ يَمِينُكَ مِمَّا أَفَاءَ اللَّهُ عَلَيْكَ وَبَنَاتِ عَمِّكَ وَبَنَاتِ عَمَّاتِكَ وَبَنَاتِ خَالِكَ وَبَنَاتِ خَالَاتِكَ اللَّاتِي هَاجَرْنَ مَعَكَ وَامْرَأَةً مُؤْمِنَةً إِنْ وَهَبَتْ نَفْسَهَا لِلنَّبِيِّ إِنْ أَرَادَ النَّبِيُّ أَنْ يَسْتَنْكِحَهَا خَالِصَةً لَكَ مِنْ دُونِ الْمُؤْمِنِينَ ۗ قَدْ عَلِمْنَا مَا فَرَضْنَا عَلَيْهِمْ فِي أَزْوَاجِهِمْ وَمَا مَلَكَتْ أَيْمَانُهُمْ لِكَيْلَا يَكُونَ عَلَيْكَ حَرَجٌ ۗ وَكَانَ اللَّهُ غَفُورًا رَحِيمًا
-ARTHUR JOHN ARBERRY:
 O Prophet, We have made lawful for thee thy wives whom thou hast given their wages and what thy right hand owns, spoils of war that God has given thee, and the daughters of thy uncles paternal and aunts paternal, thy uncles maternal and aunts maternal, who have emigrated with thee, and any woman believer, if she give herself to the Prophet and if the Prophet desire to take her in marriage, for thee exclusively, apart from the believers -- We know what We have imposed upon them touching their wives and what their right hands own -- that there may be no fault in thee; God is All-forgiving, All-compassionate.
 51
-القرآن:
 ۞ تُرْجِي مَنْ تَشَاءُ مِنْهُنَّ وَتُؤْوِي إِلَيْكَ مَنْ تَشَاءُ ۖ وَمَنِ ابْتَغَيْتَ مِمَّنْ عَزَلْتَ فَلَا جُنَاحَ عَلَيْكَ ۚ ذَٰلِكَ أَدْنَىٰ أَنْ تَقَرَّ أَعْيُنُهُنَّ وَلَا يَحْزَنَّ وَيَرْضَيْنَ بِمَا آتَيْتَهُنَّ كُلُّهُنَّ ۚ وَاللَّهُ يَعْلَمُ مَا فِي قُلُوبِكُمْ ۚ وَكَانَ اللَّهُ عَلِيمًا حَلِيمًا
-ARTHUR JOHN ARBERRY:
 Thou mayest put off whom thou wilt of them, and whom thou wilt thou mayest take to thee; and if thou seekest any thou hast set aside there is no fault in thee. So it is likelier they will be comforted, and not sorrow, and every one of them will be well-pleased with what thou givest her. God knows what is in your hearts; God is All-knowing, All-clement.
 52
-القرآن:
 لَا يَحِلُّ لَكَ النِّسَاءُ مِنْ بَعْدُ وَلَا أَنْ تَبَدَّلَ بِهِنَّ مِنْ أَزْوَاجٍ وَلَوْ أَعْجَبَكَ حُسْنُهُنَّ إِلَّا مَا مَلَكَتْ يَمِينُكَ ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ رَقِيبًا
-ARTHUR JOHN ARBERRY:
 Thereafter women are not lawful to thee, neither for thee to take other wives in exchange for them, though their beauty please thee, except what thy right hand owns; God is watchful over everything.
 53
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَدْخُلُوا بُيُوتَ النَّبِيِّ إِلَّا أَنْ يُؤْذَنَ لَكُمْ إِلَىٰ طَعَامٍ غَيْرَ نَاظِرِينَ إِنَاهُ وَلَٰكِنْ إِذَا دُعِيتُمْ فَادْخُلُوا فَإِذَا طَعِمْتُمْ فَانْتَشِرُوا وَلَا مُسْتَأْنِسِينَ لِحَدِيثٍ ۚ إِنَّ ذَٰلِكُمْ كَانَ يُؤْذِي النَّبِيَّ فَيَسْتَحْيِي مِنْكُمْ ۖ وَاللَّهُ لَا يَسْتَحْيِي مِنَ الْحَقِّ ۚ وَإِذَا سَأَلْتُمُوهُنَّ مَتَاعًا فَاسْأَلُوهُنَّ مِنْ وَرَاءِ حِجَابٍ ۚ ذَٰلِكُمْ أَطْهَرُ لِقُلُوبِكُمْ وَقُلُوبِهِنَّ ۚ وَمَا كَانَ لَكُمْ أَنْ تُؤْذُوا رَسُولَ اللَّهِ وَلَا أَنْ تَنْكِحُوا أَزْوَاجَهُ مِنْ بَعْدِهِ أَبَدًا ۚ إِنَّ ذَٰلِكُمْ كَانَ عِنْدَ اللَّهِ عَظِيمًا
-ARTHUR JOHN ARBERRY:
 O believers, enter not the houses of the Prophet, except leave is given you for a meal, without watching for its hour. But when you are invited, then enter; and when you have had the meal, disperse, neither lingering for idle talk; that is hurtful to the Prophet, and he is ashamed before you; but God is not ashamed before the truth. And when you ask his wives for any object, ask them from behind a curtain; that is cleaner for your hearts and theirs. It is not for you to hurt God's Messenger, neither to marry his wives after him, ever; surely that would be, in God's sight, a monstrous thing.
 54
-القرآن:
 إِنْ تُبْدُوا شَيْئًا أَوْ تُخْفُوهُ فَإِنَّ اللَّهَ كَانَ بِكُلِّ شَيْءٍ عَلِيمًا
-ARTHUR JOHN ARBERRY:
 Whether you reveal anything, or whether you conceal it, surely God has knowledge of everything.
 55
-القرآن:
 لَا جُنَاحَ عَلَيْهِنَّ فِي آبَائِهِنَّ وَلَا أَبْنَائِهِنَّ وَلَا إِخْوَانِهِنَّ وَلَا أَبْنَاءِ إِخْوَانِهِنَّ وَلَا أَبْنَاءِ أَخَوَاتِهِنَّ وَلَا نِسَائِهِنَّ وَلَا مَا مَلَكَتْ أَيْمَانُهُنَّ ۗ وَاتَّقِينَ اللَّهَ ۚ إِنَّ اللَّهَ كَانَ عَلَىٰ كُلِّ شَيْءٍ شَهِيدًا
-ARTHUR JOHN ARBERRY:
 There is no fault in the Prophet's wives touching their fathers, their sons, their brothers, their brothers' sons, their sisters' sons, their women, and what their right hands own. And fear you God; surely God is witness of everything.
 56
-القرآن:
 إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا
-ARTHUR JOHN ARBERRY:
 God and His angels bless the Prophet. O believers, do you also bless him, and pray him peace.
 57
-القرآن:
 إِنَّ الَّذِينَ يُؤْذُونَ اللَّهَ وَرَسُولَهُ لَعَنَهُمُ اللَّهُ فِي الدُّنْيَا وَالْآخِرَةِ وَأَعَدَّ لَهُمْ عَذَابًا مُهِينًا
-ARTHUR JOHN ARBERRY:
 Those who hurt God and His Messenger -- them God has cursed in the present world and the world to come, and has prepared for them a humbling chastisement.
 58
-القرآن:
 وَالَّذِينَ يُؤْذُونَ الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ بِغَيْرِ مَا اكْتَسَبُوا فَقَدِ احْتَمَلُوا بُهْتَانًا وَإِثْمًا مُبِينًا
-ARTHUR JOHN ARBERRY:
 And those who hurt believing men and believing women, without that they have earned it, have laid upon themselves calumny and manifest sin.
 59
-القرآن:
 يَا أَيُّهَا النَّبِيُّ قُلْ لِأَزْوَاجِكَ وَبَنَاتِكَ وَنِسَاءِ الْمُؤْمِنِينَ يُدْنِينَ عَلَيْهِنَّ مِنْ جَلَابِيبِهِنَّ ۚ ذَٰلِكَ أَدْنَىٰ أَنْ يُعْرَفْنَ فَلَا يُؤْذَيْنَ ۗ وَكَانَ اللَّهُ غَفُورًا رَحِيمًا
-ARTHUR JOHN ARBERRY:
 O Prophet, say to thy wives and daughters and the believing women, that they draw their veils close to them; so it is likelier they will be known, and not hurt. God is All-forgiving, All-compassionate.
 60
-القرآن:
 ۞ لَئِنْ لَمْ يَنْتَهِ الْمُنَافِقُونَ وَالَّذِينَ فِي قُلُوبِهِمْ مَرَضٌ وَالْمُرْجِفُونَ فِي الْمَدِينَةِ لَنُغْرِيَنَّكَ بِهِمْ ثُمَّ لَا يُجَاوِرُونَكَ فِيهَا إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 Now; if the hypocrites do not give over, and those in whose hearts there is sickness and they that make commotion in the city, We shall assuredly urge thee against them and then they will be thy neighbours there only a little;
 61
-القرآن:
 مَلْعُونِينَ ۖ أَيْنَمَا ثُقِفُوا أُخِذُوا وَقُتِّلُوا تَقْتِيلًا
-ARTHUR JOHN ARBERRY:
 cursed they shalt be, and wheresoever they are come upon they shall be seized and slaughtered all --
 62
-القرآن:
 سُنَّةَ اللَّهِ فِي الَّذِينَ خَلَوْا مِنْ قَبْلُ ۖ وَلَنْ تَجِدَ لِسُنَّةِ اللَّهِ تَبْدِيلًا
-ARTHUR JOHN ARBERRY:
 God's wont with those who passed away before; and thou shall find no changing the wont of God.
 63
-القرآن:
 يَسْأَلُكَ النَّاسُ عَنِ السَّاعَةِ ۖ قُلْ إِنَّمَا عِلْمُهَا عِنْدَ اللَّهِ ۚ وَمَا يُدْرِيكَ لَعَلَّ السَّاعَةَ تَكُونُ قَرِيبًا
-ARTHUR JOHN ARBERRY:
 The people will question thee concerning the Hour. Say: 'The knowledge of it is only with God; what shall make thee know? Haply the Hour is nigh.'
 64
-القرآن:
 إِنَّ اللَّهَ لَعَنَ الْكَافِرِينَ وَأَعَدَّ لَهُمْ سَعِيرًا
-ARTHUR JOHN ARBERRY:
 God has cursed the unbelievers, and prepared for them a Blaze,
 65
-القرآن:
 خَالِدِينَ فِيهَا أَبَدًا ۖ لَا يَجِدُونَ وَلِيًّا وَلَا نَصِيرًا
-ARTHUR JOHN ARBERRY:
 therein to dwell for ever; they shall find neither protector nor helper.
 66
-القرآن:
 يَوْمَ تُقَلَّبُ وُجُوهُهُمْ فِي النَّارِ يَقُولُونَ يَا لَيْتَنَا أَطَعْنَا اللَّهَ وَأَطَعْنَا الرَّسُولَا
-ARTHUR JOHN ARBERRY:
 Upon the day when their faces are turned about in the Fire they shall say, 'Ah, would we had obeyed God and the Messenger!
 67
-القرآن:
 وَقَالُوا رَبَّنَا إِنَّا أَطَعْنَا سَادَتَنَا وَكُبَرَاءَنَا فَأَضَلُّونَا السَّبِيلَا
-ARTHUR JOHN ARBERRY:
 They shall say, 'Our Lord, we obeyed our chiefs and great ones, and they led us astray from the way.
 68
-القرآن:
 رَبَّنَا آتِهِمْ ضِعْفَيْنِ مِنَ الْعَذَابِ وَالْعَنْهُمْ لَعْنًا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 Our Lord, give them chastisement twofold, and curse them with a mighty curse!'
 69
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَكُونُوا كَالَّذِينَ آذَوْا مُوسَىٰ فَبَرَّأَهُ اللَّهُ مِمَّا قَالُوا ۚ وَكَانَ عِنْدَ اللَّهِ وَجِيهًا
-ARTHUR JOHN ARBERRY:
 O believers, be not as those who hurt Moses, but God declared him quit of what they said, and he was high honoured with God.
 70
-القرآن:
 يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَقُولُوا قَوْلًا سَدِيدًا
-ARTHUR JOHN ARBERRY:
 O believers, fear God, and speak words hitting the mark,
 71
-القرآن:
 يُصْلِحْ لَكُمْ أَعْمَالَكُمْ وَيَغْفِرْ لَكُمْ ذُنُوبَكُمْ ۗ وَمَنْ يُطِعِ اللَّهَ وَرَسُولَهُ فَقَدْ فَازَ فَوْزًا عَظِيمًا
-ARTHUR JOHN ARBERRY:
 and He will set right your deeds for you and will forgive you your sins. Whosoever obeys God and His Messenger has won a mighty triumph.
 72
-القرآن:
 إِنَّا عَرَضْنَا الْأَمَانَةَ عَلَى السَّمَاوَاتِ وَالْأَرْضِ وَالْجِبَالِ فَأَبَيْنَ أَنْ يَحْمِلْنَهَا وَأَشْفَقْنَ مِنْهَا وَحَمَلَهَا الْإِنْسَانُ ۖ إِنَّهُ كَانَ ظَلُومًا جَهُولًا
-ARTHUR JOHN ARBERRY:
 We offered the trust to the heavens and the earth and the mountains, but they refused to carry it and were afraid of it; and man carried it. Surely he is sinful, very foolish.
 73
-القرآن:
 لِيُعَذِّبَ اللَّهُ الْمُنَافِقِينَ وَالْمُنَافِقَاتِ وَالْمُشْرِكِينَ وَالْمُشْرِكَاتِ وَيَتُوبَ اللَّهُ عَلَى الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ ۗ وَكَانَ اللَّهُ غَفُورًا رَحِيمًا
-ARTHUR JOHN ARBERRY:
 That God may chastise the hypocrites, men and women alike, and the idolaters, men and women alike; and that God may turn again unto the believers, men and women alike. God is All-forgiving, All-compassionate.

@@ -1,557 +1,335 @@
 ﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
 IN THE NAME OF GOD, THE MERCIFUL, THE COMPASSIONATE
 1
-القرآن:
 سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ لِنُرِيَهُ مِنْ آيَاتِنَا ۚ إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ
-ARTHUR JOHN ARBERRY:
 Glory be to Him, who carried His servant by night from the Holy Mosque to the Further Mosque the precincts of which We have blessed, that We might show him some of Our signs. He is the All-hearing, the All-seeing.
 2
-القرآن:
 وَآتَيْنَا مُوسَى الْكِتَابَ وَجَعَلْنَاهُ هُدًى لِبَنِي إِسْرَائِيلَ أَلَّا تَتَّخِذُوا مِنْ دُونِي وَكِيلًا
-ARTHUR JOHN ARBERRY:
 And We gave Moses the Book, and made it a guidance to the Children of Israel: 'Take not unto yourselves any guardian apart from Me.'
 3
-القرآن:
 ذُرِّيَّةَ مَنْ حَمَلْنَا مَعَ نُوحٍ ۚ إِنَّهُ كَانَ عَبْدًا شَكُورًا
-ARTHUR JOHN ARBERRY:
 The seed of those We bore with Noah; he was a thankful servant.
 4
-القرآن:
 وَقَضَيْنَا إِلَىٰ بَنِي إِسْرَائِيلَ فِي الْكِتَابِ لَتُفْسِدُنَّ فِي الْأَرْضِ مَرَّتَيْنِ وَلَتَعْلُنَّ عُلُوًّا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 And We decreed for the Children of Israel in the Book: 'You shall do corruption in the earth twice, and you shall ascend exceeding high.'
 5
-القرآن:
 فَإِذَا جَاءَ وَعْدُ أُولَاهُمَا بَعَثْنَا عَلَيْكُمْ عِبَادًا لَنَا أُولِي بَأْسٍ شَدِيدٍ فَجَاسُوا خِلَالَ الدِّيَارِ ۚ وَكَانَ وَعْدًا مَفْعُولًا
-ARTHUR JOHN ARBERRY:
 So, when the promise of the first of these came to pass, We sent against you servants of Ours, men of great might, and they went through the habitations, and it was a promise performed.
 6
-القرآن:
 ثُمَّ رَدَدْنَا لَكُمُ الْكَرَّةَ عَلَيْهِمْ وَأَمْدَدْنَاكُمْ بِأَمْوَالٍ وَبَنِينَ وَجَعَلْنَاكُمْ أَكْثَرَ نَفِيرًا
-ARTHUR JOHN ARBERRY:
 Then We gave back to you the turn to prevail over them, and We succoured you with wealth and children, and We made you a greater host.
 7
-القرآن:
 إِنْ أَحْسَنْتُمْ أَحْسَنْتُمْ لِأَنْفُسِكُمْ ۖ وَإِنْ أَسَأْتُمْ فَلَهَا ۚ فَإِذَا جَاءَ وَعْدُ الْآخِرَةِ لِيَسُوءُوا وُجُوهَكُمْ وَلِيَدْخُلُوا الْمَسْجِدَ كَمَا دَخَلُوهُ أَوَّلَ مَرَّةٍ وَلِيُتَبِّرُوا مَا عَلَوْا تَتْبِيرًا
-ARTHUR JOHN ARBERRY:
 'If you do good, it is your own souls you do good to, and if you do evil it is to them likewise.' Then, when the promise of the second came to pass, We sent against you Our servants to discountenance you, and to enter the Temple, as they entered it the first time, and to destroy utterly that which they ascended to.
 8
-القرآن:
 عَسَىٰ رَبُّكُمْ أَنْ يَرْحَمَكُمْ ۚ وَإِنْ عُدْتُمْ عُدْنَا ۘ وَجَعَلْنَا جَهَنَّمَ لِلْكَافِرِينَ حَصِيرًا
-ARTHUR JOHN ARBERRY:
 Perchance your Lord will have mercy upon you; but if you return, We shall return; and We have made Gehenna a prison for the unbelievers.
 9
-القرآن:
 إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ وَيُبَشِّرُ الْمُؤْمِنِينَ الَّذِينَ يَعْمَلُونَ الصَّالِحَاتِ أَنَّ لَهُمْ أَجْرًا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 Surely this Koran guides to the way that is straightest and gives good tidings to the believers who do deeds of righteousness, that theirs shall be a great wage,
 10
-القرآن:
 وَأَنَّ الَّذِينَ لَا يُؤْمِنُونَ بِالْآخِرَةِ أَعْتَدْنَا لَهُمْ عَذَابًا أَلِيمًا
-ARTHUR JOHN ARBERRY:
 and that those who do not believe in the world to come -- we have prepared for them a painful chastisement.
 11
-القرآن:
 وَيَدْعُ الْإِنْسَانُ بِالشَّرِّ دُعَاءَهُ بِالْخَيْرِ ۖ وَكَانَ الْإِنْسَانُ عَجُولًا
-ARTHUR JOHN ARBERRY:
 Man prays for evil, as he prays for good; man is ever hasty.
 12
-القرآن:
 وَجَعَلْنَا اللَّيْلَ وَالنَّهَارَ آيَتَيْنِ ۖ فَمَحَوْنَا آيَةَ اللَّيْلِ وَجَعَلْنَا آيَةَ النَّهَارِ مُبْصِرَةً لِتَبْتَغُوا فَضْلًا مِنْ رَبِّكُمْ وَلِتَعْلَمُوا عَدَدَ السِّنِينَ وَالْحِسَابَ ۚ وَكُلَّ شَيْءٍ فَصَّلْنَاهُ تَفْصِيلًا
-ARTHUR JOHN ARBERRY:
 We have appointed the night and the day as two signs; then We have blotted out the sign of the night, and made the sign of the day to see, and that you may seek bounty from your Lord, and that you may know the number of the years, and the reckoning; and everything We have distinguished very distinctly.
 13
-القرآن:
 وَكُلَّ إِنْسَانٍ أَلْزَمْنَاهُ طَائِرَهُ فِي عُنُقِهِ ۖ وَنُخْرِجُ لَهُ يَوْمَ الْقِيَامَةِ كِتَابًا يَلْقَاهُ مَنْشُورًا
-ARTHUR JOHN ARBERRY:
 And every man -- We have fastened to him his bird of omen upon his neck; and We shall bring forth for him, on the Day of Resurrection, a book he shall find spread wide open.
 14
-القرآن:
 اقْرَأْ كِتَابَكَ كَفَىٰ بِنَفْسِكَ الْيَوْمَ عَلَيْكَ حَسِيبًا
-ARTHUR JOHN ARBERRY:
 'Read thy book! Thy soul suffices thee this day as a reckoner against thee.'
 15
-القرآن:
 مَنِ اهْتَدَىٰ فَإِنَّمَا يَهْتَدِي لِنَفْسِهِ ۖ وَمَنْ ضَلَّ فَإِنَّمَا يَضِلُّ عَلَيْهَا ۚ وَلَا تَزِرُ وَازِرَةٌ وِزْرَ أُخْرَىٰ ۗ وَمَا كُنَّا مُعَذِّبِينَ حَتَّىٰ نَبْعَثَ رَسُولًا
-ARTHUR JOHN ARBERRY:
 Whosoever is guided, is only guided to his own gain, and whosoever goes astray, it is only to his own loss; no soul laden bears the load of another. We never chastise, until We send forth a Messenger.
 16
-القرآن:
 وَإِذَا أَرَدْنَا أَنْ نُهْلِكَ قَرْيَةً أَمَرْنَا مُتْرَفِيهَا فَفَسَقُوا فِيهَا فَحَقَّ عَلَيْهَا الْقَوْلُ فَدَمَّرْنَاهَا تَدْمِيرًا
-ARTHUR JOHN ARBERRY:
 And when We desire to destroy a city, We command its men who live at ease, and they commit ungodliness therein, then the Word is realized against it, and We destroy it utterly.
 17
-القرآن:
 وَكَمْ أَهْلَكْنَا مِنَ الْقُرُونِ مِنْ بَعْدِ نُوحٍ ۗ وَكَفَىٰ بِرَبِّكَ بِذُنُوبِ عِبَادِهِ خَبِيرًا بَصِيرًا
-ARTHUR JOHN ARBERRY:
 How many generations We have destroyed after Noah! Thy Lord suffices as one who is aware of and sees the sins of His servants.
 18
-القرآن:
 مَنْ كَانَ يُرِيدُ الْعَاجِلَةَ عَجَّلْنَا لَهُ فِيهَا مَا نَشَاءُ لِمَنْ نُرِيدُ ثُمَّ جَعَلْنَا لَهُ جَهَنَّمَ يَصْلَاهَا مَذْمُومًا مَدْحُورًا
-ARTHUR JOHN ARBERRY:
 Whosoever desires this hasty world, We hasten for him therein what We will unto whomsoever We desire; then We appoint for him Gehenna wherein he shall roast, condemned and rejected.
 19
-القرآن:
 وَمَنْ أَرَادَ الْآخِرَةَ وَسَعَىٰ لَهَا سَعْيَهَا وَهُوَ مُؤْمِنٌ فَأُولَٰئِكَ كَانَ سَعْيُهُمْ مَشْكُورًا
-ARTHUR JOHN ARBERRY:
 And whosoever desires the world to come and strives after it as he should, being a believer -- those, their striving shall be thanked.
 20
-القرآن:
 كُلًّا نُمِدُّ هَٰؤُلَاءِ وَهَٰؤُلَاءِ مِنْ عَطَاءِ رَبِّكَ ۚ وَمَا كَانَ عَطَاءُ رَبِّكَ مَحْظُورًا
-ARTHUR JOHN ARBERRY:
 Each We succour, these and those, from thy Lord's gift; and thy Lord's gift is not confined.
 21
-القرآن:
 انْظُرْ كَيْفَ فَضَّلْنَا بَعْضَهُمْ عَلَىٰ بَعْضٍ ۚ وَلَلْآخِرَةُ أَكْبَرُ دَرَجَاتٍ وَأَكْبَرُ تَفْضِيلًا
-ARTHUR JOHN ARBERRY:
 Behold, how We prefer some of them over others! And surely the world to come is greater in ranks, greater in preferment.
 22
-القرآن:
 لَا تَجْعَلْ مَعَ اللَّهِ إِلَٰهًا آخَرَ فَتَقْعُدَ مَذْمُومًا مَخْذُولًا
-ARTHUR JOHN ARBERRY:
 Set not up with God another god, or thou wilt sit condemned and forsaken.
 23
-القرآن:
 ۞ وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا ۚ إِمَّا يَبْلُغَنَّ عِنْدَكَ الْكِبَرَ أَحَدُهُمَا أَوْ كِلَاهُمَا فَلَا تَقُلْ لَهُمَا أُفٍّ وَلَا تَنْهَرْهُمَا وَقُلْ لَهُمَا قَوْلًا كَرِيمًا
-ARTHUR JOHN ARBERRY:
 Thy Lord has decreed you shall not serve any but Him, and to be good to parents, whether one or both of them attains old age with thee; say not to them 'Fie' neither chide them, but speak unto them words respectful,
 24
-القرآن:
 وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ مِنَ الرَّحْمَةِ وَقُلْ رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
-ARTHUR JOHN ARBERRY:
 and lower to them the wing of humbleness out of mercy and say; 'My Lord, have mercy upon them, as they raised me up when I was little.'
 25
-القرآن:
 رَبُّكُمْ أَعْلَمُ بِمَا فِي نُفُوسِكُمْ ۚ إِنْ تَكُونُوا صَالِحِينَ فَإِنَّهُ كَانَ لِلْأَوَّابِينَ غَفُورًا
-ARTHUR JOHN ARBERRY:
 Your Lord knows very well what is in your hearts if you are righteous, for He is All-forgiving to those who are penitent.
 26
-القرآن:
 وَآتِ ذَا الْقُرْبَىٰ حَقَّهُ وَالْمِسْكِينَ وَابْنَ السَّبِيلِ وَلَا تُبَذِّرْ تَبْذِيرًا
-ARTHUR JOHN ARBERRY:
 And give the kinsman his right, and the needy, and the traveller; and never squander;
 27
-القرآن:
 إِنَّ الْمُبَذِّرِينَ كَانُوا إِخْوَانَ الشَّيَاطِينِ ۖ وَكَانَ الشَّيْطَانُ لِرَبِّهِ كَفُورًا
-ARTHUR JOHN ARBERRY:
 the squanderers are brothers of Satan, and Satan is unthankful to his Lord.
 28
-القرآن:
 وَإِمَّا تُعْرِضَنَّ عَنْهُمُ ابْتِغَاءَ رَحْمَةٍ مِنْ رَبِّكَ تَرْجُوهَا فَقُلْ لَهُمْ قَوْلًا مَيْسُورًا
-ARTHUR JOHN ARBERRY:
 But if thou turnest from them, seeking mercy from thy Lord that thou hopest for, then speak unto them gentle words.
 29
-القرآن:
 وَلَا تَجْعَلْ يَدَكَ مَغْلُولَةً إِلَىٰ عُنُقِكَ وَلَا تَبْسُطْهَا كُلَّ الْبَسْطِ فَتَقْعُدَ مَلُومًا مَحْسُورًا
-ARTHUR JOHN ARBERRY:
 And keep not thy hand chained to thy neck, nor outspread it widespread altogether, or thou wilt sit reproached and denuded.
 30
-القرآن:
 إِنَّ رَبَّكَ يَبْسُطُ الرِّزْقَ لِمَنْ يَشَاءُ وَيَقْدِرُ ۚ إِنَّهُ كَانَ بِعِبَادِهِ خَبِيرًا بَصِيرًا
-ARTHUR JOHN ARBERRY:
 Surely thy Lord outspreads and straitens His provision unto whom He will; surely He is aware of and sees His servants.
 31
-القرآن:
 وَلَا تَقْتُلُوا أَوْلَادَكُمْ خَشْيَةَ إِمْلَاقٍ ۖ نَحْنُ نَرْزُقُهُمْ وَإِيَّاكُمْ ۚ إِنَّ قَتْلَهُمْ كَانَ خِطْئًا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 And slay not your children for fear of poverty; We will provide for you and them; surely the slaying of them is a grievous sin.
 32
-القرآن:
 وَلَا تَقْرَبُوا الزِّنَا ۖ إِنَّهُ كَانَ فَاحِشَةً وَسَاءَ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 And approach not fornication; surely it is an indecency, and evil as a way.
 33
-القرآن:
 وَلَا تَقْتُلُوا النَّفْسَ الَّتِي حَرَّمَ اللَّهُ إِلَّا بِالْحَقِّ ۗ وَمَنْ قُتِلَ مَظْلُومًا فَقَدْ جَعَلْنَا لِوَلِيِّهِ سُلْطَانًا فَلَا يُسْرِفْ فِي الْقَتْلِ ۖ إِنَّهُ كَانَ مَنْصُورًا
-ARTHUR JOHN ARBERRY:
 And slay not the soul God has forbidden, except by right. Whosoever is slain unjustly, We have appointed to his next-of-kin authority; but let him not exceed in slaying; he shall be helped.
 34
-القرآن:
 وَلَا تَقْرَبُوا مَالَ الْيَتِيمِ إِلَّا بِالَّتِي هِيَ أَحْسَنُ حَتَّىٰ يَبْلُغَ أَشُدَّهُ ۚ وَأَوْفُوا بِالْعَهْدِ ۖ إِنَّ الْعَهْدَ كَانَ مَسْئُولًا
-ARTHUR JOHN ARBERRY:
 And do not approach the property of the orphan save in the fairest manner, until he is of age. And fulfil the covenant; surely the covenant shall be questioned of.
 35
-القرآن:
 وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ ۚ ذَٰلِكَ خَيْرٌ وَأَحْسَنُ تَأْوِيلًا
-ARTHUR JOHN ARBERRY:
 And fill up the measure when you measure, and weigh with the straight balance; that is better and fairer in the issue.
 36
-القرآن:
 وَلَا تَقْفُ مَا لَيْسَ لَكَ بِهِ عِلْمٌ ۚ إِنَّ السَّمْعَ وَالْبَصَرَ وَالْفُؤَادَ كُلُّ أُولَٰئِكَ كَانَ عَنْهُ مَسْئُولًا
-ARTHUR JOHN ARBERRY:
 And pursue not that thou hast no knowledge of; the hearing, the sight, the heart -- all of those shall be questioned of.
 37
-القرآن:
 وَلَا تَمْشِ فِي الْأَرْضِ مَرَحًا ۖ إِنَّكَ لَنْ تَخْرِقَ الْأَرْضَ وَلَنْ تَبْلُغَ الْجِبَالَ طُولًا
-ARTHUR JOHN ARBERRY:
 And walk not in the earth exultantly; certainly thou wilt never tear the earth open, nor attain the mountains in height.
 38
-القرآن:
 كُلُّ ذَٰلِكَ كَانَ سَيِّئُهُ عِنْدَ رَبِّكَ مَكْرُوهًا
-ARTHUR JOHN ARBERRY:
 All of that -- the wickedness of it is hateful in the sight of thy Lord has revealed to thee:
 39
-القرآن:
 ذَٰلِكَ مِمَّا أَوْحَىٰ إِلَيْكَ رَبُّكَ مِنَ الْحِكْمَةِ ۗ وَلَا تَجْعَلْ مَعَ اللَّهِ إِلَٰهًا آخَرَ فَتُلْقَىٰ فِي جَهَنَّمَ مَلُومًا مَدْحُورًا
-ARTHUR JOHN ARBERRY:
 That is of the wisdom thy Lord set not up with God another god, or thou wilt be cast into Gehenna, reproached and rejected.
 40
-القرآن:
 أَفَأَصْفَاكُمْ رَبُّكُمْ بِالْبَنِينَ وَاتَّخَذَ مِنَ الْمَلَائِكَةِ إِنَاثًا ۚ إِنَّكُمْ لَتَقُولُونَ قَوْلًا عَظِيمًا
-ARTHUR JOHN ARBERRY:
 What, has your Lord favoured you with sons and taken to Himself from the angels females? Surely it is a monstrous thing you are saying!
 41
-القرآن:
 وَلَقَدْ صَرَّفْنَا فِي هَٰذَا الْقُرْآنِ لِيَذَّكَّرُوا وَمَا يَزِيدُهُمْ إِلَّا نُفُورًا
-ARTHUR JOHN ARBERRY:
 We have turned about in this Koran, that they may remember; and it increases them only in aversion.
 42
-القرآن:
 قُلْ لَوْ كَانَ مَعَهُ آلِهَةٌ كَمَا يَقُولُونَ إِذًا لَابْتَغَوْا إِلَىٰ ذِي الْعَرْشِ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 Say: 'If there had been other gods with Him, as they say, in that case assuredly they would have sought a way unto the Lord of the Throne.' Glory be to Him!
 43
-القرآن:
 سُبْحَانَهُ وَتَعَالَىٰ عَمَّا يَقُولُونَ عُلُوًّا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 High indeed be He exalted above that they say!
 44
-القرآن:
 تُسَبِّحُ لَهُ السَّمَاوَاتُ السَّبْعُ وَالْأَرْضُ وَمَنْ فِيهِنَّ ۚ وَإِنْ مِنْ شَيْءٍ إِلَّا يُسَبِّحُ بِحَمْدِهِ وَلَٰكِنْ لَا تَفْقَهُونَ تَسْبِيحَهُمْ ۗ إِنَّهُ كَانَ حَلِيمًا غَفُورًا
-ARTHUR JOHN ARBERRY:
 The seven heavens and the earth, and whosoever in them is, extol Him; nothing is, that does not proclaim His praise, but you do not understand their extolling. Surely He is All-clement, All-forgiving.
 45
-القرآن:
 وَإِذَا قَرَأْتَ الْقُرْآنَ جَعَلْنَا بَيْنَكَ وَبَيْنَ الَّذِينَ لَا يُؤْمِنُونَ بِالْآخِرَةِ حِجَابًا مَسْتُورًا
-ARTHUR JOHN ARBERRY:
 When thou recitest the Koran, We place between thee, and those who do not believe in the world to come, a curtain obstructing,
 46
-القرآن:
 وَجَعَلْنَا عَلَىٰ قُلُوبِهِمْ أَكِنَّةً أَنْ يَفْقَهُوهُ وَفِي آذَانِهِمْ وَقْرًا ۚ وَإِذَا ذَكَرْتَ رَبَّكَ فِي الْقُرْآنِ وَحْدَهُ وَلَّوْا عَلَىٰ أَدْبَارِهِمْ نُفُورًا
-ARTHUR JOHN ARBERRY:
 and We lay veils upon their hearts lest they understand it, and in their ears heaviness. And when thou mentionest thy Lord only in the Koran, they turn in their traces in aversion.
 47
-القرآن:
 نَحْنُ أَعْلَمُ بِمَا يَسْتَمِعُونَ بِهِ إِذْ يَسْتَمِعُونَ إِلَيْكَ وَإِذْ هُمْ نَجْوَىٰ إِذْ يَقُولُ الظَّالِمُونَ إِنْ تَتَّبِعُونَ إِلَّا رَجُلًا مَسْحُورًا
-ARTHUR JOHN ARBERRY:
 We know very well how they listen when they listen to thee, and when they conspire, when the evildoers say, 'You are only following a man bewitched!'
 48
-القرآن:
 انْظُرْ كَيْفَ ضَرَبُوا لَكَ الْأَمْثَالَ فَضَلُّوا فَلَا يَسْتَطِيعُونَ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 Behold, how they strike similitudes for thee, and go astray, and cannot find a way!
 49
-القرآن:
 وَقَالُوا أَإِذَا كُنَّا عِظَامًا وَرُفَاتًا أَإِنَّا لَمَبْعُوثُونَ خَلْقًا جَدِيدًا
-ARTHUR JOHN ARBERRY:
 They say, 'What, when we are bones and broken bits, shall we really be raised up again in a new creation?'
 50
-القرآن:
 ۞ قُلْ كُونُوا حِجَارَةً أَوْ حَدِيدًا
-ARTHUR JOHN ARBERRY:
 Say: 'Let you be stones, or iron,
 51
-القرآن:
 أَوْ خَلْقًا مِمَّا يَكْبُرُ فِي صُدُورِكُمْ ۚ فَسَيَقُولُونَ مَنْ يُعِيدُنَا ۖ قُلِ الَّذِي فَطَرَكُمْ أَوَّلَ مَرَّةٍ ۚ فَسَيُنْغِضُونَ إِلَيْكَ رُءُوسَهُمْ وَيَقُولُونَ مَتَىٰ هُوَ ۖ قُلْ عَسَىٰ أَنْ يَكُونَ قَرِيبًا
-ARTHUR JOHN ARBERRY:
 or some creation yet more monstrous in your minds!' Then they will say, 'Who will bring us back?' Say: 'He who originated you the first time.' Then they will shake their heads at thee, and they will say, 'When will it be?' Say: 'It is possible that it may be nigh,
 52
-القرآن:
 يَوْمَ يَدْعُوكُمْ فَتَسْتَجِيبُونَ بِحَمْدِهِ وَتَظُنُّونَ إِنْ لَبِثْتُمْ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 on the day when He will call you, and you will answer praising Him, and you will think you have but tarried a little.'
 53
-القرآن:
 وَقُلْ لِعِبَادِي يَقُولُوا الَّتِي هِيَ أَحْسَنُ ۚ إِنَّ الشَّيْطَانَ يَنْزَغُ بَيْنَهُمْ ۚ إِنَّ الشَّيْطَانَ كَانَ لِلْإِنْسَانِ عَدُوًّا مُبِينًا
-ARTHUR JOHN ARBERRY:
 And say to My servants, that they say words that are kindlier. For surely Satan provokes strife between them, and Satan is ever a manifest foe to man.
 54
-القرآن:
 رَبُّكُمْ أَعْلَمُ بِكُمْ ۖ إِنْ يَشَأْ يَرْحَمْكُمْ أَوْ إِنْ يَشَأْ يُعَذِّبْكُمْ ۚ وَمَا أَرْسَلْنَاكَ عَلَيْهِمْ وَكِيلًا
-ARTHUR JOHN ARBERRY:
 Your Lord knows you very well; if He will, He will have mercy on you, or, if He will, He will chastise you. We sent thee not to be a guardian over them.
 55
-القرآن:
 وَرَبُّكَ أَعْلَمُ بِمَنْ فِي السَّمَاوَاتِ وَالْأَرْضِ ۗ وَلَقَدْ فَضَّلْنَا بَعْضَ النَّبِيِّينَ عَلَىٰ بَعْضٍ ۖ وَآتَيْنَا دَاوُودَ زَبُورًا
-ARTHUR JOHN ARBERRY:
 And thy Lord knows very well all who are in the heavens and the earth; and We have preferred some Prophets over others; and We gave to David Psalms.
 56
-القرآن:
 قُلِ ادْعُوا الَّذِينَ زَعَمْتُمْ مِنْ دُونِهِ فَلَا يَمْلِكُونَ كَشْفَ الضُّرِّ عَنْكُمْ وَلَا تَحْوِيلًا
-ARTHUR JOHN ARBERRY:
 Say: 'Call on those you asserted apart from Him; they have no power to remove affliction from you, or to transfer it.
 57
-القرآن:
 أُولَٰئِكَ الَّذِينَ يَدْعُونَ يَبْتَغُونَ إِلَىٰ رَبِّهِمُ الْوَسِيلَةَ أَيُّهُمْ أَقْرَبُ وَيَرْجُونَ رَحْمَتَهُ وَيَخَافُونَ عَذَابَهُ ۚ إِنَّ عَذَابَ رَبِّكَ كَانَ مَحْذُورًا
-ARTHUR JOHN ARBERRY:
 Those they call upon are themselves seeking the means to come to their Lord, which of them shall be nearer; they hope for His mercy, and fear His chastisement. Surely thy Lord's chastisement is a thing to beware of.
 58
-القرآن:
 وَإِنْ مِنْ قَرْيَةٍ إِلَّا نَحْنُ مُهْلِكُوهَا قَبْلَ يَوْمِ الْقِيَامَةِ أَوْ مُعَذِّبُوهَا عَذَابًا شَدِيدًا ۚ كَانَ ذَٰلِكَ فِي الْكِتَابِ مَسْطُورًا
-ARTHUR JOHN ARBERRY:
 No city is there, but We shall destroy it before the Day of Resurrection, or We shall chastise it with a terrible chastisement; that is in the Book inscribed.
 59
-القرآن:
 وَمَا مَنَعَنَا أَنْ نُرْسِلَ بِالْآيَاتِ إِلَّا أَنْ كَذَّبَ بِهَا الْأَوَّلُونَ ۚ وَآتَيْنَا ثَمُودَ النَّاقَةَ مُبْصِرَةً فَظَلَمُوا بِهَا ۚ وَمَا نُرْسِلُ بِالْآيَاتِ إِلَّا تَخْوِيفًا
-ARTHUR JOHN ARBERRY:
 Naught prevented Us from sending the signs but that the ancients cried lies to them; and We brought Thamood the She-camel visible, but they did her wrong. And We do not send the signs, except to frighten.
 60
-القرآن:
 وَإِذْ قُلْنَا لَكَ إِنَّ رَبَّكَ أَحَاطَ بِالنَّاسِ ۚ وَمَا جَعَلْنَا الرُّؤْيَا الَّتِي أَرَيْنَاكَ إِلَّا فِتْنَةً لِلنَّاسِ وَالشَّجَرَةَ الْمَلْعُونَةَ فِي الْقُرْآنِ ۚ وَنُخَوِّفُهُمْ فَمَا يَزِيدُهُمْ إِلَّا طُغْيَانًا كَبِيرًا
-ARTHUR JOHN ARBERRY:
 And when We said to thee, 'Surely thy Lord encompasses men,' and We made the vision that We showed thee and the tree cursed in the Koran to be only a trial for men; and We frighten them, but it only increases them in great insolence.
 61
-القرآن:
 وَإِذْ قُلْنَا لِلْمَلَائِكَةِ اسْجُدُوا لِآدَمَ فَسَجَدُوا إِلَّا إِبْلِيسَ قَالَ أَأَسْجُدُ لِمَنْ خَلَقْتَ طِينًا
-ARTHUR JOHN ARBERRY:
 And when We said to the angels, 'Bow yourselves to Adam'; so they bowed themselves, save Iblis; he said,, 'Shall I bow myself unto one Thou hast created of clay?'
 62
-القرآن:
 قَالَ أَرَأَيْتَكَ هَٰذَا الَّذِي كَرَّمْتَ عَلَيَّ لَئِنْ أَخَّرْتَنِ إِلَىٰ يَوْمِ الْقِيَامَةِ لَأَحْتَنِكَنَّ ذُرِّيَّتَهُ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 He said, 'What thinkest Thou? This whom Thou hast honoured above me -- if Thou deferrest me to the Day of Resurrection I shall assuredly master his seed, save a few.'
 63
-القرآن:
 قَالَ اذْهَبْ فَمَنْ تَبِعَكَ مِنْهُمْ فَإِنَّ جَهَنَّمَ جَزَاؤُكُمْ جَزَاءً مَوْفُورًا
-ARTHUR JOHN ARBERRY:
 Said He, 'Depart! Those of them that follow thee -- surely Gehenna shall be your recompense, an ample recompense!
 64
-القرآن:
 وَاسْتَفْزِزْ مَنِ اسْتَطَعْتَ مِنْهُمْ بِصَوْتِكَ وَأَجْلِبْ عَلَيْهِمْ بِخَيْلِكَ وَرَجِلِكَ وَشَارِكْهُمْ فِي الْأَمْوَالِ وَالْأَوْلَادِ وَعِدْهُمْ ۚ وَمَا يَعِدُهُمُ الشَّيْطَانُ إِلَّا غُرُورًا
-ARTHUR JOHN ARBERRY:
 And startle whomsoever of them thou canst with thy voice; and rally against them thy horsemen and thy foot, and share with them in their wealth and their children, and promise them!' But Satan promises them naught, except delusion.
 65
-القرآن:
 إِنَّ عِبَادِي لَيْسَ لَكَ عَلَيْهِمْ سُلْطَانٌ ۚ وَكَفَىٰ بِرَبِّكَ وَكِيلًا
-ARTHUR JOHN ARBERRY:
 'Surely over My servants thou shalt have no authority.' Thy Lord suffices as a guardian.
 66
-القرآن:
 رَبُّكُمُ الَّذِي يُزْجِي لَكُمُ الْفُلْكَ فِي الْبَحْرِ لِتَبْتَغُوا مِنْ فَضْلِهِ ۚ إِنَّهُ كَانَ بِكُمْ رَحِيمًا
-ARTHUR JOHN ARBERRY:
 Your Lord it is who drives for you the ships on the sea that you may seek His bounty; surely He is All-compassionate towards you.
 67
-القرآن:
 وَإِذَا مَسَّكُمُ الضُّرُّ فِي الْبَحْرِ ضَلَّ مَنْ تَدْعُونَ إِلَّا إِيَّاهُ ۖ فَلَمَّا نَجَّاكُمْ إِلَى الْبَرِّ أَعْرَضْتُمْ ۚ وَكَانَ الْإِنْسَانُ كَفُورًا
-ARTHUR JOHN ARBERRY:
 And when affliction visits you upon the sea, then there go astray those on whom you call except Him; and when He delivers you to land, you turn away; man is ever unthankful.
 68
-القرآن:
 أَفَأَمِنْتُمْ أَنْ يَخْسِفَ بِكُمْ جَانِبَ الْبَرِّ أَوْ يُرْسِلَ عَلَيْكُمْ حَاصِبًا ثُمَّ لَا تَجِدُوا لَكُمْ وَكِيلًا
-ARTHUR JOHN ARBERRY:
 Do you feel secure that He will not cause the shore to swallow you up, or loose against you a squall of pebbles, then you will find no guardian for you?
 69
-القرآن:
 أَمْ أَمِنْتُمْ أَنْ يُعِيدَكُمْ فِيهِ تَارَةً أُخْرَىٰ فَيُرْسِلَ عَلَيْكُمْ قَاصِفًا مِنَ الرِّيحِ فَيُغْرِقَكُمْ بِمَا كَفَرْتُمْ ۙ ثُمَّ لَا تَجِدُوا لَكُمْ عَلَيْنَا بِهِ تَبِيعًا
-ARTHUR JOHN ARBERRY:
 Or do you feel secure that He will not send you back into it a second time, and loose against you a hurricane of wind and drown you for your thanklessness, then you will find no prosecutor for you against Us?
 70
-القرآن:
 ۞ وَلَقَدْ كَرَّمْنَا بَنِي آدَمَ وَحَمَلْنَاهُمْ فِي الْبَرِّ وَالْبَحْرِ وَرَزَقْنَاهُمْ مِنَ الطَّيِّبَاتِ وَفَضَّلْنَاهُمْ عَلَىٰ كَثِيرٍ مِمَّنْ خَلَقْنَا تَفْضِيلًا
-ARTHUR JOHN ARBERRY:
 We have honoured the Children of Adam and carried them on land and sea, and provided them with good things, and preferred them greatly over many of those We created.
 71
-القرآن:
 يَوْمَ نَدْعُو كُلَّ أُنَاسٍ بِإِمَامِهِمْ ۖ فَمَنْ أُوتِيَ كِتَابَهُ بِيَمِينِهِ فَأُولَٰئِكَ يَقْرَءُونَ كِتَابَهُمْ وَلَا يُظْلَمُونَ فَتِيلًا
-ARTHUR JOHN ARBERRY:
 On the day when We shall call all men with their record, and whoso is given his book in his right hand -- those shall read their book, and they shall not be wronged a single date-thread.
 72
-القرآن:
 وَمَنْ كَانَ فِي هَٰذِهِ أَعْمَىٰ فَهُوَ فِي الْآخِرَةِ أَعْمَىٰ وَأَضَلُّ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 And whosoever is blind in this world shall be blind in the world to come, and he shall be even further astray from the way.
 73
-القرآن:
 وَإِنْ كَادُوا لَيَفْتِنُونَكَ عَنِ الَّذِي أَوْحَيْنَا إِلَيْكَ لِتَفْتَرِيَ عَلَيْنَا غَيْرَهُ ۖ وَإِذًا لَاتَّخَذُوكَ خَلِيلًا
-ARTHUR JOHN ARBERRY:
 Indeed they were near to seducing thee from that We revealed to thee, that thou mightest forge against Us another, and then they would surely have taken thee as a friend;
 74
-القرآن:
 وَلَوْلَا أَنْ ثَبَّتْنَاكَ لَقَدْ كِدْتَ تَرْكَنُ إِلَيْهِمْ شَيْئًا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 and had We not confirmed thee, surely thou wert near to inclining unto them a very little;
 75
-القرآن:
 إِذًا لَأَذَقْنَاكَ ضِعْفَ الْحَيَاةِ وَضِعْفَ الْمَمَاتِ ثُمَّ لَا تَجِدُ لَكَ عَلَيْنَا نَصِيرًا
-ARTHUR JOHN ARBERRY:
 then would We have let thee taste the double of life and the double of death; and then thou wouldst have found none to help thee against Us.
 76
-القرآن:
 وَإِنْ كَادُوا لَيَسْتَفِزُّونَكَ مِنَ الْأَرْضِ لِيُخْرِجُوكَ مِنْهَا ۖ وَإِذًا لَا يَلْبَثُونَ خِلَافَكَ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 Indeed they were near to startling thee from the land, to expel thee from it, and then they would have tarried after thee only a little --
 77
-القرآن:
 سُنَّةَ مَنْ قَدْ أَرْسَلْنَا قَبْلَكَ مِنْ رُسُلِنَا ۖ وَلَا تَجِدُ لِسُنَّتِنَا تَحْوِيلًا
-ARTHUR JOHN ARBERRY:
 the wont of those We sent before thee of Our Messengers; thou wilt find no change to Our wont.
 78
-القرآن:
 أَقِمِ الصَّلَاةَ لِدُلُوكِ الشَّمْسِ إِلَىٰ غَسَقِ اللَّيْلِ وَقُرْآنَ الْفَجْرِ ۖ إِنَّ قُرْآنَ الْفَجْرِ كَانَ مَشْهُودًا
-ARTHUR JOHN ARBERRY:
 Perform the prayer at the sinking of the sun to the darkening of the night and the recital of dawn; surely the recital of dawn is witnessed.
 79
-القرآن:
 وَمِنَ اللَّيْلِ فَتَهَجَّدْ بِهِ نَافِلَةً لَكَ عَسَىٰ أَنْ يَبْعَثَكَ رَبُّكَ مَقَامًا مَحْمُودًا
-ARTHUR JOHN ARBERRY:
 And as for the night, keep vigil a part of it, as a work of supererogation for thee; it may be that thy Lord will raise thee up to a laudable station.
 80
-القرآن:
 وَقُلْ رَبِّ أَدْخِلْنِي مُدْخَلَ صِدْقٍ وَأَخْرِجْنِي مُخْرَجَ صِدْقٍ وَاجْعَلْ لِي مِنْ لَدُنْكَ سُلْطَانًا نَصِيرًا
-ARTHUR JOHN ARBERRY:
 And say: 'My Lord, lead me in with a just ingoing, and lead me out with a just outgoing; grant me authority from Thee, to help me.'
 81
-القرآن:
 وَقُلْ جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ ۚ إِنَّ الْبَاطِلَ كَانَ زَهُوقًا
-ARTHUR JOHN ARBERRY:
 And say: 'The truth has come, and falsehood has vanished away; surely falsehood is ever certain to vanish.'
 82
-القرآن:
 وَنُنَزِّلُ مِنَ الْقُرْآنِ مَا هُوَ شِفَاءٌ وَرَحْمَةٌ لِلْمُؤْمِنِينَ ۙ وَلَا يَزِيدُ الظَّالِمِينَ إِلَّا خَسَارًا
-ARTHUR JOHN ARBERRY:
 And We send down, of the Koran, that which is a healing and a mercy to the believers; and the unbelievers it increases not, except in loss.
 83
-القرآن:
 وَإِذَا أَنْعَمْنَا عَلَى الْإِنْسَانِ أَعْرَضَ وَنَأَىٰ بِجَانِبِهِ ۖ وَإِذَا مَسَّهُ الشَّرُّ كَانَ يَئُوسًا
-ARTHUR JOHN ARBERRY:
 And when We bless man, he turns away, and withdraws aside; but when evil visits him, he is in despair.
 84
-القرآن:
 قُلْ كُلٌّ يَعْمَلُ عَلَىٰ شَاكِلَتِهِ فَرَبُّكُمْ أَعْلَمُ بِمَنْ هُوَ أَهْدَىٰ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 Say: 'Every man works according to his own manner; but your Lord knows very well what man is best guided as to the way.'
 85
-القرآن:
 وَيَسْأَلُونَكَ عَنِ الرُّوحِ ۖ قُلِ الرُّوحُ مِنْ أَمْرِ رَبِّي وَمَا أُوتِيتُمْ مِنَ الْعِلْمِ إِلَّا قَلِيلًا
-ARTHUR JOHN ARBERRY:
 They will question thee concerning the Spirit. Say: 'The Spirit is of the bidding of my Lord. You have been given of knowledge nothing except a little.'
 86
-القرآن:
 وَلَئِنْ شِئْنَا لَنَذْهَبَنَّ بِالَّذِي أَوْحَيْنَا إِلَيْكَ ثُمَّ لَا تَجِدُ لَكَ بِهِ عَلَيْنَا وَكِيلًا
-ARTHUR JOHN ARBERRY:
 If We willed, We could take away that We have revealed to thee, then thou wouldst find none thereover to guard thee against Us,
 87
-القرآن:
 إِلَّا رَحْمَةً مِنْ رَبِّكَ ۚ إِنَّ فَضْلَهُ كَانَ عَلَيْكَ كَبِيرًا
-ARTHUR JOHN ARBERRY:
 excepting by some mercy of thy Lord; surly His favour to thee is great.
 88
-القرآن:
 قُلْ لَئِنِ اجْتَمَعَتِ الْإِنْسُ وَالْجِنُّ عَلَىٰ أَنْ يَأْتُوا بِمِثْلِ هَٰذَا الْقُرْآنِ لَا يَأْتُونَ بِمِثْلِهِ وَلَوْ كَانَ بَعْضُهُمْ لِبَعْضٍ ظَهِيرًا
-ARTHUR JOHN ARBERRY:
 Say: 'If men and jinn banded together to produce the like of this Koran, they would never produce its like, not though they backed one another.'
 89
-القرآن:
 وَلَقَدْ صَرَّفْنَا لِلنَّاسِ فِي هَٰذَا الْقُرْآنِ مِنْ كُلِّ مَثَلٍ فَأَبَىٰ أَكْثَرُ النَّاسِ إِلَّا كُفُورًا
-ARTHUR JOHN ARBERRY:
 We have indeed turned about for men in this Koran every manner of similitude; yet most men refuse all but unbelief.
 90
-القرآن:
 وَقَالُوا لَنْ نُؤْمِنَ لَكَ حَتَّىٰ تَفْجُرَ لَنَا مِنَ الْأَرْضِ يَنْبُوعًا
-ARTHUR JOHN ARBERRY:
 They say, 'We will not believe thee till thou makest a spring to gush forth from the earth for us,
 91
-القرآن:
 أَوْ تَكُونَ لَكَ جَنَّةٌ مِنْ نَخِيلٍ وَعِنَبٍ فَتُفَجِّرَ الْأَنْهَارَ خِلَالَهَا تَفْجِيرًا
-ARTHUR JOHN ARBERRY:
 or till thou possessest a garden of plants and vines, and thou makest rivers to gush forth abundantly all amongst it,
 92
-القرآن:
 أَوْ تُسْقِطَ السَّمَاءَ كَمَا زَعَمْتَ عَلَيْنَا كِسَفًا أَوْ تَأْتِيَ بِاللَّهِ وَالْمَلَائِكَةِ قَبِيلًا
-ARTHUR JOHN ARBERRY:
 or till thou makest heaven to fall, as thou assertest, on us in fragments, or thou bringest God and the angels as a surety,
 93
-القرآن:
 أَوْ يَكُونَ لَكَ بَيْتٌ مِنْ زُخْرُفٍ أَوْ تَرْقَىٰ فِي السَّمَاءِ وَلَنْ نُؤْمِنَ لِرُقِيِّكَ حَتَّىٰ تُنَزِّلَ عَلَيْنَا كِتَابًا نَقْرَؤُهُ ۗ قُلْ سُبْحَانَ رَبِّي هَلْ كُنْتُ إِلَّا بَشَرًا رَسُولًا
-ARTHUR JOHN ARBERRY:
 or till thou possessest a house of gold ornament, or till thou goest up into heaven; and we will not believe thy going up till thou bringest down on us a book that we may read. Say: 'Glory be to my Lord. Am I aught but a mortal, a Messenger?'
 94
-القرآن:
 وَمَا مَنَعَ النَّاسَ أَنْ يُؤْمِنُوا إِذْ جَاءَهُمُ الْهُدَىٰ إِلَّا أَنْ قَالُوا أَبَعَثَ اللَّهُ بَشَرًا رَسُولًا
-ARTHUR JOHN ARBERRY:
 And naught prevented men from believing when the guidance came to them, but that they said, 'Has God sent forth a mortal as Messenger?'
 95
-القرآن:
 قُلْ لَوْ كَانَ فِي الْأَرْضِ مَلَائِكَةٌ يَمْشُونَ مُطْمَئِنِّينَ لَنَزَّلْنَا عَلَيْهِمْ مِنَ السَّمَاءِ مَلَكًا رَسُولًا
-ARTHUR JOHN ARBERRY:
 Say: 'Had there been in the earth angels walking. at peace, We would have sent down upon them out of heaven an angel as Messenger.'
 96
-القرآن:
 قُلْ كَفَىٰ بِاللَّهِ شَهِيدًا بَيْنِي وَبَيْنَكُمْ ۚ إِنَّهُ كَانَ بِعِبَادِهِ خَبِيرًا بَصِيرًا
-ARTHUR JOHN ARBERRY:
 Say: 'God suffices as a witness between me and you; surely He is aware of and sees His servants.'
 97
-القرآن:
 وَمَنْ يَهْدِ اللَّهُ فَهُوَ الْمُهْتَدِ ۖ وَمَنْ يُضْلِلْ فَلَنْ تَجِدَ لَهُمْ أَوْلِيَاءَ مِنْ دُونِهِ ۖ وَنَحْشُرُهُمْ يَوْمَ الْقِيَامَةِ عَلَىٰ وُجُوهِهِمْ عُمْيًا وَبُكْمًا وَصُمًّا ۖ مَأْوَاهُمْ جَهَنَّمُ ۖ كُلَّمَا خَبَتْ زِدْنَاهُمْ سَعِيرًا
-ARTHUR JOHN ARBERRY:
 Whomsoever God guides, he is rightly guided; and whom He leads astray -- thou wilt not find for them protectors, apart from Him. And We shall muster them on the Resurrection Day upon their faces, blind, dumb, deaf; their refuge shall be Gehenna, and whensoever it abates We shall increase for them the Blaze.
 98
-القرآن:
 ذَٰلِكَ جَزَاؤُهُمْ بِأَنَّهُمْ كَفَرُوا بِآيَاتِنَا وَقَالُوا أَإِذَا كُنَّا عِظَامًا وَرُفَاتًا أَإِنَّا لَمَبْعُوثُونَ خَلْقًا جَدِيدًا
-ARTHUR JOHN ARBERRY:
 That is their recompense because they disbelieved in Our signs and said, 'What, when we are bones and broken bits, shall we really be raised up again in a new creation?'
 99
-القرآن:
 ۞ أَوَلَمْ يَرَوْا أَنَّ اللَّهَ الَّذِي خَلَقَ السَّمَاوَاتِ وَالْأَرْضَ قَادِرٌ عَلَىٰ أَنْ يَخْلُقَ مِثْلَهُمْ وَجَعَلَ لَهُمْ أَجَلًا لَا رَيْبَ فِيهِ فَأَبَى الظَّالِمُونَ إِلَّا كُفُورًا
-ARTHUR JOHN ARBERRY:
 Have they not seen that God, who created the heavens and earth, is powerful to create the like of them? He has appointed for them a term, no doubt of it; yet the unbelievers refuse all but unbelief.
 100
-القرآن:
 قُلْ لَوْ أَنْتُمْ تَمْلِكُونَ خَزَائِنَ رَحْمَةِ رَبِّي إِذًا لَأَمْسَكْتُمْ خَشْيَةَ الْإِنْفَاقِ ۚ وَكَانَ الْإِنْسَانُ قَتُورًا
-ARTHUR JOHN ARBERRY:
 Say: 'If you possessed the treasuries of my Lord's mercy, yet would you hold back for fear of expending; and man is ever niggardly.'
 101
-القرآن:
 وَلَقَدْ آتَيْنَا مُوسَىٰ تِسْعَ آيَاتٍ بَيِّنَاتٍ ۖ فَاسْأَلْ بَنِي إِسْرَائِيلَ إِذْ جَاءَهُمْ فَقَالَ لَهُ فِرْعَوْنُ إِنِّي لَأَظُنُّكَ يَا مُوسَىٰ مَسْحُورًا
-ARTHUR JOHN ARBERRY:
 And We gave Moses nine signs, clear signs. Ask the Children of Israel when he came to them, and Pharaoh said to him, 'Moses, I think thou art bewitched.'
 102
-القرآن:
 قَالَ لَقَدْ عَلِمْتَ مَا أَنْزَلَ هَٰؤُلَاءِ إِلَّا رَبُّ السَّمَاوَاتِ وَالْأَرْضِ بَصَائِرَ وَإِنِّي لَأَظُنُّكَ يَا فِرْعَوْنُ مَثْبُورًا
-ARTHUR JOHN ARBERRY:
 He said, 'Indeed thou knowest that none sent these down, except the Lord of the heavens and earth, as clear proofs; and, Pharaoh, I think thou art accursed.'
 103
-القرآن:
 فَأَرَادَ أَنْ يَسْتَفِزَّهُمْ مِنَ الْأَرْضِ فَأَغْرَقْنَاهُ وَمَنْ مَعَهُ جَمِيعًا
-ARTHUR JOHN ARBERRY:
 He desired to startle them from the land; and We drowned him and those with him, all together.
 104
-القرآن:
 وَقُلْنَا مِنْ بَعْدِهِ لِبَنِي إِسْرَائِيلَ اسْكُنُوا الْأَرْضَ فَإِذَا جَاءَ وَعْدُ الْآخِرَةِ جِئْنَا بِكُمْ لَفِيفًا
-ARTHUR JOHN ARBERRY:
 And We said to the Children of Israel after him, 'Dwell in the land; and when the promise of the world to come comes to pass, We shall bring you a rabble.'
 105
-القرآن:
 وَبِالْحَقِّ أَنْزَلْنَاهُ وَبِالْحَقِّ نَزَلَ ۗ وَمَا أَرْسَلْنَاكَ إِلَّا مُبَشِّرًا وَنَذِيرًا
-ARTHUR JOHN ARBERRY:
 With the truth We have sent it down, and with the truth it has come down; and We have sent thee not, except good tidings to bear, and warning;
 106
-القرآن:
 وَقُرْآنًا فَرَقْنَاهُ لِتَقْرَأَهُ عَلَى النَّاسِ عَلَىٰ مُكْثٍ وَنَزَّلْنَاهُ تَنْزِيلًا
-ARTHUR JOHN ARBERRY:
 and a Koran We have divided, for thee to recite it to mankind at intervals, and We have sent it down successively.
 107
-القرآن:
 قُلْ آمِنُوا بِهِ أَوْ لَا تُؤْمِنُوا ۚ إِنَّ الَّذِينَ أُوتُوا الْعِلْمَ مِنْ قَبْلِهِ إِذَا يُتْلَىٰ عَلَيْهِمْ يَخِرُّونَ لِلْأَذْقَانِ سُجَّدًا
-ARTHUR JOHN ARBERRY:
 Say: 'Believe in it, or believe not; those who were given the knowledge before it when it is recited to them, fall down upon their faces prostrating,
 108
-القرآن:
 وَيَقُولُونَ سُبْحَانَ رَبِّنَا إِنْ كَانَ وَعْدُ رَبِّنَا لَمَفْعُولًا
-ARTHUR JOHN ARBERRY:
 and say, "Glory be to our Lord! Our Lord's promise is performed."
 109
-القرآن:
 وَيَخِرُّونَ لِلْأَذْقَانِ يَبْكُونَ وَيَزِيدُهُمْ خُشُوعًا ۩
-ARTHUR JOHN ARBERRY:
 And they fall down upon their faces weeping; and it increases them in humility.'
 110
-القرآن:
 قُلِ ادْعُوا اللَّهَ أَوِ ادْعُوا الرَّحْمَٰنَ ۖ أَيًّا مَا تَدْعُوا فَلَهُ الْأَسْمَاءُ الْحُسْنَىٰ ۚ وَلَا تَجْهَرْ بِصَلَاتِكَ وَلَا تُخَافِتْ بِهَا وَابْتَغِ بَيْنَ ذَٰلِكَ سَبِيلًا
-ARTHUR JOHN ARBERRY:
 Say: 'Call upon God, or call upon the Merciful; whichsoever you call upon, to Him belong the Names Most Beautiful.' And be thou not loud in thy prayer, nor hushed therein, but seek thou for a way between that.
 111
-القرآن:
 وَقُلِ الْحَمْدُ لِلَّهِ الَّذِي لَمْ يَتَّخِذْ وَلَدًا وَلَمْ يَكُنْ لَهُ شَرِيكٌ فِي الْمُلْكِ وَلَمْ يَكُنْ لَهُ وَلِيٌّ مِنَ الذُّلِّ ۖ وَكَبِّرْهُ تَكْبِيرًا
-ARTHUR JOHN ARBERRY:
 And say: 'Praise belongs to God, who has not taken to Him a son, and who has not any associate in the Kingdom, nor any protector out of humbleness.' And magnify Him with repeated magnificats.
