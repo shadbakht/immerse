@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum AnnotationType {
+  case Tag
+  case Note
+  case Ref
+}
+
 class RAService: NSObject {
   static var mapping : NSArray = [] // Publicly Accessible Mappings
   static let folderNames : NSArray = [
@@ -20,7 +26,7 @@ class RAService: NSObject {
     "8 - More",
   ] // Folder Names of Interest
   
-  class func recursivelyBuildMapping() {
+  class func recursivelyBuildMapping(mapType:AnnotationType? = nil) {
     /**
      recursivelyBuildMapping
      Maps out the complete structure of the resourcePath for the bundle, then selects
@@ -75,6 +81,23 @@ class RAService: NSObject {
           // Can also add writings to the parent if there are no children nodes
           let file = createWriting(lastItem!)
           lastFolder?.addChild(file)
+          
+          // Depending on the mode of this execution, add or remove additional nodes for the text pertaining
+          // the writings.
+          if mapType != nil {
+            switch mapType! {
+            case AnnotationType.Note:
+              let note = createWriting("")
+              file.addChild(note)
+            case AnnotationType.Tag:
+              let note = createWriting("")
+              file.addChild(note)
+            case AnnotationType.Ref:
+              let ref = createWriting("")
+              file.addChild(ref)
+            }
+          }
+          
           continue
         }
       }
