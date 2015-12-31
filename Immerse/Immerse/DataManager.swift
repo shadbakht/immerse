@@ -30,8 +30,14 @@ class DataManager: NSObject {
     return writings
   }
   
-  class func selectWriting(name:String) {
-    WritingService.selectWriting(name)
+  class func selectWritingById(id:String) {
+    WritingService.selectWritingById(id)
+    ActivityService.recordLastWriting(WritingService.current_writing_object!)
+    Util.notify("ShowReader")
+  }
+  
+  class func selectWritingByName(name:String) {
+    WritingService.selectWritingByName(name)
     ActivityService.recordLastWriting(WritingService.current_writing_object!)
     Util.notify("ShowReader")
   }

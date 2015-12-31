@@ -25,7 +25,7 @@ class HomeInteractor: NSObject {
   }
   
   func selectWriting(writing:Writing) {
-    DataManager.selectWriting(writing.writing_filepath)
+    DataManager.selectWritingByName(writing.writing_filepath)
   }
   
   func getProgressForWriting(writing:Writing) -> (progress:Float, text:String) {

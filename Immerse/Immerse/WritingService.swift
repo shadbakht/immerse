@@ -104,7 +104,16 @@ class WritingService: NSObject {
     return nil
   }
   
-  class func selectWriting(name:String) {
+  class func selectWritingById(id:String) {
+    let query = "writing_id = '\(id)'"
+    let results = RealmService.objectsForQuery(Writing.self, query: query)
+    if let writing = results.firstObject as? Writing {
+      WritingService.current_writing = writing.writing_filepath
+      WritingService.current_writing_object = writing
+    }
+  }
+  
+  class func selectWritingByName(name:String) {
     var nameCleaned = name
     if name.containsString("'") {
       nameCleaned = name.componentsSeparatedByString("/").last!
