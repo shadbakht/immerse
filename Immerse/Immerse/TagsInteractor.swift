@@ -9,5 +9,6 @@
 import UIKit
 
 class TagsInteractor: NSObject {
-
+  weak var presenter : TagsPresenter? = nil
+  
 }

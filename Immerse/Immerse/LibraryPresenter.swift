@@ -11,8 +11,7 @@ import RATreeView
 
 class LibraryPresenter: NSObject {
 
-  static let sharedInstance : LibraryPresenter = LibraryPresenter()
-  var view : LibraryView? = nil
+  weak var view : LibraryView? = nil
   var interactor : LibraryInteractor? = nil
   
   var isSetup : Bool = false

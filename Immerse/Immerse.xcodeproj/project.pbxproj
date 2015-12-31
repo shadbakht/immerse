@@ -15,6 +15,7 @@
 		544CFCC21C000A3B00A41085 /* AddCrossRefInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */; };
 		544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */; };
 		545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481261C35A36600B4E7E6 /* IMNavControl.swift */; };
+		545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -107,6 +108,7 @@
 		544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefInteractor.swift; sourceTree = "<group>"; };
 		544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefReaderView.swift; sourceTree = "<group>"; };
 		545481261C35A36600B4E7E6 /* IMNavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMNavControl.swift; sourceTree = "<group>"; };
+		545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewCell.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,15 @@
 			name = AddCrossRefBook;
 			sourceTree = "<group>";
 		};
+		5454812A1C35AA4A00B4E7E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				548476501BF66235004374B5 /* LibraryCell.xib */,
+				545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		546794C81BD0CB850062FAFB /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +255,7 @@
 		546794CD1BD0CBB20062FAFB /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				548476501BF66235004374B5 /* LibraryCell.xib */,
+				5454812A1C35AA4A00B4E7E6 /* Cells */,
 				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
 				546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */,
 				546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */,
@@ -634,6 +645,7 @@
 				54E5D75C1BE33463009F3665 /* Test.m in Sources */,
 				5416DA841BF3051C00EA28B8 /* RAObject.swift in Sources */,
 				546794D41BD0CBD90062FAFB /* NotesPresenter.swift in Sources */,
+				545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */,
 				546794E81BD0CC490062FAFB /* DataManager.swift in Sources */,
 				546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */,
 				546794CF1BD0CBBF0062FAFB /* TagsPresenter.swift in Sources */,

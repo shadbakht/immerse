@@ -10,7 +10,6 @@ import UIKit
 
 class LibraryInteractor: NSObject {
 
-  static let sharedInstance : LibraryInteractor = LibraryInteractor()
   var presenter : LibraryPresenter? = nil
   
   func selectWritingNamed(name:String) {
