@@ -8,9 +8,12 @@
 
 import UIKit
 import KYDrawerController
+import RATreeView
 
 class TagsView: UIViewController {
 
+  @IBOutlet weak var tagTreeView: RATreeView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }

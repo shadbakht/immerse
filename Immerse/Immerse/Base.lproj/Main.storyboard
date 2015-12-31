@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SJA-YR-3yZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SJA-YR-3yZ">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -470,8 +471,43 @@
                     <view key="view" contentMode="scaleToFill" id="H0X-R1-urq">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search All Tags" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-7H-Fic">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-Kl-3f9" customClass="RATreeView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="428"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiH-V4-5gg">
+                                <rect key="frame" x="0.0" y="471" width="600" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="XMa-lf-1La"/>
+                                </constraints>
+                                <state key="normal" title="SELECT ALL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UiH-V4-5gg" firstAttribute="leading" secondItem="H0X-R1-urq" secondAttribute="leadingMargin" constant="-20" id="3Bl-cW-OvH"/>
+                            <constraint firstItem="pXw-7H-Fic" firstAttribute="leading" secondItem="H0X-R1-urq" secondAttribute="leadingMargin" constant="-20" id="FDO-3g-Syi"/>
+                            <constraint firstItem="AEZ-Kl-3f9" firstAttribute="leading" secondItem="H0X-R1-urq" secondAttribute="leadingMargin" constant="-20" id="M5S-VV-NMp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UiH-V4-5gg" secondAttribute="trailing" constant="-20" id="SzB-Sf-Dpq"/>
+                            <constraint firstItem="nXI-Ni-f8O" firstAttribute="top" secondItem="UiH-V4-5gg" secondAttribute="bottom" id="Uk7-Wr-kHI"/>
+                            <constraint firstItem="UiH-V4-5gg" firstAttribute="top" secondItem="AEZ-Kl-3f9" secondAttribute="bottom" constant="-1" id="Xvk-h9-08f"/>
+                            <constraint firstItem="AEZ-Kl-3f9" firstAttribute="top" secondItem="pXw-7H-Fic" secondAttribute="bottom" id="Zte-aP-1O2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AEZ-Kl-3f9" secondAttribute="trailing" constant="-20" id="cwa-DE-SC1"/>
+                            <constraint firstItem="pXw-7H-Fic" firstAttribute="top" secondItem="Zbh-G0-ybv" secondAttribute="bottom" id="nc5-IG-Hla"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pXw-7H-Fic" secondAttribute="trailing" constant="-20" id="qXG-xk-TAj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Dk-QO-hG6">
                         <nil key="title"/>
@@ -511,6 +547,9 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tagTreeView" destination="AEZ-Kl-3f9" id="6uR-EW-Wu6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZI-Ch-UlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
