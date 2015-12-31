@@ -14,14 +14,10 @@ class LibraryPresenter: NSObject {
   weak var view : LibraryView? = nil
   var interactor : LibraryInteractor? = nil
   
-  var isSetup : Bool = false
   var mapping : NSArray = []
   
   func setup() {
-    if !isSetup {
-      mapping = interactor!.loadFolderMappings()
-      isSetup = true
-    }
+    mapping = interactor!.loadFolderMappings()
   }
   
   func selectWriting(data:RAObject) {

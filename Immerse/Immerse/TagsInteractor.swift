@@ -11,4 +11,7 @@ import UIKit
 class TagsInteractor: NSObject {
   weak var presenter : TagsPresenter? = nil
   
+  func loadTagMappings() -> NSArray {
+    return DataManager.getTagMapping()
+  }
 }

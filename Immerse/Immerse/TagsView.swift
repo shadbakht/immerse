@@ -26,7 +26,11 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     presenter?.view = self
     presenter?.interactor = i
     i.presenter = presenter
+    presenter?.setup()
 
+    // Setup the Delegate and DataSource
+    tagTreeView.delegate = self
+    tagTreeView.dataSource = self
   }
 
   override func didReceiveMemoryWarning() {
@@ -46,27 +50,25 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   //MARK: RATreeView DataSource
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-//    if item == nil {
-//      return presenter!.mapping.objectAtIndex(index)
-//    }
-//    let data : RAObject = item as! RAObject
-//    return data.children.objectAtIndex(index)
-    return RAObject()
+    if item == nil {
+      return presenter!.tags.objectAtIndex(index)
+    }
+    let data : RAObject = item as! RAObject
+    return data.children.objectAtIndex(index)
   }
   
   func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-//    if item == nil {
-//      return presenter!.mapping.count
-//    } else {
-//      let data : RAObject = item as! RAObject
-//      return data.children.count
-//    }
-    return 0
+    if item == nil {
+      return presenter!.tags.count
+    } else {
+      let data : RAObject = item as! RAObject
+      return data.children.count
+    }
   }
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-//    let cell = presenter!.cellForTreeView(self.treeView, item: item)
-    return UITableViewCell()
+    let cell = presenter!.cellForTreeView(self.tagTreeView, item: item)
+    return cell
   }
   
   

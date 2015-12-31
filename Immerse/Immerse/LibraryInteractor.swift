@@ -14,7 +14,6 @@ class LibraryInteractor: NSObject {
   
   func selectWritingNamed(name:String) {
     DataManager.selectWriting(name)
-    
   }
   
   func loadFolderMappings() -> NSArray {

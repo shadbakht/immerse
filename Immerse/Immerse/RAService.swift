@@ -8,23 +8,25 @@
 
 import UIKit
 
-enum AnnotationType {
-  case Tag
-  case Note
-  case Ref
-}
-
 class RAService: NSObject {
-  static var mapping : NSArray = [] // Publicly Accessible Mappings
-  static let folderNames : NSArray = [
-    "1 - Bahá’í",
-    "2 - Buddhist",
-    "4 - Hindu",
-    "5 - Islamic",
-    "6 - Jewish",
-    "7 - Zoroastrian",
-    "8 - More",
-  ] // Folder Names of Interest
+  static var mapping : NSArray = [] // Publicly Accessible Mappings - Text
+  static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
+  
+  class func recursivelyBuildTagMapping() {
+    /**
+     recursivelyBuildTagMapping
+     Current only supports level 1 tags and not anything more.
+     */
+    let allTags : [TagTypes] = TagService.getTagTypes() as! [TagTypes]
+    var objects : [RAObject] = []
+    for tag in allTags {
+      let object = RAObject()
+      object.displayName = tag.tag_type_name
+      object.id = tag.tag_type_id
+      objects.append(object)
+    }
+    RAService.tagMapping = objects
+  }
   
   class func recursivelyBuildMapping(mapType:AnnotationType? = nil) {
     /**
@@ -109,14 +111,14 @@ class RAService: NSObject {
     let finalSet : NSMutableArray = []
     for parent in folderCollections {
       let parentObj = parent as! RAObject
-      if RAService.folderNames.containsObject(parentObj.pathName) {
+      if Constants.folderNames.containsObject(parentObj.pathName) {
         finalSet.addObject(parent)
       }
     }
     RAService.mapping = finalSet.copy() as! NSArray
     
   }
-
+  
   private class func createFolder(display:String, path:String, children:NSArray = [] ) -> RAObject {
     let object = RAObject()
     

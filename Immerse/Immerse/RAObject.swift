@@ -12,6 +12,7 @@ class RAObject: NSObject {
   var children = []
   var displayName = ""
   var pathName = ""
+  var id = ""
   
   func configure(displayName:String, pathName: String, children: [RAObject]) -> RAObject {
     self.displayName = displayName

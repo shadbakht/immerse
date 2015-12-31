@@ -16,6 +16,7 @@
 		544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */; };
 		545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481261C35A36600B4E7E6 /* IMNavControl.swift */; };
 		545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */; };
+		5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454812B1C35B06800B4E7E6 /* Constants.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -109,6 +110,7 @@
 		544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefReaderView.swift; sourceTree = "<group>"; };
 		545481261C35A36600B4E7E6 /* IMNavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMNavControl.swift; sourceTree = "<group>"; };
 		545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewCell.swift; sourceTree = "<group>"; };
+		5454812B1C35B06800B4E7E6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				546795051BD0CFF20062FAFB /* NavTray.swift */,
 				545481261C35A36600B4E7E6 /* IMNavControl.swift */,
 				546795071BD0D00E0062FAFB /* Util.swift */,
+				5454812B1C35B06800B4E7E6 /* Constants.swift */,
 				5483BED41B95FAA70037359C /* Main.storyboard */,
 				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
 				546794C81BD0CB850062FAFB /* Home */,
@@ -676,6 +679,7 @@
 				546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */,
 				545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */,
 				546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */,
+				5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */,
 				546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */,
 				546794CC1BD0CBAE0062FAFB /* LibraryInteractor.swift in Sources */,
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,

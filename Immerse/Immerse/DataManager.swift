@@ -13,10 +13,15 @@ class DataManager: NSObject {
   class func setup() {
     WritingService.setup()
     RAService.recursivelyBuildMapping()
+    RAService.recursivelyBuildTagMapping()
   }
   
   class func getFolderMapping() -> NSArray {
     return RAService.mapping
+  }
+  
+  class func getTagMapping() -> NSArray {
+    return RAService.tagMapping
   }
   
   class func getLatestWritingsOpened(count:Int) -> NSArray {
