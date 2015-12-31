@@ -21,39 +21,38 @@ class NavTray: UITableViewController {
     super.didReceiveMemoryWarning()
   }
 
+  
+  // MARK: - Table view data source
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    launchView(indexPath: indexPath)
+  }
+  
   func goToLibrary() {
-    if let drawerController = self.parentViewController as? KYDrawerController {
-      Util.notifyData("LaunchView",
-        data: ["name":2]
-      )
-      drawerController.setDrawerState(.Closed, animated: true)
-    }
+    launchView(2)
   }
   
   func goToReader() {
-    if let drawerController = self.parentViewController as? KYDrawerController {
-      Util.notifyData("LaunchView",
-        data: ["name":8]
-      )
-      drawerController.setDrawerState(.Closed, animated: false)
-    }
+    launchView(8)
   }
   
-  // MARK: - Table view data source
-  
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    
+  func launchView(index:NSInteger?=nil, indexPath:NSIndexPath?=nil) {
     if let drawerController = self.parentViewController as? KYDrawerController {
+      
+      // Get the Index
+      var number = 0
+      if index != nil { number = index! }
+      if indexPath != nil { number = indexPath!.row }
       
       // Launch the appropriate segue
       Util.notifyData("LaunchView",
-        data: ["name":indexPath.row]
+        data: ["name":number]
       )
       
       // Close the Drawer
       drawerController.setDrawerState(.Closed, animated: true)
     }
+
   }
   
 
