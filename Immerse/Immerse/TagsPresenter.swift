@@ -21,9 +21,11 @@ class TagsPresenter: NSObject {
   
   func cellForTreeView(tree:RATreeView, item: AnyObject!) -> UITableViewCell {
     let data : RAObject = item as! RAObject
-//    let level = tree.levelForCellForItem(item)
-    let cell = UITableViewCell()
-    cell.textLabel!.text = data.displayName
-    return cell
+    let level = tree.levelForCellForItem(item)
+    if let cell = tree.dequeueReusableCellWithIdentifier("TagCell") as? TagCell {
+      cell.set(data.displayName, level: level, id: data.id)
+      return cell
+    }
+    return UITableViewCell()
   }
 }
