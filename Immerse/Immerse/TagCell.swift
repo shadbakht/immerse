@@ -38,11 +38,15 @@ class TagCell: UITableViewCell {
       tagNameTextField.userInteractionEnabled = false
       tagNameTextField.resignFirstResponder()
       editButton.selected = false
+      
+      DataManager.updateTagType(id!, name:tagNameTextField.text!)
     }
   }
   
   @IBAction func deleteSelected(sender: UIButton) {
     if selectDeleteButton.selected {
+      DataManager.deleteTagType(id!)
+      Util.notify("ReloadTagView")
     }
   }
   

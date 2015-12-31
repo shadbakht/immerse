@@ -58,4 +58,19 @@ class TagService: NSObject {
     RealmService.createObject(tagObj)
   }
   
+  class func updateTagType(id:String, name:String) {
+    RealmService.updateObject(TagTypes.self,
+      keyIdentify: "tag_type_id",
+      keyValue: id,
+      keys: ["tag_type_name"],
+      values: [name]
+    )
+  }
+  
+  class func deleteTagType(id:String) {
+    let tagType = RealmService.objectsForQuery(TagTypes.self, query: "tag_type_id = '\(id)'")
+    let tags = RealmService.objectsForQuery(Tag.self, query: "tag_type_id = '\(id)'")
+    RealmService.deleteRealmObject(tagType.firstObject as! TagTypes)
+    _ = tags.map({RealmService.deleteRealmObject($0 as! Tag)})
+  }
 }

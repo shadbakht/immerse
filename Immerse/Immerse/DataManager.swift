@@ -88,13 +88,18 @@ class DataManager: NSObject {
     let current = WritingService.current_writing_object
     CrossRefService.createRefForText(start, length:length, writing:writing!, reference:current!)
   }
+  class func updateTagType(id:String, name:String) {
+    TagService.updateTagType(id, name:name)
+  }
+  class func deleteTagType(id:String) {
+    TagService.deleteTagType(id)
+  }
   class func createTagForCurrentText(start:Int, length:Int, tagID:String) {
     TagService.createTagObject(start, length: length, tagID: tagID, currentWriting: WritingService.current_writing_object!)
   }
   class func createTagName(name:String) {
     TagService.createTagType(name)
   }
-  
   class func tagsForNames(names:NSArray) -> NSArray {
     return TagService.tagTypesForNames(names)
   }

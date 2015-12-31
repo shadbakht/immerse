@@ -41,6 +41,9 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
       UINib(nibName: "TagCellText", bundle: nil),
       forCellReuseIdentifier: "TagCellText"
     )
+    
+    // Observe
+    Util.observe(self, action: "reload", named: "ReloadTagView")
   }
 
   override func didReceiveMemoryWarning() {
@@ -53,6 +56,11 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     }
   }
   
+  func reload() {
+    presenter?.setup()
+    tagTreeView.reloadData()
+  }
+  
   @IBAction func editPressed(sender: UIBarButtonItem) {
     if !edit {
       sender.title = "APPLY"
@@ -61,6 +69,7 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
       sender.title = "EDIT"
       edit = false
     }
+    presenter?.setup()
     tagTreeView.reloadData()
   }
   

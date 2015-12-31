@@ -169,8 +169,37 @@ class RealmService: NSObject {
       try! realm.write({
         progress.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
       })
-
+    }
+    
+    if objectType == TagTypes.self {
+      let progress : TagTypes = objectsForQuery(TagTypes.self, query: keyIdentify + " = '" + keyValue + "'").firstObject as! TagTypes
+      let properties = NSDictionary(objects: values as [AnyObject], forKeys: keys as! [NSCopying])
+      try! realm.write({
+        progress.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
+      })
+    }
+  }
+  
+  class func deleteRealmObject(object:Object) {
+    if let realm = try? Realm () {
+      do {
+        try! realm.write {
+          realm.delete(object)
+        }
+      }
     }
   }
 
+  class func updateRealmObjects(objects:[Object]) {
+    if let realm = try? Realm() {
+      do {
+        try! realm.write{
+          realm.add(objects, update: true)
+        }
+      }
+    }
+  }
+
+
+  
 }
