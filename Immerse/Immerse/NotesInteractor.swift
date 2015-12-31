@@ -10,4 +10,5 @@ import UIKit
 
 class NotesInteractor: NSObject {
 
+  weak var presenter : NotesPresenter? = nil
 }

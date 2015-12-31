@@ -30,11 +30,13 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   override func viewDidLoad() {
     
     // Setup VIPER Stack
-    presenter = HomePresenter.sharedInstance
-    presenter?.interactor = HomeInteractor.sharedInstance
+    let p = HomePresenter()
+    let i = HomeInteractor()
+    presenter = p
+    presenter?.interactor = i
     presenter?.view = self
-    HomeInteractor.sharedInstance.presenter = presenter
-    HomePresenter.sharedInstance.setup()
+    i.presenter = presenter
+    presenter?.setup()
     
     countTagLabel.setTextForInt(presenter!.totalTagCount)
     countNoteLabel.setTextForInt(presenter!.totalNoteCount)
@@ -50,7 +52,7 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   }
 
   func reload() {
-    HomePresenter.sharedInstance.setup()
+    presenter?.setup()
     countTagLabel.setTextForInt(presenter!.totalTagCount)
     countNoteLabel.setTextForInt(presenter!.totalNoteCount)
     countXRefLabel.setTextForInt(presenter!.totalXRefCount)

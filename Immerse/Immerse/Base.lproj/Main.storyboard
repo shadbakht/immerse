@@ -491,7 +491,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="XMa-lf-1La"/>
                                 </constraints>
-                                <state key="normal" title="EXPAND ALL">
+                                <state key="normal" title="SELECT ALL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -706,8 +706,44 @@
                     <view key="view" contentMode="scaleToFill" id="fJx-rc-Pzv">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search All Notes" translatesAutoresizingMaskIntoConstraints="NO" id="8CF-Ng-GSC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtP-MJ-hqZ" customClass="RATreeView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="427"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-F1-3gZ">
+                                <rect key="frame" x="0.0" y="471" width="600" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Blf-Kb-gfk"/>
+                                </constraints>
+                                <state key="normal" title="SELECT ALL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AtP-MJ-hqZ" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="3Yl-Ol-apv"/>
+                            <constraint firstItem="8CF-Ng-GSC" firstAttribute="top" secondItem="eCA-PI-ryV" secondAttribute="bottom" id="7Cg-mn-E0V"/>
+                            <constraint firstItem="8CF-Ng-GSC" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="CJv-tL-SCw"/>
+                            <constraint firstItem="xmS-F1-3gZ" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="F1c-DG-1ZY"/>
+                            <constraint firstItem="xmS-F1-3gZ" firstAttribute="top" secondItem="AtP-MJ-hqZ" secondAttribute="bottom" id="Mrf-cx-USl"/>
+                            <constraint firstItem="AtP-MJ-hqZ" firstAttribute="top" secondItem="8CF-Ng-GSC" secondAttribute="bottom" id="TkY-PZ-vJ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xmS-F1-3gZ" secondAttribute="trailing" constant="-20" id="VCf-GD-49L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AtP-MJ-hqZ" secondAttribute="trailing" constant="-20" id="YWL-g3-tIQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8CF-Ng-GSC" secondAttribute="trailing" constant="-20" id="bSj-Gu-qcL"/>
+                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="xmS-F1-3gZ" secondAttribute="bottom" id="giv-fY-gce"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VKF-sk-uKY">
                         <nil key="title"/>

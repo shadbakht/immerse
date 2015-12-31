@@ -10,10 +10,8 @@ import UIKit
 
 class HomePresenter: NSObject {
 
-  static let sharedInstance : HomePresenter = HomePresenter()
   var interactor : HomeInteractor? = nil
-  var view : HomeView? = nil
-  var isSetup : Bool = false
+  weak var view : HomeView? = nil
   var recentlyViewedWritings : NSArray = []
   var totalTagCount = 0
   var totalNoteCount = 0
@@ -25,10 +23,6 @@ class HomePresenter: NSObject {
     totalTagCount = counts.tags
     totalNoteCount = counts.notes
     totalXRefCount = counts.xRefs
-
-    if !isSetup {
-      isSetup = true
-    }
   }
   
   func numberOfRecentlyViewed() -> Int {

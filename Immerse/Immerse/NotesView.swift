@@ -11,8 +11,19 @@ import KYDrawerController
 
 class NotesView: UIViewController {
 
+  var presenter : NotesPresenter? = nil
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Setup the VIPER Stack
+    let p = NotesPresenter()
+    let i = NotesInteractor()
+    presenter = p
+    presenter?.view = self
+    presenter?.interactor = i
+    i.presenter = presenter
+    
   }
 
   override func didReceiveMemoryWarning() {

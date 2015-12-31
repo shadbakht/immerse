@@ -10,4 +10,7 @@ import UIKit
 
 class NotesPresenter: NSObject {
 
+  weak var view : NotesView? = nil
+  var interactor : NotesInteractor? = nil
+  
 }

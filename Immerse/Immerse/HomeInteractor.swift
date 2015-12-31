@@ -10,8 +10,7 @@ import UIKit
 
 class HomeInteractor: NSObject {
 
-  static let sharedInstance = HomeInteractor()
-  var presenter : HomePresenter? = nil
+  weak var presenter : HomePresenter? = nil
   
   func getObjectCounts() -> (tags:Int, notes:Int, xRefs:Int) {
     let notesCount = DataManager.getNotes().count
