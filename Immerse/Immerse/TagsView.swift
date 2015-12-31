@@ -31,11 +31,16 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     // Setup the Delegate and DataSource
     tagTreeView.delegate = self
     tagTreeView.dataSource = self
+    
+    // Register the Cells
     self.tagTreeView.registerNib(
       UINib(nibName: "TagCell", bundle: nil),
       forCellReuseIdentifier: "TagCell"
     )
-
+    self.tagTreeView.registerNib(
+      UINib(nibName: "TagCellText", bundle: nil),
+      forCellReuseIdentifier: "TagCellText"
+    )
   }
 
   override func didReceiveMemoryWarning() {
@@ -66,6 +71,11 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   }
   
   //MARK: RATreeView DataSource
+  func treeView(treeView: RATreeView, heightForRowForItem item: AnyObject) -> CGFloat {
+    let level = treeView.levelForCellForItem(item)
+    if level == 1 { return 100 }
+    return 50
+  }
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
     if item == nil {
       return presenter!.tags.objectAtIndex(index)
@@ -85,7 +95,9 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
     let cell = presenter!.cellForTreeView(self.tagTreeView, item: item)
-    (cell as! TagCell).configureMode(edit)
+    if cell is TagCell {
+      (cell as! TagCell).configureMode(edit)
+    }
     return cell
   }
   
