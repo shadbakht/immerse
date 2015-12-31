@@ -13,6 +13,9 @@ class TagCell: UITableViewCell {
   @IBOutlet weak var selectDeleteButton: UIButton!
   @IBOutlet weak var editButton: UIButton!
   @IBOutlet weak var tagNameTextField: UITextField!
+  @IBOutlet weak var indentBar: UIView!
+  @IBOutlet weak var indentBarWidth: NSLayoutConstraint!
+  
   var id : String? = nil
   var level : Int? = nil
   
@@ -40,7 +43,6 @@ class TagCell: UITableViewCell {
   
   @IBAction func deleteSelected(sender: UIButton) {
     if selectDeleteButton.selected {
-      
     }
   }
   
@@ -48,6 +50,15 @@ class TagCell: UITableViewCell {
     tagNameTextField.text = text
     self.level = level
     self.id = id
+    if self.level == 1 {
+      indentBarWidth.constant = 15
+      self.tagNameTextField.textColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1.0)
+      self.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
+    } else {
+      indentBarWidth.constant = 0
+      self.tagNameTextField.textColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1.0)
+      self.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+    }
   }
   
   func configureMode(editMode:Bool) {
