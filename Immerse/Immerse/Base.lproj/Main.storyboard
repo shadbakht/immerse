@@ -936,10 +936,10 @@
             </objects>
             <point key="canvasLocation" x="940" y="-610"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav Control-->
         <scene sceneID="0PG-1W-S1O">
             <objects>
-                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="otr-5L-HxM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="otr-5L-HxM" customClass="IMNavControl" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iok-dW-cW8">

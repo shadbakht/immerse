@@ -10,7 +10,7 @@ import UIKit
 import KYDrawerController
 
 class NavTray: UITableViewController {
-
+  
   override func viewDidLoad() {
     Util.observe(self, action: "goToLibrary", named: "ShowLibrary")
     Util.observe(self, action: "goToReader", named: "ShowReader")
@@ -23,18 +23,18 @@ class NavTray: UITableViewController {
 
   func goToLibrary() {
     if let drawerController = self.parentViewController as? KYDrawerController {
-      let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
-      mainNavigation.performSegueWithIdentifier("showLibrary", sender: self)
-      drawerController.mainViewController = mainNavigation
+      Util.notifyData("LaunchView",
+        data: ["name":2]
+      )
       drawerController.setDrawerState(.Closed, animated: true)
     }
   }
   
   func goToReader() {
     if let drawerController = self.parentViewController as? KYDrawerController {
-      let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
-      mainNavigation.performSegueWithIdentifier("showReader", sender: self)
-      drawerController.mainViewController = mainNavigation
+      Util.notifyData("LaunchView",
+        data: ["name":8]
+      )
       drawerController.setDrawerState(.Closed, animated: false)
     }
   }
@@ -45,28 +45,13 @@ class NavTray: UITableViewController {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     
     if let drawerController = self.parentViewController as? KYDrawerController {
-      let mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainNavigation") as! UINavigationController
-      switch indexPath.row {
-      case 0:
-        mainNavigation.popToRootViewControllerAnimated(true)
-      case 1:
-        mainNavigation.popToRootViewControllerAnimated(true)
-      case 2:
-        mainNavigation.performSegueWithIdentifier("showLibrary", sender: self)
-      case 3:
-        mainNavigation.performSegueWithIdentifier("showTags", sender: self)
-      case 4:
-        mainNavigation.performSegueWithIdentifier("showNotes", sender: self)
-      case 5:
-        mainNavigation.performSegueWithIdentifier("showCrossRefs", sender: self)
-      case 6:
-        mainNavigation.performSegueWithIdentifier("showSettings", sender: self)
-      case 8:
-        mainNavigation.performSegueWithIdentifier("showReader", sender: self)
-      default:
-        mainNavigation.popToRootViewControllerAnimated(true)
-      }
-      drawerController.mainViewController = mainNavigation
+      
+      // Launch the appropriate segue
+      Util.notifyData("LaunchView",
+        data: ["name":indexPath.row]
+      )
+      
+      // Close the Drawer
       drawerController.setDrawerState(.Closed, animated: true)
     }
   }
