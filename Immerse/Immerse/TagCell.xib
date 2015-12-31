@@ -63,19 +63,30 @@
                             <constraint firstAttribute="width" constant="4" id="01P-xg-fKM"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6v-ze-H8h">
+                        <rect key="frame" x="0.0" y="49" width="390" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="gsO-hs-eWM"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <animations/>
                 <constraints>
                     <constraint firstItem="l86-8Q-CL0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="3UM-Tu-6Ug"/>
                     <constraint firstAttribute="trailingMargin" secondItem="SZh-AX-PIE" secondAttribute="trailing" constant="-8" id="AP3-q3-Ic1"/>
                     <constraint firstItem="SZh-AX-PIE" firstAttribute="leading" secondItem="PUs-N1-tzM" secondAttribute="trailing" constant="8" id="Bvb-zd-ay0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="I6v-ze-H8h" secondAttribute="bottom" constant="-9" id="JiJ-gc-GCe"/>
                     <constraint firstItem="SZh-AX-PIE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KEE-z2-wV9"/>
                     <constraint firstItem="PUs-N1-tzM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NTN-fl-eQV"/>
                     <constraint firstItem="LIw-EJ-mSL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XVb-1O-sWk"/>
                     <constraint firstItem="LIw-EJ-mSL" firstAttribute="leading" secondItem="l86-8Q-CL0" secondAttribute="trailing" constant="4" id="a12-Rb-gOE"/>
+                    <constraint firstItem="I6v-ze-H8h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="aEJ-Yy-Pj3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="l86-8Q-CL0" secondAttribute="bottom" constant="-9" id="c1h-Fo-Xnk"/>
                     <constraint firstItem="LIw-EJ-mSL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tSb-El-13B"/>
                     <constraint firstItem="l86-8Q-CL0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="vL9-Hn-b52"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="I6v-ze-H8h" secondAttribute="trailing" constant="-8" id="wbN-6Y-RxH"/>
                     <constraint firstItem="PUs-N1-tzM" firstAttribute="leading" secondItem="LIw-EJ-mSL" secondAttribute="trailing" constant="8" id="xlq-cL-Qwz"/>
                 </constraints>
                 <variation key="default">

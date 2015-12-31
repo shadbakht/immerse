@@ -19,6 +19,12 @@ class TagsPresenter: NSObject {
     tags = interactor!.loadTagMappings()
   }
   
+  func goToWriting(data:AnyObject) {
+    let item = data as! RAObject
+    let writingId = item.id
+    interactor?.selectWriting(writingId)
+  }
+  
   func cellForTreeView(tree:RATreeView, item: AnyObject!) -> UITableViewCell {
     let data : RAObject = item as! RAObject
     let level = tree.levelForCellForItem(item)

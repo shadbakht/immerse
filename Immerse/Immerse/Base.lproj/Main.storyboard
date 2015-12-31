@@ -475,6 +475,7 @@
                             <searchBar contentMode="redraw" placeholder="Search All Tags" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-7H-Fic">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
+                                <color key="barTintColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEZ-Kl-3f9" customClass="RATreeView">

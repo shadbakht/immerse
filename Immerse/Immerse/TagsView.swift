@@ -66,8 +66,11 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   //MARK: RATreeView Delegate
   func treeView(treeView: RATreeView, didSelectRowForItem item: AnyObject) {
-    print("something!")
-    treeView.deselectRowForItem(item, animated: true)
+    treeView.deselectRowForItem(item, animated: false)
+    let level = treeView.levelForCellForItem(item)
+    if level == 1 {
+      presenter?.goToWriting(item)
+    }
   }
   
   //MARK: RATreeView DataSource

@@ -11,6 +11,10 @@ import UIKit
 class TagsInteractor: NSObject {
   weak var presenter : TagsPresenter? = nil
   
+  func selectWriting(id:String) {
+    DataManager.selectWritingById(id)
+  }
+  
   func loadTagMappings() -> NSArray {
     return DataManager.getTagMapping()
   }
