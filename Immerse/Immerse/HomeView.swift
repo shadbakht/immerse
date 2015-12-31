@@ -25,7 +25,8 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   @IBOutlet weak var countTagLabel: UILabel!
   @IBOutlet weak var countNoteLabel: UILabel!
   @IBOutlet weak var countXRefLabel: UILabel!
-
+  @IBOutlet weak var table: UITableView!
+  
   override func viewDidLoad() {
     
     // Setup VIPER Stack
@@ -40,12 +41,21 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     countXRefLabel.setTextForInt(presenter!.totalXRefCount)
     
     super.viewDidLoad()
+    
+    Util.observe(self, action: "reload", named: "ReloadTagView")
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
 
+  func reload() {
+    HomePresenter.sharedInstance.setup()
+    countTagLabel.setTextForInt(presenter!.totalTagCount)
+    countNoteLabel.setTextForInt(presenter!.totalNoteCount)
+    countXRefLabel.setTextForInt(presenter!.totalXRefCount)
+    table.reloadData()
+  }
   // MARK: Open Menu
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {

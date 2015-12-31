@@ -454,6 +454,7 @@
                         <outlet property="countNoteLabel" destination="Dn4-YH-tHT" id="1ad-G3-kyF"/>
                         <outlet property="countTagLabel" destination="3lM-ol-Vaw" id="mLG-yH-EUK"/>
                         <outlet property="countXRefLabel" destination="1WC-YL-f1q" id="0KQ-DA-hiG"/>
+                        <outlet property="table" destination="sYh-eb-3Ck" id="lZr-Ox-vlN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
