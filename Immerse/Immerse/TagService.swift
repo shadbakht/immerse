@@ -30,6 +30,7 @@ class TagService: NSObject {
     type.tag_parent_id = ""
     type.tag_type_id = Util.uniqueString()
     RealmService.createObject(type)
+    Util.notify("ReloadTagView")
   }
   
   class func getTagTypes() -> NSArray {
@@ -56,6 +57,7 @@ class TagService: NSObject {
     tagObj.tag_type_id = tagID
     tagObj.writing_id = currentWriting.writing_id
     RealmService.createObject(tagObj)
+    Util.notify("ReloadTagView")
   }
   
   class func updateTagType(id:String, name:String) {
