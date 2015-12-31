@@ -13,7 +13,6 @@ class DataManager: NSObject {
   class func setup() {
     WritingService.setup()
     RAService.recursivelyBuildMapping()
-    RAService.recursivelyBuildTagMapping()
   }
   
   class func getFolderMapping() -> NSArray {
@@ -21,6 +20,7 @@ class DataManager: NSObject {
   }
   
   class func getTagMapping() -> NSArray {
+    RAService.recursivelyBuildTagMapping()
     return RAService.tagMapping
   }
   

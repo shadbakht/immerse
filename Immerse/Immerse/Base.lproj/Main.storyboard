@@ -489,7 +489,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="XMa-lf-1La"/>
                                 </constraints>
-                                <state key="normal" title="SELECT ALL">
+                                <state key="normal" title="EXPAND ALL">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -546,6 +546,12 @@
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="lrk-mQ-eT3">
+                            <color key="tintColor" red="0.36470588240000001" green="0.47058823529999999" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="editPressed:" destination="Nfx-eS-lPc" id="xyH-iU-iT6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tagTreeView" destination="AEZ-Kl-3f9" id="6uR-EW-Wu6"/>

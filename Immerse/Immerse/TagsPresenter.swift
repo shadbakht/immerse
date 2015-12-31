@@ -24,7 +24,6 @@ class TagsPresenter: NSObject {
 //    let level = tree.levelForCellForItem(item)
     let cell = UITableViewCell()
     cell.textLabel!.text = data.displayName
-    cell.backgroundColor = UIColor.lightGrayColor()
     return cell
   }
 }

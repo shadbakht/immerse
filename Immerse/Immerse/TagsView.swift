@@ -13,8 +13,8 @@ import RATreeView
 class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
 
   @IBOutlet weak var tagTreeView: RATreeView!
-  
   var presenter : TagsPresenter? = nil
+  var edit : Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +43,15 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     }
   }
   
+  @IBAction func editPressed(sender: UIBarButtonItem) {
+    if !edit {
+      sender.title = "APPLY"
+      edit = true
+    } else {
+      sender.title = "EDIT"
+      edit = false
+    }
+  }
   //MARK: RATreeView Delegate
   func treeView(treeView: RATreeView, didSelectRowForItem item: AnyObject) {
     print("something!")
