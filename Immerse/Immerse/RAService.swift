@@ -28,6 +28,7 @@ class RAService: NSObject {
       var children : [RAObject] = []
       let results : [Tag] = RealmService.objectsForQuery(Tag.self, query: "tag_type_id = \(tag.tag_type_id)") as! [Tag]
       for item:Tag in results {
+        // Retrieve the data to populate for the tag
         let writingId = item.writing_id
         let start = item.start_position
         let length = item.length
