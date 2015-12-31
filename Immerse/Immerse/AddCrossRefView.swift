@@ -39,7 +39,7 @@ class AddCrossRefView: UIViewController, RATreeViewDataSource, RATreeViewDelegat
   
   //MARK: RATreeView Delegate
   
-  func treeView(treeView: RATreeView!, didSelectRowForItem item: AnyObject!) {
+  func treeView(treeView: RATreeView, didSelectRowForItem item: AnyObject) {
     let data : RAObject = item as! RAObject
     if data.pathName.containsString(".txt") {
       presenter!.selectWritingForXRef(data)
@@ -49,7 +49,7 @@ class AddCrossRefView: UIViewController, RATreeViewDataSource, RATreeViewDelegat
   
   // MARK: RATreeView DataSource
   
-  func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
+  func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
     if item == nil {
       return presenter!.mapping.objectAtIndex(index)
     }
@@ -57,7 +57,7 @@ class AddCrossRefView: UIViewController, RATreeViewDataSource, RATreeViewDelegat
     return data.children.objectAtIndex(index)
   }
   
-  func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
+  func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
     if item == nil {
       return presenter!.mapping.count
     } else {
@@ -66,7 +66,7 @@ class AddCrossRefView: UIViewController, RATreeViewDataSource, RATreeViewDelegat
     }
   }
   
-  func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
+  func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
     let cell = presenter!.cellForTreeView(self.treeView, item: item)
     return cell
   }
