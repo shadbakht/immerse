@@ -55,7 +55,7 @@ class TagCell: UITableViewCell {
       self.tagNameTextField.textColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1.0)
       self.backgroundColor = UIColor(red: 249/255, green: 249/255, blue: 249/255, alpha: 1.0)
     } else {
-      indentBarWidth.constant = 0
+      indentBarWidth.constant = 10
       self.tagNameTextField.textColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 1.0)
       self.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0)
     }
