@@ -162,6 +162,19 @@ class WritingService: NSObject {
     return ""
   }
   
+  class func getBodyForWriting(writing:Writing, start:Int?=nil, length:Int?=nil) -> String {
+    let genericPath = writing.writing_filepath
+    let absolutePath = NSFileManager.localPathForItem(genericPath)
+    let body = try! NSString(contentsOfFile: absolutePath, encoding: NSUTF8StringEncoding)
+    let bodyProcessed = body.stringByReplacingOccurrencesOfString("\n", withString: "\n\n")
+    if start != nil && length != nil {
+      let range : NSRange = NSMakeRange(start!, length!)
+      let bodySub = (bodyProcessed as NSString).substringWithRange(range)
+      return bodySub
+    }
+    return bodyProcessed
+  }
+  
   class func getCurrentXRefBody() -> String {
     if current_writing_xref_object != nil {
       let genericPath = current_writing_xref_object?.writing_filepath

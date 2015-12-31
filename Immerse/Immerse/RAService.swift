@@ -23,6 +23,25 @@ class RAService: NSObject {
       let object = RAObject()
       object.displayName = tag.tag_type_name
       object.id = tag.tag_type_id
+      
+      // Fetch the tag + associated writing object
+      var children : [RAObject] = []
+      let results : [Tag] = RealmService.objectsForQuery(Tag.self, query: "tag_type_id = \(tag.tag_type_id)") as! [Tag]
+      for item:Tag in results {
+        let writingId = item.writing_id
+        let start = item.start_position
+        let length = item.length
+        if let writing = WritingService.writingForID(writingId) {
+          let writingName = writing.writing_title
+          let subString = WritingService.getBodyForWriting(writing, start: start, length: length)
+          let child = RAObject()
+          child.displayName = subString
+          child.id = writingId
+          child.subDisplayName = writingName
+          children.append(child)
+        }
+        object.children = children
+      }
       objects.append(object)
     }
     RAService.tagMapping = objects

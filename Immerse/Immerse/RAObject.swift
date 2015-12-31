@@ -12,7 +12,8 @@ class RAObject: NSObject {
   var children = []
   var displayName = ""
   var pathName = ""
-  var id = ""
+  var id = "" // Used by Tag
+  var subDisplayName = "" //Used by Tag
   
   func configure(displayName:String, pathName: String, children: [RAObject]) -> RAObject {
     self.displayName = displayName
