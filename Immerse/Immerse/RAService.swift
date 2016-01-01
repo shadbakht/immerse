@@ -12,6 +12,11 @@ class RAService: NSObject {
   static var mapping : NSArray = [] // Publicly Accessible Mappings - Text
   static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
   
+  class func recursivelyBuildNoteMappting() {
+    let allNotes = NotesService.getNotes()
+    
+  }
+  
   class func recursivelyBuildTagMapping() {
     /**
      recursivelyBuildTagMapping
