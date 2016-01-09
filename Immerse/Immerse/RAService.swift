@@ -11,10 +11,31 @@ import UIKit
 class RAService: NSObject {
   static var mapping : NSArray = [] // Publicly Accessible Mappings - Text
   static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
+  static var noteMapping : NSArray = []
   
   class func recursivelyBuildNoteMappting() {
-    let allNotes = NotesService.getNotes()
-    
+    let allNotes : [Note] = NotesService.getNotes() as! [Note]
+    var objects : [RAObject] = []
+    for note in allNotes {
+      let object = RAObject()
+      object.displayName = note.note_comment
+      object.id = note.note_id
+      
+      // Fetch the note's associated writing object
+      let writingID = note.writing_id
+      let writing = WritingService.writingForID(writingID)
+      let writingObject = RAObject()
+      writingObject.displayName = writing!.writing_title
+      writingObject.id  = writingID
+      
+      let existing = objects.filter({ $0.id == writingID })
+      if existing.count > 0 {
+        existing.first?.addChild(object)
+      } else {
+        writingObject.addChild(object)
+        objects.append(writingObject)
+      }
+    }
   }
   
   class func recursivelyBuildTagMapping() {

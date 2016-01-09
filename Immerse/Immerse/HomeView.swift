@@ -45,6 +45,8 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     super.viewDidLoad()
     
     Util.observe(self, action: "reload", named: "ReloadTagView")
+    Util.observe(self, action: "reload", named: "ReloadNoteView")
+
   }
 
   override func didReceiveMemoryWarning() {
