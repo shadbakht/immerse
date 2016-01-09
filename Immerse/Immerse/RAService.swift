@@ -17,6 +17,7 @@ class RAService: NSObject {
     let allNotes : [Note] = NotesService.getNotes() as! [Note]
     var objects : [RAObject] = []
     for note in allNotes {
+      
       let object = RAObject()
       object.displayName = note.note_comment
       object.id = note.note_id
@@ -27,6 +28,13 @@ class RAService: NSObject {
       let writingObject = RAObject()
       writingObject.displayName = writing!.writing_title
       writingObject.id  = writingID
+      
+      // Get the Substring text
+      let start = note.start_position
+      let length = note.length
+      let subString = WritingService.getBodyForWriting(writing!, start: start, length: length)
+      object.subDisplayName = subString
+
       
       let existing = objects.filter({ $0.id == writingID })
       if existing.count > 0 {

@@ -35,5 +35,6 @@ class NotesService: NSObject {
     
     RealmService.createObject(newNote)
     
+    Util.notify("ReloadNoteView")
   }
 }
