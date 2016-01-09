@@ -722,6 +722,9 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteTreeView" destination="AtP-MJ-hqZ" id="NG8-Mu-vLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZR-F1-0Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

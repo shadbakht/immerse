@@ -13,7 +13,7 @@ class RAService: NSObject {
   static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
   static var noteMapping : NSArray = []
   
-  class func recursivelyBuildNoteMappting() {
+  class func recursivelyBuildNoteMapping() {
     let allNotes : [Note] = NotesService.getNotes() as! [Note]
     var objects : [RAObject] = []
     for note in allNotes {
@@ -36,6 +36,7 @@ class RAService: NSObject {
         objects.append(writingObject)
       }
     }
+    RAService.noteMapping = objects
   }
   
   class func recursivelyBuildTagMapping() {
