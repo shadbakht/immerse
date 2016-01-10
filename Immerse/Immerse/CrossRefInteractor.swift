@@ -15,4 +15,5 @@ class CrossRefInteractor: NSObject {
   func loadRefMapping() -> NSArray {
     return DataManager.getRefMapping()
   }
+
 }

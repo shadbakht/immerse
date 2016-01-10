@@ -76,6 +76,10 @@
 		5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED91B95FAA70037359C /* LaunchScreen.xib */; };
 		5483BEE71B95FAA70037359C /* ImmerseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BEE61B95FAA70037359C /* ImmerseTests.swift */; };
 		548476511BF66235004374B5 /* LibraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548476501BF66235004374B5 /* LibraryCell.xib */; };
+		548DD4A81C41E64700B170F3 /* RefCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548DD4A61C41E64700B170F3 /* RefCell.swift */; };
+		548DD4A91C41E64700B170F3 /* RefCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548DD4A71C41E64700B170F3 /* RefCell.xib */; };
+		548DD4AC1C41E65F00B170F3 /* RefCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548DD4AA1C41E65F00B170F3 /* RefCellText.swift */; };
+		548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548DD4AB1C41E65F00B170F3 /* RefCellText.xib */; };
 		54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7451BDD6930009F3665 /* Icon-40.png */; };
 		54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7461BDD6930009F3665 /* Icon-40@2x.png */; };
 		54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7471BDD6930009F3665 /* Icon-40@3x.png */; };
@@ -182,6 +186,10 @@
 		5483BEE51B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BEE61B95FAA70037359C /* ImmerseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmerseTests.swift; sourceTree = "<group>"; };
 		548476501BF66235004374B5 /* LibraryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryCell.xib; sourceTree = "<group>"; };
+		548DD4A61C41E64700B170F3 /* RefCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefCell.swift; sourceTree = "<group>"; };
+		548DD4A71C41E64700B170F3 /* RefCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefCell.xib; sourceTree = "<group>"; };
+		548DD4AA1C41E65F00B170F3 /* RefCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefCellText.swift; sourceTree = "<group>"; };
+		548DD4AB1C41E65F00B170F3 /* RefCellText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefCellText.xib; sourceTree = "<group>"; };
 		54E5D7451BDD6930009F3665 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		54E5D7461BDD6930009F3665 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		54E5D7471BDD6930009F3665 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
@@ -316,6 +324,7 @@
 		546794DC1BD0CC010062FAFB /* CrossRef */ = {
 			isa = PBXGroup;
 			children = (
+				548DD4AE1C41E66600B170F3 /* Cells */,
 				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
 				546794D81BD0CBF20062FAFB /* CrossRefPresenter.swift */,
 				546794DA1BD0CBFD0062FAFB /* CrossRefInteractor.swift */,
@@ -492,6 +501,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		548DD4AE1C41E66600B170F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				548DD4A61C41E64700B170F3 /* RefCell.swift */,
+				548DD4A71C41E64700B170F3 /* RefCell.xib */,
+				548DD4AA1C41E65F00B170F3 /* RefCellText.swift */,
+				548DD4AB1C41E65F00B170F3 /* RefCellText.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		9E0AC03E7325E8958B930D3C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +616,7 @@
 				546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */,
 				546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */,
 				546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */,
+				548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */,
 				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
 				54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */,
 				54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */,
@@ -611,6 +632,7 @@
 				545481381C35BD2300B4E7E6 /* edit.png in Resources */,
 				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
 				545481331C35BC6700B4E7E6 /* circle.png in Resources */,
+				548DD4A91C41E64700B170F3 /* RefCell.xib in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
 				54FFC3E41BF829540041458D /* ReaderXRefsAccessory.xib in Resources */,
 				545481391C35BD2300B4E7E6 /* move.png in Resources */,
@@ -697,6 +719,7 @@
 				546795081BD0D00E0062FAFB /* Util.swift in Sources */,
 				546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */,
 				546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */,
+				548DD4AC1C41E65F00B170F3 /* RefCellText.swift in Sources */,
 				5454813C1C35CD4900B4E7E6 /* TagCellText.swift in Sources */,
 				546794FD1BD0CD130062FAFB /* Progress.swift in Sources */,
 				546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */,
@@ -733,6 +756,7 @@
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
 				546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */,
 				546794EA1BD0CC620062FAFB /* WritingService.swift in Sources */,
+				548DD4A81C41E64700B170F3 /* RefCell.swift in Sources */,
 				546794DE1BD0CC0E0062FAFB /* SettingsPresenter.swift in Sources */,
 				5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */,
 			);
