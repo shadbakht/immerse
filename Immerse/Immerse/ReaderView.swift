@@ -300,6 +300,7 @@ class ReaderView: UIViewController, UITextViewDelegate {
   
   func createXRef(tv: ImmerseTextView) {
     let view : ReaderXRefAccessoryView = createView("ReaderXRefsAccessory") as! ReaderXRefAccessoryView
+    presenter?.storeXRef(tv.selectedRange)
     view.selectedRange = tv.selectedRange
     view.parent = self
     view.config()

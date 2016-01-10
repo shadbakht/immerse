@@ -48,10 +48,12 @@ class ReaderInteractor: NSObject {
       DataManager.createTagForCurrentText(start, length: length, tagID: tagID)
     }
   }
-  func createRef(writingID:String, range:NSRange) {
+  func createRef(writingID:String, range:NSRange, rangeSource:NSRange) {
     let start = range.location
     let length = range.length
-    DataManager.createRefForCurrentText(start, length:length, writing:writingID)
+    DataManager.createRefForCurrentText(
+      start, length: length, writing: writingID,
+      startRef: rangeSource.location, lengthRef: rangeSource.length)
   }
   func createTagLabel(name:String) {
     DataManager.createTagName(name)

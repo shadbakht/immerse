@@ -93,8 +93,8 @@ class DataManager: NSObject {
     let current = WritingService.current_writing_object
 
     CrossRefService.createRefForText(
-      start, lengthWriting: length, writing: current!,
-      startReference: startRef, lengthReference: lengthRef, reference: writing!
+      start, lengthWriting: length, writing: writing!,
+      startReference: startRef, lengthReference: lengthRef, reference: current!
     )
   }
   class func updateTagType(id:String, name:String) {

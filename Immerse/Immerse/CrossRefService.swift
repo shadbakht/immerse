@@ -28,6 +28,7 @@ class CrossRefService: NSObject {
     obj.writing_id_end = reference.writing_id
     
     RealmService.createObject(obj)
+    Util.notify("ReloadRefView")
   }
   
   class func getRefsForText(writing:Writing) -> NSArray {

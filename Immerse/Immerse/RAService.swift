@@ -18,7 +18,7 @@ class RAService: NSObject {
     let objects : [RAObject] = []
     for ref in allRefs {
       let object = RAObject()
-      ref.sta
+//      ref.sta
     }
   }
   

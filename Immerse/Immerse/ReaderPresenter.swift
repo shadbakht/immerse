@@ -19,7 +19,13 @@ class ReaderPresenter: NSObject {
   var current_progress : Float = 0.0
   var current_offset : CGFloat = 0.0
   
+  var rangeTemp : NSRange? = nil
+  
   var isSetup : Bool = false
+  
+  func storeXRef(range:NSRange) {
+    rangeTemp = range
+  }
   
   func setup() {
     
@@ -69,6 +75,8 @@ class ReaderPresenter: NSObject {
   }
   
   func createRef(data:NSDictionary) {
+    
+    // Reference (destination)
     let writing_id = data.objectForKey("writing_id") as! String
     let start = data.objectForKey("start") as! Int
     let length = data.objectForKey("length") as! Int
@@ -76,7 +84,11 @@ class ReaderPresenter: NSObject {
     let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
     attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.orangeColor(), range: range)
     view!.writingBody.attributedText = attributedString
-    interactor!.createRef(writing_id, range: range)
+    
+    // Get the Origin
+    if let r = rangeTemp {
+      interactor!.createRef(writing_id, range: range, rangeSource:r)
+    }
   }
   
   func createTag(range:NSRange, tagTypes:NSArray) {
@@ -107,7 +119,7 @@ class ReaderPresenter: NSObject {
     }
     if item is CrossRef {
       let refObj = item as! CrossRef
-      let range = NSMakeRange(refObj.start_position, refObj.length)
+      let range = NSMakeRange(refObj.start_writing, refObj.length_writing)
       let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
       attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: range)
       view!.writingBody.attributedText = attributedString
