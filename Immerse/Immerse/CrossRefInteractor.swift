@@ -10,4 +10,9 @@ import UIKit
 
 class CrossRefInteractor: NSObject {
 
+  weak var presenter : CrossRefPresenter? = nil
+  
+  func loadRefMapping() -> NSArray {
+    return DataManager.getRefMapping()
+  }
 }
