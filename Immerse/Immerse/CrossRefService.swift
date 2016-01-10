@@ -20,10 +20,13 @@ class CrossRefService: NSObject {
     )
   {
     let obj = CrossRef()
-    obj.start_position = start
-    obj.length = length
+    obj.start_writing = startWriting
+    obj.length_writing = lengthWriting
+    obj.start_reference = startReference
+    obj.length_reference = lengthReference
     obj.writing_id_start = writing.writing_id
     obj.writing_id_end = reference.writing_id
+    
     RealmService.createObject(obj)
   }
   
