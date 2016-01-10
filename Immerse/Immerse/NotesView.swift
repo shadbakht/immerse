@@ -48,6 +48,11 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
 
   }
 
+  func reload() {
+    presenter?.setup()
+    noteTreeView.reloadData()
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

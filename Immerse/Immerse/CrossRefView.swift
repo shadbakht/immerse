@@ -42,6 +42,13 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
       forCellReuseIdentifier: "RefCellText"
     )
 
+    Util.observe(self, action: "reload", named: "ReloadRefView")
+
+  }
+
+  func reload() {
+    presenter?.setup()
+    refTreeView.reloadData()
   }
 
   override func didReceiveMemoryWarning() {
