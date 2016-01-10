@@ -10,15 +10,26 @@ import UIKit
 
 class RefCellText: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+  @IBOutlet weak var sourceTitle: UILabel!
+  @IBOutlet weak var sourceText: UILabel!
+  
+  @IBOutlet weak var refTitle: UILabel!
+  @IBOutlet weak var refText: UILabel!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  func load(obj:RAObjectReference) {
+    sourceTitle.text = obj.displayName
+    sourceText.text = obj.subDisplayName
 
-        // Configure the view for the selected state
-    }
+    refTitle.text = obj.displayName2
+    refText.text = obj.subDisplayName2
+  }
+  
+  override func setSelected(selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
     
 }

@@ -12,6 +12,7 @@ class RefCell: UITableViewCell {
 
   @IBOutlet weak var numberOfReferences: UIImageView!
   @IBOutlet weak var selectionButton: UIImageView!
+  
   @IBOutlet weak var sourceWritingName: UILabel!
   @IBOutlet weak var referenceWritingName: UILabel!
   
@@ -19,6 +20,11 @@ class RefCell: UITableViewCell {
     super.awakeFromNib()
   }
 
+  func load(obj:RAObjectReference) {
+    sourceWritingName.text = obj.displayName
+    referenceWritingName.text = obj.displayName2
+  }
+  
   override func setSelected(selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
 

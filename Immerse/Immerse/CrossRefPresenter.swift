@@ -23,17 +23,17 @@ class CrossRefPresenter: NSObject {
   }
  
   func cellForTreeView(tree:RATreeView, item: AnyObject!) -> UITableViewCell {
-    let data : RAObject = item as! RAObject
+    let data : RAObjectReference = item as! RAObjectReference
     let level = tree.levelForCellForItem(item)
     if level == 0 {
-      if let cell = tree.dequeueReusableCellWithIdentifier("TagCell") as? TagCell {
-        cell.set(data.displayName, level: level, id: data.id)
+      if let cell = tree.dequeueReusableCellWithIdentifier("RefCell") as? RefCell {
+        cell.load(data)
         return cell
       }
     }
     if level == 1 {
-      if let cell = tree.dequeueReusableCellWithIdentifier("TagCellText") as? TagCellText {
-        cell.set(data.displayName, level:level, id:data.id, location:data.subDisplayName)
+      if let cell = tree.dequeueReusableCellWithIdentifier("RefCellText") as? RefCellText {
+        cell.load(data)
         return cell
       }
     }

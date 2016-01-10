@@ -28,6 +28,20 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     i.presenter = presenter
     presenter?.setup()
 
+    // Delegates
+    refTreeView.delegate = self
+    refTreeView.dataSource = self
+    
+    // Register the Cells
+    self.refTreeView.registerNib(
+      UINib(nibName: "RefCell", bundle: nil),
+      forCellReuseIdentifier: "RefCell"
+    )
+    self.refTreeView.registerNib(
+      UINib(nibName: "RefCellText", bundle: nil),
+      forCellReuseIdentifier: "RefCellText"
+    )
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -75,9 +89,6 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
     let cell = presenter!.cellForTreeView(self.refTreeView, item: item)
-    if cell is TagCell {
-      //      (cell as! TagCell).configureMode(edit)
-    }
     return cell
   }
 
