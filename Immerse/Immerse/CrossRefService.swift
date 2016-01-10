@@ -14,7 +14,11 @@ class CrossRefService: NSObject {
     return RealmService.allObjectsForType(CrossRef.self)
   }
   
-  class func createRefForText(start:Int, length:Int, writing:Writing, reference:Writing) {
+  class func createRefForText(
+    startWriting:Int, lengthWriting:Int, writing:Writing,
+    startReference:Int, lengthReference:Int, reference:Writing
+    )
+  {
     let obj = CrossRef()
     obj.start_position = start
     obj.length = length

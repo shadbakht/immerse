@@ -13,6 +13,15 @@ class RAService: NSObject {
   static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
   static var noteMapping : NSArray = []
   
+  class func recursivelyBuildXRefMapping() {
+    let allRefs : [CrossRef] = CrossRefService.getRefs() as! [CrossRef]
+    let objects : [RAObject] = []
+    for ref in allRefs {
+      let object = RAObject()
+      ref.sta
+    }
+  }
+  
   class func recursivelyBuildNoteMapping() {
     let allNotes : [Note] = NotesService.getNotes() as! [Note]
     var objects : [RAObject] = []
