@@ -34,3 +34,10 @@ class RAObject: NSObject {
 
   }
 }
+
+class RAObjectReference : RAObject {
+  var displayName2 = ""
+  var subDisplayName2 = ""
+  var writing_id1 = ""
+  var writing_id2 = ""
+}

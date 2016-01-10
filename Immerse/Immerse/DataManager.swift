@@ -29,6 +29,11 @@ class DataManager: NSObject {
     return RAService.noteMapping
   }
   
+  class func getRefMapping() -> NSArray {
+    RAService.recursivelyBuildXRefMapping()
+    return RAService.refMapping
+  }
+  
   class func getLatestWritingsOpened(count:Int) -> NSArray {
     let activities = ActivityService.getLatestWritings(count)
     let writings = WritingService.activityToWriting(activities)

@@ -11,15 +11,52 @@ import UIKit
 class RAService: NSObject {
   static var mapping : NSArray = [] // Publicly Accessible Mappings - Text
   static var tagMapping : NSArray = [] // Publicly Accessible Mappings - Tags
-  static var noteMapping : NSArray = []
+  static var noteMapping : NSArray = [] // Publicly Accessible Mappings - Notes
+  static var refMapping : NSArray = [] // Publicly Accessible Mappings - Refs
   
   class func recursivelyBuildXRefMapping() {
     let allRefs : [CrossRef] = CrossRefService.getRefs() as! [CrossRef]
-    let objects : [RAObject] = []
+    
+    var parents : [RAObjectReference] = []
+    
     for ref in allRefs {
-      let object = RAObject()
-//      ref.sta
+      
+      let sourceID = ref.writing_id_start
+      let refID = ref.writing_id_end
+
+      let sourceWriting = WritingService.writingForID(sourceID)
+      let refWriting = WritingService.writingForID(refID)
+      
+      // Create the Children
+      let obj = RAObjectReference()
+      obj.writing_id1 = sourceID
+      obj.displayName = sourceWriting!.writing_title
+      obj.subDisplayName = WritingService.getBodyForWriting(sourceWriting!, start: ref.start_writing, length: ref.length_writing)
+      
+      obj.writing_id2 = refID
+      obj.displayName2 = refWriting!.writing_title
+      obj.subDisplayName2 = WritingService.getBodyForWriting(refWriting!, start: ref.start_reference, length: ref.length_reference)
+
+      // Create the Parents
+      let parent = RAObjectReference()
+      parent.writing_id1 = sourceID
+      parent.writing_id2 = refID
+      parent.displayName = sourceWriting!.writing_title
+      parent.displayName2 = refWriting!.writing_title
+      
+      // Add a new parent only if necessary
+      let results = parents.filter({
+        ($0 as RAObjectReference).writing_id1 == parent.writing_id1 &&
+        ($0 as RAObjectReference).writing_id2 == parent.writing_id2
+      })
+      if results.count == 0 {
+        parent.addChild(obj)
+        parents.append(parent)
+      } else {
+        results.first?.addChild(obj)
+      }
     }
+    RAService.refMapping = parents
   }
   
   class func recursivelyBuildNoteMapping() {
