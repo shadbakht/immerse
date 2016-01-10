@@ -33,6 +33,9 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     treeView.delegate = self
     treeView.dataSource = self
     
+    // Get rideof tableview
+    treeView.treeFooterView = UIView(frame: CGRectZero)
+
     self.treeView.registerNib(UINib(nibName: "LibraryCell", bundle: nil), forCellReuseIdentifier: "LibraryCell")
     
     super.viewDidLoad()

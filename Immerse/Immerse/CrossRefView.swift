@@ -32,6 +32,9 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     refTreeView.delegate = self
     refTreeView.dataSource = self
     
+    // Get rideof tableview
+    refTreeView.treeFooterView = UIView(frame: CGRectZero)
+
     // Register the Cells
     self.refTreeView.registerNib(
       UINib(nibName: "RefCell", bundle: nil),

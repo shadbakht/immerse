@@ -33,6 +33,9 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     noteTreeView.delegate = self
     noteTreeView.dataSource = self
     
+    // Get rideof tableview
+    noteTreeView.treeFooterView = UIView(frame: CGRectZero)
+
     // Register the Cells
     self.noteTreeView.registerNib(
       UINib(nibName: "TagCell", bundle: nil),

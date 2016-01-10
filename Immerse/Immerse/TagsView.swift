@@ -32,6 +32,9 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     tagTreeView.delegate = self
     tagTreeView.dataSource = self
     
+    // Get rideof tableview
+    tagTreeView.treeFooterView = UIView(frame: CGRectZero)
+
     // Register the Cells
     self.tagTreeView.registerNib(
       UINib(nibName: "TagCell", bundle: nil),
