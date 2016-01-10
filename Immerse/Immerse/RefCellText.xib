@@ -43,11 +43,11 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-rH-bJM">
-                        <rect key="frame" x="0.0" y="104" width="360" height="2"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-rH-bJM" userLabel="Border">
+                        <rect key="frame" x="0.0" y="105" width="360" height="1"/>
+                        <color key="backgroundColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="2" id="fsu-T5-NhA"/>
+                            <constraint firstAttribute="height" constant="1" id="fsu-T5-NhA"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgQ-Il-stO">
