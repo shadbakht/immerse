@@ -42,6 +42,9 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     countNoteLabel.setTextForInt(presenter!.totalNoteCount)
     countXRefLabel.setTextForInt(presenter!.totalXRefCount)
     
+    // Get rideof tableview
+    table.tableFooterView = UIView(frame: CGRectZero)
+
     super.viewDidLoad()
     
     Util.observe(self, action: "reload", named: "ReloadTagView")
