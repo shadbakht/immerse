@@ -88,10 +88,14 @@ class DataManager: NSObject {
     NotesService.createNoteForText(start, length:length,
       text:text, currentWriting: WritingService.current_writing_object!)
   }
-  class func createRefForCurrentText(start:Int, length:Int, writing:String) {
+  class func createRefForCurrentText(start:Int, length:Int, writing:String, startRef:Int, lengthRef:Int) {
     let writing = WritingService.writingForID(writing)
     let current = WritingService.current_writing_object
-    CrossRefService.createRefForText(start, length:length, writing:writing!, reference:current!)
+
+    CrossRefService.createRefForText(
+      start, lengthWriting: length, writing: current!,
+      startReference: startRef, lengthReference: lengthRef, reference: writing!
+    )
   }
   class func updateTagType(id:String, name:String) {
     TagService.updateTagType(id, name:name)
