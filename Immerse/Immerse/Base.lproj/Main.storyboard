@@ -355,6 +355,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="4Z5-10-Wah" secondAttribute="trailing" constant="8" id="sKW-ks-E88"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="writingCompleteLabel" destination="Kes-db-c7d" id="oni-fm-ZLD"/>
                                             <outlet property="writingCompletedProgressBar" destination="4Z5-10-Wah" id="kXP-LS-ky3"/>
