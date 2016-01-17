@@ -83,6 +83,9 @@
 		548DD4B01C41E74500B170F3 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 548DD4AF1C41E74500B170F3 /* cross.png */; };
 		548DD4B21C41EC7A00B170F3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548DD4B11C41EC7A00B170F3 /* Social.framework */; };
 		54A91DF91C42F3B500B4D2B2 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A91DF81C42F3B500B4D2B2 /* Share.swift */; };
+		54A91DFD1C4326A000B4D2B2 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFA1C4326A000B4D2B2 /* note.png */; };
+		54A91DFE1C4326A000B4D2B2 /* ref.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFB1C4326A000B4D2B2 /* ref.png */; };
+		54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFC1C4326A000B4D2B2 /* tag.png */; };
 		54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7451BDD6930009F3665 /* Icon-40.png */; };
 		54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7461BDD6930009F3665 /* Icon-40@2x.png */; };
 		54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54E5D7471BDD6930009F3665 /* Icon-40@3x.png */; };
@@ -196,6 +199,9 @@
 		548DD4AF1C41E74500B170F3 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		548DD4B11C41EC7A00B170F3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		54A91DF81C42F3B500B4D2B2 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		54A91DFA1C4326A000B4D2B2 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		54A91DFB1C4326A000B4D2B2 /* ref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ref.png; sourceTree = "<group>"; };
+		54A91DFC1C4326A000B4D2B2 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
 		54E5D7451BDD6930009F3665 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		54E5D7461BDD6930009F3665 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		54E5D7471BDD6930009F3665 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
@@ -469,6 +475,9 @@
 		5483BECE1B95FAA70037359C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54A91DFA1C4326A000B4D2B2 /* note.png */,
+				54A91DFB1C4326A000B4D2B2 /* ref.png */,
+				54A91DFC1C4326A000B4D2B2 /* tag.png */,
 				548DD4AF1C41E74500B170F3 /* cross.png */,
 				545481341C35BD2300B4E7E6 /* delete.png */,
 				545481351C35BD2300B4E7E6 /* edit.png */,
@@ -622,6 +631,8 @@
 				5467951B1BD32F6B0062FAFB /* 8 - More in Resources */,
 				545481371C35BD2300B4E7E6 /* delete.png in Resources */,
 				545481301C35BB7400B4E7E6 /* TagCell.xib in Resources */,
+				54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */,
+				54A91DFD1C4326A000B4D2B2 /* note.png in Resources */,
 				5467950A1BD1EC9E0062FAFB /* menu.png in Resources */,
 				546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */,
 				548DD4B01C41E74500B170F3 /* cross.png in Resources */,
@@ -642,6 +653,7 @@
 				548476511BF66235004374B5 /* LibraryCell.xib in Resources */,
 				545481381C35BD2300B4E7E6 /* edit.png in Resources */,
 				54E5D7521BDD6930009F3665 /* Icon-60@2x.png in Resources */,
+				54A91DFE1C4326A000B4D2B2 /* ref.png in Resources */,
 				545481331C35BC6700B4E7E6 /* circle.png in Resources */,
 				548DD4A91C41E64700B170F3 /* RefCell.xib in Resources */,
 				5483BED81B95FAA70037359C /* Images.xcassets in Resources */,
