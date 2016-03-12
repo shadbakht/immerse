@@ -60,7 +60,7 @@ class HomePresenter: NSObject {
     let total : NSMutableArray = []
     let noteString = String(format:"%d NOTE", notes)
     let tagString = String(format:"%d TAG", tags)
-    let refString = String(format:"%d REF", refs)
+    let refString = String(format:"%d X-REF", refs)
     
     if notes != 0 { total.addObject((notes == 1) ? noteString : noteString + "S") }
     if tags != 0 { total.addObject((tags == 1) ? tagString : tagString + "S") }
