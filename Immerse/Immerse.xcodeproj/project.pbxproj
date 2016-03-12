@@ -10,6 +10,7 @@
 		5416DA841BF3051C00EA28B8 /* RAObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416DA831BF3051C00EA28B8 /* RAObject.swift */; };
 		5416DA861BF30CB400EA28B8 /* RAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5416DA851BF30CB400EA28B8 /* RAService.swift */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
+		5431DBBB1C9494BE00756842 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5431DBBA1C9494BE00756842 /* Record.swift */; };
 		544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */; };
 		544CFCC01C0009DD00A41085 /* AddCrossRefPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */; };
 		544CFCC21C000A3B00A41085 /* AddCrossRefInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */; };
@@ -125,6 +126,7 @@
 		5416DA851BF30CB400EA28B8 /* RAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAService.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5431DBB61C94885000756842 /* ImmerseDBTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImmerseDBTest.playground; sourceTree = "<group>"; };
+		5431DBBA1C9494BE00756842 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefView.swift; sourceTree = "<group>"; };
 		544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefPresenter.swift; sourceTree = "<group>"; };
 		544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefInteractor.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		546794FE1BD0CD180062FAFB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5431DBBA1C9494BE00756842 /* Record.swift */,
 				546794F41BD0CCBE0062FAFB /* Writing.swift */,
 				546794F61BD0CCCA0062FAFB /* Note.swift */,
 				546794F81BD0CCD40062FAFB /* Tag.swift */,
@@ -684,6 +687,7 @@
 				5454812F1C35BB7400B4E7E6 /* TagCell.swift in Sources */,
 				54A91DF91C42F3B500B4D2B2 /* Share.swift in Sources */,
 				544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */,
+				5431DBBB1C9494BE00756842 /* Record.swift in Sources */,
 				546794D11BD0CBC80062FAFB /* TagsInteractor.swift in Sources */,
 				546795021BD0CD4F0062FAFB /* Activity.swift in Sources */,
 				546795081BD0D00E0062FAFB /* Util.swift in Sources */,
