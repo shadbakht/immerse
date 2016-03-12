@@ -124,6 +124,7 @@
 		5416DA831BF3051C00EA28B8 /* RAObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAObject.swift; sourceTree = "<group>"; };
 		5416DA851BF30CB400EA28B8 /* RAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAService.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		5431DBB61C94885000756842 /* ImmerseDBTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImmerseDBTest.playground; sourceTree = "<group>"; };
 		544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefView.swift; sourceTree = "<group>"; };
 		544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefPresenter.swift; sourceTree = "<group>"; };
 		544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefInteractor.swift; sourceTree = "<group>"; };
@@ -259,118 +260,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		544CFCC31C000AF400A41085 /* AddCrossRef */ = {
+		5431DBB71C9490DA00756842 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */,
+				546794C41BD0CB760062FAFB /* HomePresenter.swift */,
+				546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */,
+				546794CE1BD0CBBF0062FAFB /* TagsPresenter.swift */,
+				546794D31BD0CBD90062FAFB /* NotesPresenter.swift */,
 				544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */,
-				544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */,
+				546794D81BD0CBF20062FAFB /* CrossRefPresenter.swift */,
+				546794DD1BD0CC0E0062FAFB /* SettingsPresenter.swift */,
+				546794E21BD0CC280062FAFB /* ReaderPresenter.swift */,
 			);
-			name = AddCrossRef;
+			name = Presenter;
 			sourceTree = "<group>";
 		};
-		544CFCC61C000C7900A41085 /* AddCrossRefBook */ = {
+		5431DBB81C9490E500756842 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */,
+				546794C61BD0CB800062FAFB /* HomeInteractor.swift */,
+				546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */,
+				546794D01BD0CBC80062FAFB /* TagsInteractor.swift */,
+				546794D51BD0CBE20062FAFB /* NotesInteractor.swift */,
+				544CFCC11C000A3B00A41085 /* AddCrossRefInteractor.swift */,
+				546794DA1BD0CBFD0062FAFB /* CrossRefInteractor.swift */,
+				546794DF1BD0CC180062FAFB /* SettingsInteractor.swift */,
+				546794E41BD0CC330062FAFB /* ReaderInteractor.swift */,
 			);
-			name = AddCrossRefBook;
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		5431DBB91C94912000756842 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5454812A1C35AA4A00B4E7E6 /* Cells */,
+				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
+				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
+				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
+				544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */,
+				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
+				544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */,
+				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
+				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
+				546794C21BD0CB140062FAFB /* ReaderView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		5454812A1C35AA4A00B4E7E6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				548476501BF66235004374B5 /* LibraryCell.xib */,
-				545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		545481311C35BB8200B4E7E6 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
+				548DD4A61C41E64700B170F3 /* RefCell.swift */,
+				548DD4A71C41E64700B170F3 /* RefCell.xib */,
+				548DD4AA1C41E65F00B170F3 /* RefCellText.swift */,
+				548DD4AB1C41E65F00B170F3 /* RefCellText.xib */,
 				5454812E1C35BB7400B4E7E6 /* TagCell.xib */,
 				5454812D1C35BB7400B4E7E6 /* TagCell.swift */,
 				5454813B1C35CD4900B4E7E6 /* TagCellText.xib */,
 				5454813A1C35CD4900B4E7E6 /* TagCellText.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		546794C81BD0CB850062FAFB /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
-				546794C41BD0CB760062FAFB /* HomePresenter.swift */,
-				546794C61BD0CB800062FAFB /* HomeInteractor.swift */,
-			);
-			name = Home;
-			sourceTree = "<group>";
-		};
-		546794CD1BD0CBB20062FAFB /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				5454812A1C35AA4A00B4E7E6 /* Cells */,
-				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
-				546794C91BD0CBA40062FAFB /* LibraryPresenter.swift */,
-				546794CB1BD0CBAE0062FAFB /* LibraryInteractor.swift */,
-			);
-			name = Library;
-			sourceTree = "<group>";
-		};
-		546794D21BD0CBCD0062FAFB /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				545481311C35BB8200B4E7E6 /* Cells */,
-				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
-				546794CE1BD0CBBF0062FAFB /* TagsPresenter.swift */,
-				546794D01BD0CBC80062FAFB /* TagsInteractor.swift */,
-			);
-			name = Tags;
-			sourceTree = "<group>";
-		};
-		546794D71BD0CBE60062FAFB /* Notes */ = {
-			isa = PBXGroup;
-			children = (
-				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
-				546794D31BD0CBD90062FAFB /* NotesPresenter.swift */,
-				546794D51BD0CBE20062FAFB /* NotesInteractor.swift */,
-			);
-			name = Notes;
-			sourceTree = "<group>";
-		};
-		546794DC1BD0CC010062FAFB /* CrossRef */ = {
-			isa = PBXGroup;
-			children = (
-				548DD4AE1C41E66600B170F3 /* Cells */,
-				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
-				546794D81BD0CBF20062FAFB /* CrossRefPresenter.swift */,
-				546794DA1BD0CBFD0062FAFB /* CrossRefInteractor.swift */,
-			);
-			name = CrossRef;
-			sourceTree = "<group>";
-		};
-		546794E11BD0CC1C0062FAFB /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
-				546794DD1BD0CC0E0062FAFB /* SettingsPresenter.swift */,
-				546794DF1BD0CC180062FAFB /* SettingsInteractor.swift */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		546794E61BD0CC370062FAFB /* Reader */ = {
-			isa = PBXGroup;
-			children = (
+				548476501BF66235004374B5 /* LibraryCell.xib */,
+				545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */,
 				54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */,
 				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
-				546794C21BD0CB140062FAFB /* ReaderView.swift */,
-				546794E21BD0CC280062FAFB /* ReaderPresenter.swift */,
-				546794E41BD0CC330062FAFB /* ReaderInteractor.swift */,
 			);
-			name = Reader;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		546794F31BD0CC9E0062FAFB /* Services */ = {
@@ -431,6 +385,7 @@
 		5483BEC21B95FAA70037359C = {
 			isa = PBXGroup;
 			children = (
+				5431DBB61C94885000756842 /* ImmerseDBTest.playground */,
 				5483BECD1B95FAA70037359C /* Immerse */,
 				5483BEE31B95FAA70037359C /* ImmerseTests */,
 				5483BECC1B95FAA70037359C /* Products */,
@@ -459,17 +414,11 @@
 				54A91DF81C42F3B500B4D2B2 /* Share.swift */,
 				5483BED41B95FAA70037359C /* Main.storyboard */,
 				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
-				546794C81BD0CB850062FAFB /* Home */,
-				546794CD1BD0CBB20062FAFB /* Library */,
-				546794D21BD0CBCD0062FAFB /* Tags */,
-				546794D71BD0CBE60062FAFB /* Notes */,
-				544CFCC31C000AF400A41085 /* AddCrossRef */,
-				544CFCC61C000C7900A41085 /* AddCrossRefBook */,
-				546794DC1BD0CC010062FAFB /* CrossRef */,
-				546794E11BD0CC1C0062FAFB /* Settings */,
-				546794E61BD0CC370062FAFB /* Reader */,
-				546794F31BD0CC9E0062FAFB /* Services */,
+				5431DBB91C94912000756842 /* View */,
+				5431DBB71C9490DA00756842 /* Presenter */,
+				5431DBB81C9490E500756842 /* Interactor */,
 				546794FE1BD0CD180062FAFB /* Entities */,
+				546794F31BD0CC9E0062FAFB /* Services */,
 				5483BED71B95FAA70037359C /* Images.xcassets */,
 				5483BECE1B95FAA70037359C /* Supporting Files */,
 			);
@@ -524,17 +473,6 @@
 				5483BEE51B95FAA70037359C /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		548DD4AE1C41E66600B170F3 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				548DD4A61C41E64700B170F3 /* RefCell.swift */,
-				548DD4A71C41E64700B170F3 /* RefCell.xib */,
-				548DD4AA1C41E65F00B170F3 /* RefCellText.swift */,
-				548DD4AB1C41E65F00B170F3 /* RefCellText.xib */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 		9E0AC03E7325E8958B930D3C /* Pods */ = {
