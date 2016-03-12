@@ -26,6 +26,7 @@
 		545481391C35BD2300B4E7E6 /* move.png in Resources */ = {isa = PBXBuildFile; fileRef = 545481361C35BD2300B4E7E6 /* move.png */; };
 		5454813C1C35CD4900B4E7E6 /* TagCellText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454813A1C35CD4900B4E7E6 /* TagCellText.swift */; };
 		5454813D1C35CD4900B4E7E6 /* TagCellText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5454813B1C35CD4900B4E7E6 /* TagCellText.xib */; };
+		545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -125,7 +126,6 @@
 		5416DA831BF3051C00EA28B8 /* RAObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAObject.swift; sourceTree = "<group>"; };
 		5416DA851BF30CB400EA28B8 /* RAService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAService.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		5431DBB61C94885000756842 /* ImmerseDBTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImmerseDBTest.playground; sourceTree = "<group>"; };
 		5431DBBA1C9494BE00756842 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefView.swift; sourceTree = "<group>"; };
 		544CFCBF1C0009DD00A41085 /* AddCrossRefPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefPresenter.swift; sourceTree = "<group>"; };
@@ -142,6 +142,7 @@
 		545481361C35BD2300B4E7E6 /* move.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move.png; sourceTree = "<group>"; };
 		5454813A1C35CD4900B4E7E6 /* TagCellText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCellText.swift; sourceTree = "<group>"; };
 		5454813B1C35CD4900B4E7E6 /* TagCellText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCellText.xib; sourceTree = "<group>"; };
+		545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBuilder.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -333,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				546794E71BD0CC490062FAFB /* DataManager.swift */,
+				545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */,
 				546795031BD0CD5B0062FAFB /* AnalyticsService.swift */,
 				54FFC3E71BF84A970041458D /* ActivityService.swift */,
 				546794FF1BD0CD370062FAFB /* ShareService.swift */,
@@ -388,7 +390,6 @@
 		5483BEC21B95FAA70037359C = {
 			isa = PBXGroup;
 			children = (
-				5431DBB61C94885000756842 /* ImmerseDBTest.playground */,
 				5483BECD1B95FAA70037359C /* Immerse */,
 				5483BEE31B95FAA70037359C /* ImmerseTests */,
 				5483BECC1B95FAA70037359C /* Products */,
@@ -689,6 +690,7 @@
 				544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */,
 				5431DBBB1C9494BE00756842 /* Record.swift in Sources */,
 				546794D11BD0CBC80062FAFB /* TagsInteractor.swift in Sources */,
+				545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */,
 				546795021BD0CD4F0062FAFB /* Activity.swift in Sources */,
 				546795081BD0D00E0062FAFB /* Util.swift in Sources */,
 				546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */,

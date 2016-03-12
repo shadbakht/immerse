@@ -24,8 +24,8 @@ class Record: Object {
   dynamic var record_faithName : String = ""
   dynamic var record_authorName : String = ""
   dynamic var record_bookName : String = ""
-  dynamic var type : RecordType.RawValue = ""
-  dynamic var typeCount : Int = 0
-  dynamic var text : String = ""
-  dynamic var textCount : Int = 0
+  dynamic var record_type : RecordType.RawValue = ""
+  dynamic var record_typeCount : Int = 0
+  dynamic var record_text : String = ""
+  dynamic var record_textCount : Int = 0
 }
