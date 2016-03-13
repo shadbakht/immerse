@@ -49,9 +49,6 @@
 		546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E21BD0CC280062FAFB /* ReaderPresenter.swift */; };
 		546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E41BD0CC330062FAFB /* ReaderInteractor.swift */; };
 		546794E81BD0CC490062FAFB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E71BD0CC490062FAFB /* DataManager.swift */; };
-		546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EB1BD0CC6F0062FAFB /* TagService.swift */; };
-		546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794ED1BD0CC780062FAFB /* NotesService.swift */; };
-		546794F01BD0CC830062FAFB /* CrossRefService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EF1BD0CC830062FAFB /* CrossRefService.swift */; };
 		546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F11BD0CC9A0062FAFB /* UserService.swift */; };
 		546794F71BD0CCCA0062FAFB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F61BD0CCCA0062FAFB /* Note.swift */; };
 		546794F91BD0CCD40062FAFB /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F81BD0CCD40062FAFB /* Tag.swift */; };
@@ -151,9 +148,6 @@
 		546794E21BD0CC280062FAFB /* ReaderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderPresenter.swift; sourceTree = "<group>"; };
 		546794E41BD0CC330062FAFB /* ReaderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderInteractor.swift; sourceTree = "<group>"; };
 		546794E71BD0CC490062FAFB /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		546794EB1BD0CC6F0062FAFB /* TagService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
-		546794ED1BD0CC780062FAFB /* NotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
-		546794EF1BD0CC830062FAFB /* CrossRefService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRefService.swift; sourceTree = "<group>"; };
 		546794F11BD0CC9A0062FAFB /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		546794F61BD0CCCA0062FAFB /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		546794F81BD0CCD40062FAFB /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -308,9 +302,6 @@
 				546794E71BD0CC490062FAFB /* DataManager.swift */,
 				545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */,
 				546794FF1BD0CD370062FAFB /* ShareService.swift */,
-				546794EB1BD0CC6F0062FAFB /* TagService.swift */,
-				546794ED1BD0CC780062FAFB /* NotesService.swift */,
-				546794EF1BD0CC830062FAFB /* CrossRefService.swift */,
 				546794F11BD0CC9A0062FAFB /* UserService.swift */,
 				5425CD3F1BD9F4990047A8AD /* RealmService.swift */,
 				5416DA851BF30CB400EA28B8 /* RAService.swift */,
@@ -632,7 +623,6 @@
 				548DD4AC1C41E65F00B170F3 /* RefCellText.swift in Sources */,
 				5454813C1C35CD4900B4E7E6 /* TagCellText.swift in Sources */,
 				546794C31BD0CB140062FAFB /* ReaderView.swift in Sources */,
-				546794F01BD0CC830062FAFB /* CrossRefService.swift in Sources */,
 				546794D61BD0CBE20062FAFB /* NotesInteractor.swift in Sources */,
 				546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */,
 				546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */,
@@ -642,11 +632,9 @@
 				546794DB1BD0CBFD0062FAFB /* CrossRefInteractor.swift in Sources */,
 				546795061BD0CFF20062FAFB /* NavTray.swift in Sources */,
 				544CFCC21C000A3B00A41085 /* AddCrossRefInteractor.swift in Sources */,
-				546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */,
 				5416DA861BF30CB400EA28B8 /* RAService.swift in Sources */,
 				546794F71BD0CCCA0062FAFB /* Note.swift in Sources */,
 				546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */,
-				546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */,
 				545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */,
 				546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */,
 				5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */,
