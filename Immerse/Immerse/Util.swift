@@ -16,33 +16,33 @@ extension UILabel {
 
 extension NSFileManager {
   
-  class func localPath() -> String {
-    
+  static var documentsPath : String {
+    return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+  }
+  
+  static var localPath : String {
     let path = NSBundle.mainBundle().resourcePath!
     return path
     
   }
   
   class func localPathForItem(item:String) -> String {
-    return self.localPath() + "/" + item
+    return self.localPath + "/" + item
   }
   
-  func recursivePathsForResources(type type: String) -> [String] {
-    
-    let path = NSBundle.mainBundle().resourcePath!
-
-    // Enumerators are recursive
-    let enumerator = self.enumeratorAtPath(path)
-    var filePaths = [String]()
-    
-    while let filePath = enumerator?.nextObject() as? String {
-      
-      if NSURL(fileURLWithPath: filePath).pathExtension == type {
-        filePaths.append(filePath)
-      }
+  class func moveFileFromBundleToDocumentDirectory(name:String) {
+    let source = NSFileManager.localPath + "/" + name
+    let destination = NSFileManager.documentsPath + "/" + name
+    do {
+      try NSFileManager.defaultManager().copyItemAtPath(source, toPath: destination)
+    } catch let error as NSError {
+      print(error)
     }
-    
-    return filePaths
+  }
+  
+  class func fileExistsInDocumentDirectory(name:String) -> Bool {
+    let path = NSFileManager.documentsPath + "\\" + name
+    return NSFileManager.defaultManager().fileExistsAtPath(path)
   }
 }
 
@@ -66,7 +66,7 @@ class Util: NSObject {
   }
   
   class func notifyData(name:String, data:NSDictionary) {
-    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil, userInfo: data as [NSObject : AnyObject])
+    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil, userInfo: data as! [NSObject : AnyObject])
   }
 
   class func storeDefault(key:String, value:AnyObject?) {

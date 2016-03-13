@@ -12,10 +12,11 @@ class DataManager: NSObject {
 
   class func setup() {
     
-    DBBuilder().processFromFilePath("")
-    RealmService.numberOfObjects(Record)
+    // Check for Existing Default.Realm file, Copy it if it doesn't exist
+    if !NSFileManager.fileExistsInDocumentDirectory("default.realm") {
+      NSFileManager.moveFileFromBundleToDocumentDirectory("default.realm")
+    }
     
-    CrossRef().delete(self)
   }
   
   class func getFolderMapping() -> NSArray {

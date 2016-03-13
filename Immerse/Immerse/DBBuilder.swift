@@ -15,14 +15,25 @@ import RealmSwift
 
 class DBBuilder: NSObject {
 
+  /**
+   processFromeFilePath
+   Pass in a file path, get out a db realm to your desktop
+   - parameter path: String
+   - parameter out:  String : desktop path + realm name
+   */
   func processFromFilePath(path:String, out:String="/Users/jamestan/Desktop/default.realm") {
-    
     let testRecordSampe = "test faith| test author| this is a book|3|chapter|1|this is some awesome text"
     let config = setupRealm(out)
     processRow(testRecordSampe, config: config)
-    
   }
 
+  /**
+   setupRealm
+   Configures a Realm configuration file to use in writing to the Realm DB on your
+   Desktop
+   - parameter path: String : path to realm to save
+   - returns: Realm.Configuration : a configuration file for your realm DB
+   */
   func setupRealm(path:String) -> Realm.Configuration {
     var config = Realm.Configuration()
     config.path = path
@@ -36,7 +47,14 @@ class DBBuilder: NSObject {
     return config
   }
   
-
+  /**
+   processRow
+   Processes an individual record and writes it to the database and configured
+   In the Realm.Configuration file.
+   - parameter row:    String : bar dilimited string
+   - parameter config: Realm.Configuration : from setupRealm
+   - returns: Bool : Success?
+   */
   func processRow(row:String, config:Realm.Configuration) -> Bool {
     
     let keys = ["record_faithName","record_authorName","record_bookName","record_typeCount", "record_type","record_textCount","record_text"]

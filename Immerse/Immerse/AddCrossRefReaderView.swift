@@ -46,7 +46,7 @@ class ImmerseXRefTextView : UITextView {
 class AddCrossRefReaderView: UIViewController {
 
   @IBOutlet weak var textBody: ImmerseXRefTextView!
-  var writing : Writing? = nil
+  var writing : Record? = nil
   override func viewDidLoad() {
     super.viewDidLoad()
     
