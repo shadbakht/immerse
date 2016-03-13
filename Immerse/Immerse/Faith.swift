@@ -23,9 +23,7 @@ class GenericModelInterface : NSObject {
     }
     return RealmService.objectsWhere(type, query: query )
   }
-  
 }
-
 
 
 class FaithInterface : GenericModelInterface {
@@ -33,7 +31,6 @@ class FaithInterface : GenericModelInterface {
   class func getAllFaiths() -> [Faith] {
     return RealmService.allObjects(Faith.self) as! [Faith]
   }
-  
 }
 
 class Faith: Object {

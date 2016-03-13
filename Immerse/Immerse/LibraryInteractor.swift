@@ -13,16 +13,13 @@ class LibraryInteractor: NSObject {
   var presenter : LibraryPresenter? = nil
   
   func selectWritingNamed(name:String) {
-    DataManager.selectWritingByName(name)
   }
   
   func loadFolderMappings() -> NSArray {
-  
+    return []
   }
   
   func childrenForPath(name:String) -> NSArray {
-    let matches = DataManager.childrenForPath(name)
-    let keys = matches.allKeys
-    return keys
+    return []
   }
 }

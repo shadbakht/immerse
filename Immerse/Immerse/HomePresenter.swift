@@ -31,19 +31,13 @@ class HomePresenter: NSObject {
 
   func selectCell(indexPath:NSIndexPath) {
     let row = indexPath.row
-    let writing = recentlyViewedWritings.objectAtIndex(row)
-    interactor!.selectWriting(writing as! Writing)
   }
   func recentlyViewedCellForIndex(tableView:UITableView, indexPath: NSIndexPath) -> HomeViewCell? {
     
     let cell = tableView.dequeueReusableCellWithIdentifier("HomeViewCell", forIndexPath: indexPath) as? HomeViewCell
     let row = indexPath.row
-    let writing : Writing = recentlyViewedWritings.objectAtIndex(row) as! Writing
-    let data = interactor!.getProgressForWriting(writing)
-    let counts = interactor!.getTagNoteRefCounts(writing)
     let subtitle = createSubtitleFromCount(counts.notes, tags: counts.tags, refs: counts.refs)
     
-    cell?.writingTitleLabel.text = writing.writing_title
     cell?.writingCompletedProgressBar.progress = data.progress
     cell?.writingProgressLabel.text = data.text
     cell?.writingSubTitleLabel.text = subtitle
