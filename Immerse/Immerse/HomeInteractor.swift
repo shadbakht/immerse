@@ -10,16 +10,7 @@ import UIKit
 
 class HomeInteractor: NSObject {
 
-  weak var presenter : HomePresenter? = nil
-  
-  func getObjectCounts() -> (tags:Int, notes:Int, xRefs:Int) {
-    return (0, 0, 0)
-  }
-  
-  func getRecent() -> NSArray {
-    return []
-  }
-  
+  weak var presenter : HomePresenter? = nil  
   
   
 }

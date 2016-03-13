@@ -14,17 +14,14 @@ class AddCrossRefInteractor: NSObject {
   var presenter : AddCrossRefPresenter? = nil
   
   func selectWritingForXRef(name:String) {
-    DataManager.selectWritingForXRef(name)
   }
   
   func loadFolderMappings() -> NSArray {
-    return DataManager.getFolderMapping()
+    return []
   }
   
   func childrenForPath(name:String) -> NSArray {
-    let matches = DataManager.childrenForPath(name)
-    let keys = matches.allKeys
-    return keys
+    return []
   }
 
 }

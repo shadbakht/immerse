@@ -13,7 +13,7 @@ class NotesInteractor: NSObject {
   weak var presenter : NotesPresenter? = nil
   
   func loadNoteMapping() -> NSArray {
-    return DataManager.getNoteMapping()
+    return []
   }
   
 }
