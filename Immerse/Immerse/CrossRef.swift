@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class CrossRefInterface : NSObject {
+class CrossRefInterface : GenericModelInterface {
   
 }
 

@@ -17,7 +17,7 @@ class LibraryInteractor: NSObject {
   }
   
   func loadFolderMappings() -> NSArray {
-    return DataManager.getFolderMapping()
+  
   }
   
   func childrenForPath(name:String) -> NSArray {

@@ -14,25 +14,6 @@ enum RecordType : String {
   case SECTION = "section"
 }
 
-
-extension Object {
-  static func primaryKey() -> String? {
-    return "id"
-  }
-}
-
-class GenericModelInterface : NSObject {
-  
-  class func getRecordBy<T>(type:T, name:String, value:AnyObject) -> [Object] {
-    var query = "\(name) == \(value)"
-    if value is String {
-      query = "\(name) == '\(value)'"
-    }
-    return RealmService.objectsWhere(type, query: query )
-  }
-}
-
-
 class RecordInterface : GenericModelInterface {
   static let sharedInstance = RecordInterface()
   func getRecordTree() -> NSArray {

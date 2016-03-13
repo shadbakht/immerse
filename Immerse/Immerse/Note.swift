@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class NoteInterface : NSObject {
+class NoteInterface : GenericModelInterface {
   
 }
 class Note: Object {

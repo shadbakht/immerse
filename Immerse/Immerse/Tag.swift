@@ -8,6 +8,10 @@
 
 import RealmSwift
 
+class TagTypeInterface : GenericModelInterface {
+  
+}
+
 class TagType : Object {
 
   dynamic var id : String = ""
@@ -16,7 +20,7 @@ class TagType : Object {
 }
 
 
-class TagInterface : NSObject {
+class TagInterface : GenericModelInterface {
   
 }
 

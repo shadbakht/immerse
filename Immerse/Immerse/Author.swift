@@ -8,7 +8,19 @@
 
 import RealmSwift
 
+class AuthorInterface : GenericModelInterface {
+  
+  class func getAuthors(faith:Faith? = nil) -> [Author] {
+    if faith == nil {
+      return RealmService.allObjects(Author.self) as! [Author]
+    } else {
+      return faith!.authors
+    }
+  }
+}
+
 class Author: Object {
+  
   dynamic var id : String = ""
   dynamic var name : String = ""
   dynamic var faith : Faith?
