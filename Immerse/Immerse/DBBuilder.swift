@@ -69,17 +69,71 @@ class DBBuilder: NSObject {
     properties.setObject((properties.objectForKey("record_typeCount")?.integerValue)!, forKey: "record_typeCount")
     let propertiesFinal = NSDictionary(objects: properties.allValues, forKeys: properties.allKeys as! [NSCopying])
     
+    // Create Faith
+    var faithObj = Faith()
+    let name = propertiesFinal.valueForKey("record_faithName") as! String
+    let results = FaithInterface.getObjectsBy(Faith.self, name: "name", value: name)
+    if results.count == 1 {
+      faithObj = results.first as! Faith
+    } else if results.count == 0 {
+      faithObj.name = propertiesFinal.valueForKey("record_faithName") as! String
+      faithObj.id = name.sha1()
+    } else {
+      print("ERROR!")
+    }
+
+    var authorObj = Author()
+    let nameA = propertiesFinal.valueForKey("record_authorName") as! String
+    let resultsA = AuthorInterface.getObjectsBy(Author.self, name: "name", value: name)
+    if results.count == 1 {
+      authorObj = resultsA.first as! Author
+    } else if results.count == 0 {
+      authorObj.name = nameA
+      authorObj.id = nameA.sha1()
+    } else {
+      print("ERROR!")
+    }
+    
+    var bookObj = Book()
+    let nameB = propertiesFinal.valueForKey("record_bookName") as! String
+    let resultsB = BookInterface.getObjectsBy(Book.self, name: "name", value: name)
+    if results.count == 1 {
+      bookObj = resultsB.first as! Book
+    } else if results.count == 0 {
+      bookObj.name = nameB
+      bookObj.id = nameB.sha1()
+    } else {
+      print("ERROR!")
+    }
+
+    
     let recordObj = Record()
-    recordObj.setValuesForKeysWithDictionary((propertiesFinal as? [String : AnyObject])!)
+    recordObj.faith = faithObj
+    recordObj.author = authorObj
+    recordObj.book = bookObj
+    recordObj.record_text = propertiesFinal.valueForKey("record_text") as! String
+    recordObj.record_textCount = propertiesFinal.valueForKey("record_textCount") as! Int
+    recordObj.record_type = propertiesFinal.valueForKey("record_type") as! String
+    recordObj.record_typeCount = propertiesFinal.valueForKey("record_typeCount") as! Int
+    recordObj.id = recordObj.record_text.sha1()
+    
+    authorObj.faith = faithObj
+    bookObj.author = authorObj
+    
+
     
     // Create a Realm Object
     do {
       let realm = try! Realm(configuration: config)
       try! realm.write({
+        realm.add(faithObj)
+        realm.add(authorObj)
+        realm.add(bookObj)
         realm.add(recordObj)
+        
       })
       return true
     }
   }
-
+  
 }

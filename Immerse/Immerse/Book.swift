@@ -21,8 +21,8 @@ class BookInterface : GenericModelInterface {
 
 class Book : Object {
   
-  dynamic var book_id : String = ""
-  dynamic var book_name : String = ""
+  dynamic var id : String = ""
+  dynamic var name : String = ""
   dynamic var author : Author?
 
   var records: [Record] {
