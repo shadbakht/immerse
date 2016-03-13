@@ -15,13 +15,12 @@ import RealmSwift
 
 class DBBuilder: NSObject {
 
-  func processFromFilePath(path:String) {
+  func processFromFilePath(path:String, out:String="/Users/jamestan/Desktop/output.realm") {
     
-    let testRecordSampe = "KEY|test faith| test author| this is a book|3|chapter|1|this is some awesome text"
-    let pathRealm :String = "/Users/jamestan/Desktop/output.realm"
-    
-    let config = setupRealm(pathRealm)
+    let testRecordSampe = "test faith| test author| this is a book|3|chapter|1|this is some awesome text"
+    let config = setupRealm(out)
     processRow(testRecordSampe, config: config)
+    
   }
 
   func setupRealm(path:String) -> Realm.Configuration {
@@ -32,7 +31,6 @@ class DBBuilder: NSObject {
       if (oldSchemaVersion < 1) {
       }
     }
-    //  let config = Realm.Configuration(path: realmPath, schemaVersion: 2, migrationBlock: migrationBlock )
     config.migrationBlock = migrationBlock
     config.schemaVersion = 2
     return config
@@ -41,9 +39,12 @@ class DBBuilder: NSObject {
 
   func processRow(row:String, config:Realm.Configuration) -> Bool {
     
-    let keys = ["id","record_faithName","record_authorName","record_bookName","record_typeCount", "record_type","record_textCount","record_text"]
+    let keys = ["record_faithName","record_authorName","record_bookName","record_typeCount", "record_type","record_textCount","record_text"]
     let values = row.componentsSeparatedByString("|")
     let properties = NSMutableDictionary(objects: values, forKeys: keys)
+    
+    // Add a Unique ID
+    properties.setObject(NSDate().description.sha1(), forKey: "id")
     
     // Fix the Properties
     properties.setObject((properties.objectForKey("record_textCount")?.integerValue)!, forKey: "record_textCount")

@@ -20,7 +20,7 @@ class Record: Object {
     return "id"
   }
   
-  dynamic var id = 0
+  dynamic var id : String = ""
   dynamic var record_faithName : String = ""
   dynamic var record_authorName : String = ""
   dynamic var record_bookName : String = ""
@@ -28,4 +28,5 @@ class Record: Object {
   dynamic var record_typeCount : Int = 0
   dynamic var record_text : String = ""
   dynamic var record_textCount : Int = 0
+  
 }

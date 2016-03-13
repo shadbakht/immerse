@@ -11,6 +11,8 @@ import UIKit
 class DataManager: NSObject {
 
   class func setup() {
+    
+    DBBuilder().processFromFilePath("")
     WritingService.setup()
     RAService.recursivelyBuildMapping()
   }
