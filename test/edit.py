@@ -13,34 +13,6 @@ for i in range(len(textLine)-1,-1, -1):
 	if textLine[i]== '\n':
 		del textLine [i]		
 
-'--------------------add author, book name, faith-----------------------'
-
-
-
-# def findType( line ):
-
-# 	if line.find('/*') != -1:
-# 		titleType = line
-
-#    		if titleType.find('faith')!= -1:
-#    			faith =titleType[9:]
-#    			print "faith: ", faith
-#    		elif titleType.find('author')!= -1:
-#    			author =titleType[10:]   
-#    			print "author: ", author
-#    		elif titleType.find('sub-sub-chapter')!= -1:
-#    			subSection =titleType[20:]   
-#    			print "sub-section: ", subSection
-#    		elif titleType.find('sub-chapter')!= -1:
-#    			section =titleType[15:]   
-#    			print "section: ", section
-# 		elif titleType.find('chapter')!= -1:
-# 			chapter =titleType[11:]   
-# 			print "chapter: ", chapter 
-# 	else: 
-# 		paragraph =line[0:10]
-# 		# print "paragraph: ", paragraph   	
-# 	return 
 subSectionNumber = 0
 sectionNumber = 0
 chapterNumber = 0
