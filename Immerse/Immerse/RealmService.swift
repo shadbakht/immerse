@@ -11,192 +11,71 @@ import RealmSwift
 class RealmService: NSObject {
 
   
-  
-  class func numberOfObjectsOfType(objectType:AnyObject.Type) -> Int {
-    let realm = try! Realm()
-    if objectType == Writing.self {
-      return realm.objects(Writing).count
+  class func numberOfObjects<T>(type:T) -> Int {
+    do {
+      if let realm = try? Realm() {
+        if let typeCheck = type as? Object.Type {
+          return realm.objects(typeCheck).count
+        }
+      }
     }
-    
     return 0
   }
   
-  class func createObject(object:AnyObject) {
-    
-    let realm = try! Realm()
-    
-    // Create Writing
-    if object is Writing {
-      try! realm.write({
-        realm.add(object as! Writing)
-      })
-    }
-    
-    // Create Note
-    if object is Note {
-      try! realm.write({
-        realm.add(object as! Note)
-      })
-    }
-    
-    // Create Activity
-    if object is Activity {
-      try! realm.write({
-        realm.add(object as! Activity)
-      })
-    }
-    
-    // Create Activity
-    if object is Progress {
-      try! realm.write({
-        realm.add(object as! Progress)
-      })
-    }
-    
-    // Create TagTypes
-    if object is TagTypes {
-      try! realm.write({
-        realm.add(object as! TagTypes)
-      })
-    }
-
-    // Create TagTypes
-    if object is Tag {
-      try! realm.write({
-        realm.add(object as! Tag)
-      })
-    }
-    
-    // Create CrossRef
-    if object is CrossRef {
-      try! realm.write({
-        realm.add(object as! CrossRef)
-      })
-    }
-
-    
-  }
-  
-  class func allObjectsForType(objectType:AnyObject.Type) -> NSArray {
-    
-    let realm = try! Realm()
-    
-    if objectType == Writing.self {
-      let results = realm.objects(Writing)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == Note.self {
-      let results = realm.objects(Note)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == Activity.self{
-      let results = realm.objects(Activity)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == Progress.self{
-      let results = realm.objects(Progress)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == TagTypes.self{
-      let results = realm.objects(TagTypes)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == Tag.self{
-      let results = realm.objects(Tag)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    if objectType == CrossRef.self{
-      let results = realm.objects(CrossRef)
-      return (results.valueForKey("self") as! NSArray)
-    }
-
-
-
-    
-
-    return []
-  }
-
-  class func objectsForQuery(objectType:AnyObject.Type, query : String) -> NSArray {
-    
-    let realm = try! Realm()
-    
-    if objectType == Writing.self {
-      let results = realm.objects(Writing).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-    if objectType == Note.self {
-      let results = realm.objects(Note).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-    if objectType == Activity.self {
-      let results = realm.objects(Activity).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-    if objectType == Progress.self {
-      let results = realm.objects(Progress).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-    if objectType == TagTypes.self {
-      let results = realm.objects(TagTypes).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-
-    if objectType == Tag.self {
-      let results = realm.objects(Tag).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-    if objectType == CrossRef.self {
-      let results = realm.objects(CrossRef).filter(query)
-      return (results.valueForKey("self") as! NSArray)
-    }
-    
-
-
-    return []
-  }
-  
-  class func updateObject(objectType:AnyObject.Type, keyIdentify : String, keyValue: String, keys: NSArray, values: NSArray) {
-
-    let realm = try! Realm()
-
-    if objectType == Progress.self {
-      let progress : Progress = objectsForQuery(Progress.self, query: keyIdentify + " = '" + keyValue + "'").firstObject as! Progress
-      let properties = NSDictionary(objects: values as [AnyObject], forKeys: keys as! [NSCopying])
-      try! realm.write({
-        progress.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
-      })
-    }
-    
-    if objectType == TagTypes.self {
-      let progress : TagTypes = objectsForQuery(TagTypes.self, query: keyIdentify + " = '" + keyValue + "'").firstObject as! TagTypes
-      let properties = NSDictionary(objects: values as [AnyObject], forKeys: keys as! [NSCopying])
-      try! realm.write({
-        progress.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
-      })
-    }
-  }
-  
-  class func deleteRealmObject(object:Object) {
-    if let realm = try? Realm () {
-      do {
-        try! realm.write {
-          realm.delete(object)
+  class func createObject<T>(object:T) {
+    do {
+      if let realm = try? Realm() {
+        _ = try? realm.write {
+          realm.add(object as! Object)
         }
       }
     }
   }
 
-  class func updateRealmObjects(objects:[Object]) {
-    if let realm = try? Realm() {
+  class func allObjects<T>(type:T) -> [Object] {
+    do {
+      if let realm = try? Realm() {
+        if let typeCheck = type as? Object.Type {
+          if let results = realm.objects(typeCheck).valueForKey("self") as? [Object] {
+            return results
+          }
+        }
+      }
+    }
+    return []
+  }
+
+  class func objectsWhere<T>(type:T, query : String) -> [Object] {
+    do {
+      if let realm = try? Realm() {
+        if let typeCheck = type as? Object.Type {
+          if let results = realm.objects(typeCheck).filter(query).valueForKey("self") as? [Object] {
+            return results
+          }
+        }
+      }
+    }
+    return []
+  }
+  
+  class func updateObject<T>(type:T,pid:String, keys:[String], values:[AnyObject]) {
+    do {
+      if let realm = try? Realm(), typeCheck = type as? Object.Type {
+        if let object = objectsWhere(typeCheck, query: "id = \(pid)").first {
+          let properties = NSDictionary(objects: values, forKeys: keys)
+          _ = try? realm.write {
+            object.setValuesForKeysWithDictionary(properties as! [String : AnyObject])
+          }
+        }
+      }
+    }
+  }
+  
+  class func deleteObject(object:Object) {
+    if let realm = try? Realm () {
       do {
-        try! realm.write{
-          realm.add(objects, update: true)
+        try! realm.write {
+          realm.delete(object)
         }
       }
     }

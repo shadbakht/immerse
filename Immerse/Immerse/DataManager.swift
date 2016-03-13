@@ -13,8 +13,7 @@ class DataManager: NSObject {
   class func setup() {
     
     DBBuilder().processFromFilePath("")
-    
-    Record()
+    RealmService.numberOfObjects(Record)
   }
   
   class func getFolderMapping() -> NSArray {
