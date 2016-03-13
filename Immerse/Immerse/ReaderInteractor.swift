@@ -41,8 +41,8 @@ class ReaderInteractor: NSObject {
   func createTag(range:NSRange, tags:NSArray) {
     let tags = DataManager.tagsForNames(tags)
     for tag in tags {
-      let tagObj = tag as! TagTypes
-      let tagID = tagObj.tag_type_id
+      let tagObj = tag as! TagType
+      let tagID = tagObj.id
       let start = range.location
       let length = range.length
       DataManager.createTagForCurrentText(start, length: length, tagID: tagID)

@@ -14,6 +14,8 @@ class DataManager: NSObject {
     
     DBBuilder().processFromFilePath("")
     RealmService.numberOfObjects(Record)
+    
+    CrossRef().delete(self)
   }
   
   class func getFolderMapping() -> NSArray {

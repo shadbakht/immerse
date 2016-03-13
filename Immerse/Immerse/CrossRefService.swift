@@ -11,7 +11,7 @@ import UIKit
 class CrossRefService: NSObject {
 
   class func getRefs() -> NSArray {
-    return RealmService.allObjectsForType(CrossRef.self)
+    return RealmService.allObjects(CrossRef)
   }
   
   class func createRefForText(
@@ -31,7 +31,7 @@ class CrossRefService: NSObject {
     Util.notify("ReloadRefView")
   }
   
-  class func getRefsForText(writing:Writing) -> NSArray {
+  class func getRefsForText(writing:Record) -> NSArray {
     let writing_id = writing.writing_id
     let results = RealmService.objectsForQuery(CrossRef.self, query:
       "writing_id_start = '" + writing_id + "' OR writing_id_end = '" + writing_id + "'")

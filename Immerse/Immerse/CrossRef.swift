@@ -18,4 +18,11 @@ class CrossRef: Object {
   dynamic var destination_index : Int = 0
   dynamic var destination_length : Int = 0
 
+  class func create() {
+    
+  }
+  
+  class func delete() {
+    
+  }
 }
