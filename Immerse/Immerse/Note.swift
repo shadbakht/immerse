@@ -8,6 +8,9 @@
 
 import RealmSwift
 
+class NoteInterface : NSObject {
+  
+}
 class Note: Object {
 
   dynamic var id : String = ""

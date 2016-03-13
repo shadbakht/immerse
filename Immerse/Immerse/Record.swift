@@ -20,6 +20,11 @@ extension Object {
     return "id"
   }
 }
+
+class RecordInterface : NSObject {
+  
+}
+
 class Record: Object {
 
   dynamic var id : String = ""

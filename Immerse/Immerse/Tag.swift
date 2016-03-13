@@ -15,6 +15,11 @@ class TagType : Object {
   dynamic var parent : TagType?
 }
 
+
+class TagInterface : NSObject {
+  
+}
+
 class Tag: Object {
   
   dynamic var id : String = ""
