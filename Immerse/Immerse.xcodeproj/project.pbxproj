@@ -29,6 +29,9 @@
 		545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */; };
 		545AE2FF1C95122100A46F5F /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = 545AE2FE1C95122100A46F5F /* default.realm */; };
 		545AE3001C95122100A46F5F /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = 545AE2FE1C95122100A46F5F /* default.realm */; };
+		545AE3081C951B0D00A46F5F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE3071C951B0D00A46F5F /* Book.swift */; };
+		545AE30A1C951C3800A46F5F /* Faith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE3091C951C3800A46F5F /* Faith.swift */; };
+		545AE30C1C951C4300A46F5F /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE30B1C951C4300A46F5F /* Author.swift */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -129,6 +132,9 @@
 		5454813B1C35CD4900B4E7E6 /* TagCellText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCellText.xib; sourceTree = "<group>"; };
 		545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBBuilder.swift; sourceTree = "<group>"; };
 		545AE2FE1C95122100A46F5F /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
+		545AE3071C951B0D00A46F5F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		545AE3091C951C3800A46F5F /* Faith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Faith.swift; sourceTree = "<group>"; };
+		545AE30B1C951C4300A46F5F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -315,6 +321,9 @@
 		546794FE1BD0CD180062FAFB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				545AE3091C951C3800A46F5F /* Faith.swift */,
+				545AE30B1C951C4300A46F5F /* Author.swift */,
+				545AE3071C951B0D00A46F5F /* Book.swift */,
 				5431DBBA1C9494BE00756842 /* Record.swift */,
 				546794F61BD0CCCA0062FAFB /* Note.swift */,
 				546794F81BD0CCD40062FAFB /* Tag.swift */,
@@ -609,8 +618,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545AE30C1C951C4300A46F5F /* Author.swift in Sources */,
 				546794F91BD0CCD40062FAFB /* Tag.swift in Sources */,
 				54E5D75C1BE33463009F3665 /* Test.m in Sources */,
+				545AE3081C951B0D00A46F5F /* Book.swift in Sources */,
 				5416DA841BF3051C00EA28B8 /* RAObject.swift in Sources */,
 				546794D41BD0CBD90062FAFB /* NotesPresenter.swift in Sources */,
 				545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */,
@@ -632,6 +643,7 @@
 				546794D61BD0CBE20062FAFB /* NotesInteractor.swift in Sources */,
 				546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */,
 				546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */,
+				545AE30A1C951C3800A46F5F /* Faith.swift in Sources */,
 				546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */,
 				546794D91BD0CBF20062FAFB /* CrossRefPresenter.swift in Sources */,
 				544CFCC01C0009DD00A41085 /* AddCrossRefPresenter.swift in Sources */,
