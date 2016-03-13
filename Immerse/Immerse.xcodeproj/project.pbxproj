@@ -58,7 +58,6 @@
 		546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FA1BD0CCDE0062FAFB /* CrossRef.swift */; };
 		546794FD1BD0CD130062FAFB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FC1BD0CD130062FAFB /* Progress.swift */; };
 		546795001BD0CD370062FAFB /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FF1BD0CD370062FAFB /* ShareService.swift */; };
-		546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795031BD0CD5B0062FAFB /* AnalyticsService.swift */; };
 		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; };
 		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; };
 		5467950A1BD1EC9E0062FAFB /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 546795091BD1EC9E0062FAFB /* menu.png */; };
@@ -95,7 +94,6 @@
 		54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */; };
 		54FFC3E41BF829540041458D /* ReaderXRefsAccessory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */; };
 		54FFC3E61BF82C140041458D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FFC3E51BF82C140041458D /* QuartzCore.framework */; };
-		54FFC3E81BF84A970041458D /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FFC3E71BF84A970041458D /* ActivityService.swift */; };
 		54FFC3EA1BF85E8D0041458D /* ProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FFC3E91BF85E8D0041458D /* ProgressService.swift */; };
 		E91A37593168B2754A6BC431 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9104F0529718EC07A125BDFE /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -164,7 +162,6 @@
 		546794FA1BD0CCDE0062FAFB /* CrossRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRef.swift; sourceTree = "<group>"; };
 		546794FC1BD0CD130062FAFB /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		546794FF1BD0CD370062FAFB /* ShareService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
-		546795031BD0CD5B0062FAFB /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		546795051BD0CFF20062FAFB /* NavTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTray.swift; sourceTree = "<group>"; };
 		546795071BD0D00E0062FAFB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		546795091BD1EC9E0062FAFB /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
@@ -207,7 +204,6 @@
 		54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderNotesAccessory.xib; sourceTree = "<group>"; };
 		54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderXRefsAccessory.xib; sourceTree = "<group>"; };
 		54FFC3E51BF82C140041458D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		54FFC3E71BF84A970041458D /* ActivityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		54FFC3E91BF85E8D0041458D /* ProgressService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressService.swift; sourceTree = "<group>"; };
 		9104F0529718EC07A125BDFE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -315,8 +311,6 @@
 			children = (
 				546794E71BD0CC490062FAFB /* DataManager.swift */,
 				545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */,
-				546795031BD0CD5B0062FAFB /* AnalyticsService.swift */,
-				54FFC3E71BF84A970041458D /* ActivityService.swift */,
 				546794FF1BD0CD370062FAFB /* ShareService.swift */,
 				546794EB1BD0CC6F0062FAFB /* TagService.swift */,
 				546794ED1BD0CC780062FAFB /* NotesService.swift */,
@@ -652,7 +646,6 @@
 				546794C51BD0CB760062FAFB /* HomePresenter.swift in Sources */,
 				546794D91BD0CBF20062FAFB /* CrossRefPresenter.swift in Sources */,
 				544CFCC01C0009DD00A41085 /* AddCrossRefPresenter.swift in Sources */,
-				546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */,
 				546794DB1BD0CBFD0062FAFB /* CrossRefInteractor.swift in Sources */,
 				54FFC3EA1BF85E8D0041458D /* ProgressService.swift in Sources */,
 				546795061BD0CFF20062FAFB /* NavTray.swift in Sources */,
@@ -670,7 +663,6 @@
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
 				544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */,
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
-				54FFC3E81BF84A970041458D /* ActivityService.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
 				546794E01BD0CC180062FAFB /* SettingsInteractor.swift in Sources */,
 				546794CA1BD0CBA40062FAFB /* LibraryPresenter.swift in Sources */,
