@@ -62,13 +62,6 @@
 		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; };
 		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; };
 		5467950A1BD1EC9E0062FAFB /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 546795091BD1EC9E0062FAFB /* menu.png */; };
-		546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */ = {isa = PBXBuildFile; fileRef = 5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */; };
-		546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */ = {isa = PBXBuildFile; fileRef = 5467950F1BD32F6B0062FAFB /* 2 - Buddhist */; };
-		546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */ = {isa = PBXBuildFile; fileRef = 546795101BD32F6B0062FAFB /* 4 - Hindu */; };
-		546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */ = {isa = PBXBuildFile; fileRef = 546795111BD32F6B0062FAFB /* 5 - Islamic */; };
-		546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */ = {isa = PBXBuildFile; fileRef = 546795121BD32F6B0062FAFB /* 6 - Jewish */; };
-		5467951A1BD32F6B0062FAFB /* 7 - Zoroastrian in Resources */ = {isa = PBXBuildFile; fileRef = 546795131BD32F6B0062FAFB /* 7 - Zoroastrian */; };
-		5467951B1BD32F6B0062FAFB /* 8 - More in Resources */ = {isa = PBXBuildFile; fileRef = 546795141BD32F6B0062FAFB /* 8 - More */; };
 		5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED01B95FAA70037359C /* AppDelegate.swift */; };
 		5483BED61B95FAA70037359C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED41B95FAA70037359C /* Main.storyboard */; };
 		5483BED81B95FAA70037359C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED71B95FAA70037359C /* Images.xcassets */; };
@@ -175,13 +168,6 @@
 		546795051BD0CFF20062FAFB /* NavTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTray.swift; sourceTree = "<group>"; };
 		546795071BD0D00E0062FAFB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		546795091BD1EC9E0062FAFB /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
-		5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "1 - Bahá’í"; sourceTree = "<group>"; };
-		5467950F1BD32F6B0062FAFB /* 2 - Buddhist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "2 - Buddhist"; sourceTree = "<group>"; };
-		546795101BD32F6B0062FAFB /* 4 - Hindu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "4 - Hindu"; sourceTree = "<group>"; };
-		546795111BD32F6B0062FAFB /* 5 - Islamic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "5 - Islamic"; sourceTree = "<group>"; };
-		546795121BD32F6B0062FAFB /* 6 - Jewish */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "6 - Jewish"; sourceTree = "<group>"; };
-		546795131BD32F6B0062FAFB /* 7 - Zoroastrian */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "7 - Zoroastrian"; sourceTree = "<group>"; };
-		546795141BD32F6B0062FAFB /* 8 - More */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "8 - More"; sourceTree = "<group>"; };
 		5483BECB1B95FAA70037359C /* Immerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BECF1B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BED01B95FAA70037359C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -356,28 +342,6 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
-		5467950B1BD210D50062FAFB /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				546795091BD1EC9E0062FAFB /* menu.png */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
-		5467951C1BD32F710062FAFB /* Writings */ = {
-			isa = PBXGroup;
-			children = (
-				5467950E1BD32F6B0062FAFB /* 1 - Bahá’í */,
-				5467950F1BD32F6B0062FAFB /* 2 - Buddhist */,
-				546795101BD32F6B0062FAFB /* 4 - Hindu */,
-				546795111BD32F6B0062FAFB /* 5 - Islamic */,
-				546795121BD32F6B0062FAFB /* 6 - Jewish */,
-				546795131BD32F6B0062FAFB /* 7 - Zoroastrian */,
-				546795141BD32F6B0062FAFB /* 8 - More */,
-			);
-			name = Writings;
-			sourceTree = "<group>";
-		};
 		5483BEC21B95FAA70037359C = {
 			isa = PBXGroup;
 			children = (
@@ -443,8 +407,7 @@
 				54E5D74C1BDD6930009F3665 /* Icon-Small.png */,
 				54E5D74D1BDD6930009F3665 /* Icon-Small@2x.png */,
 				54E5D74E1BDD6930009F3665 /* Icon-Small@3x.png */,
-				5467951C1BD32F710062FAFB /* Writings */,
-				5467950B1BD210D50062FAFB /* Assets */,
+				546795091BD1EC9E0062FAFB /* menu.png */,
 				5483BECF1B95FAA70037359C /* Info.plist */,
 				54E5D75A1BE33463009F3665 /* Test.h */,
 				54E5D75B1BE33463009F3665 /* Test.m */,
@@ -565,18 +528,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5483BED61B95FAA70037359C /* Main.storyboard in Resources */,
-				5467951A1BD32F6B0062FAFB /* 7 - Zoroastrian in Resources */,
 				5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */,
-				5467951B1BD32F6B0062FAFB /* 8 - More in Resources */,
 				545481371C35BD2300B4E7E6 /* delete.png in Resources */,
 				545481301C35BB7400B4E7E6 /* TagCell.xib in Resources */,
 				54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */,
 				54A91DFD1C4326A000B4D2B2 /* note.png in Resources */,
 				5467950A1BD1EC9E0062FAFB /* menu.png in Resources */,
-				546795151BD32F6B0062FAFB /* 1 - Bahá’í in Resources */,
 				548DD4B01C41E74500B170F3 /* cross.png in Resources */,
-				546795191BD32F6B0062FAFB /* 6 - Jewish in Resources */,
-				546795161BD32F6B0062FAFB /* 2 - Buddhist in Resources */,
 				548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */,
 				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
 				54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */,
@@ -588,7 +546,6 @@
 				5454813D1C35CD4900B4E7E6 /* TagCellText.xib in Resources */,
 				54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */,
 				54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */,
-				546795171BD32F6B0062FAFB /* 4 - Hindu in Resources */,
 				54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */,
 				548476511BF66235004374B5 /* LibraryCell.xib in Resources */,
 				545481381C35BD2300B4E7E6 /* edit.png in Resources */,
@@ -602,7 +559,6 @@
 				54B9942F1C4B350E00B873EC /* progress.png in Resources */,
 				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
 				54FFC3E01BF7C62B0041458D /* ReaderTagsAccessory.xib in Resources */,
-				546795181BD32F6B0062FAFB /* 5 - Islamic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
