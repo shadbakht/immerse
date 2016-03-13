@@ -14,12 +14,14 @@ enum RecordType : String {
   case SECTION = "section"
 }
 
-class Record: Object {
 
-  override static func primaryKey() -> String? {
+extension Object {
+  static func primaryKey() -> String? {
     return "id"
   }
-  
+}
+class Record: Object {
+
   dynamic var id : String = ""
   dynamic var record_faithName : String = ""
   dynamic var record_authorName : String = ""

@@ -8,17 +8,18 @@
 
 import RealmSwift
 
-class TagTypes : Object {
-  dynamic var tag_type_id : String = ""
-  dynamic var tag_type_name : String = ""
-  dynamic var tag_parent_id : String = ""
+class TagType : Object {
+
+  dynamic var id : String = ""
+  dynamic var name : String = ""
+  dynamic var parent : TagType?
 }
 
 class Tag: Object {
-    
-  dynamic var tag_id : String = ""
-  dynamic var tag_type_id : String = ""
-  dynamic var writing_id : String = ""
+  
+  dynamic var id : String = ""
+  dynamic var tag_type : TagType?
+  dynamic var record : Record?
   dynamic var start_position : Int = 0
   dynamic var length : Int = 0
 

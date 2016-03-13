@@ -49,18 +49,15 @@
 		546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E21BD0CC280062FAFB /* ReaderPresenter.swift */; };
 		546794E51BD0CC330062FAFB /* ReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E41BD0CC330062FAFB /* ReaderInteractor.swift */; };
 		546794E81BD0CC490062FAFB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E71BD0CC490062FAFB /* DataManager.swift */; };
-		546794EA1BD0CC620062FAFB /* WritingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794E91BD0CC620062FAFB /* WritingService.swift */; };
 		546794EC1BD0CC6F0062FAFB /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EB1BD0CC6F0062FAFB /* TagService.swift */; };
 		546794EE1BD0CC780062FAFB /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794ED1BD0CC780062FAFB /* NotesService.swift */; };
 		546794F01BD0CC830062FAFB /* CrossRefService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794EF1BD0CC830062FAFB /* CrossRefService.swift */; };
 		546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F11BD0CC9A0062FAFB /* UserService.swift */; };
-		546794F51BD0CCBE0062FAFB /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F41BD0CCBE0062FAFB /* Writing.swift */; };
 		546794F71BD0CCCA0062FAFB /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F61BD0CCCA0062FAFB /* Note.swift */; };
 		546794F91BD0CCD40062FAFB /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794F81BD0CCD40062FAFB /* Tag.swift */; };
 		546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FA1BD0CCDE0062FAFB /* CrossRef.swift */; };
 		546794FD1BD0CD130062FAFB /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FC1BD0CD130062FAFB /* Progress.swift */; };
 		546795001BD0CD370062FAFB /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794FF1BD0CD370062FAFB /* ShareService.swift */; };
-		546795021BD0CD4F0062FAFB /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795011BD0CD4F0062FAFB /* Activity.swift */; };
 		546795041BD0CD5B0062FAFB /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795031BD0CD5B0062FAFB /* AnalyticsService.swift */; };
 		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; };
 		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; };
@@ -165,18 +162,15 @@
 		546794E21BD0CC280062FAFB /* ReaderPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderPresenter.swift; sourceTree = "<group>"; };
 		546794E41BD0CC330062FAFB /* ReaderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderInteractor.swift; sourceTree = "<group>"; };
 		546794E71BD0CC490062FAFB /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		546794E91BD0CC620062FAFB /* WritingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingService.swift; sourceTree = "<group>"; };
 		546794EB1BD0CC6F0062FAFB /* TagService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		546794ED1BD0CC780062FAFB /* NotesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
 		546794EF1BD0CC830062FAFB /* CrossRefService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRefService.swift; sourceTree = "<group>"; };
 		546794F11BD0CC9A0062FAFB /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		546794F41BD0CCBE0062FAFB /* Writing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
 		546794F61BD0CCCA0062FAFB /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		546794F81BD0CCD40062FAFB /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		546794FA1BD0CCDE0062FAFB /* CrossRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRef.swift; sourceTree = "<group>"; };
 		546794FC1BD0CD130062FAFB /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		546794FF1BD0CD370062FAFB /* ShareService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
-		546795011BD0CD4F0062FAFB /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		546795031BD0CD5B0062FAFB /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		546795051BD0CFF20062FAFB /* NavTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTray.swift; sourceTree = "<group>"; };
 		546795071BD0D00E0062FAFB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -338,7 +332,6 @@
 				546795031BD0CD5B0062FAFB /* AnalyticsService.swift */,
 				54FFC3E71BF84A970041458D /* ActivityService.swift */,
 				546794FF1BD0CD370062FAFB /* ShareService.swift */,
-				546794E91BD0CC620062FAFB /* WritingService.swift */,
 				546794EB1BD0CC6F0062FAFB /* TagService.swift */,
 				546794ED1BD0CC780062FAFB /* NotesService.swift */,
 				546794EF1BD0CC830062FAFB /* CrossRefService.swift */,
@@ -354,12 +347,10 @@
 			isa = PBXGroup;
 			children = (
 				5431DBBA1C9494BE00756842 /* Record.swift */,
-				546794F41BD0CCBE0062FAFB /* Writing.swift */,
 				546794F61BD0CCCA0062FAFB /* Note.swift */,
 				546794F81BD0CCD40062FAFB /* Tag.swift */,
 				546794FA1BD0CCDE0062FAFB /* CrossRef.swift */,
 				546794FC1BD0CD130062FAFB /* Progress.swift */,
-				546795011BD0CD4F0062FAFB /* Activity.swift */,
 				5416DA831BF3051C00EA28B8 /* RAObject.swift */,
 			);
 			name = Entities;
@@ -691,7 +682,6 @@
 				5431DBBB1C9494BE00756842 /* Record.swift in Sources */,
 				546794D11BD0CBC80062FAFB /* TagsInteractor.swift in Sources */,
 				545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */,
-				546795021BD0CD4F0062FAFB /* Activity.swift in Sources */,
 				546795081BD0D00E0062FAFB /* Util.swift in Sources */,
 				546794C71BD0CB800062FAFB /* HomeInteractor.swift in Sources */,
 				546794E31BD0CC280062FAFB /* ReaderPresenter.swift in Sources */,
@@ -726,12 +716,10 @@
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				54FFC3E81BF84A970041458D /* ActivityService.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
-				546794F51BD0CCBE0062FAFB /* Writing.swift in Sources */,
 				546794E01BD0CC180062FAFB /* SettingsInteractor.swift in Sources */,
 				546794CA1BD0CBA40062FAFB /* LibraryPresenter.swift in Sources */,
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
 				546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */,
-				546794EA1BD0CC620062FAFB /* WritingService.swift in Sources */,
 				548DD4A81C41E64700B170F3 /* RefCell.swift in Sources */,
 				546794DE1BD0CC0E0062FAFB /* SettingsPresenter.swift in Sources */,
 				5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */,

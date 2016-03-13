@@ -9,13 +9,13 @@
 import RealmSwift
 
 class CrossRef: Object {
-    
-  dynamic var xref_id : String = ""
-  dynamic var writing_id_start : String = ""
-  dynamic var writing_id_end : String = ""
-  dynamic var start_writing : Int = 0
-  dynamic var length_writing : Int = 0
-  dynamic var start_reference : Int = 0
-  dynamic var length_reference : Int = 0
+
+  dynamic var id : String = ""
+  dynamic var source_ref : Record?
+  dynamic var destination_red : Record?
+  dynamic var source_index : Int = 0
+  dynamic var source_length : Int = 0
+  dynamic var destination_index : Int = 0
+  dynamic var destination_length : Int = 0
 
 }

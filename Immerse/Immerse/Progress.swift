@@ -9,8 +9,10 @@
 import RealmSwift
 
 class Progress: Object {
-    
-  dynamic var writing_id : String = ""
-  dynamic var current_progress : Float = 0.0
+
+  dynamic var id : String = ""
+  dynamic var record : Record?
+  dynamic var progress : Float = 0.0
+  dynamic var lastOpened : NSDate = NSDate()
   
 }

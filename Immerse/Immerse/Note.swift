@@ -10,8 +10,8 @@ import RealmSwift
 
 class Note: Object {
 
-  dynamic var note_id : String = ""
-  dynamic var writing_id : String = ""
+  dynamic var id : String = ""
+  dynamic var record : Record?
   dynamic var start_position : Int = 0
   dynamic var length : Int = 0
   dynamic var note_comment : String = ""

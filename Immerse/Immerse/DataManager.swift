@@ -13,8 +13,7 @@ class DataManager: NSObject {
   class func setup() {
     
     DBBuilder().processFromFilePath("")
-    WritingService.setup()
-    RAService.recursivelyBuildMapping()
+    
   }
   
   class func getFolderMapping() -> NSArray {

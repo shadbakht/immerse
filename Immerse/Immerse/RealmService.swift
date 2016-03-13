@@ -10,6 +10,8 @@ import UIKit
 import RealmSwift
 class RealmService: NSObject {
 
+  
+  
   class func numberOfObjectsOfType(objectType:AnyObject.Type) -> Int {
     let realm = try! Realm()
     if objectType == Writing.self {

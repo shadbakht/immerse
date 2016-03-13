@@ -15,7 +15,7 @@ import RealmSwift
 
 class DBBuilder: NSObject {
 
-  func processFromFilePath(path:String, out:String="/Users/jamestan/Desktop/output.realm") {
+  func processFromFilePath(path:String, out:String="/Users/jamestan/Desktop/default.realm") {
     
     let testRecordSampe = "test faith| test author| this is a book|3|chapter|1|this is some awesome text"
     let config = setupRealm(out)
