@@ -1,0 +1,23 @@
+
+
+1. Name of the files cannot have any special characters such as ‘, #,”…
+2. On the beginning of each file we need to have the following items in separate lines. they cannot be in one line:
+
+	/*title*/‘Abdu’l-Bahá in London
+	/*author*/‘Abdu’l-Bahá
+	/*faith*/Baha’i
+
+3. If there is any chapter# in the chapter title please take it out, the script will associate the numbers based on how many /*chapter*/ finds in the text file. 
+4. Please remove any special characters such as  •    •    •  in the middle of the text. 
+5. For a book such as Tanakh (Jewish Holy book) please refer to the picture. we need to have one text file will all the sections and chapters labeled. so if you can label them at shown in the picture it would be great. I am also attaching a python script that lets you combine all the files in one folder. when you run in the a directory folder it will create a new file called “result” and combines all the files in that folder. let me know if you have any questions on how to run it. 
+
+6.we also need to separate all the files in “more” section so that they are consistent with the rest. 
+
+7. Abdul-Bata in London.txt is a sample file. 
+
+
+
+
+
+
+|faith|author|bookName|typeNumber|titleType|textNumber|text

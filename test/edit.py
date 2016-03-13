@@ -2,7 +2,7 @@
 import string
 from collections import Counter 
 
-text_TBE = open("Selections from the Writings of The Bab.txt", "r")
+text_TBE = open("Abdul-Baha in London.txt", "r")
 
 textLine= text_TBE.readlines ()
 text_TBE.close()
@@ -30,7 +30,7 @@ for i in range(0,3):
 tag1 = ("%s|%s|%s|"% (faith.strip('\n'), author.strip('\n'), bookName.strip('\n')))
 	
 	
-file = open("Edited_Selections from the Writings of The Bab.txt", "w")
+file = open("Edited_Abdul-Baha in London.txt", "w")
 for i in range(3,len(textLine)):
 	line = textLine[i]
 	if line.find('/*') != -1:
