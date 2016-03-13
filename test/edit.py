@@ -1,0 +1,102 @@
+
+import string
+from collections import Counter 
+
+text_TBE = open("Selections from the Writings of The Bab.txt", "r")
+
+textLine= text_TBE.readlines ()
+text_TBE.close()
+
+
+'--------------------get rid of empty lines-----------------------'
+for i in range(len(textLine)-1,-1, -1):
+	if textLine[i]== '\n':
+		del textLine [i]		
+
+'--------------------add author, book name, faith-----------------------'
+
+
+
+# def findType( line ):
+
+# 	if line.find('/*') != -1:
+# 		titleType = line
+
+#    		if titleType.find('faith')!= -1:
+#    			faith =titleType[9:]
+#    			print "faith: ", faith
+#    		elif titleType.find('author')!= -1:
+#    			author =titleType[10:]   
+#    			print "author: ", author
+#    		elif titleType.find('sub-sub-chapter')!= -1:
+#    			subSection =titleType[20:]   
+#    			print "sub-section: ", subSection
+#    		elif titleType.find('sub-chapter')!= -1:
+#    			section =titleType[15:]   
+#    			print "section: ", section
+# 		elif titleType.find('chapter')!= -1:
+# 			chapter =titleType[11:]   
+# 			print "chapter: ", chapter 
+# 	else: 
+# 		paragraph =line[0:10]
+# 		# print "paragraph: ", paragraph   	
+# 	return 
+subSectionNumber = 0
+sectionNumber = 0
+chapterNumber = 0
+parNumber = 0
+titleType=""
+for i in range(0,3):
+	line = textLine[i]
+	if line.find('/*') != -1:
+		if line.find('faith')!= -1:
+			faith =line[9:]
+		elif line.find('author')!= -1:
+			author =line[10:] 
+		elif line.find('title')!= -1:
+			bookName =line[9:] 
+tag1 = ("%s|%s|%s|"% (faith.strip('\n'), author.strip('\n'), bookName.strip('\n')))
+	
+	
+file = open("Edited_Selections from the Writings of The Bab.txt", "w")
+for i in range(3,len(textLine)):
+	line = textLine[i]
+	if line.find('/*') != -1:
+		if line.find('sub-sub-chapter')!= -1:
+			text =line[20:]
+			titleType="sub-section"
+			subSectionNumber +=1
+			parNumber = 0
+		elif (line.find('sub-chapter')!= -1):
+			text =line[15:]
+			titleType="section"
+			sectionNumber +=1  
+			subSectionNumber = 0
+			parNumber = 0
+
+		elif (line.find('chapter')!= -1):
+			text =line[11:]
+			titleType="chapter"
+			chapterNumber+=1
+			subSectionNumber = 0
+			sectionNumber = 0
+			parNumber = 0
+	else: 
+		paragraph =line[0:10]
+		text=line
+		titleType="paragraph"
+		parNumber+=1
+
+	if titleType == "sub-section":
+		typeNumber = subSectionNumber
+	elif titleType == "section":
+		typeNumber = sectionNumber
+	elif titleType == "chapter":
+		typeNumber = chapterNumber
+	else: 
+		typeNumber = parNumber
+	tag = ("%d|%s|%d|%s"% (typeNumber,titleType, i, text))
+	file.write("%s%s"%(tag1,tag))
+	
+
+file.close()
