@@ -17,4 +17,7 @@ class Author: Object {
     return linkingObjects(Book.self, forProperty: "author")
   }
   
+  var records : [Record] {
+    return linkingObjects(Record.self, forProperty: "author")
+  }
 }

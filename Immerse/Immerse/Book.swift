@@ -10,8 +10,8 @@ import RealmSwift
 
 class Book : Object {
   
-  dynamic var book_id : String
-  dynamic var book_name : String
+  dynamic var book_id : String = ""
+  dynamic var book_name : String = ""
   dynamic var author : Author?
 
   var records: [Record] {

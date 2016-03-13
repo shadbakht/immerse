@@ -9,6 +9,7 @@
 import RealmSwift
 
 class Faith: Object {
+  
   dynamic var id : String = ""
   dynamic var name : String = ""
   
@@ -16,5 +17,7 @@ class Faith: Object {
     return linkingObjects(Author.self, forProperty: "faith")
   }
   
-
+  var records : [Record] {
+    return linkingObjects(Record.self, forProperty: "author")
+  }
 }
