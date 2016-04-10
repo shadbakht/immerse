@@ -12,22 +12,11 @@ import KYDrawerController
 
 class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
 
-  var presenter : NotesPresenter? = nil
   @IBOutlet weak var noteTreeView : RATreeView!
 
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Setup the VIPER Stack
-    let p = NotesPresenter()
-    let i = NotesInteractor()
-    presenter = p
-    presenter?.view = self
-    presenter?.interactor = i
-    i.presenter = presenter
-    
-    presenter?.setup()
     
     // Setup the Delegate and DataSource
     noteTreeView.delegate = self
@@ -52,7 +41,6 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
   }
 
   func reload() {
-    presenter?.setup()
     noteTreeView.reloadData()
   }
   
@@ -71,7 +59,6 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     treeView.deselectRowForItem(item, animated: false)
     let level = treeView.levelForCellForItem(item)
     if level == 1 {
-      presenter?.goToWriting(item)
     }
   }
   
@@ -82,26 +69,18 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     return 50
   }
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-    if item == nil {
-      return presenter!.notes.objectAtIndex(index)
-    }
     let data : RAObject = item as! RAObject
     return data.children.objectAtIndex(index)
   }
   
   func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-    if item == nil {
-      return presenter!.notes.count
-    } else {
-      let data : RAObject = item as! RAObject
-      return data.children.count
-    }
+    let data : RAObject = item as! RAObject
+    return data.children.count
   }
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-    let cell = presenter!.cellForTreeView(self.noteTreeView, item: item)
+    let cell = UITableViewCell()
     if cell is TagCell {
-//      (cell as! TagCell).configureMode(edit)
     }
     return cell
   }

@@ -210,12 +210,6 @@ class RAService: NSObject {
     // Cut off the top, those are the folders of interest.
     // Otherwise we'll get everything in the bundle.
     let finalSet : NSMutableArray = []
-    for parent in folderCollections {
-      let parentObj = parent as! RAObject
-      if Constants.folderNames.containsObject(parentObj.pathName) {
-        finalSet.addObject(parent)
-      }
-    }
     RAService.mapping = finalSet.copy() as! NSArray
     
   }

@@ -11,23 +11,12 @@ import KYDrawerController
 import RATreeView
 
 class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
-
-  var presenter : CrossRefPresenter? = nil
   
   @IBOutlet weak var refTreeView: RATreeView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Setup VIPER
-    let p = CrossRefPresenter()
-    let i = CrossRefInteractor()
-    presenter = p
-    presenter?.view = self
-    presenter?.interactor = i
-    i.presenter = presenter
-    presenter?.setup()
-
     // Delegates
     refTreeView.delegate = self
     refTreeView.dataSource = self
@@ -50,7 +39,6 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
   }
 
   func reload() {
-    presenter?.setup()
     refTreeView.reloadData()
   }
 
@@ -81,24 +69,17 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
   }
   
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-    if item == nil {
-      return presenter!.refs.objectAtIndex(index)
-    }
     let data : RAObjectReference = item as! RAObjectReference
     return data.children.objectAtIndex(index)
   }
   
   func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-    if item == nil {
-      return presenter!.refs.count
-    } else {
-      let data : RAObjectReference = item as! RAObjectReference
-      return data.children.count
-    }
+    let data : RAObjectReference = item as! RAObjectReference
+    return data.children.count
   }
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-    let cell = presenter!.cellForTreeView(self.refTreeView, item: item)
+    let cell = UITableViewCell()
     return cell
   }
 

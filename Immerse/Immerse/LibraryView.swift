@@ -14,20 +14,10 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   
   @IBOutlet weak var treeView: RATreeView!
 
-  var presenter : LibraryPresenter? = nil
   
   // MARK: Setup
   
   override func viewDidLoad() {
-    
-    // Setup VIPER Stack
-    let i = LibraryInteractor()
-    let p = LibraryPresenter()
-    presenter = p
-    presenter?.view = self
-    presenter?.interactor = i
-    i.presenter = presenter
-    presenter?.setup()
     
     // Setup the RATreeView
     treeView.delegate = self
@@ -58,7 +48,6 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   func treeView(treeView: RATreeView, didSelectRowForItem item: AnyObject) {
     let data : RAObject = item as! RAObject
     if data.pathName.containsString(".txt") {
-      presenter!.selectWriting(data)      
     }
     
   }
@@ -66,24 +55,17 @@ class LibraryView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   // MARK: RATreeView DataSource
   
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-    if item == nil {
-      return presenter!.mapping.objectAtIndex(index)
-    }
     let data : RAObject = item as! RAObject
     return data.children.objectAtIndex(index)
   }
 
   func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-    if item == nil {
-      return presenter!.mapping.count
-    } else {
-      let data : RAObject = item as! RAObject
-      return data.children.count
-    }
+    let data : RAObject = item as! RAObject
+    return data.children.count
   }
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-    let cell = presenter!.cellForTreeView(self.treeView, item: item)
+    let cell = UITableViewCell()
     return cell
   }
 

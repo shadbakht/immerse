@@ -13,21 +13,11 @@ import RATreeView
 class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
 
   @IBOutlet weak var tagTreeView: RATreeView!
-  var presenter : TagsPresenter? = nil
   var edit : Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Setup VIPER Stack
-    let i = TagsInteractor()
-    let p = TagsPresenter()
-    presenter = p
-    presenter?.view = self
-    presenter?.interactor = i
-    i.presenter = presenter
-    presenter?.setup()
-
     // Setup the Delegate and DataSource
     tagTreeView.delegate = self
     tagTreeView.dataSource = self
@@ -60,7 +50,6 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   }
   
   func reload() {
-    presenter?.setup()
     tagTreeView.reloadData()
   }
   
@@ -72,7 +61,6 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
       sender.title = "EDIT"
       edit = false
     }
-    presenter?.setup()
     tagTreeView.reloadData()
   }
   
@@ -81,7 +69,6 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     treeView.deselectRowForItem(item, animated: false)
     let level = treeView.levelForCellForItem(item)
     if level == 1 {
-      presenter?.goToWriting(item)
     }
   }
   
@@ -92,27 +79,21 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     return 50
   }
   func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-    if item == nil {
-      return presenter!.tags.objectAtIndex(index)
-    }
     let data : RAObject = item as! RAObject
     return data.children.objectAtIndex(index)
   }
   
   func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
     if item == nil {
-      return presenter!.tags.count
     } else {
       let data : RAObject = item as! RAObject
       return data.children.count
     }
+    return 0
   }
   
   func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-    let cell = presenter!.cellForTreeView(self.tagTreeView, item: item)
-    if cell is TagCell {
-      (cell as! TagCell).configureMode(edit)
-    }
+    let cell = TagCell()
     return cell
   }
   

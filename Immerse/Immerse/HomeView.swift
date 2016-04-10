@@ -21,7 +21,6 @@ class HomeViewCell : UITableViewCell {
 
 class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
-  var presenter : HomePresenter? = nil
   @IBOutlet weak var countTagLabel: UILabel!
   @IBOutlet weak var countNoteLabel: UILabel!
   @IBOutlet weak var countXRefLabel: UILabel!
@@ -29,18 +28,6 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   override func viewDidLoad() {
     
-    // Setup VIPER Stack
-    let p = HomePresenter()
-    let i = HomeInteractor()
-    presenter = p
-    presenter?.interactor = i
-    presenter?.view = self
-    i.presenter = presenter
-    presenter?.setup()
-    
-    countTagLabel.setTextForInt(presenter!.totalTagCount)
-    countNoteLabel.setTextForInt(presenter!.totalNoteCount)
-    countXRefLabel.setTextForInt(presenter!.totalXRefCount)
     
     // Get rideof tableview
     table.tableFooterView = UIView(frame: CGRectZero)
@@ -58,10 +45,6 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   }
 
   func reload() {
-    presenter?.setup()
-    countTagLabel.setTextForInt(presenter!.totalTagCount)
-    countNoteLabel.setTextForInt(presenter!.totalNoteCount)
-    countXRefLabel.setTextForInt(presenter!.totalXRefCount)
     table.reloadData()
   }
   // MARK: Open Menu
@@ -78,16 +61,15 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   // MARK: UITableViewDatasource and UITableViewDelegate Methods
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = presenter?.recentlyViewedCellForIndex(tableView, indexPath:indexPath)
-    return cell!
+    let cell = UITableViewCell()
+    return cell
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    presenter?.selectCell(indexPath)
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return (presenter?.numberOfRecentlyViewed())!
+    return 0
   }
 }
