@@ -13,9 +13,6 @@ class ImmerseXRefTextView : UITextView {
   var parent : AddCrossRefReaderView? = nil
   
   override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-    if action == "createXRef" {
-      return true
-    }
     return false
   }
   
@@ -51,15 +48,10 @@ class AddCrossRefReaderView: UIViewController {
     super.viewDidLoad()
     
     textBody.parent = self
-    let createXRef = UIMenuItem(title: "CREATE X-REF", action: "createXRef")
+    let createXRef = UIMenuItem(title: "CREATE X-REF", action: #selector(ImmerseXRefTextView.createXRef))
     UIMenuController.sharedMenuController().menuItems = [createXRef]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
 
-    // Breaks the patter, but is pretty convenient
-    writing = DataManager.getCurrentXRefWriting()
-    let body = DataManager.getCurrentXRefBody()
-    textBody.text = body
-    
     
   }
 
@@ -68,11 +60,6 @@ class AddCrossRefReaderView: UIViewController {
   }
   
   func handleXRefCreation(range:NSRange) {
-    Util.notifyData("CreateXRef",
-      data: [
-        "writing_id":writing!.writing_id,
-        "start":range.location,
-        "length":range.length
-      ])
   }
+
 }

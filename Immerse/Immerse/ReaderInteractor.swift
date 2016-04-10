@@ -34,14 +34,14 @@ class ReaderInteractor: NSObject {
   }
   
   func createNote(range:NSRange, text:String) {
-    let start = range.location
-    let length = range.length
+    _ = range.location
+    _ = range.length
   }
   func createTag(range:NSRange, tags:NSArray) {
   }
   func createRef(writingID:String, range:NSRange, rangeSource:NSRange) {
-    let start = range.location
-    let length = range.length
+    _ = range.location
+    _ = range.length
   }
   func createTagLabel(name:String) {
   }

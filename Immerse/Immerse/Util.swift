@@ -66,7 +66,7 @@ class Util: NSObject {
   }
   
   class func notifyData(name:String, data:NSDictionary) {
-    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil, userInfo: data as! [NSObject : AnyObject])
+    NSNotificationCenter.defaultCenter().postNotificationName(name, object: nil, userInfo: data as? [NSObject : AnyObject])
   }
 
   class func storeDefault(key:String, value:AnyObject?) {

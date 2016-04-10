@@ -46,7 +46,7 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
     )
     
     // Observe
-    Util.observe(self, action: "reload", named: "ReloadTagView")
+    Util.observe(self, action: #selector(TagsView.reload), named: "ReloadTagView")
   }
 
   override func didReceiveMemoryWarning() {

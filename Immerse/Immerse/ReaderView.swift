@@ -15,7 +15,7 @@ class ImmerseTextView : UITextView {
   var parent : ReaderView? = nil
   
   override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-    if action == "createTag" || action == "createNote" || action == "createXRef" {
+    if action == #selector(ImmerseTextView.createTag) || action == #selector(ImmerseTextView.createNote) || action == #selector(ImmerseTextView.createXRef) {
       return true
     }
     return false
@@ -130,8 +130,8 @@ class ReaderNoteAccessoryView : UIView, UITextViewDelegate {
   @IBOutlet weak var notes: UITextView!
   func config() {
     notes.delegate = self
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReaderNoteAccessoryView.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReaderNoteAccessoryView.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
   }
   @IBAction func close(sender: AnyObject) {
     parent?.closePopup()
@@ -209,13 +209,13 @@ class ReaderView: UIViewController, UITextViewDelegate {
     // Setup the Delegation Pattern
     writingBody.parent = self
     writingBody.delegate = self
-    let tagItem = UIMenuItem(title: "TAG", action: "createTag")
-    let noteItem = UIMenuItem(title: "NOTE", action: "createNote")
-    let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
+    let tagItem = UIMenuItem(title: "TAG", action: #selector(ImmerseTextView.createTag))
+    let noteItem = UIMenuItem(title: "NOTE", action: #selector(ImmerseTextView.createNote))
+    let xrefItem = UIMenuItem(title: "X-REF", action: #selector(ImmerseTextView.createXRef))
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
     
-    Util.observe(self, action: "xRefCreated:", named: "CreateXRef")
+    Util.observe(self, action: #selector(ReaderView.xRefCreated(_:)), named: "CreateXRef")
     
   }
   override func viewDidAppear(animated: Bool) {
@@ -240,9 +240,9 @@ class ReaderView: UIViewController, UITextViewDelegate {
   func xRefCreated(notif:NSNotification) {
     
     // Reset the Menu
-    let tagItem = UIMenuItem(title: "TAG", action: "createTag")
-    let noteItem = UIMenuItem(title: "NOTE", action: "createNote")
-    let xrefItem = UIMenuItem(title: "X-REF", action: "createXRef")
+    let tagItem = UIMenuItem(title: "TAG", action: #selector(ImmerseTextView.createTag))
+    let noteItem = UIMenuItem(title: "NOTE", action: #selector(ImmerseTextView.createNote))
+    let xrefItem = UIMenuItem(title: "X-REF", action: #selector(ImmerseTextView.createXRef))
     UIMenuController.sharedMenuController().menuItems = [tagItem, noteItem, xrefItem]
     UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
 

@@ -12,8 +12,8 @@ import KYDrawerController
 class NavTray: UITableViewController {
   
   override func viewDidLoad() {
-    Util.observe(self, action: "goToLibrary", named: "ShowLibrary")
-    Util.observe(self, action: "goToReader", named: "ShowReader")
+    Util.observe(self, action: #selector(NavTray.goToLibrary), named: "ShowLibrary")
+    Util.observe(self, action: #selector(NavTray.goToReader), named: "ShowReader")
     super.viewDidLoad()
   }
 

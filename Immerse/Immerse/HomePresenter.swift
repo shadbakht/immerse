@@ -18,11 +18,6 @@ class HomePresenter: NSObject {
   var totalXRefCount = 0
   
   func setup() {
-    recentlyViewedWritings = interactor!.getRecent()
-    let counts = interactor!.getObjectCounts()
-    totalTagCount = counts.tags
-    totalNoteCount = counts.notes
-    totalXRefCount = counts.xRefs
   }
   
   func numberOfRecentlyViewed() -> Int {
@@ -30,18 +25,10 @@ class HomePresenter: NSObject {
   }
 
   func selectCell(indexPath:NSIndexPath) {
-    let row = indexPath.row
   }
   func recentlyViewedCellForIndex(tableView:UITableView, indexPath: NSIndexPath) -> HomeViewCell? {
     
     let cell = tableView.dequeueReusableCellWithIdentifier("HomeViewCell", forIndexPath: indexPath) as? HomeViewCell
-    let row = indexPath.row
-    let subtitle = createSubtitleFromCount(counts.notes, tags: counts.tags, refs: counts.refs)
-    
-    cell?.writingCompletedProgressBar.progress = data.progress
-    cell?.writingProgressLabel.text = data.text
-    cell?.writingSubTitleLabel.text = subtitle
-    
     return cell
     
   }

@@ -11,7 +11,7 @@ import UIKit
 class IMNavControl: UINavigationController {
 
   override func viewDidLoad() {
-    Util.observe(self, action: "goToView:", named:"LaunchView")
+    Util.observe(self, action: #selector(IMNavControl.goToView(_:)), named:"LaunchView")
     super.viewDidLoad()
   }
 

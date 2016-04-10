@@ -47,9 +47,9 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     super.viewDidLoad()
     
-    Util.observe(self, action: "reload", named: "ReloadTagView")
-    Util.observe(self, action: "reload", named: "ReloadNoteView")
-    Util.observe(self, action: "reload", named: "ReloadRefView")
+    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadTagView")
+    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadNoteView")
+    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadRefView")
 
   }
 

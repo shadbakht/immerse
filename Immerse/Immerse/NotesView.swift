@@ -47,7 +47,7 @@ class NotesView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
     )
     
     // Observe
-    Util.observe(self, action: "reload", named: "ReloadNoteView")
+    Util.observe(self, action: #selector(NotesView.reload), named: "ReloadNoteView")
 
   }
 

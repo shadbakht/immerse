@@ -15,82 +15,82 @@ class RAService: NSObject {
   static var refMapping : NSArray = [] // Publicly Accessible Mappings - Refs
   
   class func recursivelyBuildXRefMapping() {
-    let allRefs : [CrossRef] = CrossRefService.getRefs() as! [CrossRef]
-    
-    var parents : [RAObjectReference] = []
-    
-    for ref in allRefs {
-      
-      let sourceID = ref.writing_id_start
-      let refID = ref.writing_id_end
-
-      let sourceWriting = WritingService.writingForID(sourceID)
-      let refWriting = WritingService.writingForID(refID)
-      
-      // Create the Children
-      let obj = RAObjectReference()
-      obj.writing_id1 = sourceID
-      obj.displayName = sourceWriting!.writing_title
-      obj.subDisplayName = WritingService.getBodyForWriting(sourceWriting!, start: ref.start_writing, length: ref.length_writing)
-      
-      obj.writing_id2 = refID
-      obj.displayName2 = refWriting!.writing_title
-      obj.subDisplayName2 = WritingService.getBodyForWriting(refWriting!, start: ref.start_reference, length: ref.length_reference)
-
-      // Create the Parents
-      let parent = RAObjectReference()
-      parent.writing_id1 = sourceID
-      parent.writing_id2 = refID
-      parent.displayName = sourceWriting!.writing_title
-      parent.displayName2 = refWriting!.writing_title
-      
-      // Add a new parent only if necessary
-      let results = parents.filter({
-        ($0 as RAObjectReference).writing_id1 == parent.writing_id1 &&
-        ($0 as RAObjectReference).writing_id2 == parent.writing_id2
-      })
-      if results.count == 0 {
-        parent.addChild(obj)
-        parents.append(parent)
-      } else {
-        results.first?.addChild(obj)
-      }
-    }
-    RAService.refMapping = parents
+//    let allRefs : [CrossRef] = CrossRefService.getRefs() as! [CrossRef]
+//    
+//    var parents : [RAObjectReference] = []
+//    
+//    for ref in allRefs {
+//      
+//      let sourceID = ref.writing_id_start
+//      let refID = ref.writing_id_end
+//
+//      let sourceWriting = WritingService.writingForID(sourceID)
+//      let refWriting = WritingService.writingForID(refID)
+//      
+//      // Create the Children
+//      let obj = RAObjectReference()
+//      obj.writing_id1 = sourceID
+//      obj.displayName = sourceWriting!.writing_title
+//      obj.subDisplayName = WritingService.getBodyForWriting(sourceWriting!, start: ref.start_writing, length: ref.length_writing)
+//      
+//      obj.writing_id2 = refID
+//      obj.displayName2 = refWriting!.writing_title
+//      obj.subDisplayName2 = WritingService.getBodyForWriting(refWriting!, start: ref.start_reference, length: ref.length_reference)
+//
+//      // Create the Parents
+//      let parent = RAObjectReference()
+//      parent.writing_id1 = sourceID
+//      parent.writing_id2 = refID
+//      parent.displayName = sourceWriting!.writing_title
+//      parent.displayName2 = refWriting!.writing_title
+//      
+//      // Add a new parent only if necessary
+//      let results = parents.filter({
+//        ($0 as RAObjectReference).writing_id1 == parent.writing_id1 &&
+//        ($0 as RAObjectReference).writing_id2 == parent.writing_id2
+//      })
+//      if results.count == 0 {
+//        parent.addChild(obj)
+//        parents.append(parent)
+//      } else {
+//        results.first?.addChild(obj)
+//      }
+//    }
+//    RAService.refMapping = parents
   }
   
   class func recursivelyBuildNoteMapping() {
-    let allNotes : [Note] = NotesService.getNotes() as! [Note]
-    var objects : [RAObject] = []
-    for note in allNotes {
-      
-      let object = RAObject()
-      object.displayName = note.note_comment
-      object.id = note.note_id
-      
-      // Fetch the note's associated writing object
-      let writingID = note.writing_id
-      let writing = WritingService.writingForID(writingID)
-      let writingObject = RAObject()
-      writingObject.displayName = writing!.writing_title
-      writingObject.id  = writingID
-      
-      // Get the Substring text
-      let start = note.start_position
-      let length = note.length
-      let subString = WritingService.getBodyForWriting(writing!, start: start, length: length)
-      object.subDisplayName = subString
-
-      
-      let existing = objects.filter({ $0.id == writingID })
-      if existing.count > 0 {
-        existing.first?.addChild(object)
-      } else {
-        writingObject.addChild(object)
-        objects.append(writingObject)
-      }
-    }
-    RAService.noteMapping = objects
+//    let allNotes : [Note] = NotesService.getNotes() as! [Note]
+//    var objects : [RAObject] = []
+//    for note in allNotes {
+//      
+//      let object = RAObject()
+//      object.displayName = note.note_comment
+//      object.id = note.note_id
+//      
+//      // Fetch the note's associated writing object
+//      let writingID = note.writing_id
+//      let writing = WritingService.writingForID(writingID)
+//      let writingObject = RAObject()
+//      writingObject.displayName = writing!.writing_title
+//      writingObject.id  = writingID
+//      
+//      // Get the Substring text
+//      let start = note.start_position
+//      let length = note.length
+//      let subString = WritingService.getBodyForWriting(writing!, start: start, length: length)
+//      object.subDisplayName = subString
+//
+//      
+//      let existing = objects.filter({ $0.id == writingID })
+//      if existing.count > 0 {
+//        existing.first?.addChild(object)
+//      } else {
+//        writingObject.addChild(object)
+//        objects.append(writingObject)
+//      }
+//    }
+//    RAService.noteMapping = objects
   }
   
   class func recursivelyBuildTagMapping() {
@@ -98,35 +98,35 @@ class RAService: NSObject {
      recursivelyBuildTagMapping
      Current only supports level 1 tags and not anything more.
      */
-    let allTags : [TagTypes] = TagService.getTagTypes() as! [TagTypes]
-    var objects : [RAObject] = []
-    for tag in allTags {
-      let object = RAObject()
-      object.displayName = tag.tag_type_name
-      object.id = tag.tag_type_id
-      
-      // Fetch the tag + associated writing object
-      var children : [RAObject] = []
-      let results : [Tag] = RealmService.objectsForQuery(Tag.self, query: "tag_type_id = '\(tag.tag_type_id)'") as! [Tag]
-      for item:Tag in results {
-        // Retrieve the data to populate for the tag
-        let writingId = item.writing_id
-        let start = item.start_position
-        let length = item.length
-        if let writing = WritingService.writingForID(writingId) {
-          let writingName = writing.writing_title
-          let subString = WritingService.getBodyForWriting(writing, start: start, length: length)
-          let child = RAObject()
-          child.displayName = subString
-          child.id = writingId
-          child.subDisplayName = writingName
-          children.append(child)
-        }
-        object.children = children
-      }
-      objects.append(object)
-    }
-    RAService.tagMapping = objects
+//    let allTags : [TagTypes] = TagService.getTagTypes() as! [TagTypes]
+//    var objects : [RAObject] = []
+//    for tag in allTags {
+//      let object = RAObject()
+//      object.displayName = tag.tag_type_name
+//      object.id = tag.tag_type_id
+//      
+//      // Fetch the tag + associated writing object
+//      var children : [RAObject] = []
+//      let results : [Tag] = RealmService.objectsForQuery(Tag.self, query: "tag_type_id = '\(tag.tag_type_id)'") as! [Tag]
+//      for item:Tag in results {
+//        // Retrieve the data to populate for the tag
+//        let writingId = item.writing_id
+//        let start = item.start_position
+//        let length = item.length
+//        if let writing = WritingService.writingForID(writingId) {
+//          let writingName = writing.writing_title
+//          let subString = WritingService.getBodyForWriting(writing, start: start, length: length)
+//          let child = RAObject()
+//          child.displayName = subString
+//          child.id = writingId
+//          child.subDisplayName = writingName
+//          children.append(child)
+//        }
+//        object.children = children
+//      }
+//      objects.append(object)
+//    }
+//    RAService.tagMapping = objects
   }
   
   class func recursivelyBuildMapping(mapType:AnnotationType? = nil) {

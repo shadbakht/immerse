@@ -45,7 +45,7 @@ class CrossRefView: UIViewController, RATreeViewDelegate, RATreeViewDataSource {
       forCellReuseIdentifier: "RefCellText"
     )
 
-    Util.observe(self, action: "reload", named: "ReloadRefView")
+    Util.observe(self, action: #selector(CrossRefView.reload), named: "ReloadRefView")
 
   }
 

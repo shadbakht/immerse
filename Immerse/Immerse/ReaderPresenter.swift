@@ -118,11 +118,6 @@ class ReaderPresenter: NSObject {
       view!.writingBody.attributedText = attributedString
     }
     if item is CrossRef {
-      let refObj = item as! CrossRef
-      let range = NSMakeRange(refObj.start_writing, refObj.length_writing)
-      let attributedString = NSMutableAttributedString(attributedString: view!.writingBody.attributedText)
-      attributedString.addAttribute(NSBackgroundColorAttributeName, value: UIColor.yellowColor(), range: range)
-      view!.writingBody.attributedText = attributedString
 
     }
   }
@@ -138,10 +133,7 @@ class ReaderPresenter: NSObject {
   }
   
   func tagTypeCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
-    let tags = interactor!.tagTypes()
-    let tagName : TagTypes = tags.objectAtIndex(indexPath.row) as! TagTypes
     let cell : UITableViewCell = UITableViewCell()
-    cell.textLabel!.text = tagName.tag_type_name
     return cell
   }
   
@@ -151,43 +143,7 @@ class ReaderPresenter: NSObject {
   
   func refCellForIndexPath(tableView:UITableView, indexPath:NSIndexPath) -> UITableViewCell {
     let cell : UITableViewCell = UITableViewCell()
-    let refs = interactor!.getCurrentRefs()
-    let ref : CrossRef = refs.objectAtIndex(indexPath.row) as! CrossRef
-    let text : String = "Reference: " + ref.writing_id_end + " to " + ref.writing_id_start
-    cell.textLabel!.text = text
     return cell
   }
   
-  //MARK: Detect Tap Gesture
-  // from: http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
-//  - (void)textTapped:(UITapGestureRecognizer *)recognizer
-//  {
-//  UITextView *textView = (UITextView *)recognizer.view;
-//  
-//  // Location of the tap in text-container coordinates
-//  
-//  NSLayoutManager *layoutManager = textView.layoutManager;
-//  CGPoint location = [recognizer locationInView:textView];
-//  location.x -= textView.textContainerInset.left;
-//  location.y -= textView.textContainerInset.top;
-//  
-//  // Find the character that's been tapped on
-//  
-//  NSUInteger characterIndex;
-//  characterIndex = [layoutManager characterIndexForPoint:location
-//  inTextContainer:textView.textContainer
-//  fractionOfDistanceBetweenInsertionPoints:NULL];
-//  
-//  if (characterIndex < textView.textStorage.length) {
-//  
-//  NSRange range;
-//  id value = [textView.attributedText attribute:@"myCustomTag" atIndex:characterIndex effectiveRange:&range];
-//  
-//  // Handle as required...
-//  
-//  NSLog(@"%@, %d, %d", value, range.location, range.length);
-//  
-//  }
-//  }
-
 }
