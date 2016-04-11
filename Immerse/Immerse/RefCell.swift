@@ -20,9 +20,7 @@ class RefCell: UITableViewCell {
     super.awakeFromNib()
   }
 
-  func load(obj:RAObjectReference) {
-    sourceWritingName.text = obj.displayName
-    referenceWritingName.text = obj.displayName2
+  func load(obj:NSObject) {
   }
   
   override func setSelected(selected: Bool, animated: Bool) {

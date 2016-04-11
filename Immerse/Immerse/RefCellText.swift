@@ -20,12 +20,7 @@ class RefCellText: UITableViewCell {
     super.awakeFromNib()
   }
 
-  func load(obj:RAObjectReference) {
-    sourceTitle.text = obj.displayName
-    sourceText.text = obj.subDisplayName
-
-    refTitle.text = obj.displayName2
-    refText.text = obj.subDisplayName2
+  func load(obj:NSObject) {
   }
   
   override func setSelected(selected: Bool, animated: Bool) {
