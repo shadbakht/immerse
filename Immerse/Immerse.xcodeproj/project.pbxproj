@@ -18,8 +18,6 @@
 		5424A8821CBB1DD200AF6B43 /* GenericModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8811CBB1DD200AF6B43 /* GenericModelInterface.swift */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
 		5431DBBB1C9494BE00756842 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5431DBBA1C9494BE00756842 /* Record.swift */; };
-		544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */; };
-		544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */; };
 		545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481261C35A36600B4E7E6 /* IMNavControl.swift */; };
 		545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */; };
 		5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454812B1C35B06800B4E7E6 /* Constants.swift */; };
@@ -111,8 +109,6 @@
 		5424A8811CBB1DD200AF6B43 /* GenericModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericModelInterface.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5431DBBA1C9494BE00756842 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
-		544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefView.swift; sourceTree = "<group>"; };
-		544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCrossRefReaderView.swift; sourceTree = "<group>"; };
 		545481261C35A36600B4E7E6 /* IMNavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMNavControl.swift; sourceTree = "<group>"; };
 		545481281C35AA3100B4E7E6 /* LibraryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewCell.swift; sourceTree = "<group>"; };
 		5454812B1C35B06800B4E7E6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -237,9 +233,7 @@
 				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
 				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
 				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
-				544CFCC41C000C2000A41085 /* AddCrossRefReaderView.swift */,
 				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
-				544CFCBD1C0006CD00A41085 /* AddCrossRefView.swift */,
 				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
 				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
 			);
@@ -589,7 +583,6 @@
 				5424A8781CBB1D1F00AF6B43 /* RecordViewModel.swift in Sources */,
 				546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */,
 				5454812F1C35BB7400B4E7E6 /* TagCell.swift in Sources */,
-				544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */,
 				5431DBBB1C9494BE00756842 /* Record.swift in Sources */,
 				545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */,
 				546795081BD0D00E0062FAFB /* Util.swift in Sources */,
@@ -606,7 +599,6 @@
 				5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */,
 				546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */,
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
-				544CFCC51C000C2000A41085 /* AddCrossRefReaderView.swift in Sources */,
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
