@@ -32,7 +32,7 @@
                                                 <constraint firstAttribute="height" constant="46" id="2nZ-XS-Wy7"/>
                                                 <constraint firstAttribute="width" constant="174" id="V0P-Bd-5ha"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <color key="textColor" red="0.5725490196078431" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -48,7 +48,7 @@
                                                 <constraint firstAttribute="height" constant="45" id="jpP-Bg-7Ft"/>
                                                 <constraint firstAttribute="width" constant="174" id="sGT-pV-pW9"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <color key="textColor" red="0.57254901960000004" green="0.57254901960000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -562,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIJ-1Z-THS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="735"/>
+            <point key="canvasLocation" x="1841" y="891"/>
         </scene>
         <!--Notes View-->
         <scene sceneID="OzY-y8-GR4">

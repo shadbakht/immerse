@@ -16,6 +16,7 @@
 		5424A87E1CBB1D3700AF6B43 /* CrossRefViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A87D1CBB1D3700AF6B43 /* CrossRefViewModel.swift */; };
 		5424A8801CBB1DB300AF6B43 /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A87F1CBB1DB300AF6B43 /* GenericViewModel.swift */; };
 		5424A8821CBB1DD200AF6B43 /* GenericModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8811CBB1DD200AF6B43 /* GenericModelInterface.swift */; };
+		5424A8931CBB55B500AF6B43 /* LibrarySubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
 		5431DBBB1C9494BE00756842 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5431DBBA1C9494BE00756842 /* Record.swift */; };
 		545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481261C35A36600B4E7E6 /* IMNavControl.swift */; };
@@ -107,6 +108,7 @@
 		5424A87D1CBB1D3700AF6B43 /* CrossRefViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRefViewModel.swift; sourceTree = "<group>"; };
 		5424A87F1CBB1DB300AF6B43 /* GenericViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
 		5424A8811CBB1DD200AF6B43 /* GenericModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericModelInterface.swift; sourceTree = "<group>"; };
+		5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySubView.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5431DBBA1C9494BE00756842 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		545481261C35A36600B4E7E6 /* IMNavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMNavControl.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
 				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
+				5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */,
 				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
 				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
 				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
@@ -596,6 +599,7 @@
 				546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */,
 				545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */,
 				546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */,
+				5424A8931CBB55B500AF6B43 /* LibrarySubView.swift in Sources */,
 				5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */,
 				546794BF1BD0CAC20062FAFB /* CrossRefView.swift in Sources */,
 				546794BD1BD0CAAF0062FAFB /* NotesView.swift in Sources */,
