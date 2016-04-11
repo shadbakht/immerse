@@ -66,7 +66,6 @@
 		548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548DD4AB1C41E65F00B170F3 /* RefCellText.xib */; };
 		548DD4B01C41E74500B170F3 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 548DD4AF1C41E74500B170F3 /* cross.png */; };
 		548DD4B21C41EC7A00B170F3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548DD4B11C41EC7A00B170F3 /* Social.framework */; };
-		54A91DF91C42F3B500B4D2B2 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A91DF81C42F3B500B4D2B2 /* Share.swift */; };
 		54A91DFD1C4326A000B4D2B2 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFA1C4326A000B4D2B2 /* note.png */; };
 		54A91DFE1C4326A000B4D2B2 /* ref.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFB1C4326A000B4D2B2 /* ref.png */; };
 		54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54A91DFC1C4326A000B4D2B2 /* tag.png */; };
@@ -165,7 +164,6 @@
 		548DD4AB1C41E65F00B170F3 /* RefCellText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefCellText.xib; sourceTree = "<group>"; };
 		548DD4AF1C41E74500B170F3 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		548DD4B11C41EC7A00B170F3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		54A91DF81C42F3B500B4D2B2 /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
 		54A91DFA1C4326A000B4D2B2 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
 		54A91DFB1C4326A000B4D2B2 /* ref.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ref.png; sourceTree = "<group>"; };
 		54A91DFC1C4326A000B4D2B2 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
@@ -237,10 +235,9 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
-		5431DBB91C94912000756842 /* View + View Controllers */ = {
+		5431DBB91C94912000756842 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5454812A1C35AA4A00B4E7E6 /* Cells */,
 				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
 				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
 				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
@@ -250,12 +247,14 @@
 				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
 				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
 			);
-			name = "View + View Controllers";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		5454812A1C35AA4A00B4E7E6 /* Cells */ = {
+		5454812A1C35AA4A00B4E7E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5483BED41B95FAA70037359C /* Main.storyboard */,
+				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
 				548DD4A61C41E64700B170F3 /* RefCell.swift */,
 				548DD4A71C41E64700B170F3 /* RefCell.xib */,
 				548DD4AA1C41E65F00B170F3 /* RefCellText.swift */,
@@ -270,14 +269,14 @@
 				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
 			);
-			name = Cells;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		546794F31BD0CC9E0062FAFB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				546794E71BD0CC490062FAFB /* DataManager.swift */,
 				545AE2FC1C94A79E00A46F5F /* DBBuilder.swift */,
+				546794E71BD0CC490062FAFB /* DataManager.swift */,
 				546794FF1BD0CD370062FAFB /* ShareService.swift */,
 				546794F11BD0CC9A0062FAFB /* UserService.swift */,
 				5425CD3F1BD9F4990047A8AD /* RealmService.swift */,
@@ -330,10 +329,8 @@
 				545481261C35A36600B4E7E6 /* IMNavControl.swift */,
 				546795071BD0D00E0062FAFB /* Util.swift */,
 				5454812B1C35B06800B4E7E6 /* Constants.swift */,
-				54A91DF81C42F3B500B4D2B2 /* Share.swift */,
-				5483BED41B95FAA70037359C /* Main.storyboard */,
-				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
-				5431DBB91C94912000756842 /* View + View Controllers */,
+				5454812A1C35AA4A00B4E7E6 /* Views */,
+				5431DBB91C94912000756842 /* View Controllers */,
 				5431DBB71C9490DA00756842 /* ViewModel */,
 				546794FE1BD0CD180062FAFB /* Model */,
 				546794F31BD0CC9E0062FAFB /* Services */,
@@ -599,7 +596,6 @@
 				5424A8781CBB1D1F00AF6B43 /* RecordViewModel.swift in Sources */,
 				546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */,
 				5454812F1C35BB7400B4E7E6 /* TagCell.swift in Sources */,
-				54A91DF91C42F3B500B4D2B2 /* Share.swift in Sources */,
 				544CFCBE1C0006CD00A41085 /* AddCrossRefView.swift in Sources */,
 				5431DBBB1C9494BE00756842 /* Record.swift in Sources */,
 				545AE2FD1C94A79E00A46F5F /* DBBuilder.swift in Sources */,

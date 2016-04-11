@@ -8,32 +8,13 @@
 
 import UIKit
 import KYDrawerController
-import RATreeView
 
-class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
+class TagsView: UIViewController {
 
-  @IBOutlet weak var tagTreeView: RATreeView!
   var edit : Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Setup the Delegate and DataSource
-    tagTreeView.delegate = self
-    tagTreeView.dataSource = self
-    
-    // Get rideof tableview
-    tagTreeView.treeFooterView = UIView(frame: CGRectZero)
-
-    // Register the Cells
-    self.tagTreeView.registerNib(
-      UINib(nibName: "TagCell", bundle: nil),
-      forCellReuseIdentifier: "TagCell"
-    )
-    self.tagTreeView.registerNib(
-      UINib(nibName: "TagCellText", bundle: nil),
-      forCellReuseIdentifier: "TagCellText"
-    )
     
     // Observe
     Util.observe(self, action: #selector(TagsView.reload), named: "ReloadTagView")
@@ -50,7 +31,6 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
   }
   
   func reload() {
-    tagTreeView.reloadData()
   }
   
   @IBAction func editPressed(sender: UIBarButtonItem) {
@@ -61,42 +41,5 @@ class TagsView: UIViewController, RATreeViewDataSource, RATreeViewDelegate {
       sender.title = "EDIT"
       edit = false
     }
-    tagTreeView.reloadData()
   }
-  
-  //MARK: RATreeView Delegate
-  func treeView(treeView: RATreeView, didSelectRowForItem item: AnyObject) {
-    treeView.deselectRowForItem(item, animated: false)
-    let level = treeView.levelForCellForItem(item)
-    if level == 1 {
-    }
-  }
-  
-  //MARK: RATreeView DataSource
-  func treeView(treeView: RATreeView, heightForRowForItem item: AnyObject) -> CGFloat {
-    let level = treeView.levelForCellForItem(item)
-    if level == 1 { return 100 }
-    return 50
-  }
-  func treeView(treeView: RATreeView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-    let data : RAObject = item as! RAObject
-    return data.children.objectAtIndex(index)
-  }
-  
-  func treeView(treeView: RATreeView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-    if item == nil {
-    } else {
-      let data : RAObject = item as! RAObject
-      return data.children.count
-    }
-    return 0
-  }
-  
-  func treeView(treeView: RATreeView, cellForItem item: AnyObject?) -> UITableViewCell {
-    let cell = TagCell()
-    return cell
-  }
-  
-  
-
 }
