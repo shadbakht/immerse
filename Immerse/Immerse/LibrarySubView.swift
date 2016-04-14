@@ -46,9 +46,13 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     return cell!
   }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let count = faith?.books.count {
+      return count
+    }
     return 1
   }
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    
     return 150
   }
   
