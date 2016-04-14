@@ -21,6 +21,10 @@ class AuthorInterface : GenericModelInterface {
 
 class Author: Object {
   
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+  
   dynamic var id : String = ""
   dynamic var name : String = ""
   dynamic var faith : Faith?

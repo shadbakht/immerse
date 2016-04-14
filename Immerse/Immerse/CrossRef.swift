@@ -14,6 +14,10 @@ class CrossRefInterface : GenericModelInterface {
 
 class CrossRef: Object {
 
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var source_ref : Record?
   dynamic var destination_red : Record?

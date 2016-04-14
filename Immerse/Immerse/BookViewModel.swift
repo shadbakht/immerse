@@ -8,6 +8,9 @@
 
 import UIKit
 
-class BookViewModel: NSObject {
+class BookViewModel: GenericViewModel, ViewModelProtocol {
 
+  func setup() {
+    
+  }
 }

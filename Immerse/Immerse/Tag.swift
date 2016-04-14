@@ -14,6 +14,10 @@ class TagTypeInterface : GenericModelInterface {
 
 class TagType : Object {
 
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var name : String = ""
   dynamic var parent : TagType?
@@ -26,6 +30,10 @@ class TagInterface : GenericModelInterface {
 
 class Tag: Object {
   
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var type : TagType?
   dynamic var record : Record?

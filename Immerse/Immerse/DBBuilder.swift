@@ -21,10 +21,35 @@ class DBBuilder: NSObject {
    - parameter path: String
    - parameter out:  String : desktop path + realm name
    */
-  func processFromFilePath(path:String, out:String="/Users/jamestan/Desktop/default.realm") {
-    let testRecordSampe = "test faith| test author| this is a book|3|chapter|1|this is some awesome text"
+  func processFromFilePath(path:String="/Users/jamestan/Desktop/testWritings.txt", out:String="/Users/jamestan/Desktop/default.realm") {
+
     let config = setupRealm(out)
-    processRow(testRecordSampe, config: config)
+
+    if let url = NSURL(string: path) {
+      do {
+        let test = try String(contentsOfURL: url)
+        let list = test.componentsSeparatedByString("\n")
+        _ = list.map({
+          processRow($0, config: config)
+        })
+      } catch let error {
+        let filename = "testWritings"
+        if let path = NSBundle.mainBundle().pathForResource(filename, ofType: "txt") {
+          do {
+            let test = try String(contentsOfFile: path)
+            _ = test.componentsSeparatedByString("\n").map({
+              processRow($0, config: config)
+              print("Processing...")
+            })
+            print("Finished!")
+          } catch let error {
+            print(error)
+          }
+          
+        }
+        print(error)
+      }
+    }
   }
 
   /**
@@ -34,7 +59,7 @@ class DBBuilder: NSObject {
    - parameter path: String : path to realm to save
    - returns: Realm.Configuration : a configuration file for your realm DB
    */
-  func setupRealm(path:String) -> Realm.Configuration {
+  private func setupRealm(path:String) -> Realm.Configuration {
     var config = Realm.Configuration()
     config.path = path
     
@@ -55,81 +80,93 @@ class DBBuilder: NSObject {
    - parameter config: Realm.Configuration : from setupRealm
    - returns: Bool : Success?
    */
-  func processRow(row:String, config:Realm.Configuration) -> Bool {
+  private func processRow(row:String, config:Realm.Configuration) -> Bool {
     
-    let keys = ["record_faithName","record_authorName","record_bookName","record_typeCount", "record_type","record_textCount","record_text"]
-    let values = row.componentsSeparatedByString("|")
-    let properties = NSMutableDictionary(objects: values, forKeys: keys)
-    
-    // Add a Unique ID
-    properties.setObject(NSDate().description.sha1(), forKey: "id")
-    
-    // Fix the Properties
-    properties.setObject((properties.objectForKey("record_textCount")?.integerValue)!, forKey: "record_textCount")
-    properties.setObject((properties.objectForKey("record_typeCount")?.integerValue)!, forKey: "record_typeCount")
-    let propertiesFinal = NSDictionary(objects: properties.allValues, forKeys: properties.allKeys as! [NSCopying])
-    
-    // Create Faith
-    var faithObj = Faith()
-    let name = propertiesFinal.valueForKey("record_faithName") as! String
-    let results = FaithInterface.getObjectsBy(Faith.self, name: "name", value: name)
-    if results.count == 1 {
-      faithObj = results.first as! Faith
-    } else if results.count == 0 {
-      faithObj.name = propertiesFinal.valueForKey("record_faithName") as! String
-      faithObj.id = name.sha1()
-    } else {
-      print("ERROR!")
-    }
-
-    var authorObj = Author()
-    let nameA = propertiesFinal.valueForKey("record_authorName") as! String
-    let resultsA = AuthorInterface.getObjectsBy(Author.self, name: "name", value: name)
-    if results.count == 1 {
-      authorObj = resultsA.first as! Author
-    } else if results.count == 0 {
-      authorObj.name = nameA
-      authorObj.id = nameA.sha1()
-    } else {
-      print("ERROR!")
-    }
-    
-    var bookObj = Book()
-    let nameB = propertiesFinal.valueForKey("record_bookName") as! String
-    let resultsB = BookInterface.getObjectsBy(Book.self, name: "name", value: name)
-    if results.count == 1 {
-      bookObj = resultsB.first as! Book
-    } else if results.count == 0 {
-      bookObj.name = nameB
-      bookObj.id = nameB.sha1()
-    } else {
-      print("ERROR!")
-    }
-
-    
-    let recordObj = Record()
-    recordObj.faith = faithObj
-    recordObj.author = authorObj
-    recordObj.book = bookObj
-    recordObj.record_text = propertiesFinal.valueForKey("record_text") as! String
-    recordObj.record_textCount = propertiesFinal.valueForKey("record_textCount") as! Int
-    recordObj.record_type = propertiesFinal.valueForKey("record_type") as! String
-    recordObj.record_typeCount = propertiesFinal.valueForKey("record_typeCount") as! Int
-    recordObj.id = recordObj.record_text.sha1()
-    
-    authorObj.faith = faithObj
-    bookObj.author = authorObj
-    
-
     
     // Create a Realm Object
     do {
       let realm = try! Realm(configuration: config)
+      
+      let keys = ["record_faithName","record_authorName","record_bookName","record_typeCount", "record_type","record_textCount","record_text"]
+      let values = row.componentsSeparatedByString("|")
+      let properties = NSMutableDictionary(objects: values, forKeys: keys)
+      
+      // Add a Unique ID
+      properties.setObject(NSDate().description.sha1(), forKey: "id")
+      
+      // Fix the Properties
+      properties.setObject((properties.objectForKey("record_textCount")?.integerValue)!, forKey: "record_textCount")
+      properties.setObject((properties.objectForKey("record_typeCount")?.integerValue)!, forKey: "record_typeCount")
+      let propertiesFinal = NSDictionary(objects: properties.allValues, forKeys: properties.allKeys as! [NSCopying])
+      
+      
+      
+      
       try! realm.write({
-        realm.add(faithObj)
-        realm.add(authorObj)
-        realm.add(bookObj)
-        realm.add(recordObj)
+        
+        // Create Faith
+        var faithObj = Faith()
+        let name = propertiesFinal.valueForKey("record_faithName") as! String
+        let createFaith = realm.objects(Faith).filter("name = '\(name)'").count == 0
+        if createFaith {
+          faithObj.name = propertiesFinal.valueForKey("record_faithName") as! String
+          faithObj.id = name.sha1()
+        } else {
+          faithObj = realm.objects(Faith).filter("name = '\(name)'").first!
+        }
+        
+        var authorObj = Author()
+        let nameA = propertiesFinal.valueForKey("record_authorName") as! String
+        let createAuthor = realm.objects(Author).filter("name = '\(nameA)'").count == 0
+        if createAuthor {
+          authorObj.name = nameA
+          authorObj.id = nameA.sha1()
+        } else {
+          authorObj = realm.objects(Author).filter("name = '\(nameA)'").first!
+        }
+        
+        var bookObj = Book()
+        let nameB = propertiesFinal.valueForKey("record_bookName") as! String
+        let createBook = realm.objects(Book).filter("name = '\(nameB)'").count == 0
+        if createBook {
+          bookObj.name = nameB
+          bookObj.id = nameB.sha1()
+        } else {
+          bookObj = realm.objects(Book).filter("name = '\(nameB)'").first!
+        }
+        
+        
+        let recordObj = Record()
+        let textId = (propertiesFinal.valueForKey("record_text") as! String).sha1()
+        let createRecord = realm.objects(Record).filter("id = '\(textId)'").count == 0
+        if createRecord {
+          recordObj.faith = faithObj
+          recordObj.author = authorObj
+          recordObj.book = bookObj
+          recordObj.record_text = propertiesFinal.valueForKey("record_text") as! String
+          recordObj.record_textCount = propertiesFinal.valueForKey("record_textCount") as! Int
+          recordObj.record_type = propertiesFinal.valueForKey("record_type") as! String
+          recordObj.record_typeCount = propertiesFinal.valueForKey("record_typeCount") as! Int
+          recordObj.id = textId
+          
+          authorObj.faith = faithObj
+          bookObj.author = authorObj
+          bookObj.faith = faithObj
+        }
+
+        
+        if createFaith {
+          realm.add(faithObj)
+        }
+        if createAuthor {
+          realm.add(authorObj)
+        }
+        if createBook {
+          realm.add(bookObj)          
+        }
+        if createRecord{
+          realm.add(recordObj)
+        }
         
       })
       return true

@@ -8,20 +8,15 @@
 
 import RealmSwift
 
-extension Object {
-  static func primaryKey() -> String? {
-    return "id"
-  }
-}
-
 class GenericModelInterface : NSObject {
   
   class func getObjectsBy<T>(type:T, name:String, value:AnyObject) -> [Object] {
-    var query = "\(name) == \(value)"
+    var query = "\(name) = \(value)"
     if value is String {
-      query = "\(name) == '\(value)'"
+      query = "\(name) = '" + (value as! String) + "'"
     }
-    return RealmService.objectsWhere(type, query: query )
+    let results = RealmService.objectsWhere(self, query: query )
+    return results
   }
 }
 

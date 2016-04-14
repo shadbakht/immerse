@@ -8,6 +8,21 @@
 
 import UIKit
 
+protocol ViewModelProtocol {
+  func setup()
+}
+
 class GenericViewModel: NSObject {
 
+  weak var vc : UIViewController? = nil
+  
+  convenience override init() {
+    self.init(viewController : nil)
+  }
+  
+  init(viewController : UIViewController?) {
+    self.vc = viewController
+    super.init()
+  }
+  
 }

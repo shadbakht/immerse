@@ -9,12 +9,15 @@
 import UIKit
 import XLPagerTabStrip
 
-class LibrarySubView: UIViewController, IndicatorInfoProvider {
+class LibrarySubView: UITableViewController, IndicatorInfoProvider {
 
   var itemInfo: IndicatorInfo = "View"
+  var faith : Faith? = nil
+  var bookViewModel : BookViewModel? = nil
   
-  init(itemInfo: IndicatorInfo) {
+  init(itemInfo: IndicatorInfo, faith: Faith) {
     self.itemInfo = itemInfo
+    self.faith = faith
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -25,16 +28,9 @@ class LibrarySubView: UIViewController, IndicatorInfoProvider {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = UIColor.clearColor()
+    bookViewModel = BookViewModel(viewController: self)
+    bookViewModel?.setup()
     
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = "XLPagerTabStrip"
-    
-    view.addSubview(label)
-
-    view.addConstraint(NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: -50))
   }
   
   // MARK: - IndicatorInfoProvider
@@ -42,6 +38,8 @@ class LibrarySubView: UIViewController, IndicatorInfoProvider {
   func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
     return itemInfo
   }
+  
+  
   
 
     /*

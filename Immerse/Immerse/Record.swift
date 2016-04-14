@@ -23,6 +23,10 @@ class RecordInterface : GenericModelInterface {
 
 class Record: Object {
 
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var faith : Faith?
   dynamic var author : Author?

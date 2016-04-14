@@ -20,11 +20,16 @@ class BookInterface : GenericModelInterface {
 }
 
 class Book : Object {
-  
+
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var name : String = ""
   dynamic var author : Author?
-
+  dynamic var faith : Faith?
+  
   var records: [Record] {
     return linkingObjects(Record.self, forProperty: "book")
   }

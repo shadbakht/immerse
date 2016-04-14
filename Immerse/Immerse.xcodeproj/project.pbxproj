@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5415B7CA1CBF34B500946055 /* testWritings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7C91CBF34B500946055 /* testWritings.txt */; };
 		5424A8721CBB1CF700AF6B43 /* FaithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */; };
 		5424A8741CBB1D0800AF6B43 /* AuthorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */; };
 		5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */; };
@@ -99,6 +100,7 @@
 /* Begin PBXFileReference section */
 		0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5415B7C91CBF34B500946055 /* testWritings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWritings.txt; sourceTree = "<group>"; };
 		5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaithViewModel.swift; sourceTree = "<group>"; };
 		5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewModel.swift; sourceTree = "<group>"; };
 		5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		5483BECE1B95FAA70037359C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5415B7C91CBF34B500946055 /* testWritings.txt */,
 				545AE2FE1C95122100A46F5F /* default.realm */,
 				54B9942C1C4B350E00B873EC /* complete.png */,
 				54B9942D1C4B350E00B873EC /* progress.png */,
@@ -476,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5483BED61B95FAA70037359C /* Main.storyboard in Resources */,
+				5415B7CA1CBF34B500946055 /* testWritings.txt in Resources */,
 				5483BEDB1B95FAA70037359C /* LaunchScreen.xib in Resources */,
 				545481371C35BD2300B4E7E6 /* delete.png in Resources */,
 				545481301C35BB7400B4E7E6 /* TagCell.xib in Resources */,

@@ -13,6 +13,10 @@ class NoteInterface : GenericModelInterface {
 }
 class Note: Object {
 
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   dynamic var id : String = ""
   dynamic var record : Record?
   dynamic var start_position : Int = 0
