@@ -100,7 +100,8 @@ class DBBuilder: NSObject {
       let propertiesFinal = NSDictionary(objects: properties.allValues, forKeys: properties.allKeys as! [NSCopying])
       
       
-      
+      // NOTE: We must do all the parsing here because this Realm File is NOT referenced in the rest of the application.
+      // If we try to use the app's utility methods to retrieve and process Realm DB results, this will fail!
       
       try! realm.write({
         

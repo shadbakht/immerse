@@ -14,7 +14,7 @@ class FaithViewModel: GenericViewModel, ViewModelProtocol {
   
   func setup() {
     if faiths.isEmpty {
-      let fetchFaiths =  Faith.getAllFaiths()
+      let fetchFaiths =  FaithInterface.getAllFaiths()
       faiths = fetchFaiths
     }
     

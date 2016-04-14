@@ -30,7 +30,9 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     
     bookViewModel = BookViewModel(viewController: self)
     bookViewModel?.setup()
-    
+
+    let nib = UINib(nibName: "LibraryBookCell", bundle: nil)
+    tableView.registerNib(nib, forCellReuseIdentifier: "LibraryBookCell")
   }
   
   // MARK: - IndicatorInfoProvider
@@ -39,6 +41,16 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     return itemInfo
   }
   
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell")
+    return cell!
+  }
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 150
+  }
   
   
 

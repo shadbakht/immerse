@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5415B7CA1CBF34B500946055 /* testWritings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7C91CBF34B500946055 /* testWritings.txt */; };
+		5415B7CC1CBF62D900946055 /* LibraryBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */; };
 		5424A8721CBB1CF700AF6B43 /* FaithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */; };
 		5424A8741CBB1D0800AF6B43 /* AuthorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */; };
 		5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */; };
@@ -101,6 +102,7 @@
 		0C4E41121568ECD7C159A32C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4ACE5D80873F6774CFD230B8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5415B7C91CBF34B500946055 /* testWritings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWritings.txt; sourceTree = "<group>"; };
+		5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryBookCell.xib; sourceTree = "<group>"; };
 		5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaithViewModel.swift; sourceTree = "<group>"; };
 		5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewModel.swift; sourceTree = "<group>"; };
 		5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				54FFC3DF1BF7C62B0041458D /* ReaderTagsAccessory.xib */,
 				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
+				5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */,
 				54A91DFD1C4326A000B4D2B2 /* note.png in Resources */,
 				5467950A1BD1EC9E0062FAFB /* menu.png in Resources */,
+				5415B7CC1CBF62D900946055 /* LibraryBookCell.xib in Resources */,
 				548DD4B01C41E74500B170F3 /* cross.png in Resources */,
 				548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */,
 				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
