@@ -68,7 +68,7 @@ class DBBuilder: NSObject {
       }
     }
     config.migrationBlock = migrationBlock
-    config.schemaVersion = 2
+    config.schemaVersion = 0
     return config
   }
   

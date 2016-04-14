@@ -12,7 +12,7 @@ class DataManager: NSObject {
 
   class func setup() {
     
-    DBBuilder().processFromFilePath()
+//    DBBuilder().processFromFilePath()
     
     // Check for Existing Default.Realm file, Copy it if it doesn't exist
     if !NSFileManager.fileExistsInDocumentDirectory("default.realm") {

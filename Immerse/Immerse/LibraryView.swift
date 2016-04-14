@@ -17,9 +17,6 @@ class LibraryView: ButtonBarPagerTabStripViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    faithViewModel = FaithViewModel(viewController: self)
-    faithViewModel?.setup()
-    
     settings.style.buttonBarItemBackgroundColor = UIColor.clearColor()
     buttonBarView.backgroundColor = UIColor.clearColor()
     settings.style.buttonBarItemTitleColor = UIColor.darkGrayColor()
@@ -40,7 +37,11 @@ class LibraryView: ButtonBarPagerTabStripViewController {
   
   override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
     
+    faithViewModel = FaithViewModel(viewController: self)
+    faithViewModel?.setup()
+    
     if let views = faithViewModel?.faiths.map({
+      
       LibrarySubView(itemInfo: IndicatorInfo(title: $0.name), faith: $0)
       }) {
       return views

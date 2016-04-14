@@ -49,4 +49,16 @@ class Faith: Object {
   var books : [Book] {
     return linkingObjects(Book.self, forProperty: "faith")
   }
+  
+  static func getAllFaiths() -> [Faith] {
+    do {
+      let realm = try Realm()
+      let results = realm.objects(Faith).map({$0})
+      return results
+    } catch let error {
+      print(error)
+      return[]
+    }
+  }
+  
 }
