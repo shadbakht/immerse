@@ -379,40 +379,6 @@
         <scene sceneID="ib9-Tn-VZf">
             <objects>
                 <viewController id="Nfx-eS-lPc" customClass="TagsView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zbh-G0-ybv"/>
-                        <viewControllerLayoutGuide type="bottom" id="nXI-Ni-f8O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="H0X-R1-urq">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search All Tags" translatesAutoresizingMaskIntoConstraints="NO" id="pXw-7H-Fic">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <color key="barTintColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiH-V4-5gg">
-                                <rect key="frame" x="0.0" y="471" width="600" height="65"/>
-                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="XMa-lf-1La"/>
-                                </constraints>
-                                <state key="normal" title="SELECT ALL">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="UiH-V4-5gg" firstAttribute="leading" secondItem="H0X-R1-urq" secondAttribute="leadingMargin" constant="-20" id="3Bl-cW-OvH"/>
-                            <constraint firstItem="pXw-7H-Fic" firstAttribute="leading" secondItem="H0X-R1-urq" secondAttribute="leadingMargin" constant="-20" id="FDO-3g-Syi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UiH-V4-5gg" secondAttribute="trailing" constant="-20" id="SzB-Sf-Dpq"/>
-                            <constraint firstItem="nXI-Ni-f8O" firstAttribute="top" secondItem="UiH-V4-5gg" secondAttribute="bottom" id="Uk7-Wr-kHI"/>
-                            <constraint firstItem="pXw-7H-Fic" firstAttribute="top" secondItem="Zbh-G0-ybv" secondAttribute="bottom" id="nc5-IG-Hla"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pXw-7H-Fic" secondAttribute="trailing" constant="-20" id="qXG-xk-TAj"/>
-                        </constraints>
-                    </view>
                     <navigationItem key="navigationItem" id="0Dk-QO-hG6">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="p9k-hC-8Ez">

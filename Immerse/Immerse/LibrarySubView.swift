@@ -13,11 +13,13 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
 
   var itemInfo: IndicatorInfo = "View"
   var faith : Faith? = nil
+  var books : [Book]? = nil
   var bookViewModel : BookViewModel? = nil
   
   init(itemInfo: IndicatorInfo, faith: Faith) {
     self.itemInfo = itemInfo
     self.faith = faith
+    self.books = faith.books
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -41,21 +43,32 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     return itemInfo
   }
   
+  // MARK: - TableViewDelegate & DataSource
+  
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell")
+    if let booksObj = books {
+      let book = booksObj[indexPath.row]
+      cell?.textLabel?.text = book.name
+    }
     return cell!
   }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if let count = faith?.books.count {
+    if let count = books?.count {
       return count
     }
     return 1
   }
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    
-    return 150
+    return 80
   }
-  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    let readerVc = ReaderView(nibName: "ReaderView", bundle: nil)
+    self.presentViewController(readerVc, animated: true, completion: {
+      
+    })
+  }
   
 
     /*

@@ -57,6 +57,21 @@ extension String {
   }
 }
 
+extension UIColor {
+  
+  static var imBlue : UIColor {
+    return rgb(39, g: 55, b: 66)
+  }
+  
+  static var imBackground : UIColor {
+    return rgb(249, g: 249, b: 249)
+  }
+  
+  class func rgb(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
+    return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0)
+  }
+}
+
 class Util: NSObject {
   
   //MARK: Traverse Bundle
