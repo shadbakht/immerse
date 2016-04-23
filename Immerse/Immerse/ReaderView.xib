@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReaderView" customModule="Immerse" customModuleProvider="target">
             <connections>
+                <outlet property="navbar" destination="Ike-47-tT3" id="jvf-30-bIY"/>
+                <outlet property="readerTable" destination="S2E-3b-CBi" id="e35-xd-hRm"/>
+                <outlet property="toolbar" destination="i0t-Xf-g09" id="UoU-YH-ThJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,12 +18,48 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2E-3b-CBi">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2E-3b-CBi">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-Xf-g09">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Qnz-VD-TGi"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" id="Djr-lK-Bas"/>
+                    </items>
+                </toolbar>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-47-tT3">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="l85-80-7yd"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="READER" id="cuD-4N-MXd">
+                            <barButtonItem key="rightBarButtonItem" systemItem="stop" id="k4x-aM-Mka">
+                                <connections>
+                                    <action selector="close:" destination="-1" id="cGk-Vv-BSd"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="i0t-Xf-g09" secondAttribute="trailing" id="0H8-mQ-zNX"/>
+                <constraint firstAttribute="trailing" secondItem="Ike-47-tT3" secondAttribute="trailing" id="0ha-li-77k"/>
+                <constraint firstAttribute="bottom" secondItem="i0t-Xf-g09" secondAttribute="bottom" id="1cr-ut-oen"/>
+                <constraint firstItem="i0t-Xf-g09" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Ld-rh-7jL"/>
+                <constraint firstItem="S2E-3b-CBi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BHE-GO-BMw"/>
+                <constraint firstAttribute="trailing" secondItem="S2E-3b-CBi" secondAttribute="trailing" id="Bd0-do-2fF"/>
+                <constraint firstItem="Ike-47-tT3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pw4-Co-EYx"/>
+                <constraint firstItem="Ike-47-tT3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ess-Ps-m9d"/>
+                <constraint firstItem="S2E-3b-CBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAt-2W-6OB"/>
+                <constraint firstAttribute="bottom" secondItem="S2E-3b-CBi" secondAttribute="bottom" id="xh5-SS-KwW"/>
+            </constraints>
         </view>
     </objects>
 </document>

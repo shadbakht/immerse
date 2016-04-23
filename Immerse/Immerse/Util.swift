@@ -72,6 +72,11 @@ extension UIColor {
   }
 }
 
+extension CGRect {
+  mutating func setY(val:CGFloat) {
+    self = CGRectMake(origin.x, val, width, height)
+  }
+}
 class Util: NSObject {
   
   //MARK: Traverse Bundle

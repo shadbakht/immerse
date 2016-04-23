@@ -48,8 +48,7 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell")
     if let booksObj = books {
-      let book = booksObj[indexPath.row]
-      cell?.textLabel?.text = book.name
+      _ = booksObj[indexPath.row]
     }
     return cell!
   }
@@ -65,6 +64,7 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
     let readerVc = ReaderView(nibName: "ReaderView", bundle: nil)
+    readerVc.load(books![indexPath.row])
     self.presentViewController(readerVc, animated: true, completion: {
       
     })
