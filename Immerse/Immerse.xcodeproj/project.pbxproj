@@ -10,6 +10,7 @@
 		5415B7CA1CBF34B500946055 /* testWritings.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7C91CBF34B500946055 /* testWritings.txt */; };
 		5415B7CC1CBF62D900946055 /* LibraryBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */; };
 		5423FE731CCB4F360042933F /* ReaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5423FE721CCB4F360042933F /* ReaderCell.xib */; };
+		5423FE751CCC9F890042933F /* ReaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423FE741CCC9F890042933F /* ReaderCell.swift */; };
 		5424A8721CBB1CF700AF6B43 /* FaithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */; };
 		5424A8741CBB1D0800AF6B43 /* AuthorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */; };
 		5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */; };
@@ -107,6 +108,7 @@
 		5415B7C91CBF34B500946055 /* testWritings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testWritings.txt; sourceTree = "<group>"; };
 		5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryBookCell.xib; sourceTree = "<group>"; };
 		5423FE721CCB4F360042933F /* ReaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderCell.xib; sourceTree = "<group>"; };
+		5423FE741CCC9F890042933F /* ReaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderCell.swift; sourceTree = "<group>"; };
 		5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaithViewModel.swift; sourceTree = "<group>"; };
 		5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewModel.swift; sourceTree = "<group>"; };
 		5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
 				5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */,
 				5423FE721CCB4F360042933F /* ReaderCell.xib */,
+				5423FE741CCC9F890042933F /* ReaderCell.swift */,
 				544AA71D1CC1C009005118AA /* ReaderView.xib */,
 			);
 			name = Views;
@@ -601,6 +604,7 @@
 				5424A8801CBB1DB300AF6B43 /* GenericViewModel.swift in Sources */,
 				5424A8721CBB1CF700AF6B43 /* FaithViewModel.swift in Sources */,
 				545AE3081C951B0D00A46F5F /* Book.swift in Sources */,
+				5423FE751CCC9F890042933F /* ReaderCell.swift in Sources */,
 				545481291C35AA3100B4E7E6 /* LibraryViewCell.swift in Sources */,
 				546794E81BD0CC490062FAFB /* DataManager.swift in Sources */,
 				5424A8781CBB1D1F00AF6B43 /* RecordViewModel.swift in Sources */,
