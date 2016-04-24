@@ -3,7 +3,9 @@ use_frameworks!
 pod 'RealmSwift'
 pod 'KYDrawerController'
 pod 'XLPagerTabStrip', '~> 5.0'
-pod 'UITags'
+pod 'JCTagListView'
+
+
 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.1'

@@ -38,7 +38,6 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     var newFrame = textView.frame
     newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
     textView.frame = newFrame;
-    
   }
 
 }

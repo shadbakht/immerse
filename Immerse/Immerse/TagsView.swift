@@ -8,16 +8,29 @@
 
 import UIKit
 import KYDrawerController
+import JCTagListView
 
 class TagsView: UIViewController {
 
   var edit : Bool = false
   
+  @IBOutlet var tagListView: JCTagListView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Observe
-    Util.observe(self, action: #selector(TagsView.reload), named: "ReloadTagView")
+    tagListView.canSelectTags = true
+    tagListView.tagCornerRadius = 2.0
+    //    self.tagListView.tagStrokeColor = [UIColor redColor];
+    //    self.tagListView.tagBackgroundColor = [UIColor orangeColor];
+    //    self.tagListView.tagTextColor = [UIColor greenColor];
+    //    self.tagListView.tagSelectedBackgroundColor = [UIColor yellowColor];
+
+    tagListView.tags.addObjectsFromArray(["MOO!"])
+    tagListView.setCompletionBlockWithSelected({
+      finished in
+      // On Select
+    })
   }
 
   override func didReceiveMemoryWarning() {

@@ -379,6 +379,15 @@
         <scene sceneID="ib9-Tn-VZf">
             <objects>
                 <viewController id="Nfx-eS-lPc" customClass="TagsView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hdd-7W-eY8"/>
+                        <viewControllerLayoutGuide type="bottom" id="s9p-EU-P8V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wqv-fR-M2q" customClass="JCTagListView">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <navigationItem key="navigationItem" id="0Dk-QO-hG6">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="p9k-hC-8Ez">
@@ -419,6 +428,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZI-Ch-UlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

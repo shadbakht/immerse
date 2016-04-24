@@ -60,7 +60,6 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   
   @IBAction func close(sender: UIBarButtonItem) {
     self.dismissViewControllerAnimated(true, completion: {
-      
     })
   }
   
@@ -75,7 +74,6 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
     let record = records![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("ReaderCell") as! ReaderCell
     cell.textView.text = record.record_text
-//    cell.textLabel?.text = record.record_text
     return cell
   }
   
