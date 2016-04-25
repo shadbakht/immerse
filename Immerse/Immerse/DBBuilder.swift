@@ -21,7 +21,7 @@ class DBBuilder: NSObject {
    - parameter path: String
    - parameter out:  String : desktop path + realm name
    */
-  func processFromFilePath(path:String="/Users/jamestan/Desktop/testWritings.txt", out:String="/Users/jamestan/Desktop/default.realm") {
+  func processFromFilePath(path:String="/Users/jamestan/Desktop/example.txt", out:String="/Users/jamestan/Desktop/default.realm") {
 
     let config = setupRealm(out)
 

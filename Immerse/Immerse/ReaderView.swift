@@ -22,7 +22,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
     
     readerTable.delegate = self
     readerTable.dataSource = self
-    readerTable.rowHeight = UITableViewAutomaticDimension
+//    readerTable.rowHeight = UITableViewAutomaticDimension
     
     let nib = UINib(nibName: "ReaderCell", bundle: nil)
     readerTable.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
@@ -80,6 +80,15 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
   }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+  
+  func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+
   
 
 }
