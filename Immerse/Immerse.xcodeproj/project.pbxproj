@@ -11,6 +11,8 @@
 		5415B7CC1CBF62D900946055 /* LibraryBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */; };
 		5423FE731CCB4F360042933F /* ReaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5423FE721CCB4F360042933F /* ReaderCell.xib */; };
 		5423FE751CCC9F890042933F /* ReaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423FE741CCC9F890042933F /* ReaderCell.swift */; };
+		5423FE781CCDE3630042933F /* CreateTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5423FE761CCDE3630042933F /* CreateTagView.swift */; };
+		5423FE791CCDE3630042933F /* CreateTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5423FE771CCDE3630042933F /* CreateTagView.xib */; };
 		5424A8721CBB1CF700AF6B43 /* FaithViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */; };
 		5424A8741CBB1D0800AF6B43 /* AuthorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */; };
 		5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */; };
@@ -109,6 +111,8 @@
 		5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryBookCell.xib; sourceTree = "<group>"; };
 		5423FE721CCB4F360042933F /* ReaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderCell.xib; sourceTree = "<group>"; };
 		5423FE741CCC9F890042933F /* ReaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderCell.swift; sourceTree = "<group>"; };
+		5423FE761CCDE3630042933F /* CreateTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTagView.swift; sourceTree = "<group>"; };
+		5423FE771CCDE3630042933F /* CreateTagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTagView.xib; sourceTree = "<group>"; };
 		5424A8711CBB1CF700AF6B43 /* FaithViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaithViewModel.swift; sourceTree = "<group>"; };
 		5424A8731CBB1D0800AF6B43 /* AuthorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewModel.swift; sourceTree = "<group>"; };
 		5424A8751CBB1D1100AF6B43 /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
 				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
 				544AA71C1CC1C009005118AA /* ReaderView.swift */,
+				5423FE761CCDE3630042933F /* CreateTagView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				5423FE721CCB4F360042933F /* ReaderCell.xib */,
 				5423FE741CCC9F890042933F /* ReaderCell.swift */,
 				544AA71D1CC1C009005118AA /* ReaderView.xib */,
+				5423FE771CCDE3630042933F /* CreateTagView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */,
 				54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */,
 				54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */,
+				5423FE791CCDE3630042933F /* CreateTagView.xib in Resources */,
 				544AA71F1CC1C009005118AA /* ReaderView.xib in Resources */,
 				54B9942E1C4B350E00B873EC /* complete.png in Resources */,
 				5454813D1C35CD4900B4E7E6 /* TagCellText.xib in Resources */,
@@ -617,6 +624,7 @@
 				5454813C1C35CD4900B4E7E6 /* TagCellText.swift in Sources */,
 				5424A87C1CBB1D2F00AF6B43 /* TagViewModel.swift in Sources */,
 				546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */,
+				5423FE781CCDE3630042933F /* CreateTagView.swift in Sources */,
 				545AE30A1C951C3800A46F5F /* Faith.swift in Sources */,
 				546795061BD0CFF20062FAFB /* NavTray.swift in Sources */,
 				546794F71BD0CCCA0062FAFB /* Note.swift in Sources */,

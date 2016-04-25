@@ -9,7 +9,18 @@
 import RealmSwift
 
 class TagTypeInterface : GenericModelInterface {
+  class func createTag(name:String) -> Bool {
+    let tag = TagType()
+    tag.name = name
+    tag.id = name.sha1()
+    RealmService.createObject(tag)
+    return true
+  }
   
+  class func getAllTagTypes() -> [TagType] {
+    return RealmService.allObjects(TagType.self) as! [TagType]
+  }
+
 }
 
 class TagType : Object {

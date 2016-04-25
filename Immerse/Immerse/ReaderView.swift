@@ -88,7 +88,14 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }
-
   
+  @IBAction func addCrossRef(sender: AnyObject) {
+  }
+  @IBAction func addNote(sender: AnyObject) {
+  }
+  @IBAction func addTag(sender: AnyObject) {
+    let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
+    self.showDetailViewController(create, sender: self)
+  }
 
 }

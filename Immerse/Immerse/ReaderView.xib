@@ -28,7 +28,21 @@
                         <constraint firstAttribute="height" constant="44" id="Qnz-VD-TGi"/>
                     </constraints>
                     <items>
-                        <barButtonItem title="Item" id="Djr-lK-Bas"/>
+                        <barButtonItem title="TAG" id="Djr-lK-Bas">
+                            <connections>
+                                <action selector="addTag:" destination="-1" id="F9s-2j-uIf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="NOTE" id="VvV-Ps-MZJ">
+                            <connections>
+                                <action selector="addNote:" destination="-1" id="jYT-rV-QEP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="CROSS-REF" id="VUL-g0-xgg">
+                            <connections>
+                                <action selector="addCrossRef:" destination="-1" id="9zu-0I-bqC"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-47-tT3">
