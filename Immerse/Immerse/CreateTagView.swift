@@ -7,20 +7,35 @@
 //
 
 import UIKit
+import JCTagListView
 
-class CreateTagView: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-  @IBOutlet var tagTable: UITableView!
+class CreateTagView: UIViewController {
 
   var tagViewModel : TagViewModel? = nil
+  var record : Record? = nil
+  
+  @IBOutlet var tagListView: JCTagListView!
+  @IBOutlet var tagText: UILabel!
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Setup the ViewModel
     tagViewModel = TagViewModel(viewController: self)
     tagViewModel?.setup()
     
-    tagTable.delegate = self
-    tagTable.dataSource = self
+    // Popuplate TagsList
+    tagListView.canSelectTags = true
+    tagListView.tagCornerRadius = 2.0
+    if let tagTypes = tagViewModel?.tagTypes {
+      let strings = tagTypes.map({$0.name})
+      tagListView.tags.addObjectsFromArray(strings)
+    }
+    tagListView.setCompletionBlockWithSelected({
+      finished in
+      // On Select
+    })
   }
   
   @IBAction func close(sender: AnyObject) {
@@ -34,8 +49,14 @@ class CreateTagView: UIViewController, UITableViewDelegate, UITableViewDataSourc
       finished in
       if let textField = alert.textFields?.first {
         if self.tagViewModel!.createTagType(textField.text!) {
+          
+          // Update the TagListView
           self.tagViewModel?.setup()
-          self.tagTable.reloadData()
+          if let types =  self.tagViewModel?.tagTypes {
+            self.tagListView.tags.removeAllObjects()
+            self.tagListView.tags.addObjectsFromArray(types.map({$0.name}))
+            self.tagListView.collectionView.reloadData()
+          }
         } else {
           //Failure
         }
@@ -55,28 +76,20 @@ class CreateTagView: UIViewController, UITableViewDelegate, UITableViewDataSourc
     })
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if let count = tagViewModel?.tagTypes.count {
-      return count
-    }
-    return 0
-  }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "moo!")
-    let type : TagType = (tagViewModel?.tagTypes[indexPath.row])!
-    cell.textLabel?.text = type.name
-    return cell
-  }
-  
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  @IBAction func applySelectedTags(sender: AnyObject) {
+    // Get the Ids
+    let indexOfSelected = tagListView.selectedTags.map({ $0 as! String
+      tagListView.tags.indexOfObject($0)
+    })
     self.dismissViewControllerAnimated(true, completion: {
       
     })
+//    tagViewModel.createTag(record, text:"", selectedTagTypes)
+    
+    
+    
   }
-  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
 }

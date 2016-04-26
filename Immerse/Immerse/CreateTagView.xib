@@ -7,7 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateTagView" customModule="Immerse" customModuleProvider="target">
             <connections>
-                <outlet property="tagTable" destination="yc4-hu-GZc" id="2t8-k4-Sco"/>
+                <outlet property="tagListView" destination="thW-oa-1vN" id="vdc-3I-mjY"/>
+                <outlet property="tagText" destination="CHQ-87-R5R" id="2DF-Jx-U3g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,22 +37,49 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yc4-hu-GZc">
-                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thW-oa-1vN" customClass="JCTagListView">
+                    <rect key="frame" x="0.0" y="126" width="600" height="421"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwk-KN-Dvz">
+                    <rect key="frame" x="0.0" y="548" width="600" height="52"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="6Ax-Rw-aHa"/>
+                    </constraints>
+                    <state key="normal" title="APPLY TO TEXT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="applySelectedTags:" destination="-1" eventType="touchUpInside" id="hux-03-lcf"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-87-R5R">
+                    <rect key="frame" x="20" y="44" width="560" height="82"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="2OA-O0-oTg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="highlightedColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Nwk-KN-Dvz" secondAttribute="bottom" id="BPl-Ov-eJM"/>
                 <constraint firstAttribute="trailing" secondItem="z1l-ux-qfe" secondAttribute="trailing" id="Bop-Gw-oSU"/>
-                <constraint firstItem="yc4-hu-GZc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DHW-xG-qeV"/>
-                <constraint firstAttribute="bottom" secondItem="yc4-hu-GZc" secondAttribute="bottom" id="Ijv-0w-4jQ"/>
+                <constraint firstAttribute="trailing" secondItem="thW-oa-1vN" secondAttribute="trailing" id="E2c-v3-lZO"/>
+                <constraint firstAttribute="trailing" secondItem="Nwk-KN-Dvz" secondAttribute="trailing" id="HVc-gc-Uus"/>
+                <constraint firstItem="CHQ-87-R5R" firstAttribute="top" secondItem="z1l-ux-qfe" secondAttribute="bottom" id="Hkj-4m-XRo"/>
+                <constraint firstAttribute="trailing" secondItem="CHQ-87-R5R" secondAttribute="trailing" constant="20" id="JiL-Oa-kwq"/>
+                <constraint firstItem="CHQ-87-R5R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="RU2-WF-QVV"/>
+                <constraint firstItem="Nwk-KN-Dvz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vfy-NV-sKL"/>
                 <constraint firstItem="z1l-ux-qfe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bdb-l3-oFq"/>
-                <constraint firstItem="yc4-hu-GZc" firstAttribute="top" secondItem="z1l-ux-qfe" secondAttribute="bottom" id="fb6-R7-pVe"/>
+                <constraint firstItem="thW-oa-1vN" firstAttribute="top" secondItem="CHQ-87-R5R" secondAttribute="bottom" id="csx-z2-u35"/>
                 <constraint firstItem="z1l-ux-qfe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fgc-AS-i5g"/>
-                <constraint firstAttribute="trailing" secondItem="yc4-hu-GZc" secondAttribute="trailing" id="yqZ-f2-Rva"/>
+                <constraint firstItem="Nwk-KN-Dvz" firstAttribute="top" secondItem="thW-oa-1vN" secondAttribute="bottom" constant="1" id="mKS-mr-1ye"/>
+                <constraint firstItem="thW-oa-1vN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ovi-0D-1fy"/>
             </constraints>
         </view>
-        <barButtonItem title="Item" id="tdf-rZ-RkJ"/>
     </objects>
 </document>

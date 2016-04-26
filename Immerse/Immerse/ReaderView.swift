@@ -73,6 +73,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let record = records![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("ReaderCell") as! ReaderCell
+    cell.record = record
     cell.textView.text = record.record_text
     return cell
   }
@@ -95,7 +96,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   }
   @IBAction func addTag(sender: AnyObject) {
     let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
-    self.showDetailViewController(create, sender: self)
+    self.presentViewController(create, animated: true, completion: {
+      
+    })
   }
 
 }

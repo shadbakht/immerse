@@ -11,6 +11,8 @@ import UIKit
 class ReaderCell: UITableViewCell, UITextViewDelegate {
 
   @IBOutlet var textView: UITextView!
+  var record : Record? = nil
+  
   var rowHeight : CGFloat {
     get {
       return textView.frame.height

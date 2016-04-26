@@ -13,11 +13,15 @@ import JCTagListView
 class TagsView: UIViewController {
 
   var edit : Bool = false
+  var tagViewModel : TagViewModel? = nil
   
   @IBOutlet var tagListView: JCTagListView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    tagViewModel = TagViewModel(viewController: self)
+    tagViewModel?.setup()
     
     tagListView.canSelectTags = true
     tagListView.tagCornerRadius = 2.0
@@ -26,11 +30,15 @@ class TagsView: UIViewController {
     //    self.tagListView.tagTextColor = [UIColor greenColor];
     //    self.tagListView.tagSelectedBackgroundColor = [UIColor yellowColor];
 
-    tagListView.tags.addObjectsFromArray(["MOO!"])
+    if let tagTypes = tagViewModel?.tagTypes {
+      let strings = tagTypes.map({$0.name})
+      tagListView.tags.addObjectsFromArray(strings)
+    }
     tagListView.setCompletionBlockWithSelected({
       finished in
       // On Select
     })
+    
   }
 
   override func didReceiveMemoryWarning() {
