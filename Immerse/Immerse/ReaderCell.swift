@@ -12,6 +12,11 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
 
   @IBOutlet var textView: UITextView!
   var record : Record? = nil
+  var hasSelected : Bool {
+    get {
+      return (textView.selectedTextRange?.empty)!
+    }
+  }
   
   var rowHeight : CGFloat {
     get {
@@ -40,6 +45,15 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     var newFrame = textView.frame
     newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
     textView.frame = newFrame;
+    
   }
+  
+  func getSelectedText() -> (UITextRange, Record)? {
+    if let range = textView.selectedTextRange, let record = record {
+      return (range, record)
+    }
+    return nil
+  }
+  
 
 }

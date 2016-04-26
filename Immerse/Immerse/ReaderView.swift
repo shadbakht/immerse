@@ -22,7 +22,6 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
     
     readerTable.delegate = self
     readerTable.dataSource = self
-//    readerTable.rowHeight = UITableViewAutomaticDimension
     
     let nib = UINib(nibName: "ReaderCell", bundle: nil)
     readerTable.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
@@ -95,6 +94,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   @IBAction func addNote(sender: AnyObject) {
   }
   @IBAction func addTag(sender: AnyObject) {
+    
     let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
     self.presentViewController(create, animated: true, completion: {
       

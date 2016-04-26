@@ -78,11 +78,15 @@ class CreateTagView: UIViewController {
 
   @IBAction func applySelectedTags(sender: AnyObject) {
     // Get the Ids
-    let indexOfSelected = tagListView.selectedTags.map({ $0 as! String
-      tagListView.tags.indexOfObject($0)
+    let indexSet = NSMutableIndexSet()
+    _ = tagListView.selectedTags.map({ $0 as! String
+      indexSet.addIndex(tagListView.tags.indexOfObject($0))
     })
+    
+    let tags = NSMutableArray(array:(tagViewModel?.tags)!).objectsAtIndexes(indexSet)
+    
+    
     self.dismissViewControllerAnimated(true, completion: {
-      
     })
 //    tagViewModel.createTag(record, text:"", selectedTagTypes)
     
