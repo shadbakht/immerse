@@ -102,6 +102,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   // MARK:-TOOLBAR
   
   @IBAction func addCrossRef(sender: AnyObject) {
+    let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
+    self.presentViewController(create, animated: true, completion: {
+    })
   }
   
   @IBAction func addNote(sender: AnyObject) {
