@@ -25,6 +25,11 @@
 		5424A8931CBB55B500AF6B43 /* LibrarySubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */; };
 		5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5425CD3F1BD9F4990047A8AD /* RealmService.swift */; };
 		5431DBBB1C9494BE00756842 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5431DBBA1C9494BE00756842 /* Record.swift */; };
+		544798141CD08B7E00CA391E /* LibraryBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544798131CD08B7E00CA391E /* LibraryBookCell.swift */; };
+		5447981B1CD08DED00CA391E /* TagTypeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544798191CD08DED00CA391E /* TagTypeDetailView.swift */; };
+		5447981C1CD08DED00CA391E /* TagTypeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5447981A1CD08DED00CA391E /* TagTypeDetailView.xib */; };
+		5447981F1CD0941500CA391E /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5447981D1CD0941500CA391E /* CreateNoteView.swift */; };
+		544798201CD0941500CA391E /* CreateNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5447981E1CD0941500CA391E /* CreateNoteView.xib */; };
 		544AA71E1CC1C009005118AA /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544AA71C1CC1C009005118AA /* ReaderView.swift */; };
 		544AA71F1CC1C009005118AA /* ReaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544AA71D1CC1C009005118AA /* ReaderView.xib */; };
 		545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545481261C35A36600B4E7E6 /* IMNavControl.swift */; };
@@ -125,6 +130,11 @@
 		5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySubView.swift; sourceTree = "<group>"; };
 		5425CD3F1BD9F4990047A8AD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5431DBBA1C9494BE00756842 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		544798131CD08B7E00CA391E /* LibraryBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBookCell.swift; sourceTree = "<group>"; };
+		544798191CD08DED00CA391E /* TagTypeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTypeDetailView.swift; sourceTree = "<group>"; };
+		5447981A1CD08DED00CA391E /* TagTypeDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagTypeDetailView.xib; sourceTree = "<group>"; };
+		5447981D1CD0941500CA391E /* CreateNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
+		5447981E1CD0941500CA391E /* CreateNoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateNoteView.xib; sourceTree = "<group>"; };
 		544AA71C1CC1C009005118AA /* ReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		544AA71D1CC1C009005118AA /* ReaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderView.xib; sourceTree = "<group>"; };
 		545481261C35A36600B4E7E6 /* IMNavControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMNavControl.swift; sourceTree = "<group>"; };
@@ -257,6 +267,8 @@
 				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
 				544AA71C1CC1C009005118AA /* ReaderView.swift */,
 				5423FE761CCDE3630042933F /* CreateTagView.swift */,
+				5447981D1CD0941500CA391E /* CreateNoteView.swift */,
+				544798191CD08DED00CA391E /* TagTypeDetailView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -280,10 +292,13 @@
 				54FFC3E11BF8268E0041458D /* ReaderNotesAccessory.xib */,
 				54FFC3E31BF829540041458D /* ReaderXRefsAccessory.xib */,
 				5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */,
+				544798131CD08B7E00CA391E /* LibraryBookCell.swift */,
 				5423FE721CCB4F360042933F /* ReaderCell.xib */,
 				5423FE741CCC9F890042933F /* ReaderCell.swift */,
 				544AA71D1CC1C009005118AA /* ReaderView.xib */,
 				5423FE771CCDE3630042933F /* CreateTagView.xib */,
+				5447981E1CD0941500CA391E /* CreateNoteView.xib */,
+				5447981A1CD08DED00CA391E /* TagTypeDetailView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -507,6 +522,7 @@
 				54A91DFF1C4326A000B4D2B2 /* tag.png in Resources */,
 				54A91DFD1C4326A000B4D2B2 /* note.png in Resources */,
 				5467950A1BD1EC9E0062FAFB /* menu.png in Resources */,
+				544798201CD0941500CA391E /* CreateNoteView.xib in Resources */,
 				5415B7CC1CBF62D900946055 /* LibraryBookCell.xib in Resources */,
 				548DD4B01C41E74500B170F3 /* cross.png in Resources */,
 				548DD4AD1C41E65F00B170F3 /* RefCellText.xib in Resources */,
@@ -514,6 +530,7 @@
 				54FFC3E21BF8268E0041458D /* ReaderNotesAccessory.xib in Resources */,
 				54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */,
 				54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */,
+				5447981C1CD08DED00CA391E /* TagTypeDetailView.xib in Resources */,
 				54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */,
 				54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */,
 				5423FE791CCDE3630042933F /* CreateTagView.xib in Resources */,
@@ -625,6 +642,7 @@
 				5424A87C1CBB1D2F00AF6B43 /* TagViewModel.swift in Sources */,
 				546794C11BD0CAD10062FAFB /* SettingsView.swift in Sources */,
 				5423FE781CCDE3630042933F /* CreateTagView.swift in Sources */,
+				5447981B1CD08DED00CA391E /* TagTypeDetailView.swift in Sources */,
 				545AE30A1C951C3800A46F5F /* Faith.swift in Sources */,
 				546795061BD0CFF20062FAFB /* NavTray.swift in Sources */,
 				546794F71BD0CCCA0062FAFB /* Note.swift in Sources */,
@@ -640,10 +658,12 @@
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
 				5424A8821CBB1DD200AF6B43 /* GenericModelInterface.swift in Sources */,
 				5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */,
+				5447981F1CD0941500CA391E /* CreateNoteView.swift in Sources */,
 				5424A87E1CBB1D3700AF6B43 /* CrossRefViewModel.swift in Sources */,
 				5424A8741CBB1D0800AF6B43 /* AuthorViewModel.swift in Sources */,
 				546794FB1BD0CCDE0062FAFB /* CrossRef.swift in Sources */,
 				548DD4A81C41E64700B170F3 /* RefCell.swift in Sources */,
+				544798141CD08B7E00CA391E /* LibraryBookCell.swift in Sources */,
 				5425CD401BD9F4990047A8AD /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

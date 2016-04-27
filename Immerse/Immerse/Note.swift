@@ -9,8 +9,19 @@
 import RealmSwift
 
 class NoteInterface : GenericModelInterface {
+
+  class func createNote(record:Record, range:NSRange, text:String) {
+    let note = Note()
+    note.id = String.unique()
+    note.record = record
+    note.start_position = range.location
+    note.length = range.length
+    note.note_comment = text
+    RealmService.createObject(note)
+  }
   
 }
+
 class Note: Object {
 
   override static func primaryKey() -> String? {

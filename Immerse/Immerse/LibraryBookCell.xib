@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LibraryBookCell" rowHeight="80" id="KoI-aQ-RRH">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LibraryBookCell" rowHeight="80" id="KoI-aQ-RRH" customClass="LibraryBookCell" customModule="Immerse" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="458" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KoI-aQ-RRH" id="7U6-Ei-nhI">
@@ -118,6 +118,10 @@
                     <constraint firstItem="yzv-9g-gzD" firstAttribute="centerX" secondItem="7LD-Vv-dh3" secondAttribute="centerX" id="ye2-jl-vDu"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bookAuthorLabel" destination="fFu-BR-oyQ" id="j66-Fh-pqo"/>
+                <outlet property="bookTitleLabel" destination="Ck5-RH-B4u" id="jSs-qC-Lcf"/>
+            </connections>
             <point key="canvasLocation" x="574" y="419"/>
         </tableViewCell>
     </objects>

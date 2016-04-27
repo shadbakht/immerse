@@ -12,10 +12,9 @@ import JCTagListView
 
 class TagsView: UIViewController {
 
-  var edit : Bool = false
-  var tagViewModel : TagViewModel? = nil
-  
   @IBOutlet var tagListView: JCTagListView!
+
+  var tagViewModel : TagViewModel? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +22,7 @@ class TagsView: UIViewController {
     tagViewModel = TagViewModel(viewController: self)
     tagViewModel?.setup()
     
-    tagListView.canSelectTags = true
+//    tagListView.canSelectTags = true
     tagListView.tagCornerRadius = 2.0
     //    self.tagListView.tagStrokeColor = [UIColor redColor];
     //    self.tagListView.tagBackgroundColor = [UIColor orangeColor];
@@ -35,8 +34,14 @@ class TagsView: UIViewController {
       tagListView.tags.addObjectsFromArray(strings)
     }
     tagListView.setCompletionBlockWithSelected({
-      finished in
+      index in
+      
       // On Select
+      let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
+      vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
+      self.presentViewController(vc, animated: true, completion: {
+        
+      })
     })
     
   }
@@ -51,16 +56,4 @@ class TagsView: UIViewController {
     }
   }
   
-  func reload() {
-  }
-  
-  @IBAction func editPressed(sender: UIBarButtonItem) {
-    if !edit {
-      sender.title = "APPLY"
-      edit = true
-    } else {
-      sender.title = "EDIT"
-      edit = false
-    }
-  }
 }

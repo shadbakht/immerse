@@ -55,6 +55,11 @@ extension String {
     let hexBytes = digest.map { String(format: "%02hhx", $0) }
     return hexBytes.joinWithSeparator("")
   }
+  
+  static func unique() -> String {
+    let uuid = NSUUID().UUIDString
+    return uuid.sha1()
+  }
 }
 
 extension UIColor {

@@ -13,6 +13,7 @@ class CreateTagView: UIViewController {
 
   var tagViewModel : TagViewModel? = nil
   var record : Record? = nil
+  var range : NSRange? = nil
   
   @IBOutlet var tagListView: JCTagListView!
   @IBOutlet var tagText: UILabel!
@@ -24,6 +25,13 @@ class CreateTagView: UIViewController {
     // Setup the ViewModel
     tagViewModel = TagViewModel(viewController: self)
     tagViewModel?.setup()
+    
+    // Populate the Text
+    if (record != nil && range != nil) {
+      let text = record!.record_text as NSString
+      let substring = text.substringWithRange(range!)
+      tagText.text = substring as String
+    }
     
     // Popuplate TagsList
     tagListView.canSelectTags = true
@@ -77,14 +85,18 @@ class CreateTagView: UIViewController {
   }
 
   @IBAction func applySelectedTags(sender: AnyObject) {
-    // Get the Ids
+    
+    // Get the Ids Of Selected Tag Types
     let indexSet = NSMutableIndexSet()
     _ = tagListView.selectedTags.map({ $0 as! String
       indexSet.addIndex(tagListView.tags.indexOfObject($0))
     })
     
-    let tags = NSMutableArray(array:(tagViewModel?.tags)!).objectsAtIndexes(indexSet)
+    // Get the String Value of the Tag Types
+    let tags = NSMutableArray(array:(tagViewModel?.tagTypes)!).objectsAtIndexes(indexSet)
     
+    // Create the Tag
+    tagViewModel?.createTag(record!, range: range!, types: tags as! [TagType])
     
     self.dismissViewControllerAnimated(true, completion: {
     })

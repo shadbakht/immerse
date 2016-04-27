@@ -33,6 +33,8 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     bookViewModel = BookViewModel(viewController: self)
     bookViewModel?.setup()
 
+    // Register Nibs
+    
     let nib = UINib(nibName: "LibraryBookCell", bundle: nil)
     tableView.registerNib(nib, forCellReuseIdentifier: "LibraryBookCell")
   }
@@ -46,11 +48,12 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   // MARK: - TableViewDelegate & DataSource
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell")
-    if let booksObj = books {
-      _ = booksObj[indexPath.row]
-    }
-    return cell!
+    let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell") as! LibraryBookCell
+    let bookObj = books![indexPath.row]
+    cell.bookTitleLabel.text = bookObj.name
+    cell.bookAuthorLabel.text = bookObj.author?.name
+    
+    return cell
   }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if let count = books?.count {
@@ -69,16 +72,5 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
       
     })
   }
-  
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

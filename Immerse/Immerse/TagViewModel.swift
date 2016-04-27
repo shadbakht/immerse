@@ -24,4 +24,10 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
     return true
   }
   
+  func createTag(record:Record, range: NSRange, types:[TagType]) {
+    _ = types.map({
+      TagInterface.createTag(record, range: range, type: $0)
+    })
+  }
+  
 }

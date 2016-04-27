@@ -8,23 +8,18 @@
 
 import UIKit
 
+
+protocol ReaderCellDelegate {
+  func textWasSelected(range:NSRange, record:Record)
+}
+
 class ReaderCell: UITableViewCell, UITextViewDelegate {
 
   @IBOutlet var textView: UITextView!
   var record : Record? = nil
-  var hasSelected : Bool {
-    get {
-      return (textView.selectedTextRange?.empty)!
-    }
-  }
+  var delegate : ReaderCellDelegate? = nil
   
-  var rowHeight : CGFloat {
-    get {
-      return textView.frame.height
-    }
-  }
-  
-  override func awakeFromNib() {
+    override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
     textView.delegate = self
@@ -32,10 +27,10 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
 
   override func setSelected(selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-
-      // Configure the view for the selected state
+    // Configure the view for the selected state
   }
   
+
   func textViewDidChange(textView: UITextView) {
     
     // Resize the textView
@@ -48,12 +43,8 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     
   }
   
-  func getSelectedText() -> (UITextRange, Record)? {
-    if let range = textView.selectedTextRange, let record = record {
-      return (range, record)
-    }
-    return nil
+  func textViewDidChangeSelection(textView: UITextView) {
+    let range = textView.selectedRange
+    delegate?.textWasSelected(range, record: record!)
   }
-  
-
 }

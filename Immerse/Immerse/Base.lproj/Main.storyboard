@@ -421,12 +421,6 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="EDIT" id="lrk-mQ-eT3">
-                            <color key="tintColor" red="0.36470588240000001" green="0.47058823529999999" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="editPressed:" destination="Nfx-eS-lPc" id="xyH-iU-iT6"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>

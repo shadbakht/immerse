@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate  {
+class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate, ReaderCellDelegate  {
 
   @IBOutlet var navbar: UINavigationBar!
   @IBOutlet var toolbar: UIToolbar!
@@ -16,6 +16,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   
   private var records : [Record]? = nil
   private var hidden : Bool = false
+  private var selectedRecord : Record? = nil
+  private var selectedRange : NSRange? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -62,6 +64,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
     })
   }
   
+  // MARK:-PROTOCOLS
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if let count = records?.count {
       return count
@@ -72,6 +76,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let record = records![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("ReaderCell") as! ReaderCell
+    cell.delegate = self
     cell.record = record
     cell.textView.text = record.record_text
     return cell
@@ -89,15 +94,29 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate 
     return UITableViewAutomaticDimension
   }
   
+  func textWasSelected(range: NSRange, record: Record) {
+    selectedRange = range
+    selectedRecord = record
+  }
+  
+  // MARK:-TOOLBAR
+  
   @IBAction func addCrossRef(sender: AnyObject) {
   }
+  
   @IBAction func addNote(sender: AnyObject) {
-  }
-  @IBAction func addTag(sender: AnyObject) {
-    
-    let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
+    let create = CreateNoteView(nibName: "CreateNoteView", bundle: nil)
+    create.record = self.selectedRecord
+    create.range = self.selectedRange
     self.presentViewController(create, animated: true, completion: {
-      
+    })
+  }
+  
+  @IBAction func addTag(sender: AnyObject) {
+    let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
+    create.record = self.selectedRecord
+    create.range = self.selectedRange
+    self.presentViewController(create, animated: true, completion: {
     })
   }
 

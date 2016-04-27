@@ -8,6 +8,15 @@
 
 import UIKit
 
-class NoteViewModel: NSObject {
+class NoteViewModel: GenericViewModel, ViewModelProtocol {
+
+  var notes : [Note]? = nil
+  
+  func setup() {
+  }
+  
+  func createNote(record:Record, range:NSRange, text:String) {
+    NoteInterface.createNote(record, range:range, text:text)
+  }
 
 }
