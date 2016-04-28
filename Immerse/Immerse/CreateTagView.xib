@@ -38,7 +38,7 @@
                     </items>
                 </navigationBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thW-oa-1vN" customClass="JCTagListView">
-                    <rect key="frame" x="0.0" y="126" width="600" height="421"/>
+                    <rect key="frame" x="0.0" y="146" width="600" height="401"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwk-KN-Dvz">
@@ -54,13 +54,13 @@
                         <action selector="applySelectedTags:" destination="-1" eventType="touchUpInside" id="hux-03-lcf"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-87-R5R">
-                    <rect key="frame" x="20" y="44" width="560" height="82"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-87-R5R">
+                    <rect key="frame" x="20" y="54" width="560" height="82"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="82" id="2OA-O0-oTg"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="highlightedColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
             </subviews>
@@ -70,12 +70,12 @@
                 <constraint firstAttribute="trailing" secondItem="z1l-ux-qfe" secondAttribute="trailing" id="Bop-Gw-oSU"/>
                 <constraint firstAttribute="trailing" secondItem="thW-oa-1vN" secondAttribute="trailing" id="E2c-v3-lZO"/>
                 <constraint firstAttribute="trailing" secondItem="Nwk-KN-Dvz" secondAttribute="trailing" id="HVc-gc-Uus"/>
-                <constraint firstItem="CHQ-87-R5R" firstAttribute="top" secondItem="z1l-ux-qfe" secondAttribute="bottom" id="Hkj-4m-XRo"/>
+                <constraint firstItem="CHQ-87-R5R" firstAttribute="top" secondItem="z1l-ux-qfe" secondAttribute="bottom" constant="10" id="Hkj-4m-XRo"/>
                 <constraint firstAttribute="trailing" secondItem="CHQ-87-R5R" secondAttribute="trailing" constant="20" id="JiL-Oa-kwq"/>
                 <constraint firstItem="CHQ-87-R5R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="RU2-WF-QVV"/>
                 <constraint firstItem="Nwk-KN-Dvz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vfy-NV-sKL"/>
                 <constraint firstItem="z1l-ux-qfe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bdb-l3-oFq"/>
-                <constraint firstItem="thW-oa-1vN" firstAttribute="top" secondItem="CHQ-87-R5R" secondAttribute="bottom" id="csx-z2-u35"/>
+                <constraint firstItem="thW-oa-1vN" firstAttribute="top" secondItem="CHQ-87-R5R" secondAttribute="bottom" constant="10" id="csx-z2-u35"/>
                 <constraint firstItem="z1l-ux-qfe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fgc-AS-i5g"/>
                 <constraint firstItem="Nwk-KN-Dvz" firstAttribute="top" secondItem="thW-oa-1vN" secondAttribute="bottom" constant="1" id="mKS-mr-1ye"/>
                 <constraint firstItem="thW-oa-1vN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ovi-0D-1fy"/>

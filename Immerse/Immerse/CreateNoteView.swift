@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateNoteView: UIViewController {
+class CreateNoteView: UIViewController, UITextViewDelegate {
 
   var record : Record? = nil
   var range : NSRange? = nil
@@ -28,8 +28,15 @@ class CreateNoteView: UIViewController {
     noteViewModel = NoteViewModel(viewController: self)
     noteViewModel?.setup()
     
+    // Delegates
+    textView.delegate = self
+    
     super.viewDidLoad()
 
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    textView.becomeFirstResponder()
   }
 
   override func didReceiveMemoryWarning() {
@@ -43,9 +50,17 @@ class CreateNoteView: UIViewController {
     })
   }
   
+  func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    if (text == "\n") {
+      noteViewModel?.createNote(record!, range: self.range!, text: textView.text)
+      textView.resignFirstResponder()
+      dismiss(self)
+    }
+    return true
+  }
+  
   @IBAction func dismiss(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: {
-      
     })
   }
 

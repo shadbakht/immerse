@@ -553,25 +553,20 @@
                                 <color key="barTintColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmS-F1-3gZ">
-                                <rect key="frame" x="0.0" y="471" width="600" height="65"/>
-                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Blf-Kb-gfk"/>
-                                </constraints>
-                                <state key="normal" title="SELECT ALL">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omC-Kn-u2I">
+                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="omC-Kn-u2I" secondAttribute="trailing" id="3ew-4B-Z5W"/>
+                            <constraint firstItem="omC-Kn-u2I" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="6i8-La-Kx7"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="top" secondItem="eCA-PI-ryV" secondAttribute="bottom" id="7Cg-mn-E0V"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="CJv-tL-SCw"/>
-                            <constraint firstItem="xmS-F1-3gZ" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="F1c-DG-1ZY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xmS-F1-3gZ" secondAttribute="trailing" constant="-20" id="VCf-GD-49L"/>
+                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="omC-Kn-u2I" secondAttribute="bottom" id="XZu-hC-a9I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8CF-Ng-GSC" secondAttribute="trailing" constant="-20" id="bSj-Gu-qcL"/>
-                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="xmS-F1-3gZ" secondAttribute="bottom" id="giv-fY-gce"/>
+                            <constraint firstItem="omC-Kn-u2I" firstAttribute="top" secondItem="8CF-Ng-GSC" secondAttribute="bottom" id="dIv-Fq-xkd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VKF-sk-uKY">
@@ -608,6 +603,9 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZR-F1-0Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -826,25 +824,12 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONh-Um-XbJ">
-                                <rect key="frame" x="0.0" y="471" width="600" height="65"/>
-                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="TNf-PZ-aea"/>
-                                </constraints>
-                                <state key="normal" title="SELECT ALL">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lJw-EL-hFk" firstAttribute="leading" secondItem="1Jl-n7-EKB" secondAttribute="leadingMargin" constant="-20" id="2zi-oO-x9a"/>
                             <constraint firstItem="lJw-EL-hFk" firstAttribute="top" secondItem="beA-Ua-iEu" secondAttribute="bottom" id="7q3-FV-J4g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lJw-EL-hFk" secondAttribute="trailing" constant="-20" id="87K-Nr-Krr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ONh-Um-XbJ" secondAttribute="trailing" constant="-20" id="mdw-n8-zk2"/>
-                            <constraint firstItem="3H3-hj-2uy" firstAttribute="top" secondItem="ONh-Um-XbJ" secondAttribute="bottom" id="nu7-OK-E1u"/>
-                            <constraint firstItem="ONh-Um-XbJ" firstAttribute="leading" secondItem="1Jl-n7-EKB" secondAttribute="leadingMargin" constant="-20" id="zF6-YU-r8T"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oCl-Y2-A0p">

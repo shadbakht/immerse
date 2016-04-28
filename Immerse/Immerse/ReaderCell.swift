@@ -41,10 +41,13 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
     textView.frame = newFrame;
     
+    
   }
   
   func textViewDidChangeSelection(textView: UITextView) {
     let range = textView.selectedRange
-    delegate?.textWasSelected(range, record: record!)
+    if range.length != 0 {
+      delegate?.textWasSelected(range, record: record!)
+    }
   }
 }

@@ -32,21 +32,21 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-wW-Sei">
-                    <rect key="frame" x="8" y="44" width="584" height="72"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-wW-Sei">
+                    <rect key="frame" x="8" y="54" width="584" height="72"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="Lys-OC-Sus"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uEe-zK-Rnl">
-                    <rect key="frame" x="8" y="124" width="584" height="476"/>
+                    <rect key="frame" x="8" y="136" width="584" height="464"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1U-Xy-atV">
                     <rect key="frame" x="0.0" y="550" width="600" height="50"/>
@@ -74,9 +74,9 @@
                 <constraint firstAttribute="trailing" secondItem="Nia-wW-Sei" secondAttribute="trailing" constant="8" id="kFG-k2-bCQ"/>
                 <constraint firstAttribute="trailing" secondItem="H1U-Xy-atV" secondAttribute="trailing" id="lQf-BL-E5c"/>
                 <constraint firstItem="Nia-wW-Sei" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="m4n-Os-uJs"/>
-                <constraint firstItem="uEe-zK-Rnl" firstAttribute="top" secondItem="Nia-wW-Sei" secondAttribute="bottom" constant="8" id="pP1-AA-b3S"/>
+                <constraint firstItem="uEe-zK-Rnl" firstAttribute="top" secondItem="Nia-wW-Sei" secondAttribute="bottom" constant="10" id="pP1-AA-b3S"/>
                 <constraint firstItem="Jeb-G5-pvD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uz0-im-oy9"/>
-                <constraint firstItem="Nia-wW-Sei" firstAttribute="top" secondItem="Jeb-G5-pvD" secondAttribute="bottom" id="y9k-WS-jNX"/>
+                <constraint firstItem="Nia-wW-Sei" firstAttribute="top" secondItem="Jeb-G5-pvD" secondAttribute="bottom" constant="10" id="y9k-WS-jNX"/>
             </constraints>
             <point key="canvasLocation" x="385" y="491"/>
         </view>

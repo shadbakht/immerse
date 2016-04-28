@@ -97,6 +97,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   func textWasSelected(range: NSRange, record: Record) {
     selectedRange = range
     selectedRecord = record
+    if (hidden) {
+      toggleTools()
+    }
   }
   
   // MARK:-TOOLBAR

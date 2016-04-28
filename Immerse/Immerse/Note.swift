@@ -10,6 +10,10 @@ import RealmSwift
 
 class NoteInterface : GenericModelInterface {
 
+  class func getAllNotes() -> [Note] {
+    return RealmService.allObjects(Note.self) as! [Note]
+  }
+  
   class func createNote(record:Record, range:NSRange, text:String) {
     let note = Note()
     note.id = String.unique()

@@ -9,17 +9,36 @@
 import UIKit
 import KYDrawerController
 
-class NotesView: UIViewController {
+class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+  @IBOutlet var notesTableView: UITableView!
+  
+  var noteViewModel : NoteViewModel? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Observe
-    Util.observe(self, action: #selector(NotesView.reload), named: "ReloadNoteView")
-
+    noteViewModel = NoteViewModel(viewController: self)
+    noteViewModel?.setup()
+    
+    notesTableView.delegate = self
+    notesTableView.dataSource = self
   }
 
-  func reload() {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if let count =  noteViewModel?.notes?.count {
+      return count
+    }
+    return 0
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+    cell.textLabel?.text = noteViewModel?.notes![indexPath.row].note_comment
+    return cell
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
   }
   
   override func didReceiveMemoryWarning() {
