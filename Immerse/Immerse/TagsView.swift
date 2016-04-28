@@ -39,9 +39,7 @@ class TagsView: UIViewController {
       // On Select
       let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
       vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
-      self.presentViewController(vc, animated: true, completion: {
-        
-      })
+      self.navigationController?.pushViewController(vc, animated: true)
     })
     
   }

@@ -23,8 +23,14 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     notesTableView.delegate = self
     notesTableView.dataSource = self
+    
+    let nib = UINib(nibName: "NotesCell", bundle: nil)
+    notesTableView.registerNib(nib, forCellReuseIdentifier: "NotesCell")
+
   }
 
+  //
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if let count =  noteViewModel?.notes?.count {
       return count
@@ -33,13 +39,20 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
-    cell.textLabel?.text = noteViewModel?.notes![indexPath.row].note_comment
+    let cell = tableView.dequeueReusableCellWithIdentifier("NotesCell") as! NotesCell
+    let note = noteViewModel!.notes![indexPath.row]
+    cell.loadNote(note)
     return cell
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
   }
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 200
+  }
+  
+  // 
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

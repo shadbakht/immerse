@@ -581,27 +581,16 @@
                             <rect key="frame" x="180" y="5.5" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IMMERSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qec-Wp-Okq">
-                                    <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="756-HB-QCS">
+                                    <rect key="frame" x="67" y="6.5" width="106" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                                     <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fI-kH-LyW">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="756-HB-QCS">
-                                            <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="BVO-t4-3v8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>

@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCrossRefView" customModule="Immerse" customModuleProvider="target">
             <connections>
+                <outlet property="bookPickerButton" destination="HJR-Dy-zF4" id="GjD-nm-4Xf"/>
+                <outlet property="secondWritingReader" destination="NrC-4l-rzj" id="CUG-OI-S4Y"/>
+                <outlet property="selectedWriting" destination="KH1-fE-5lO" id="jty-T5-mf5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,24 +43,47 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-4l-rzj">
-                    <rect key="frame" x="0.0" y="161" width="600" height="385"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-4l-rzj">
+                    <rect key="frame" x="0.0" y="216" width="600" height="330"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-fE-5lO">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-fE-5lO">
                     <rect key="frame" x="8" y="54" width="584" height="91"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="91" id="9Jc-Hv-Fuw"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-Dy-zF4">
+                    <rect key="frame" x="8" y="153" width="584" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="SFy-ek-erV"/>
+                    </constraints>
+                    <state key="normal" title="SELECT TEXT"/>
+                    <connections>
+                        <action selector="launchBookPicker:" destination="-1" eventType="touchUpInside" id="EH3-Js-3Lz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="NrC-4l-rzj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3vo-Vy-v2g"/>
+                <constraint firstItem="NrC-4l-rzj" firstAttribute="top" secondItem="HJR-Dy-zF4" secondAttribute="bottom" constant="8" id="6hj-N0-svB"/>
                 <constraint firstItem="SOG-Fk-NHT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7bg-Jh-r7C"/>
                 <constraint firstAttribute="trailing" secondItem="POF-Za-0mQ" secondAttribute="trailing" id="97a-hY-1oc"/>
+                <constraint firstAttribute="trailing" secondItem="KH1-fE-5lO" secondAttribute="trailing" constant="8" id="9Iz-SM-xLL"/>
                 <constraint firstAttribute="trailing" secondItem="SOG-Fk-NHT" secondAttribute="trailing" id="Cic-Uh-wr2"/>
+                <constraint firstAttribute="trailing" secondItem="HJR-Dy-zF4" secondAttribute="trailing" constant="8" id="JK4-ru-7KM"/>
+                <constraint firstItem="POF-Za-0mQ" firstAttribute="top" secondItem="NrC-4l-rzj" secondAttribute="bottom" id="OJ3-up-3Rr"/>
+                <constraint firstItem="HJR-Dy-zF4" firstAttribute="top" secondItem="KH1-fE-5lO" secondAttribute="bottom" constant="8" id="Qb8-vL-7V9"/>
                 <constraint firstItem="POF-Za-0mQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZaO-zc-Q6R"/>
                 <constraint firstItem="SOG-Fk-NHT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="anp-II-77b"/>
+                <constraint firstItem="KH1-fE-5lO" firstAttribute="top" secondItem="SOG-Fk-NHT" secondAttribute="bottom" constant="10" id="hQn-wP-sMe"/>
+                <constraint firstItem="KH1-fE-5lO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="l4N-22-u9u"/>
+                <constraint firstItem="HJR-Dy-zF4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="mrB-Cc-wcJ"/>
+                <constraint firstAttribute="trailing" secondItem="NrC-4l-rzj" secondAttribute="trailing" id="z9d-cL-4jn"/>
                 <constraint firstAttribute="bottom" secondItem="POF-Za-0mQ" secondAttribute="bottom" id="zEb-Qy-Rv8"/>
             </constraints>
         </view>

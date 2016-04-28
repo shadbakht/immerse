@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
-class CreateCrossRefView: UIViewController {
+class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+  @IBOutlet var secondWritingReader: UITableView!
+  @IBOutlet var selectedWriting: UILabel!
+  @IBOutlet var bookPickerButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -18,9 +23,33 @@ class CreateCrossRefView: UIViewController {
     super.didReceiveMemoryWarning()
   }
   
+  
+  //
+  
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 100
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 0
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+    return cell
+  }
+  
+  //
+  
   @IBAction func dismiss(sender: AnyObject) {
     self.dismissViewControllerAnimated(true, completion: {
     })
+  }
+  
+  @IBAction func launchBookPicker(sender: AnyObject) {
   }
   
 }

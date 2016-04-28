@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagTypeDetailView" customModule="Immerse" customModuleProvider="target">
             <connections>
                 <outlet property="tagList" destination="Ahq-pd-51o" id="lnW-hW-cca"/>
-                <outlet property="tagListName" destination="BfW-q1-cpD" id="bAy-KC-XUU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,35 +16,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-XH-6i3">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="KjJ-I2-ndU"/>
-                    </constraints>
-                    <items>
-                        <navigationItem title="Title" id="BfW-q1-cpD">
-                            <barButtonItem key="rightBarButtonItem" systemItem="stop" id="AbQ-Wl-1bd">
-                                <connections>
-                                    <action selector="dismiss:" destination="-1" id="wLj-B9-InZ"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-pd-51o">
-                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="dh0-XH-6i3" secondAttribute="trailing" id="5LR-zH-0hk"/>
+                <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Ln-Xj-l0g"/>
                 <constraint firstAttribute="bottom" secondItem="Ahq-pd-51o" secondAttribute="bottom" id="B5R-Og-Ciy"/>
                 <constraint firstItem="Ahq-pd-51o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dvR-j8-KYX"/>
                 <constraint firstAttribute="trailing" secondItem="Ahq-pd-51o" secondAttribute="trailing" id="eAo-rj-2YI"/>
-                <constraint firstItem="dh0-XH-6i3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iPA-jn-t72"/>
-                <constraint firstItem="dh0-XH-6i3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kLp-90-k9d"/>
-                <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="dh0-XH-6i3" secondAttribute="bottom" id="mW3-L4-cn8"/>
             </constraints>
         </view>
     </objects>

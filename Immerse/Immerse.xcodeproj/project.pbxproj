@@ -46,6 +46,10 @@
 		545AE3081C951B0D00A46F5F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE3071C951B0D00A46F5F /* Book.swift */; };
 		545AE30A1C951C3800A46F5F /* Faith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE3091C951C3800A46F5F /* Faith.swift */; };
 		545AE30C1C951C4300A46F5F /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545AE30B1C951C4300A46F5F /* Author.swift */; };
+		546342F41CD27593001DCEF9 /* NotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546342F21CD27593001DCEF9 /* NotesCell.swift */; };
+		546342F51CD27593001DCEF9 /* NotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546342F31CD27593001DCEF9 /* NotesCell.xib */; };
+		546342FB1CD27E73001DCEF9 /* TagTypeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546342F91CD27E73001DCEF9 /* TagTypeDetail.swift */; };
+		546342FC1CD27E73001DCEF9 /* TagTypeDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546342FA1CD27E73001DCEF9 /* TagTypeDetail.xib */; };
 		546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B61BD0CA6A0062FAFB /* HomeView.swift */; };
 		546794B91BD0CA8A0062FAFB /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794B81BD0CA8A0062FAFB /* LibraryView.swift */; };
 		546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546794BA1BD0CA9C0062FAFB /* TagsView.swift */; };
@@ -139,6 +143,10 @@
 		545AE3071C951B0D00A46F5F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		545AE3091C951C3800A46F5F /* Faith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Faith.swift; sourceTree = "<group>"; };
 		545AE30B1C951C4300A46F5F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		546342F21CD27593001DCEF9 /* NotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesCell.swift; sourceTree = "<group>"; };
+		546342F31CD27593001DCEF9 /* NotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesCell.xib; sourceTree = "<group>"; };
+		546342F91CD27E73001DCEF9 /* TagTypeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTypeDetail.swift; sourceTree = "<group>"; };
+		546342FA1CD27E73001DCEF9 /* TagTypeDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagTypeDetail.xib; sourceTree = "<group>"; };
 		546794B61BD0CA6A0062FAFB /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546794B81BD0CA8A0062FAFB /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		546794BA1BD0CA9C0062FAFB /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -257,10 +265,7 @@
 			children = (
 				5483BED41B95FAA70037359C /* Main.storyboard */,
 				5483BED91B95FAA70037359C /* LaunchScreen.xib */,
-				5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */,
-				544798131CD08B7E00CA391E /* LibraryBookCell.swift */,
-				5423FE721CCB4F360042933F /* ReaderCell.xib */,
-				5423FE741CCC9F890042933F /* ReaderCell.swift */,
+				546342F61CD275A0001DCEF9 /* Cells */,
 				544AA71D1CC1C009005118AA /* ReaderView.xib */,
 				5423FE771CCDE3630042933F /* CreateTagView.xib */,
 				5447981E1CD0941500CA391E /* CreateNoteView.xib */,
@@ -268,6 +273,21 @@
 				5447981A1CD08DED00CA391E /* TagTypeDetailView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		546342F61CD275A0001DCEF9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5415B7CB1CBF62D900946055 /* LibraryBookCell.xib */,
+				544798131CD08B7E00CA391E /* LibraryBookCell.swift */,
+				5423FE721CCB4F360042933F /* ReaderCell.xib */,
+				5423FE741CCC9F890042933F /* ReaderCell.swift */,
+				546342F31CD27593001DCEF9 /* NotesCell.xib */,
+				546342F21CD27593001DCEF9 /* NotesCell.swift */,
+				546342FA1CD27E73001DCEF9 /* TagTypeDetail.xib */,
+				546342F91CD27E73001DCEF9 /* TagTypeDetail.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		546794F31BD0CC9E0062FAFB /* Services */ = {
@@ -500,6 +520,7 @@
 				5423FE791CCDE3630042933F /* CreateTagView.xib in Resources */,
 				544AA71F1CC1C009005118AA /* ReaderView.xib in Resources */,
 				54B9942E1C4B350E00B873EC /* complete.png in Resources */,
+				546342FC1CD27E73001DCEF9 /* TagTypeDetail.xib in Resources */,
 				54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */,
 				54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */,
 				54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */,
@@ -514,6 +535,7 @@
 				54B9942F1C4B350E00B873EC /* progress.png in Resources */,
 				54E5D7511BDD6930009F3665 /* Icon-40@3x.png in Resources */,
 				544798241CD099B500CA391E /* CreateCrossRefView.xib in Resources */,
+				546342F51CD27593001DCEF9 /* NotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +627,7 @@
 				546794F71BD0CCCA0062FAFB /* Note.swift in Sources */,
 				546794F21BD0CC9A0062FAFB /* UserService.swift in Sources */,
 				545481271C35A36600B4E7E6 /* IMNavControl.swift in Sources */,
+				546342FB1CD27E73001DCEF9 /* TagTypeDetail.swift in Sources */,
 				546794BB1BD0CA9C0062FAFB /* TagsView.swift in Sources */,
 				5424A8931CBB55B500AF6B43 /* LibrarySubView.swift in Sources */,
 				5454812C1C35B06800B4E7E6 /* Constants.swift in Sources */,
@@ -613,6 +636,7 @@
 				546794B71BD0CA6A0062FAFB /* HomeView.swift in Sources */,
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
+				546342F41CD27593001DCEF9 /* NotesCell.swift in Sources */,
 				5424A8821CBB1DD200AF6B43 /* GenericModelInterface.swift in Sources */,
 				5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */,
 				5447981F1CD0941500CA391E /* CreateNoteView.swift in Sources */,

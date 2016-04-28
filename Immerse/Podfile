@@ -4,6 +4,7 @@ pod 'RealmSwift'
 pod 'KYDrawerController'
 pod 'XLPagerTabStrip', '~> 5.0'
 pod 'JCTagListView'
+pod 'ActionSheetPicker-3.0', '~> 2.0.5'
 
 
 

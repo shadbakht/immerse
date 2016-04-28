@@ -10,17 +10,18 @@ import UIKit
 
 class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-  @IBOutlet var tagListName: UINavigationItem!
   @IBOutlet var tagList: UITableView!
   
   var tagType : TagType? = nil
   override func viewDidLoad() {
     
-    tagListName.title = tagType?.name
+    self.navigationController?.navigationItem.title = tagType!.name
     
     tagList.delegate = self
     tagList.dataSource = self
     
+    let nib = UINib(nibName: "TagTypeDetail", bundle: nil)
+    tagList.registerNib(nib, forCellReuseIdentifier: "TagTypeDetail")
     
     super.viewDidLoad()
 
@@ -30,6 +31,8 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
     super.didReceiveMemoryWarning()
   }
   
+  // 
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tagType!.tags.count
   }
@@ -38,17 +41,18 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
     
   }
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MOO")
-    
+
+    let cell = tableView.dequeueReusableCellWithIdentifier("TagTypeDetail") as! TagTypeDetail
     let tag = tagType!.tags[indexPath.row]
-    cell.textLabel?.text = tag.record?.record_text
-    
+
+    cell.loadTag(tag)
+
     return cell
   }
   
-  @IBAction func dismiss(sender: AnyObject) {
-    self.dismissViewControllerAnimated(true, completion: {
-      
-    })
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 125
   }
+  
+  //
 }
