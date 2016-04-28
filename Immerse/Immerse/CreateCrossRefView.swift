@@ -49,7 +49,29 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
     })
   }
   
+  @IBAction func createCrossReference(sender: AnyObject) {
+    dismiss(self.view)
+  }
+  
   @IBAction func launchBookPicker(sender: AnyObject) {
+    let colors = [["Faith","Jewish","Islam","Baha'i", "Confucious", "Socialist"], ["Book","doiawjdawojdiojawiod"]]
+    let action = ActionSheetMultipleStringPicker(title: "MANY", rows: colors, initialSelection: [0,0], doneBlock: {
+      finished in
+      }, cancelBlock: {
+        finished in
+      }, origin: self.view)
+    action.showActionSheetPicker()
+  }
+  
+  @IBAction func launchSectionPicker(sender: AnyObject) {
+    let colors = [["Chapter","1","2","3", "4"], ["Section","1"]]
+    let action = ActionSheetMultipleStringPicker(title: "MANY", rows: colors, initialSelection: [0,0], doneBlock: {
+      finished in
+      }, cancelBlock: {
+        finished in
+      }, origin: self.view)
+    action.showActionSheetPicker()
+
   }
   
 }

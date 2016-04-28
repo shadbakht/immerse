@@ -42,9 +42,12 @@
                     <state key="normal" title="CREATE CROSS REFERENCE">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="createCrossReference:" destination="-1" eventType="touchUpInside" id="kba-lQ-OIg"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-4l-rzj">
-                    <rect key="frame" x="0.0" y="216" width="600" height="330"/>
+                    <rect key="frame" x="0.0" y="206" width="600" height="340"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-fE-5lO">
@@ -56,10 +59,26 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-Dy-zF4">
-                    <rect key="frame" x="8" y="153" width="584" height="55"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vha-fL-vfX">
+                    <rect key="frame" x="302" y="153" width="290" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="55" id="SFy-ek-erV"/>
+                        <constraint firstAttribute="height" constant="45" id="1b0-7y-dfe"/>
+                        <constraint firstAttribute="height" constant="30" id="Xdo-9U-3gF"/>
+                    </constraints>
+                    <state key="normal" title="SELECT SECTION"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Xdo-9U-3gF"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="launchSectionPicker:" destination="-1" eventType="touchUpInside" id="u3i-Gu-Q3c"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-Dy-zF4">
+                    <rect key="frame" x="8" y="153" width="290" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="SFy-ek-erV"/>
                     </constraints>
                     <state key="normal" title="SELECT TEXT"/>
                     <connections>
@@ -71,21 +90,44 @@
             <constraints>
                 <constraint firstItem="NrC-4l-rzj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3vo-Vy-v2g"/>
                 <constraint firstItem="NrC-4l-rzj" firstAttribute="top" secondItem="HJR-Dy-zF4" secondAttribute="bottom" constant="8" id="6hj-N0-svB"/>
+                <constraint firstItem="NrC-4l-rzj" firstAttribute="top" secondItem="HJR-Dy-zF4" secondAttribute="bottom" constant="8" id="7ZP-Dw-uaK"/>
                 <constraint firstItem="SOG-Fk-NHT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7bg-Jh-r7C"/>
                 <constraint firstAttribute="trailing" secondItem="POF-Za-0mQ" secondAttribute="trailing" id="97a-hY-1oc"/>
                 <constraint firstAttribute="trailing" secondItem="KH1-fE-5lO" secondAttribute="trailing" constant="8" id="9Iz-SM-xLL"/>
                 <constraint firstAttribute="trailing" secondItem="SOG-Fk-NHT" secondAttribute="trailing" id="Cic-Uh-wr2"/>
+                <constraint firstItem="vha-fL-vfX" firstAttribute="top" secondItem="KH1-fE-5lO" secondAttribute="bottom" constant="8" id="GmO-cU-FTe"/>
                 <constraint firstAttribute="trailing" secondItem="HJR-Dy-zF4" secondAttribute="trailing" constant="8" id="JK4-ru-7KM"/>
+                <constraint firstItem="HJR-Dy-zF4" firstAttribute="top" secondItem="KH1-fE-5lO" secondAttribute="bottom" constant="8" id="L4q-2k-k0T"/>
                 <constraint firstItem="POF-Za-0mQ" firstAttribute="top" secondItem="NrC-4l-rzj" secondAttribute="bottom" id="OJ3-up-3Rr"/>
                 <constraint firstItem="HJR-Dy-zF4" firstAttribute="top" secondItem="KH1-fE-5lO" secondAttribute="bottom" constant="8" id="Qb8-vL-7V9"/>
+                <constraint firstItem="HJR-Dy-zF4" firstAttribute="width" secondItem="vha-fL-vfX" secondAttribute="width" id="SbZ-vu-fEe"/>
+                <constraint firstAttribute="trailing" secondItem="vha-fL-vfX" secondAttribute="trailing" constant="8" id="Sfj-om-pkD"/>
                 <constraint firstItem="POF-Za-0mQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZaO-zc-Q6R"/>
                 <constraint firstItem="SOG-Fk-NHT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="anp-II-77b"/>
+                <constraint firstItem="vha-fL-vfX" firstAttribute="top" secondItem="HJR-Dy-zF4" secondAttribute="bottom" constant="8" id="e8e-O4-GVZ"/>
+                <constraint firstItem="NrC-4l-rzj" firstAttribute="top" secondItem="vha-fL-vfX" secondAttribute="bottom" constant="8" id="gHy-ib-fG1"/>
                 <constraint firstItem="KH1-fE-5lO" firstAttribute="top" secondItem="SOG-Fk-NHT" secondAttribute="bottom" constant="10" id="hQn-wP-sMe"/>
                 <constraint firstItem="KH1-fE-5lO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="l4N-22-u9u"/>
+                <constraint firstItem="vha-fL-vfX" firstAttribute="leading" secondItem="HJR-Dy-zF4" secondAttribute="trailing" constant="4" id="mT7-rt-vr8"/>
                 <constraint firstItem="HJR-Dy-zF4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="mrB-Cc-wcJ"/>
+                <constraint firstItem="HJR-Dy-zF4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="vge-hh-t1d"/>
+                <constraint firstAttribute="trailing" secondItem="vha-fL-vfX" secondAttribute="trailing" constant="8" id="vgk-OV-LsH"/>
+                <constraint firstItem="vha-fL-vfX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="vjw-wk-mb8"/>
                 <constraint firstAttribute="trailing" secondItem="NrC-4l-rzj" secondAttribute="trailing" id="z9d-cL-4jn"/>
                 <constraint firstAttribute="bottom" secondItem="POF-Za-0mQ" secondAttribute="bottom" id="zEb-Qy-Rv8"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JK4-ru-7KM"/>
+                    <exclude reference="Qb8-vL-7V9"/>
+                    <exclude reference="mrB-Cc-wcJ"/>
+                    <exclude reference="6hj-N0-svB"/>
+                    <exclude reference="gHy-ib-fG1"/>
+                    <exclude reference="e8e-O4-GVZ"/>
+                    <exclude reference="vgk-OV-LsH"/>
+                    <exclude reference="vjw-wk-mb8"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
