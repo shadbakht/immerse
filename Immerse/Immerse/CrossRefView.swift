@@ -13,10 +13,6 @@ class CrossRefView: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    Util.observe(self, action: #selector(CrossRefView.reload), named: "ReloadRefView")
-  }
-
-  func reload() {
   }
 
   override func didReceiveMemoryWarning() {

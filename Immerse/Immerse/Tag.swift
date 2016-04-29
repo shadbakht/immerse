@@ -63,5 +63,6 @@ class Tag: Object {
   dynamic var record : Record?
   dynamic var start_position : Int = 0
   dynamic var length : Int = 0
+  dynamic var creation_date : NSDate = NSDate()
   
 }

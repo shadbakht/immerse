@@ -9,14 +9,45 @@
 import UIKit
 import ActionSheetPicker_3_0
 
-class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource, ReaderCellDelegate {
 
   @IBOutlet var secondWritingReader: UITableView!
   @IBOutlet var selectedWriting: UILabel!
   @IBOutlet var bookPickerButton: UIButton!
   
+  var faithViewModel : FaithViewModel? = nil
+  var crossRefViewModel : CrossRefViewModel? = nil
+  
+  var record : Record? = nil
+  var range : NSRange? = nil
+  
+  private var selectedFaith : Faith? = nil
+  private var selectedBook : Book? = nil
+  private var selectedBookRecords : [Record]? = nil
+  private var selectedRecord : Record? = nil
+  private var selectedRange : NSRange? = nil
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Setup ViewModels
+    faithViewModel = FaithViewModel(viewController: self)
+    faithViewModel?.setup()
+    
+    crossRefViewModel = CrossRefViewModel(viewController: self)
+    crossRefViewModel?.setup()
+    
+    // Populate Text
+    let text = (record!.record_text as NSString).substringWithRange(range!)
+    selectedWriting.text = text
+    
+    // Set the Table Delegates
+    secondWritingReader.delegate = self
+    secondWritingReader.dataSource = self
+    let nib = UINib(nibName: "ReaderCell", bundle: nil)
+    secondWritingReader.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
+
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -27,21 +58,42 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
   //
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 100
+    return UITableViewAutomaticDimension
+  }
+  
+  func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    if self.selectedBookRecords != nil {
+      return self.selectedBookRecords!.count
+    } else {
+      return 0
+    }
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
-    return cell
+    if self.selectedBookRecords != nil {
+      let record = self.selectedBookRecords![indexPath.row]
+      let cell = tableView.dequeueReusableCellWithIdentifier("ReaderCell") as! ReaderCell
+      cell.delegate = self
+      cell.record = record
+      cell.textView.text = record.record_text
+      return cell
+    } else {
+      return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+    }
   }
   
+  func textWasSelected(range: NSRange, record: Record) {
+    selectedRange = range
+    selectedRecord = record
+  }
+
   //
   
   @IBAction func dismiss(sender: AnyObject) {
@@ -50,28 +102,54 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   @IBAction func createCrossReference(sender: AnyObject) {
+    crossRefViewModel!.createCrossReference(
+      record!, sourceRange: range!,
+      destinationRecord: selectedRecord!, destinationRange: selectedRange!
+    )
     dismiss(self.view)
   }
   
-  @IBAction func launchBookPicker(sender: AnyObject) {
-    let colors = [["Faith","Jewish","Islam","Baha'i", "Confucious", "Socialist"], ["Book","doiawjdawojdiojawiod"]]
-    let action = ActionSheetMultipleStringPicker(title: "MANY", rows: colors, initialSelection: [0,0], doneBlock: {
-      finished in
-      }, cancelBlock: {
+  @IBAction func launchFaithSelect(sender: AnyObject) {
+    let names = faithViewModel?.faiths.map({$0.name})
+    let action = ActionSheetStringPicker(
+      title: "Select a Faith",
+      rows: names,
+      initialSelection: 0,
+      doneBlock:{
+        finished in
+        let index = finished.1
+        self.selectedFaith = self.faithViewModel?.faiths[index]
+      },
+      cancelBlock: {
         finished in
       }, origin: self.view)
     action.showActionSheetPicker()
   }
   
-  @IBAction func launchSectionPicker(sender: AnyObject) {
-    let colors = [["Chapter","1","2","3", "4"], ["Section","1"]]
-    let action = ActionSheetMultipleStringPicker(title: "MANY", rows: colors, initialSelection: [0,0], doneBlock: {
-      finished in
-      }, cancelBlock: {
-        finished in
-      }, origin: self.view)
-    action.showActionSheetPicker()
-
+  @IBAction func launchBookSelect(sender: AnyObject) {
+    if (selectedFaith) != nil {
+      let books = selectedFaith!.books.map({$0.name})
+      let action = ActionSheetStringPicker(
+        title: "Select a Faith",
+        rows: books,
+        initialSelection: 0,
+        doneBlock:{
+          finished in
+          let index = finished.1
+          self.selectedBook = self.selectedFaith!.books[index]
+          
+          // Populate the Reader View
+          self.selectedBookRecords = self.selectedBook?.records
+          self.secondWritingReader.reloadData()
+        },
+        cancelBlock: {
+          finished in
+        }, origin: self.view)
+      action.showActionSheetPicker()
+    }
+  }
+  
+  @IBAction func launchChapterSelect(sender: AnyObject) {
   }
   
 }

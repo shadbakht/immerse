@@ -106,6 +106,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   
   @IBAction func addCrossRef(sender: AnyObject) {
     let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
+    create.record = self.selectedRecord
+    create.range = self.selectedRange
     self.presentViewController(create, animated: true, completion: {
     })
   }

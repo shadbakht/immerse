@@ -8,6 +8,14 @@
 
 import UIKit
 
-class CrossRefViewModel: NSObject {
+class CrossRefViewModel: GenericViewModel, ViewModelProtocol {
 
+  var crossRefs : [CrossRef]? = nil
+  func setup() {
+    
+  }
+  
+  func createCrossReference(sourceRecord:Record, sourceRange: NSRange, destinationRecord:Record, destinationRange:NSRange) {
+    CrossRefInterface.createCrossRef(sourceRecord, srcRange: sourceRange, dest: destinationRecord, destRange: destinationRange)
+  }
 }
