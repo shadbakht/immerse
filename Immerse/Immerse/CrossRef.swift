@@ -20,6 +20,11 @@ class CrossRefInterface : GenericModelInterface {
     cross.destination_length = destRange.length
     RealmService.createObject(cross)
   }
+  
+  class func getAllCrossRefs() -> [CrossRef] {
+    return RealmService.allObjects(CrossRef.self) as! [CrossRef]
+  }
+
 }
 
 class CrossRef: Object {

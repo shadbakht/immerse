@@ -11,8 +11,9 @@ import UIKit
 class CrossRefViewModel: GenericViewModel, ViewModelProtocol {
 
   var crossRefs : [CrossRef]? = nil
+  
   func setup() {
-    
+    crossRefs = CrossRefInterface.getAllCrossRefs()
   }
   
   func createCrossReference(sourceRecord:Record, sourceRange: NSRange, destinationRecord:Record, destinationRange:NSRange) {

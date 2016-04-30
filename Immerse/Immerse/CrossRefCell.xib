@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CrossRefCell" rowHeight="208" id="KGk-i7-Jjw" customClass="CrossRefCell" customModule="Immerse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="530" height="208"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="530" height="207.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7li-vQ-Pib">
+                        <rect key="frame" x="11" y="8" width="250" height="145"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="lTp-ak-caP"/>
+                        </connections>
+                    </textView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xar-Hm-T4A">
+                        <rect key="frame" x="269" y="8" width="250" height="145"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="afK-1M-06b"/>
+                        </connections>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writing Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmX-Jv-gdl">
+                        <rect key="frame" x="11" y="161" width="250" height="38.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38.5" id="Z4C-0X-LlZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writing Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jn-GE-B01">
+                        <rect key="frame" x="269" y="161" width="250" height="38.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38.5" id="dJv-i8-Eph"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kmX-Jv-gdl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="3" id="7bE-nS-X8G"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xar-Hm-T4A" secondAttribute="trailing" constant="3" id="DSh-fq-llQ"/>
+                    <constraint firstItem="7li-vQ-Pib" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="3" id="Fe8-uW-vGv"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xar-Hm-T4A" secondAttribute="bottom" constant="46.5" id="QmF-Yy-arn"/>
+                    <constraint firstItem="5Jn-GE-B01" firstAttribute="top" secondItem="xar-Hm-T4A" secondAttribute="bottom" constant="8" id="S4h-Zs-ewv"/>
+                    <constraint firstItem="kmX-Jv-gdl" firstAttribute="top" secondItem="7li-vQ-Pib" secondAttribute="bottom" constant="8" id="XoZ-Ec-PGp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7li-vQ-Pib" secondAttribute="bottom" constant="46.5" id="cgv-SJ-7fz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kmX-Jv-gdl" secondAttribute="bottom" id="fVV-MY-tCf"/>
+                    <constraint firstItem="xar-Hm-T4A" firstAttribute="leading" secondItem="7li-vQ-Pib" secondAttribute="trailing" constant="8" id="gr1-1k-7hm"/>
+                    <constraint firstAttribute="topMargin" secondItem="xar-Hm-T4A" secondAttribute="top" id="gzh-PR-GOR"/>
+                    <constraint firstItem="kmX-Jv-gdl" firstAttribute="width" secondItem="5Jn-GE-B01" secondAttribute="width" id="jfj-Uz-pHO"/>
+                    <constraint firstItem="5Jn-GE-B01" firstAttribute="leading" secondItem="kmX-Jv-gdl" secondAttribute="trailing" constant="8" id="lCJ-tk-6b7"/>
+                    <constraint firstAttribute="topMargin" secondItem="7li-vQ-Pib" secondAttribute="top" id="qQR-3h-pma"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5Jn-GE-B01" secondAttribute="trailing" constant="3" id="rGl-jl-Fhc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5Jn-GE-B01" secondAttribute="bottom" id="vIV-iS-U90"/>
+                    <constraint firstItem="7li-vQ-Pib" firstAttribute="width" secondItem="xar-Hm-T4A" secondAttribute="width" id="wJ8-H0-JlA"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="XoZ-Ec-PGp"/>
+                        <exclude reference="S4h-Zs-ewv"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="destinationTextLabel" destination="5Jn-GE-B01" id="Q9C-yH-WOm"/>
+                <outlet property="destinationTextView" destination="xar-Hm-T4A" id="BCW-gY-vvu"/>
+                <outlet property="sourceTextLabel" destination="kmX-Jv-gdl" id="L9C-1p-nkJ"/>
+                <outlet property="sourceTextView" destination="7li-vQ-Pib" id="K8U-ZT-tkR"/>
+            </connections>
+            <point key="canvasLocation" x="430" y="400"/>
+        </tableViewCell>
+    </objects>
+</document>
