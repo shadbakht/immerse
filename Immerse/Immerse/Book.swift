@@ -31,7 +31,11 @@ class Book : Object {
   dynamic var faith : Faith?
   
   var records: [Record] {
-    return linkingObjects(Record.self, forProperty: "book")
+    // Ensure that records is in order
+    let records = linkingObjects(Record.self, forProperty: "book")
+    return records.sort({ recordsTuple in
+      return recordsTuple.0.record_textCount < recordsTuple.1.record_textCount
+    })
   }
 
 }

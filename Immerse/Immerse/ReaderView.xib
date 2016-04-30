@@ -43,6 +43,8 @@
                                 <action selector="addCrossRef:" destination="-1" id="9zu-0I-bqC"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Index" id="jgi-4O-df4"/>
+                        <barButtonItem title="Settings" id="Etc-8Z-YHJ"/>
                     </items>
                 </toolbar>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-47-tT3">

@@ -77,8 +77,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     let record = records![indexPath.row]
     let cell = tableView.dequeueReusableCellWithIdentifier("ReaderCell") as! ReaderCell
     cell.delegate = self
-    cell.record = record
-    cell.textView.text = record.record_text
+    cell.loadRecord(record)
     return cell
   }
   

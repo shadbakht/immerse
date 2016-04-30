@@ -31,6 +31,21 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
   }
   
 
+  func loadRecord(record:Record) {
+    self.record = record
+    textView.text = record.record_text
+    
+    // Adjust the FOnt size and styling
+    switch record.record_type {
+    case "chapter":
+      textView.font = UIFont.systemFontOfSize(20)
+    case "section":
+      textView.font = UIFont.systemFontOfSize(17)
+    default:
+      textView.font = UIFont.systemFontOfSize(13)
+    }
+  }
+  
   func textViewDidChange(textView: UITextView) {
     
     // Resize the textView
