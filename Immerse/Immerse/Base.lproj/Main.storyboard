@@ -421,6 +421,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="GPV-pY-UHM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>
@@ -529,6 +530,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="xLZ-PM-XjS"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -590,7 +592,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="BVO-t4-3v8"/>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="BVO-t4-3v8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
@@ -862,6 +864,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="9Vb-dy-Njr"/>
                     </navigationItem>
                     <connections>
                         <outlet property="crossRefTableView" destination="pWB-5U-WAZ" id="DUT-tO-cT0"/>
@@ -876,6 +879,7 @@
         <image name="menu.png" width="20" height="20"/>
         <image name="note.png" width="66" height="44"/>
         <image name="ref.png" width="66" height="44"/>
+        <image name="sort.png" width="24" height="24"/>
         <image name="tag.png" width="66" height="44"/>
     </resources>
 </document>
