@@ -26,6 +26,7 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let nib = UINib(nibName: "NotesCell", bundle: nil)
     notesTableView.registerNib(nib, forCellReuseIdentifier: "NotesCell")
+    notesTableView.tableFooterView = UIView()
 
   }
 
@@ -49,7 +50,11 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 200
+    return UITableViewAutomaticDimension
+  }
+  
+  func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
   }
   
   // 

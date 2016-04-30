@@ -8,15 +8,17 @@
 
 import UIKit
 
-class NotesCell: UITableViewCell {
+class NotesCell: UITableViewCell, UITextViewDelegate {
 
   @IBOutlet var noteLabel: UILabel!
-  @IBOutlet var noteTitle: UILabel!
   @IBOutlet var noteBody: UITextView!
+  @IBOutlet var recordBody: UITextView!
   
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+    noteBody.delegate = self
+    recordBody.delegate = self
   }
 
   override func setSelected(selected: Bool, animated: Bool) {
@@ -38,7 +40,17 @@ class NotesCell: UITableViewCell {
     let noteSubString = (note.record!.record_text as NSString).substringWithRange(NSMakeRange(note.start_position, note.length))
     let noteComment = note.note_comment
     
-    noteTitle.text = noteSubString
+    recordBody.text = noteSubString
     noteBody.text = noteComment
   }
+  
+  func textViewDidChange(textView: UITextView) {
+    let fixedWidth = textView.frame.size.width
+    textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+    let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+    var newFrame = textView.frame
+    newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+    textView.frame = newFrame
+  }
+
 }

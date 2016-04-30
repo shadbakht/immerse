@@ -37,6 +37,8 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     
     let nib = UINib(nibName: "LibraryBookCell", bundle: nil)
     tableView.registerNib(nib, forCellReuseIdentifier: "LibraryBookCell")
+    tableView.tableFooterView = UIView()
+
   }
   
   // MARK: - IndicatorInfoProvider

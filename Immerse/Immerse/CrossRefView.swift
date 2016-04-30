@@ -27,6 +27,8 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
     crossRefTableView.dataSource = self
     let nib = UINib(nibName: "CrossRefCell", bundle: nil)
     crossRefTableView.registerNib(nib, forCellReuseIdentifier: "CrossRefCell")
+    crossRefTableView.tableFooterView = UIView()
+
   }
 
   override func didReceiveMemoryWarning() {
