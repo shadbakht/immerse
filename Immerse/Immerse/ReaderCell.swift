@@ -11,6 +11,9 @@ import UIKit
 
 protocol ReaderCellDelegate {
   func textWasSelected(range:NSRange, record:Record)
+  func getTextSizeMultiplier() -> CGFloat
+  func getTextColor() -> UIColor
+  func getBackgroundColor() -> UIColor
 }
 
 class ReaderCell: UITableViewCell, UITextViewDelegate {
@@ -35,15 +38,23 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     self.record = record
     textView.text = record.record_text
     
-    // Adjust the FOnt size and styling
+    let delegateMultiplier : CGFloat = delegate!.getTextSizeMultiplier()
+    let delegateColor : UIColor = delegate!.getTextColor()
+    let delegateBackgroundColor : UIColor = delegate!.getBackgroundColor()
+    
+    // Adjust the Font size and styling
     switch record.record_type {
     case "chapter":
-      textView.font = UIFont.systemFontOfSize(20)
+      textView.font = UIFont.systemFontOfSize(20 * delegateMultiplier)
     case "section":
-      textView.font = UIFont.systemFontOfSize(17)
+      textView.font = UIFont.systemFontOfSize(17 * delegateMultiplier)
     default:
-      textView.font = UIFont.systemFontOfSize(13)
+      textView.font = UIFont.systemFontOfSize(13 * delegateMultiplier)
     }
+    
+    // Adjust the Colors
+    textView.textColor = delegateColor
+    textView.backgroundColor = delegateBackgroundColor
   }
   
   func textViewDidChange(textView: UITextView) {

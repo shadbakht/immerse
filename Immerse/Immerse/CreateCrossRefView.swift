@@ -88,6 +88,15 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
     }
   }
   
+  func getTextSizeMultiplier() -> CGFloat {
+    return 1.0
+  }
+  func getTextColor() -> UIColor {
+    return UIColor.greenColor()
+  }
+  func getBackgroundColor() -> UIColor {
+    return UIColor.clearColor()
+  }
   func textWasSelected(range: NSRange, record: Record) {
     selectedRange = range
     selectedRecord = record

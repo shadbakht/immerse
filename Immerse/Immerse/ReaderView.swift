@@ -13,14 +13,27 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
 
   @IBOutlet var navbar: UINavigationBar!
   @IBOutlet var toolbar: UIToolbar!
+  @IBOutlet var settingsToolBar: UIView!
   @IBOutlet var readerTable: UITableView!
   
   private var book : Book? = nil
   private var records : [Record]? = nil
   private var hidden : Bool = false
+  private var settingsHidden : Bool = false
   private var selectedRecord : Record? = nil
   private var selectedRange : NSRange? = nil
   
+  // Set the Color Themes
+  private let multiplierTextSizes : [(String, CGFloat)] = [("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
+  private let textBackgroundColors = [
+    ("Regular",UIColor.blackColor(), UIColor.whiteColor()),
+    ("Midnight",UIColor.whiteColor(), UIColor.blackColor()),
+    ("Sepia",UIColor.rgb(68, g: 68, b: 68), UIColor.rgb(246, g: 239, b: 220))
+  ]
+  private var selectedTextSize : (String, CGFloat) = ("Normal", 1.0)
+  private var selectedColor : (String, UIColor, UIColor) =
+    ("Regular",UIColor.blackColor(), UIColor.whiteColor())
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -59,6 +72,24 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
         self.navbar.frame.setY(-self.navbar.frame.height)
         self.toolbar.frame.setY(self.readerTable.frame.height)
       })
+      if (!settingsHidden) {
+        toggleSettings()
+      }
+    }
+  }
+  
+  func toggleSettings() {
+    if (settingsHidden) {
+      settingsHidden = false
+      UIView.animateWithDuration(0.3, animations: {
+        self.settingsToolBar.frame.setY(44)
+      })
+    } else {
+      settingsHidden = true
+      UIView.animateWithDuration(0.3, animations: {
+        self.settingsToolBar.frame.setY(-88)
+      })
+
     }
   }
   
@@ -96,6 +127,18 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     return UITableViewAutomaticDimension
   }
   
+  func getTextColor() -> UIColor {
+    return selectedColor.1
+  }
+  
+  func getTextSizeMultiplier() -> CGFloat {
+    return selectedTextSize.1
+  }
+  
+  func getBackgroundColor() -> UIColor {
+    return selectedColor.2
+  }
+  
   func textWasSelected(range: NSRange, record: Record) {
     selectedRange = range
     selectedRecord = record
@@ -105,6 +148,32 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   }
   
   // MARK:-TOOLBAR
+  
+  @IBAction func textColorSelected(sender: UISegmentedControl) {
+    let index = sender.selectedSegmentIndex
+    selectedColor = textBackgroundColors[index]
+    readerTable.reloadData()
+  }
+  
+  @IBAction func textSizeChanged(sender: UISlider) {
+    if sender.value < 0.5 {
+      sender.value = 0
+    } else if (0.5 < sender.value && sender.value < 1.5) {
+      sender.value = 1
+    } else if (1.5 < sender.value && sender.value < 2.5) {
+      sender.value = 2
+    } else if (2.5 < sender.value && sender.value < 3.5) {
+      sender.value = 3
+    } else {
+      sender.value = 4
+    }
+    selectedTextSize = multiplierTextSizes[Int(sender.value)]
+    readerTable.reloadData()
+  }
+  
+  @IBAction func showSettings(sender: AnyObject) {
+    toggleSettings()
+  }
   
   @IBAction func showTableOfContents(sender: AnyObject) {
     let chapterHeaders = self.records?.filter({$0.record_type == "chapter"})
