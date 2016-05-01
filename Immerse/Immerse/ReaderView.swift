@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
 class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate, ReaderCellDelegate  {
 
@@ -14,6 +15,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBOutlet var toolbar: UIToolbar!
   @IBOutlet var readerTable: UITableView!
   
+  private var book : Book? = nil
   private var records : [Record]? = nil
   private var hidden : Bool = false
   private var selectedRecord : Record? = nil
@@ -38,6 +40,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   }
   
   func load(book:Book) {
+    self.book = book
     records = book.records
   }
   
@@ -102,6 +105,28 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   }
   
   // MARK:-TOOLBAR
+  
+  @IBAction func showTableOfContents(sender: AnyObject) {
+    let chapterHeaders = self.records?.filter({$0.record_type == "chapter"})
+    let chapterNames = chapterHeaders!.map({$0.record_text})
+    let action = ActionSheetStringPicker(
+      title: "Select a Chapter",
+      rows: chapterNames,
+      initialSelection: 0,
+      doneBlock:{
+        finished in
+        let headerIndex = finished.1
+        let chapterHeader = chapterHeaders![headerIndex]
+        let index = chapterHeader.record_textCount
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+      },
+      cancelBlock: {
+        finished in
+      }, origin: self.view)
+    action.showActionSheetPicker()
+
+  }
   
   @IBAction func addCrossRef(sender: AnyObject) {
     let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)

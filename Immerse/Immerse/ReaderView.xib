@@ -43,8 +43,11 @@
                                 <action selector="addCrossRef:" destination="-1" id="9zu-0I-bqC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Index" id="jgi-4O-df4"/>
-                        <barButtonItem title="Settings" id="Etc-8Z-YHJ"/>
+                        <barButtonItem title="Index" id="jgi-4O-df4">
+                            <connections>
+                                <action selector="showTableOfContents:" destination="-1" id="izX-1A-vCX"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ike-47-tT3">
@@ -54,6 +57,7 @@
                     </constraints>
                     <items>
                         <navigationItem title="READER" id="cuD-4N-MXd">
+                            <barButtonItem key="leftBarButtonItem" title="Settings" id="Etc-8Z-YHJ"/>
                             <barButtonItem key="rightBarButtonItem" systemItem="stop" id="k4x-aM-Mka">
                                 <connections>
                                     <action selector="close:" destination="-1" id="cGk-Vv-BSd"/>
