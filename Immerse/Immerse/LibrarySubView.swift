@@ -15,11 +15,13 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   var faith : Faith? = nil
   var books : [Book]? = nil
   var bookViewModel : BookViewModel? = nil
+  var sorting : SortOption? = nil
   
-  init(itemInfo: IndicatorInfo, faith: Faith) {
+  init(itemInfo: IndicatorInfo, faith: Faith, sorting:SortOption) {
     self.itemInfo = itemInfo
     self.faith = faith
     self.books = faith.books
+    self.sorting = sorting
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -73,6 +75,15 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
     self.presentViewController(readerVc, animated: true, completion: {
       
     })
+  }
+  
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    
+    return 1
+  }
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return nil
   }
 
 }
