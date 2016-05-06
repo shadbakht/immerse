@@ -874,7 +874,11 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="9Vb-dy-Njr"/>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="9Vb-dy-Njr">
+                            <connections>
+                                <action selector="showSortingOptions:" destination="v3v-eA-ZZw" id="SFc-gl-NMm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="crossRefTableView" destination="pWB-5U-WAZ" id="DUT-tO-cT0"/>
