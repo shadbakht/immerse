@@ -15,12 +15,16 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   var faith : Faith? = nil
   var books : [Book]? = nil
   var bookViewModel : BookViewModel? = nil
-  var sorting : SortOption? = nil
+  var sorting : SortOption = SortOption.BookAlphabetical
+  var uniqueAuthors : NSSet? = nil
   
   init(itemInfo: IndicatorInfo, faith: Faith, sorting:SortOption) {
     self.itemInfo = itemInfo
     self.faith = faith
-    self.books = faith.books
+    self.books = faith.books.sort({
+      pair in
+      return pair.0.name < pair.1.name
+    })
     self.sorting = sorting
     super.init(nibName: nil, bundle: nil)
   }
@@ -79,11 +83,41 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     
-    
-    return 1
+    switch sorting {
+      
+      // Sort by Author Name
+    case SortOption.AuthorAlphabetical:
+      let authors = self.books!.map({$0.author!})
+      uniqueAuthors = NSSet(array:authors.sort({
+        tuple in
+        return tuple.0.name < tuple.1.name
+      }))
+      return uniqueAuthors!.count
+      
+      // Sort by Book Alphabetical
+    case SortOption.BookAlphabetical:
+      books = self.books!.sort({
+        tuple in
+        return tuple.0.name < tuple.1.name
+      })
+      return 1
+      
+      // Sort by Book Alphabetical
+    case SortOption.BookRecent:
+      return 1
+    default:
+      return 1
+    }
   }
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return nil
+    
+    switch sorting {
+    case SortOption.AuthorAlphabetical:
+      return uniqueAuthors?.allObjects[section].name!
+    default:
+      return nil
+    }
+
   }
 
 }
