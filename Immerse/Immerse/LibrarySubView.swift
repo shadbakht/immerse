@@ -57,9 +57,19 @@ class LibrarySubView: UITableViewController, IndicatorInfoProvider {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("LibraryBookCell") as! LibraryBookCell
-    let bookObj = books![indexPath.row]
-    cell.bookTitleLabel.text = bookObj.name
-    cell.bookAuthorLabel.text = bookObj.author?.name
+    
+    var bookObj : Book? = nil
+    switch sorting {
+    case SortOption.AuthorAlphabetical:
+      let author = uniqueAuthors!.allObjects[indexPath.section]
+      let authorBooks = books!.filter({ $0.author!.isEqual(author)})[indexPath.row]
+      bookObj = authorBooks
+    default:
+      bookObj = books![indexPath.row]
+    }
+    
+    cell.bookTitleLabel.text = bookObj!.name
+    cell.bookAuthorLabel.text = bookObj!.author?.name
     
     return cell
   }

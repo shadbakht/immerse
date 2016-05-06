@@ -68,5 +68,32 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       drawerController.setDrawerState(.Opened, animated: true)
     }
   }
+  
+  
+  @IBAction func showSortingOptions(sender: AnyObject) {
+    let alert = UIAlertController(title: "Group Notes By", message: "Select a dimension to group your notes along.", preferredStyle: .ActionSheet)
+    
+    let firstAction = UIAlertAction(title: "Writing [A-Z]", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let secondAction = UIAlertAction(title: "Author [A-Z]", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let thirdAction = UIAlertAction(title: "Recent", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+      finished in
+      
+    })
+    
+    alert.addAction(thirdAction)
+    alert.addAction(firstAction)
+    alert.addAction(secondAction)
+    alert.addAction(cancel)
+    presentViewController(alert, animated: true, completion:nil)
+    
+  }
+
 
 }

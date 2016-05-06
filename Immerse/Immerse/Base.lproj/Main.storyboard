@@ -597,7 +597,11 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="BVO-t4-3v8"/>
+                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="BVO-t4-3v8">
+                            <connections>
+                                <action selector="showSortingOptions:" destination="pUy-Fu-qOI" id="NUK-fg-upo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
