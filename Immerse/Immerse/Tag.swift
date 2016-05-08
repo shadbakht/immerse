@@ -12,7 +12,6 @@ class TagTypeInterface : GenericModelInterface {
   class func createTag(name:String) -> Bool {
     let tag = TagType()
     tag.name = name
-    tag.id = String.unique()
     RealmService.createObject(tag)
     return true
   }
@@ -29,7 +28,7 @@ class TagType : Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var name : String = ""
   dynamic var parent : TagType?
   
@@ -43,7 +42,6 @@ class TagType : Object {
 class TagInterface : GenericModelInterface {
   class func createTag(record:Record, range:NSRange, type:TagType) {
     let tag = Tag()
-    tag.id = String.unique()
     tag.record = record
     tag.start_position = range.location
     tag.length = range.length
@@ -58,7 +56,7 @@ class Tag: Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var type : TagType?
   dynamic var record : Record?
   dynamic var start_position : Int = 0
