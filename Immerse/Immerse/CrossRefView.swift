@@ -12,7 +12,8 @@ import KYDrawerController
 class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   var crossRefViewModel : CrossRefViewModel? = nil
-  
+  private var sorting : SortOption = SortOption.None
+  private var uniqueBooks : [Book] = []
   @IBOutlet var crossRefTableView: UITableView!
   
   override func viewDidLoad() {
@@ -37,22 +38,56 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   //
   
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    switch sorting {
+    case SortOption.BookAlphabetical:
+      return self.uniqueBooks.count
+    default:
+      return 1
+    }
+  }
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if (crossRefViewModel != nil) {
+    switch sorting {
+    case SortOption.BookAlphabetical:
+      let book = self.uniqueBooks[section]
+      let sectionBooks = self.crossRefViewModel!.crossRefs!.filter({
+        print($0.source_ref!.book?.name)
+        return ($0.source_ref!.book!.isEqual(book))
+      })
+      return sectionBooks.count
+    default:
       return crossRefViewModel!.crossRefs!.count
     }
-    return 0
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
-    let cross = crossRefViewModel!.crossRefs![indexPath.row]
-    let cell = tableView.dequeueReusableCellWithIdentifier("CrossRefCell") as! CrossRefCell
-    cell.loadCrossRef(cross)
-    
-    return cell
+    switch sorting {
+    case SortOption.BookAlphabetical:
+      let book = self.uniqueBooks[indexPath.section]
+      let sectionBooks = self.crossRefViewModel!.crossRefs!.filter({
+        ($0.source_ref!.book == book)
+      })
+      let refs = sectionBooks[indexPath.row]
+      let cell = tableView.dequeueReusableCellWithIdentifier("CrossRefCell") as! CrossRefCell
+      cell.loadCrossRef(refs)
+      return cell
+    default:
+      let cross = crossRefViewModel!.crossRefs![indexPath.row]
+      let cell = tableView.dequeueReusableCellWithIdentifier("CrossRefCell") as! CrossRefCell
+      cell.loadCrossRef(cross)
+      return cell
+    }
   }
-  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch sorting {
+    case SortOption.BookAlphabetical:
+      let book = self.uniqueBooks[section]
+      return book.name
+    default:
+      return nil
+    }
+  }
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
   }
   
@@ -76,12 +111,18 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
     let alert = UIAlertController(title: "Group Cross References By", message: "Select a dimension to group your cross references along.", preferredStyle: .ActionSheet)
     
     let firstAction = UIAlertAction(title: "Writing [A-Z]", style: .Default) { (alert: UIAlertAction!) -> Void in
-    }
-    
-    let secondAction = UIAlertAction(title: "Author [A-Z]", style: .Default) { (alert: UIAlertAction!) -> Void in
+      self.sorting = SortOption.BookAlphabetical
+      
+      // Sort the Books
+      let books = self.crossRefViewModel!.crossRefs!.map({$0.source_ref!.book!})
+      self.uniqueBooks = NSSet(array: books).allObjects as! [Book]
+      
+      self.crossRefTableView.reloadData()
     }
     
     let thirdAction = UIAlertAction(title: "Recent", style: .Default) { (alert: UIAlertAction!) -> Void in
+      self.sorting = SortOption.BookRecent
+      self.crossRefTableView.reloadData()
     }
     
     let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
@@ -89,9 +130,8 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
       
     })
     
-    alert.addAction(thirdAction)
     alert.addAction(firstAction)
-    alert.addAction(secondAction)
+    alert.addAction(thirdAction)
     alert.addAction(cancel)
     presentViewController(alert, animated: true, completion:nil)
     
