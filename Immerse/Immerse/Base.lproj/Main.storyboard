@@ -421,7 +421,6 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="GPV-pY-UHM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>
