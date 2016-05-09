@@ -13,6 +13,7 @@ class NotesCell: UITableViewCell, UITextViewDelegate {
   @IBOutlet var noteLabel: UILabel!
   @IBOutlet var noteBody: UITextView!
   @IBOutlet var recordBody: UITextView!
+  var note : Note? = nil
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -27,6 +28,7 @@ class NotesCell: UITableViewCell, UITextViewDelegate {
   }
   
   func loadNote(note:Note) {
+    self.note = note
     
     let faith = note.record!.faith!.name
     let book = note.record!.book!.name

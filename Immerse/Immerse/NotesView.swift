@@ -15,6 +15,7 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
   private var uniqueAuthors : [Author] = []
+  private var selectedNotes : [Note] = []
   var noteViewModel : NoteViewModel? = nil
   
   override func viewDidLoad() {
@@ -92,6 +93,14 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath) as! NotesCell
+    if cell.accessoryType == UITableViewCellAccessoryType.None {
+      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+      self.selectedNotes.append(cell.note!)
+    } else {
+      cell.accessoryType = UITableViewCellAccessoryType.None
+      self.selectedNotes.removeObject(cell.note!)
+    }
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
