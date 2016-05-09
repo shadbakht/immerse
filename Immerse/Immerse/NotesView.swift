@@ -28,7 +28,7 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let nib = UINib(nibName: "NotesCell", bundle: nil)
     notesTableView.registerNib(nib, forCellReuseIdentifier: "NotesCell")
-    notesTableView.tableFooterView = UIView()
+    notesTableView.tableFooterView = UIView(frame: CGRectZero)
 
   }
 
