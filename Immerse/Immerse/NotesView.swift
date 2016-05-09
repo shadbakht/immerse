@@ -91,6 +91,11 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       cell.loadNote(cross)
     }
     
+    // Select it if it's already selected
+    if selectedNotes.contains(cell.note!) {
+      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+    }
+    
     return cell
   }
   
@@ -214,7 +219,11 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var sharingItems = [AnyObject]()
     sharingItems.append(sharingText)
     let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
-    self.presentViewController(activityViewController, animated: true, completion: nil)
+    self.presentViewController(activityViewController, animated: true, completion: {
+      finished in
+      self.selectedNotes.removeAll()
+      self.notesTableView.reloadData()
+    })
   }
 
 }
