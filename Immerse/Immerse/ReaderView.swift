@@ -22,7 +22,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   private var settingsHidden : Bool = false
   private var selectedRecord : Record? = nil
   private var selectedRange : NSRange? = nil
-  
+  private var progressViewModel : ProgressViewModel? = nil
   // Set the Color Themes
   private let multiplierTextSizes : [(String, CGFloat)] = [("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
   private let textBackgroundColors = [
@@ -37,19 +37,32 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    readerTable.delegate = self
-    readerTable.dataSource = self
-    
+    // Setup the Reader
     let nib = UINib(nibName: "ReaderCell", bundle: nil)
     readerTable.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
-    
+    readerTable.delegate = self
+    readerTable.dataSource = self
+
+    // Setup the Toggle
     let tap = UITapGestureRecognizer(target: self, action: #selector(toggleTools))
     tap.numberOfTapsRequired = 1
     readerTable.addGestureRecognizer(tap)
+    
+    // Setup Progress
+    progressViewModel = ProgressViewModel(viewController: self)
+    progressViewModel?.setup()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    
+    // Reload the Progress
+    let progress = progressViewModel!.getProgress(book!)
+    let indexPath = NSIndexPath(forRow: progress.row, inSection: 0)
+    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
   }
   
   func load(book:Book) {
@@ -96,6 +109,32 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBAction func close(sender: UIBarButtonItem) {
     self.dismissViewControllerAnimated(true, completion: {
     })
+  }
+  
+  // MARK:-SCROLL PROTOCOL
+  
+  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    print("Stopped Moving")
+    let cell = readerTable.visibleCells.last as! ReaderCell
+    let record = cell.record
+    progressViewModel!.createProgress(record!)
+    
+    // Update Progress View
+    let progress = progressViewModel!.getProgress(book!).percent
+    print(progress)
+  }
+  
+  func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    print("Stopped Dragging")
+    if !decelerate {
+      let cell = readerTable.visibleCells.last as! ReaderCell
+      let record = cell.record
+      progressViewModel!.createProgress(record!)
+      
+      // Update Progress View
+      let progress = progressViewModel!.getProgress(book!).percent
+      print(progress)
+    }
   }
   
   // MARK:-PROTOCOLS
