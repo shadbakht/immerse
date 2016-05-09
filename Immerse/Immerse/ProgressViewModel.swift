@@ -19,15 +19,14 @@ class ProgressViewModel: GenericViewModel, ViewModelProtocol {
   func getProgress(writing:Book) -> Progress {
     let progress = ProgressInterface.getProgress(writing)
     if progress == nil {
-      createProgress(writing.records.first!)
+      createProgress(writing.records.first!, row: 0)
     }
     return ProgressInterface.getProgress(writing)!
   }
   
-  func createProgress(record:Record) {
+  func createProgress(record:Record, row: Int) {
     let book = record.book!
-    let index = record.record_textCount
-    ProgressInterface.createProgress(book, index: index)
+    ProgressInterface.createProgress(book, index: row)
   }
   
 }

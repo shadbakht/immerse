@@ -62,7 +62,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     // Reload the Progress
     let progress = progressViewModel!.getProgress(book!)
     let indexPath = NSIndexPath(forRow: progress.row, inSection: 0)
-    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
   }
   
   func load(book:Book) {
@@ -117,7 +117,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     print("Stopped Moving")
     let cell = readerTable.visibleCells.last as! ReaderCell
     let record = cell.record
-    progressViewModel!.createProgress(record!)
+    let indexPath = readerTable.indexPathForCell(cell)
+    progressViewModel!.createProgress(record!, row: indexPath!.row)
     
     // Update Progress View
     let progress = progressViewModel!.getProgress(book!).percent
@@ -129,7 +130,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     if !decelerate {
       let cell = readerTable.visibleCells.last as! ReaderCell
       let record = cell.record
-      progressViewModel!.createProgress(record!)
+      let indexPath = readerTable.indexPathForCell(cell)
+      progressViewModel!.createProgress(record!, row: indexPath!.row)
       
       // Update Progress View
       let progress = progressViewModel!.getProgress(book!).percent
