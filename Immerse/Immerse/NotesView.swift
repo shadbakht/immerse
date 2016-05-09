@@ -209,9 +209,9 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBAction func share(sender: AnyObject) {
     let noteText = selectedNotes.map({
-      "NOTE: \($0.note_comment) \n + FROM: \($0.creation_date) + \n + \(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length))) + \n\n"
+      "NOTE: \($0.note_comment)\n" + "FROM: \($0.creation_date)\n" + "\(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length)))\n\n"
     })
-    let final = NSArray(array: noteText).componentsJoinedByString("\n")
+    let final = NSArray(array: noteText).componentsJoinedByString("--------------------")
     shareTextImageAndURL(final)
   }
 
