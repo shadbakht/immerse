@@ -48,6 +48,10 @@ class TagInterface : GenericModelInterface {
     tag.type = type
     RealmService.createObject(tag)
   }
+  class func getAllTags() -> [Tag] {
+    return RealmService.allObjects(Tag.self) as! [Tag]
+  }
+
 }
 
 class Tag: Object {

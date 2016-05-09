@@ -15,6 +15,7 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
   
   func setup() {
     tagTypes = TagTypeInterface.getAllTagTypes()
+    tags = TagInterface.getAllTags()
   }
   
   func createTagType(name:String) -> Bool {

@@ -82,6 +82,13 @@ extension CGRect {
     self = CGRectMake(origin.x, val, width, height)
   }
 }
+
+extension Int {
+  func stringValue() -> String {
+    return "\(self)"
+  }
+}
+
 class Util: NSObject {
   
   //MARK: Traverse Bundle
@@ -121,5 +128,4 @@ class Util: NSObject {
   class func removeObserve(target:AnyObject, named:String) {
     NSNotificationCenter.defaultCenter().removeObserver(target, name: named, object: nil)
   }
-
 }
