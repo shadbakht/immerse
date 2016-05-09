@@ -19,12 +19,13 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   private var book : Book? = nil
   private var records : [Record]? = nil
   private var hidden : Bool = false
-  private var settingsHidden : Bool = false
+  private var settingsHidden : Bool = true
   private var selectedRecord : Record? = nil
   private var selectedRange : NSRange? = nil
   private var progressViewModel : ProgressViewModel? = nil
   // Set the Color Themes
-  private let multiplierTextSizes : [(String, CGFloat)] = [("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
+  private let multiplierTextSizes : [(String, CGFloat)] = [
+    ("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
   private let textBackgroundColors = [
     ("Regular",UIColor.blackColor(), UIColor.whiteColor()),
     ("Midnight",UIColor.whiteColor(), UIColor.blackColor()),
@@ -70,8 +71,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     records = book.records
   }
   
-  func toggleTools() {
-    if (hidden) {
+  func toggleTools(hide:Bool=false) {
+    // hide will try to override whateve
+    if (hidden && !hide) {
       // Show
       hidden = false
       UIView.animateWithDuration(0.3, animations: {
@@ -96,11 +98,13 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
       settingsHidden = false
       UIView.animateWithDuration(0.3, animations: {
         self.settingsToolBar.frame.setY(44)
+        self.settingsToolBar.alpha = 1.0
       })
     } else {
       settingsHidden = true
       UIView.animateWithDuration(0.3, animations: {
-        self.settingsToolBar.frame.setY(-88)
+        self.settingsToolBar.frame.setY(-132)
+        self.settingsToolBar.alpha = 0.0
       })
 
     }
@@ -115,6 +119,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   
   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
     print("Stopped Moving")
+    toggleTools(true)
+    
     let cell = readerTable.visibleCells.last as! ReaderCell
     let record = cell.record
     let indexPath = readerTable.indexPathForCell(cell)
@@ -128,6 +134,8 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     print("Stopped Dragging")
     if !decelerate {
+      toggleTools(true)
+
       let cell = readerTable.visibleCells.last as! ReaderCell
       let record = cell.record
       let indexPath = readerTable.indexPathForCell(cell)

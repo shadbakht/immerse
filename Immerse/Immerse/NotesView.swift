@@ -8,7 +8,6 @@
 
 import UIKit
 import KYDrawerController
-import Social
 
 class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -213,17 +212,8 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     })
     let final = NSArray(array: noteText).componentsJoinedByString("--------------------")
     shareTextImageAndURL(final)
-  }
+    self.selectedNotes.removeAll()
+    self.notesTableView.reloadData()
 
-  func shareTextImageAndURL(sharingText: String) {
-    var sharingItems = [AnyObject]()
-    sharingItems.append(sharingText)
-    let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
-    self.presentViewController(activityViewController, animated: true, completion: {
-      finished in
-      self.selectedNotes.removeAll()
-      self.notesTableView.reloadData()
-    })
   }
-
 }

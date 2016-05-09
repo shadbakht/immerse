@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -51,8 +51,8 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-Bx-VEb">
-                    <rect key="frame" x="0.0" y="44" width="600" height="88"/>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-Bx-VEb">
+                    <rect key="frame" x="0.0" y="-88" width="600" height="88"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pr9-sT-QYi">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
@@ -64,7 +64,7 @@
                                         <constraint firstAttribute="width" constant="76" id="ru4-2F-An0"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="plp-fo-7S5">
@@ -168,7 +168,7 @@
                 <constraint firstItem="Ike-47-tT3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Pw4-Co-EYx"/>
                 <constraint firstItem="Ike-47-tT3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ess-Ps-m9d"/>
                 <constraint firstItem="fLk-Bx-VEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fOV-7v-L5J"/>
-                <constraint firstItem="fLk-Bx-VEb" firstAttribute="top" secondItem="Ike-47-tT3" secondAttribute="bottom" id="gQI-Uc-sWj"/>
+                <constraint firstItem="fLk-Bx-VEb" firstAttribute="top" secondItem="Ike-47-tT3" secondAttribute="bottom" constant="-132" id="gQI-Uc-sWj"/>
                 <constraint firstItem="S2E-3b-CBi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAt-2W-6OB"/>
                 <constraint firstAttribute="bottom" secondItem="S2E-3b-CBi" secondAttribute="bottom" id="xh5-SS-KwW"/>
             </constraints>

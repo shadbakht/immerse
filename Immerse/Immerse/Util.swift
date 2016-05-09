@@ -89,6 +89,16 @@ extension Int {
   }
 }
 
+extension UIViewController {
+  func shareTextImageAndURL(sharingText: String) {
+    var sharingItems = [AnyObject]()
+    sharingItems.append(sharingText)
+    let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+    self.presentViewController(activityViewController, animated: true, completion: nil)
+  }
+
+}
+
 extension RangeReplaceableCollectionType where Generator.Element : Equatable {
   
   // Remove first collection element that is equal to the given `object`:
