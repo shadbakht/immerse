@@ -8,10 +8,12 @@
 
 import UIKit
 import KYDrawerController
+import Social
 
 class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet var notesTableView: UITableView!
+  @IBOutlet weak var shareButton: UIButton!
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
   private var uniqueAuthors : [Author] = []
@@ -101,6 +103,13 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       cell.accessoryType = UITableViewCellAccessoryType.None
       self.selectedNotes.removeObject(cell.note!)
     }
+    
+    if self.selectedNotes.count > 0 {
+      displayShareButton(true)
+    } else {
+      displayShareButton(false)
+    }
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -135,7 +144,6 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       drawerController.setDrawerState(.Opened, animated: true)
     }
   }
-  
   
   @IBAction func showSortingOptions(sender: AnyObject) {
     let alert = UIAlertController(title: "Group Cross References By", message: "Select a dimension to group your cross references along.", preferredStyle: .ActionSheet)
@@ -177,5 +185,36 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
   }
 
+  func displayShareButton(show:Bool) {
+    if show {
+      // Show
+      UIView.animateWithDuration(0.3, animations: {
+        let correctHeight = self.view.frame.height - 40
+        let frame = self.shareButton.frame
+        self.shareButton.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
+      })
+    } else {
+      // Hide
+      UIView.animateWithDuration(0.3, animations: {
+        let frame = self.shareButton.frame
+        self.shareButton.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
+      })
+    }
+  }
+  
+  @IBAction func share(sender: AnyObject) {
+    let noteText = selectedNotes.map({
+      "NOTE: \($0.note_comment) \n + FROM: \($0.creation_date) + \n + \(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length))) + \n\n"
+    })
+    let final = NSArray(array: noteText).componentsJoinedByString("\n")
+    shareTextImageAndURL(final)
+  }
+
+  func shareTextImageAndURL(sharingText: String) {
+    var sharingItems = [AnyObject]()
+    sharingItems.append(sharingText)
+    let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+    self.presentViewController(activityViewController, animated: true, completion: nil)
+  }
 
 }

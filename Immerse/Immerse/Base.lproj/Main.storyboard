@@ -487,6 +487,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-TY-itl">
+                                <rect key="frame" x="0.0" y="536" width="600" height="40"/>
+                                <color key="backgroundColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aS5-NG-Gc2"/>
+                                </constraints>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="pUy-Fu-qOI" eventType="touchUpInside" id="BFb-Ub-yRY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -494,9 +507,12 @@
                             <constraint firstItem="omC-Kn-u2I" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="6i8-La-Kx7"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="top" secondItem="eCA-PI-ryV" secondAttribute="bottom" id="7Cg-mn-E0V"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="CJv-tL-SCw"/>
+                            <constraint firstItem="VEi-TY-itl" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="Pih-dy-zBE"/>
+                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="VEi-TY-itl" secondAttribute="bottom" constant="-40" id="Tb3-qS-933"/>
                             <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="omC-Kn-u2I" secondAttribute="bottom" id="XZu-hC-a9I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8CF-Ng-GSC" secondAttribute="trailing" constant="-20" id="bSj-Gu-qcL"/>
                             <constraint firstItem="omC-Kn-u2I" firstAttribute="top" secondItem="8CF-Ng-GSC" secondAttribute="bottom" id="dIv-Fq-xkd"/>
+                            <constraint firstAttribute="trailing" secondItem="VEi-TY-itl" secondAttribute="trailing" id="fkW-hy-b7n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VKF-sk-uKY">
@@ -528,6 +544,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
+                        <outlet property="shareButton" destination="VEi-TY-itl" id="RPA-NN-AQV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZR-F1-0Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
