@@ -9,59 +9,43 @@
 import UIKit
 import KYDrawerController
 
-class HomeViewCell : UITableViewCell {
-  
-  @IBOutlet weak var writingProgressLabel: UILabel!
-  @IBOutlet weak var writingTitleLabel: UILabel!
-  @IBOutlet weak var writingCompleteLabel: NSLayoutConstraint!
-  @IBOutlet weak var writingSubTitleLabel: UILabel!
-  @IBOutlet weak var writingCompletedProgressBar: UIProgressView!
-  
-}
-
 class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var countTagLabel: UILabel!
   @IBOutlet weak var countNoteLabel: UILabel!
   @IBOutlet weak var countXRefLabel: UILabel!
   @IBOutlet weak var table: UITableView!
-  
+  var progressViewModel : ProgressViewModel? = nil
+
   override func viewDidLoad() {
     
+    // Configure the ProgressViewModel
+    progressViewModel = ProgressViewModel(viewController: self)
+    progressViewModel?.setup()
     
-    // Get rideof tableview
+    // Configure the TableView
+    let nib = UINib(nibName: "RecentCell", bundle: nil)
+    table.registerNib(nib, forCellReuseIdentifier: "RecentCell")
     table.tableFooterView = UIView(frame: CGRectZero)
+    table.delegate = self
+    table.dataSource = self
 
     super.viewDidLoad()
-    
-    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadTagView")
-    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadNoteView")
-    Util.observe(self, action: #selector(HomeView.reload), named: "ReloadRefView")
-
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    progressViewModel?.setup()
+    table.reloadData()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-
-  func reload() {
-    table.reloadData()
-  }
-  // MARK: Open Menu
-  @IBAction func menuOpen(sender: UIBarButtonItem) {
-    if let drawerController = navigationController?.parentViewController as? KYDrawerController {
-      drawerController.setDrawerState(.Opened, animated: true)
-    }
-  }
-
-  // MARK: Navigation
-  @IBAction func launchLibrary(sender: AnyObject) {
-    Util.notify("ShowLibrary")
-  }
   
   // MARK: UITableViewDatasource and UITableViewDelegate Methods
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    let cell = tableView.dequeueReusableCellWithIdentifier("RecentCell") as! RecentCell
+    cell.load(progressViewModel!.progress[indexPath.row], tagCount: 0, noteCount: 0, refCount: 0)
     return cell
   }
   
@@ -70,6 +54,19 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return self.progressViewModel!.progress.count
   }
+  
+  // MARK: Open Menu
+  @IBAction func menuOpen(sender: UIBarButtonItem) {
+    if let drawerController = navigationController?.parentViewController as? KYDrawerController {
+      drawerController.setDrawerState(.Opened, animated: true)
+    }
+  }
+  
+  // MARK: Navigation
+  @IBAction func launchLibrary(sender: AnyObject) {
+    Util.notify("ShowLibrary")
+  }
+
 }
