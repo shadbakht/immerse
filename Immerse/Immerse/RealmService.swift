@@ -61,7 +61,7 @@ class RealmService: NSObject {
   class func updateObject<T>(type:T,pid:String, keys:[String], values:[AnyObject]) {
     do {
       if let realm = try? Realm(), typeCheck = type as? Object.Type {
-        if let object = objectsWhere(typeCheck, query: "id = \(pid)").first {
+        if let object = objectsWhere(typeCheck, query: "id = '\(pid)'").first {
           let properties = NSDictionary(objects: values, forKeys: keys)
           _ = try? realm.write {
             object.setValuesForKeysWithDictionary(properties as! [String : AnyObject])

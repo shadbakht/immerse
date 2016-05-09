@@ -12,6 +12,8 @@ import RealmSwift
 class ProgressInterface : GenericModelInterface {
   
   class func createProgress(src:Book, index:Int) {
+    print(index)
+    // @jtan: it might be overshooting by 3 because of the missign headers: title, faith, author.
     if let progress = getProgress(src) {
       RealmService.updateObject(Progress.self, pid: progress.id, keys: ["row"], values: [index])
     } else {
@@ -23,8 +25,8 @@ class ProgressInterface : GenericModelInterface {
   }
   
   class func getProgress(src:Book) -> Progress? {
-    let results = RealmService.objectsWhere(Progress.self, query: "writing = \(src)")
-    if results.count == 1 { return results.first as? Progress }
+    let results = getAllProgress().filter({$0.writing!.isEqual(src)})
+    if results.count == 1 { return results.first }
     return nil
   }
   

@@ -62,7 +62,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     // Reload the Progress
     let progress = progressViewModel!.getProgress(book!)
     let indexPath = NSIndexPath(forRow: progress.row, inSection: 0)
-    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
   }
   
   func load(book:Book) {
