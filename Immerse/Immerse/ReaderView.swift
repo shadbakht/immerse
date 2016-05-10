@@ -16,6 +16,10 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBOutlet var settingsToolBar: UIView!
   @IBOutlet var readerTable: UITableView!
   
+  
+  @IBOutlet weak var settingSize: UISlider!
+  @IBOutlet weak var settingTheme: UISegmentedControl!
+  
   private var book : Book? = nil
   private var records : [Record]? = nil
   private var hidden : Bool = false
@@ -38,6 +42,17 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Setup Reader Settings
+    if let theme = UserService.fetchValue(DefaultKey.ReaderTheme) as? String,
+      let size = UserService.fetchValue(DefaultKey.ReaderSize) as? String
+    {
+      configureReader(theme, size:size)
+    } else {
+      UserService.setValue(DefaultKey.ReaderTheme, value: "Regular")
+      UserService.setValue(DefaultKey.ReaderSize, value: "Normal")
+      configureReader("Regular", size: "Normal")
+    }
+
     // Setup the Reader
     let nib = UINib(nibName: "ReaderCell", bundle: nil)
     readerTable.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
@@ -52,8 +67,29 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     // Setup Progress
     progressViewModel = ProgressViewModel(viewController: self)
     progressViewModel?.setup()
+    
   }
 
+  func configureReader(value:String, size:String) {
+    let chosenTheme = textBackgroundColors.filter({$0.0 == value})
+    let chosenSize = multiplierTextSizes.filter({$0.0 == size})
+    if let theme = chosenTheme.first, let size = chosenSize.first {
+      if let indexTheme = textBackgroundColors.indexOf({
+        $0.0 == theme.0
+      }) {
+        settingTheme.selectedSegmentIndex = indexTheme
+      }
+      if let indexSize = multiplierTextSizes.indexOf({
+        $0.0 == size.0
+      }) {
+        settingSize.value = Float(indexSize.successor()-1)
+      }
+      
+      selectedColor = theme
+      selectedTextSize = size
+    }
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
@@ -201,6 +237,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBAction func textColorSelected(sender: UISegmentedControl) {
     let index = sender.selectedSegmentIndex
     selectedColor = textBackgroundColors[index]
+    UserService.setValue(DefaultKey.ReaderTheme, value: selectedColor.0)
     readerTable.reloadData()
   }
   
@@ -217,6 +254,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
       sender.value = 4
     }
     selectedTextSize = multiplierTextSizes[Int(sender.value)]
+    UserService.setValue(DefaultKey.ReaderSize, value: selectedTextSize.0)
     readerTable.reloadData()
   }
   

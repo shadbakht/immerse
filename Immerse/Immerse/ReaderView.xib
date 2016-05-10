@@ -9,6 +9,8 @@
             <connections>
                 <outlet property="navbar" destination="Ike-47-tT3" id="jvf-30-bIY"/>
                 <outlet property="readerTable" destination="S2E-3b-CBi" id="e35-xd-hRm"/>
+                <outlet property="settingSize" destination="plp-fo-7S5" id="AOM-0I-Yjo"/>
+                <outlet property="settingTheme" destination="pGh-yl-b35" id="BB2-3x-YoI"/>
                 <outlet property="settingsToolBar" destination="fLk-Bx-VEb" id="SpQ-Qo-fTd"/>
                 <outlet property="toolbar" destination="i0t-Xf-g09" id="UoU-YH-ThJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
