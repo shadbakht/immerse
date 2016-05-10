@@ -42,7 +42,7 @@ extension NSFileManager {
   }
   
   class func fileExistsInDocumentDirectory(name:String) -> Bool {
-    let path = NSFileManager.documentsPath + "\\" + name
+    let path = NSFileManager.documentsPath + "/" + name
     return NSFileManager.defaultManager().fileExistsAtPath(path)
   }
 }
