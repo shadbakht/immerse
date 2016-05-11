@@ -87,4 +87,6 @@ class TagsView: UIViewController {
 
   }
   
+  @IBAction func sortTags(sender: AnyObject) {
+  }
 }

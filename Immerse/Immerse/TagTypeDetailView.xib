@@ -16,19 +16,50 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCG-5j-Rfq">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="bookmarks" id="8gu-HI-H2y"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="WxH-Qp-C2z"/>
+                        <barButtonItem systemItem="trash" id="8Iv-Ld-awN"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="d3B-nL-dZ5"/>
+                        <barButtonItem systemItem="organize" id="xQC-4E-3hs"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NCz-No-9HT"/>
+                        <barButtonItem systemItem="action" id="bet-Ot-lBY"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gxn-x0-OwS"/>
+                        <barButtonItem title="Edit" id="l09-aQ-fMZ"/>
+                    </items>
+                </toolbar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-pd-51o">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3Ln-Xj-l0g"/>
+                <constraint firstAttribute="trailing" secondItem="eCG-5j-Rfq" secondAttribute="trailing" id="37Y-ZN-EnY"/>
                 <constraint firstAttribute="bottom" secondItem="Ahq-pd-51o" secondAttribute="bottom" id="B5R-Og-Ciy"/>
+                <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="eCG-5j-Rfq" secondAttribute="bottom" id="OTB-lR-FOP"/>
+                <constraint firstAttribute="bottom" secondItem="eCG-5j-Rfq" secondAttribute="bottom" id="PzA-ye-70q"/>
+                <constraint firstAttribute="trailing" secondItem="eCG-5j-Rfq" secondAttribute="trailing" id="XZP-NO-1CW"/>
+                <constraint firstItem="eCG-5j-Rfq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aMr-2F-jRH"/>
                 <constraint firstItem="Ahq-pd-51o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dvR-j8-KYX"/>
                 <constraint firstAttribute="trailing" secondItem="Ahq-pd-51o" secondAttribute="trailing" id="eAo-rj-2YI"/>
+                <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iLN-cU-eK2"/>
+                <constraint firstItem="eCG-5j-Rfq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nnb-QH-GXv"/>
+                <constraint firstItem="eCG-5j-Rfq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ytj-cB-ZWk"/>
+                <constraint firstItem="eCG-5j-Rfq" firstAttribute="top" secondItem="Ahq-pd-51o" secondAttribute="bottom" id="zQj-eJ-3Sl"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="B5R-Og-Ciy"/>
+                    <exclude reference="OTB-lR-FOP"/>
+                    <exclude reference="XZP-NO-1CW"/>
+                    <exclude reference="nnb-QH-GXv"/>
+                    <exclude reference="ytj-cB-ZWk"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

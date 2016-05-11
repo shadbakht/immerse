@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Home View-->
@@ -299,7 +300,7 @@
             </objects>
             <point key="canvasLocation" x="1841" y="63"/>
         </scene>
-        <!--Tags View-->
+        <!--TAGS-->
         <scene sceneID="ib9-Tn-VZf">
             <objects>
                 <viewController id="Nfx-eS-lPc" customClass="TagsView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
@@ -307,53 +308,48 @@
                         <viewControllerLayoutGuide type="top" id="hdd-7W-eY8"/>
                         <viewControllerLayoutGuide type="bottom" id="s9p-EU-P8V"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wqv-fR-M2q" customClass="JCTagListView">
+                    <view key="view" contentMode="scaleToFill" id="Wqv-fR-M2q">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-tK-9Ke" customClass="JCTagListView">
+                                <rect key="frame" x="0.0" y="1" width="600" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="s9p-EU-P8V" firstAttribute="top" secondItem="Jbo-tK-9Ke" secondAttribute="bottom" id="KBk-xQ-j3I"/>
+                            <constraint firstItem="Jbo-tK-9Ke" firstAttribute="leading" secondItem="Wqv-fR-M2q" secondAttribute="leading" id="bae-un-Z23"/>
+                            <constraint firstAttribute="trailing" secondItem="Jbo-tK-9Ke" secondAttribute="trailing" id="rdq-Gy-nSI"/>
+                            <constraint firstItem="Jbo-tK-9Ke" firstAttribute="top" secondItem="hdd-7W-eY8" secondAttribute="bottom" constant="1" id="yTg-zD-v98"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Dk-QO-hG6">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="p9k-hC-8Ez">
+                    <navigationItem key="navigationItem" title="TAGS" id="0Dk-QO-hG6">
+                        <barButtonItem key="leftBarButtonItem" image="menu-2.png" id="p9k-hC-8Ez">
+                            <inset key="imageInsets" minX="-5" minY="10" maxX="30" maxY="10"/>
                             <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuOpen:" destination="Nfx-eS-lPc" id="Ijd-qE-l8w"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="hvJ-iP-qJG">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-fJ-WtJ">
-                                    <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXH-ha-OzJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STJ-Y5-bQF">
-                                            <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zFq-Sj-YSh">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="createTag:" destination="Nfx-eS-lPc" id="VeA-Rp-adW"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="zFq-Sj-YSh">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="createTag:" destination="Nfx-eS-lPc" id="VeA-Rp-adW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="MOO-Up-7rL">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sortTags:" destination="Nfx-eS-lPc" id="RrD-dE-U8b"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>
+                        <outlet property="tagListView" destination="Jbo-tK-9Ke" id="tes-8f-ZdN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZI-Ch-UlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,7 +408,7 @@
             </objects>
             <point key="canvasLocation" x="1150" y="1431"/>
         </scene>
-        <!--Library View-->
+        <!--LIBRARY-->
         <scene sceneID="JK1-5D-FMd">
             <objects>
                 <viewController id="ABK-wP-pwI" customClass="LibraryView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
@@ -426,40 +422,15 @@
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="KUY-0v-nNT">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="LIBRARY" id="KUY-0v-nNT">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="ALk-5R-ePU">
                             <color key="tintColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuOpen:" destination="ABK-wP-pwI" id="XVL-gD-VNj"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="YYI-Xz-AxQ">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IMMERSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTi-cC-mHy">
-                                    <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNg-vG-stm">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIBRARY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcI-Ej-15P">
-                                            <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="xLZ-PM-XjS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="xLZ-PM-XjS">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showSortingOptions:" destination="ABK-wP-pwI" id="cGd-kl-awA"/>
                             </connections>
@@ -471,7 +442,7 @@
             </objects>
             <point key="canvasLocation" x="1841" y="735"/>
         </scene>
-        <!--Notes View-->
+        <!--NOTES-->
         <scene sceneID="OzY-y8-GR4">
             <objects>
                 <viewController id="pUy-Fu-qOI" customClass="NotesView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
@@ -488,13 +459,13 @@
                                 <color key="barTintColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omC-Kn-u2I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omC-Kn-u2I">
                                 <rect key="frame" x="0.0" y="44" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-TY-itl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-TY-itl">
                                 <rect key="frame" x="0.0" y="536" width="600" height="40"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -522,33 +493,22 @@
                             <constraint firstAttribute="trailing" secondItem="VEi-TY-itl" secondAttribute="trailing" id="fkW-hy-b7n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VKF-sk-uKY">
-                        <nil key="title"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="NOTES" id="VKF-sk-uKY">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="WsM-qn-JK9">
                             <color key="tintColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuOpen:" destination="pUy-Fu-qOI" id="8Zz-yQ-Gf9"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="1Wo-UR-JRF">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="756-HB-QCS">
-                                    <rect key="frame" x="67" y="7" width="106" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="BVO-t4-3v8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="BVO-t4-3v8">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showSortingOptions:" destination="pUy-Fu-qOI" id="NUK-fg-upo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
                         <outlet property="shareButton" destination="VEi-TY-itl" id="RPA-NN-AQV"/>
@@ -752,7 +712,7 @@
             </objects>
             <point key="canvasLocation" x="1150" y="63"/>
         </scene>
-        <!--Cross Ref View-->
+        <!--CROSS-REFERENCES-->
         <scene sceneID="7e4-Ml-Dhh">
             <objects>
                 <viewController id="v3v-eA-ZZw" customClass="CrossRefView" customModule="Immerse" customModuleProvider="target" sceneMemberID="viewController">
@@ -764,12 +724,16 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search All XRefs" translatesAutoresizingMaskIntoConstraints="NO" id="lJw-EL-hFk">
+                            <searchBar contentMode="redraw" placeholder="Search All Cross-Refs" translatesAutoresizingMaskIntoConstraints="NO" id="lJw-EL-hFk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Wye-ez-gfq"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWB-5U-WAZ">
                                 <rect key="frame" x="0.0" y="44" width="600" height="492"/>
@@ -789,40 +753,15 @@
                             <constraint firstAttribute="trailing" secondItem="pWB-5U-WAZ" secondAttribute="trailing" id="s86-ZL-fmW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oCl-Y2-A0p">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="CROSS-REFERENCES" id="oCl-Y2-A0p">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="E0U-DM-v1d">
                             <color key="tintColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuOpen:" destination="v3v-eA-ZZw" id="uaa-OG-p1p"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="C86-yk-QP5">
-                            <rect key="frame" x="180" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IMMERSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U2-3J-KMB">
-                                    <rect key="frame" x="67" y="6" width="106" height="21"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                    <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrH-7J-azL">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CROSS REFERENCES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hV-Ir-GY5">
-                                            <rect key="frame" x="22" y="6" width="197" height="26"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" image="sort.png" id="9Vb-dy-Njr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="9Vb-dy-Njr">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="showSortingOptions:" destination="v3v-eA-ZZw" id="SFc-gl-NMm"/>
                             </connections>
@@ -838,10 +777,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu-2.png" width="64" height="64"/>
         <image name="menu.png" width="20" height="20"/>
         <image name="note.png" width="66" height="44"/>
         <image name="ref.png" width="66" height="44"/>
-        <image name="sort.png" width="24" height="24"/>
         <image name="tag.png" width="66" height="44"/>
     </resources>
 </document>
