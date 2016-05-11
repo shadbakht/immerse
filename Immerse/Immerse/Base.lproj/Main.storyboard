@@ -315,7 +315,7 @@
                     <navigationItem key="navigationItem" id="0Dk-QO-hG6">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="p9k-hC-8Ez">
-                            <color key="tintColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="menuOpen:" destination="Nfx-eS-lPc" id="Ijd-qE-l8w"/>
                             </connections>
@@ -336,7 +336,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STJ-Y5-bQF">
                                             <rect key="frame" x="67" y="6" width="106" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                            <color key="textColor" red="0.1529411765" green="0.2156862745" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -345,6 +345,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zFq-Sj-YSh">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="createTag:" destination="Nfx-eS-lPc" id="VeA-Rp-adW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tagListView" destination="Wqv-fR-M2q" id="BIL-CJ-z25"/>

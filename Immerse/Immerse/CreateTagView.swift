@@ -56,7 +56,7 @@ class CreateTagView: UIViewController {
     let ok = UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: {
       finished in
       if let textField = alert.textFields?.first {
-        if self.tagViewModel!.createTagType(textField.text!) {
+        if self.tagViewModel!.createTagType(textField.text!.uppercaseString) {
           
           // Update the TagListView
           self.tagViewModel?.setup()

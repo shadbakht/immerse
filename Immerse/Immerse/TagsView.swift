@@ -54,4 +54,37 @@ class TagsView: UIViewController {
     }
   }
   
+  @IBAction func createTag(sender: AnyObject) {
+    let alert = UIAlertController(title: "Create a New Tag", message: "Please enter a tag name below.", preferredStyle: UIAlertControllerStyle.Alert)
+    let ok = UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: {
+      finished in
+      if let textField = alert.textFields?.first {
+        if self.tagViewModel!.createTagType(textField.text!.uppercaseString) {
+          
+          // Update the TagListView
+          self.tagViewModel?.setup()
+          if let types =  self.tagViewModel?.tagTypes {
+            self.tagListView.tags.removeAllObjects()
+            self.tagListView.tags.addObjectsFromArray(types.map({$0.name}))
+            self.tagListView.collectionView.reloadData()
+          }
+        } else {
+          //Failure
+        }
+      }
+    })
+    let cancel = UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.Default, handler: {
+      finished in
+    })
+    alert.addTextFieldWithConfigurationHandler({
+      textfield in
+      textfield.placeholder = "Tag Name"
+    })
+    alert.addAction(cancel)
+    alert.addAction(ok)
+    self.presentViewController(alert, animated: true, completion: {
+    })
+
+  }
+  
 }
