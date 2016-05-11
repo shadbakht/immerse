@@ -34,8 +34,13 @@ extension NSFileManager {
     let source = NSFileManager.localPath + "/" + name
     let destination = NSFileManager.documentsPath + "/" + name
     do {
-      try NSFileManager.defaultManager().removeItemAtPath(destination)
+      if NSFileManager.defaultManager().fileExistsAtPath(destination) {
+        try NSFileManager.defaultManager().removeItemAtPath(destination)
+        print("REMOVED!")
+      }
       try NSFileManager.defaultManager().copyItemAtPath(source, toPath: destination)
+      print("COPIED:")
+      print(NSFileManager.defaultManager().fileExistsAtPath(destination))
     } catch let error as NSError {
       print(error)
     }
