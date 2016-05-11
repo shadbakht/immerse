@@ -27,6 +27,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   private var selectedRecord : Record? = nil
   private var selectedRange : NSRange? = nil
   private var progressViewModel : ProgressViewModel? = nil
+  
   // Set the Color Themes
   private let multiplierTextSizes : [(String, CGFloat)] = [
     ("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
@@ -67,34 +68,12 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     // Setup Progress
     progressViewModel = ProgressViewModel(viewController: self)
     progressViewModel?.setup()
-    
   }
-
-  func configureReader(value:String, size:String) {
-    let chosenTheme = textBackgroundColors.filter({$0.0 == value})
-    let chosenSize = multiplierTextSizes.filter({$0.0 == size})
-    if let theme = chosenTheme.first, let size = chosenSize.first {
-      if let indexTheme = textBackgroundColors.indexOf({
-        $0.0 == theme.0
-      }) {
-        settingTheme.selectedSegmentIndex = indexTheme
-      }
-      if let indexSize = multiplierTextSizes.indexOf({
-        $0.0 == size.0
-      }) {
-        settingSize.value = Float(indexSize.successor()-1)
-      }
-      
-      selectedColor = theme
-      selectedTextSize = size
-    }
-  }
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewWillAppear(animated: Bool) {
     
     // Reload the Progress
     let progress = progressViewModel!.getProgress(book!)
@@ -145,6 +124,27 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
 
     }
   }
+  
+  func configureReader(value:String, size:String) {
+    let chosenTheme = textBackgroundColors.filter({$0.0 == value})
+    let chosenSize = multiplierTextSizes.filter({$0.0 == size})
+    if let theme = chosenTheme.first, let size = chosenSize.first {
+      if let indexTheme = textBackgroundColors.indexOf({
+        $0.0 == theme.0
+      }) {
+        settingTheme.selectedSegmentIndex = indexTheme
+      }
+      if let indexSize = multiplierTextSizes.indexOf({
+        $0.0 == size.0
+      }) {
+        settingSize.value = Float(indexSize.successor()-1)
+      }
+      
+      selectedColor = theme
+      selectedTextSize = size
+    }
+  }
+
   
   @IBAction func close(sender: UIBarButtonItem) {
     self.dismissViewControllerAnimated(true, completion: {

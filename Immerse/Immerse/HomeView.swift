@@ -87,6 +87,10 @@ class HomeView: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    let cell = tableView.cellForRowAtIndexPath(indexPath) as! RecentCell
+    let readerVc = ReaderView(nibName: "ReaderView", bundle: nil)
+    readerVc.load(cell.book!)
+    self.presentViewController(readerVc, animated: true, completion:nil)
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

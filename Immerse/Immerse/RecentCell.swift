@@ -27,6 +27,9 @@ class RecentCell: UITableViewCell {
   }
   
   func load(progress:Progress, tagCount:Int=0, noteCount:Int=0, refCount:Int=0) {
+    self.progress = progress
+    self.book = progress.writing
+    
     self.bookTitle.text = progress.writing!.name
     self.bookSub.text = "\(tagCount) TAGS, \(noteCount) NOTES, \(refCount) CROSS REFS"
     self.bookProgress.progress = progress.percent
