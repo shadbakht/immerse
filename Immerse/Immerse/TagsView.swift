@@ -13,6 +13,8 @@ import JCTagListView
 class TagsView: UIViewController {
 
   @IBOutlet var tagListView: JCTagListView!
+  
+  @IBOutlet weak var tagToolbar: UIToolbar!
 
   var tagViewModel : TagViewModel? = nil
   
@@ -22,7 +24,7 @@ class TagsView: UIViewController {
     tagViewModel = TagViewModel(viewController: self)
     tagViewModel?.setup()
     
-//    tagListView.canSelectTags = true
+    //    tagListView.canSelectTags = true
     tagListView.tagCornerRadius = 2.0
     //    self.tagListView.tagStrokeColor = [UIColor redColor];
     //    self.tagListView.tagBackgroundColor = [UIColor orangeColor];
@@ -37,9 +39,13 @@ class TagsView: UIViewController {
       index in
       
       // On Select
-      let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
-      vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
-      self.navigationController?.pushViewController(vc, animated: true)
+      if !self.tagListView.canSelectTags {
+        let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
+        vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
+        self.navigationController?.pushViewController(vc, animated: true)
+      } else {
+        
+      }
     })
     
   }
@@ -87,6 +93,62 @@ class TagsView: UIViewController {
 
   }
   
+  @IBAction func toggleEdit(sender: UIBarButtonItem) {
+    if sender.tag == 0 {
+      displayToolBar(true)
+      tagListView.canSelectTags = true
+      tagListView.selectedTags.removeAllObjects()
+      tagListView.collectionView.reloadData()
+      sender.tag = 1
+    } else {
+      displayToolBar(false)
+      tagListView.canSelectTags = false
+      tagListView.selectedTags.removeAllObjects()
+      tagListView.collectionView.reloadData()
+      sender.tag = 0
+    }
+  }
+  
+  func displayToolBar(show:Bool) {
+    if show {
+      // Show
+      UIView.animateWithDuration(0.3, animations: {
+        let correctHeight = self.view.frame.height - 44
+        let frame = self.tagToolbar.frame
+        self.tagToolbar.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
+      })
+    } else {
+      // Hide
+      UIView.animateWithDuration(0.3, animations: {
+        let frame = self.tagToolbar.frame
+        self.tagToolbar.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
+      })
+    }
+  }
+  
   @IBAction func sortTags(sender: AnyObject) {
+    let alert = UIAlertController(title: "Order Tags By", message: "Select a dimension to order your tags", preferredStyle: .ActionSheet)
+    
+    let firstAction = UIAlertAction(title: "Alphabetical [A-Z]", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let secondAction = UIAlertAction(title: "Recently Added [Most->Least]", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let thirdAction = UIAlertAction(title: "Number of Tags [High->Low]", style: .Default) { (alert: UIAlertAction!) -> Void in
+    }
+    
+    let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+      finished in
+      
+    })
+    
+    alert.addAction(firstAction)
+    alert.addAction(secondAction)
+    alert.addAction(thirdAction)
+    alert.addAction(cancel)
+    presentViewController(alert, animated: true, completion:nil)
+    
+
   }
 }

@@ -316,13 +316,38 @@
                                 <rect key="frame" x="0.0" y="1" width="600" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9T-xj-Isc">
+                                <rect key="frame" x="0.0" y="536" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ac0-Uo-26x"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Share All" id="Zzp-pf-mzD">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NuG-rd-k2w"/>
+                                    <barButtonItem systemItem="add" id="DXy-uw-co7">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="createTag:" destination="Nfx-eS-lPc" id="eeP-hG-Toh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wwh-7u-9J3"/>
+                                    <barButtonItem title="Delete All" id="VWj-3g-1pG">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="s9p-EU-P8V" firstAttribute="top" secondItem="Jbo-tK-9Ke" secondAttribute="bottom" id="KBk-xQ-j3I"/>
+                            <constraint firstAttribute="trailing" secondItem="O9T-xj-Isc" secondAttribute="trailing" id="Ceu-ab-iaX"/>
                             <constraint firstItem="Jbo-tK-9Ke" firstAttribute="leading" secondItem="Wqv-fR-M2q" secondAttribute="leading" id="bae-un-Z23"/>
                             <constraint firstAttribute="trailing" secondItem="Jbo-tK-9Ke" secondAttribute="trailing" id="rdq-Gy-nSI"/>
+                            <constraint firstItem="s9p-EU-P8V" firstAttribute="top" secondItem="O9T-xj-Isc" secondAttribute="bottom" constant="-44" id="sOp-Db-ukO"/>
                             <constraint firstItem="Jbo-tK-9Ke" firstAttribute="top" secondItem="hdd-7W-eY8" secondAttribute="bottom" constant="1" id="yTg-zD-v98"/>
+                            <constraint firstItem="O9T-xj-Isc" firstAttribute="top" secondItem="Jbo-tK-9Ke" secondAttribute="bottom" id="zOz-wI-LFU"/>
+                            <constraint firstItem="O9T-xj-Isc" firstAttribute="leading" secondItem="Wqv-fR-M2q" secondAttribute="leading" id="zRS-9L-z4L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TAGS" id="0Dk-QO-hG6">
@@ -334,10 +359,10 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="zFq-Sj-YSh">
+                            <barButtonItem systemItem="edit" id="URJ-6Q-Dd9">
                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="createTag:" destination="Nfx-eS-lPc" id="VeA-Rp-adW"/>
+                                    <action selector="toggleEdit:" destination="Nfx-eS-lPc" id="ugS-1b-0An"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="organize" id="MOO-Up-7rL">
@@ -350,6 +375,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tagListView" destination="Jbo-tK-9Ke" id="tes-8f-ZdN"/>
+                        <outlet property="tagToolbar" destination="O9T-xj-Isc" id="zOL-pY-esr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZI-Ch-UlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,25 +485,24 @@
                                 <color key="barTintColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omC-Kn-u2I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="omC-Kn-u2I">
                                 <rect key="frame" x="0.0" y="44" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-TY-itl">
-                                <rect key="frame" x="0.0" y="536" width="600" height="40"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="aS5-NG-Gc2"/>
-                                </constraints>
-                                <state key="normal" title="SHARE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="share:" destination="pUy-Fu-qOI" eventType="touchUpInside" id="BFb-Ub-yRY"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqk-bz-Rcc">
+                                <rect key="frame" x="0.0" y="536" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Share All" id="rRY-Yx-icw">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2FC-TX-ICL"/>
+                                    <barButtonItem title="Delete All" id="6hR-5d-A9W">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -485,13 +510,20 @@
                             <constraint firstItem="omC-Kn-u2I" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="6i8-La-Kx7"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="top" secondItem="eCA-PI-ryV" secondAttribute="bottom" id="7Cg-mn-E0V"/>
                             <constraint firstItem="8CF-Ng-GSC" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leadingMargin" constant="-20" id="CJv-tL-SCw"/>
-                            <constraint firstItem="VEi-TY-itl" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="Pih-dy-zBE"/>
-                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="VEi-TY-itl" secondAttribute="bottom" constant="-40" id="Tb3-qS-933"/>
+                            <constraint firstAttribute="trailing" secondItem="bqk-bz-Rcc" secondAttribute="trailing" id="Cvq-wB-t26"/>
+                            <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="bqk-bz-Rcc" secondAttribute="bottom" constant="-44" id="Daz-hv-2Ms"/>
                             <constraint firstItem="Hej-BF-tm8" firstAttribute="top" secondItem="omC-Kn-u2I" secondAttribute="bottom" id="XZu-hC-a9I"/>
+                            <constraint firstItem="bqk-bz-Rcc" firstAttribute="top" secondItem="omC-Kn-u2I" secondAttribute="bottom" id="YKq-f3-FCc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8CF-Ng-GSC" secondAttribute="trailing" constant="-20" id="bSj-Gu-qcL"/>
                             <constraint firstItem="omC-Kn-u2I" firstAttribute="top" secondItem="8CF-Ng-GSC" secondAttribute="bottom" id="dIv-Fq-xkd"/>
-                            <constraint firstAttribute="trailing" secondItem="VEi-TY-itl" secondAttribute="trailing" id="fkW-hy-b7n"/>
+                            <constraint firstItem="bqk-bz-Rcc" firstAttribute="top" secondItem="omC-Kn-u2I" secondAttribute="bottom" id="jFo-Y5-rqR"/>
+                            <constraint firstItem="bqk-bz-Rcc" firstAttribute="leading" secondItem="fJx-rc-Pzv" secondAttribute="leading" id="lzL-Of-4gk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XZu-hC-a9I"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="NOTES" id="VKF-sk-uKY">
@@ -501,17 +533,26 @@
                                 <action selector="menuOpen:" destination="pUy-Fu-qOI" id="8Zz-yQ-Gf9"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="BVO-t4-3v8">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="showSortingOptions:" destination="pUy-Fu-qOI" id="NUK-fg-upo"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="dQ6-DB-eJ2">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="toggleEdit:" destination="pUy-Fu-qOI" id="1s6-gJ-Sec"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="BVO-t4-3v8">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="showSortingOptions:" destination="pUy-Fu-qOI" id="NUK-fg-upo"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="editButton" destination="dQ6-DB-eJ2" id="97f-PT-W6j"/>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
-                        <outlet property="shareButton" destination="VEi-TY-itl" id="RPA-NN-AQV"/>
+                        <outlet property="notesToolbar" destination="bqk-bz-Rcc" id="KOr-ht-Kjd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZR-F1-0Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -741,16 +782,34 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-Bo-gDa">
+                                <rect key="frame" x="0.0" y="536" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nNQ-Wb-OFH"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Share All" id="keG-ky-hNy">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TaH-dL-n95"/>
+                                    <barButtonItem title="Delete All" id="bKl-IK-1Dh">
+                                        <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UrB-Bo-gDa" secondAttribute="trailing" id="0WR-Mt-KtN"/>
                             <constraint firstItem="lJw-EL-hFk" firstAttribute="leading" secondItem="1Jl-n7-EKB" secondAttribute="leadingMargin" constant="-20" id="2zi-oO-x9a"/>
                             <constraint firstItem="lJw-EL-hFk" firstAttribute="top" secondItem="beA-Ua-iEu" secondAttribute="bottom" id="7q3-FV-J4g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lJw-EL-hFk" secondAttribute="trailing" constant="-20" id="87K-Nr-Krr"/>
                             <constraint firstItem="pWB-5U-WAZ" firstAttribute="leading" secondItem="1Jl-n7-EKB" secondAttribute="leading" id="9qe-mm-RFS"/>
                             <constraint firstItem="pWB-5U-WAZ" firstAttribute="top" secondItem="lJw-EL-hFk" secondAttribute="bottom" id="eaJ-xu-Dfm"/>
-                            <constraint firstItem="3H3-hj-2uy" firstAttribute="top" secondItem="pWB-5U-WAZ" secondAttribute="bottom" id="fYN-BJ-0TU"/>
+                            <constraint firstItem="UrB-Bo-gDa" firstAttribute="top" secondItem="pWB-5U-WAZ" secondAttribute="bottom" id="pYF-px-afY"/>
+                            <constraint firstItem="UrB-Bo-gDa" firstAttribute="leading" secondItem="1Jl-n7-EKB" secondAttribute="leading" id="qpN-Ji-PEz"/>
                             <constraint firstAttribute="trailing" secondItem="pWB-5U-WAZ" secondAttribute="trailing" id="s86-ZL-fmW"/>
+                            <constraint firstItem="3H3-hj-2uy" firstAttribute="top" secondItem="UrB-Bo-gDa" secondAttribute="bottom" constant="-44" id="yMu-l3-ArH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CROSS-REFERENCES" id="oCl-Y2-A0p">
@@ -760,15 +819,24 @@
                                 <action selector="menuOpen:" destination="v3v-eA-ZZw" id="uaa-OG-p1p"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="9Vb-dy-Njr">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="showSortingOptions:" destination="v3v-eA-ZZw" id="SFc-gl-NMm"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="oON-VZ-d4P">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="toggleEdit:" destination="v3v-eA-ZZw" id="uaH-Xt-eUd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="9Vb-dy-Njr">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="showSortingOptions:" destination="v3v-eA-ZZw" id="SFc-gl-NMm"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="crossRefTableView" destination="pWB-5U-WAZ" id="DUT-tO-cT0"/>
+                        <outlet property="crossRefToolbar" destination="UrB-Bo-gDa" id="sqM-Sx-Icc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSO-HA-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>

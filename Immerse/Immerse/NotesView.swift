@@ -12,7 +12,10 @@ import KYDrawerController
 class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet var notesTableView: UITableView!
-  @IBOutlet weak var shareButton: UIButton!
+
+  @IBOutlet weak var notesToolbar: UIToolbar!
+  @IBOutlet weak var editButton: UIBarButtonItem!
+  
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
   private var uniqueAuthors : [Author] = []
@@ -109,9 +112,7 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     if self.selectedNotes.count > 0 {
-      displayShareButton(true)
     } else {
-      displayShareButton(false)
     }
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
@@ -189,19 +190,29 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
   }
 
-  func displayShareButton(show:Bool) {
+  @IBAction func toggleEdit(sender: UIBarButtonItem) {
+    if sender.tag == 0 {
+      displayToolBar(true)
+      sender.tag = 1
+    } else {
+      displayToolBar(false)
+      sender.tag = 0
+    }
+  }
+  
+  func displayToolBar(show:Bool) {
     if show {
       // Show
       UIView.animateWithDuration(0.3, animations: {
-        let correctHeight = self.view.frame.height - 40
-        let frame = self.shareButton.frame
-        self.shareButton.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
+        let correctHeight = self.view.frame.height - 44
+        let frame = self.notesToolbar.frame
+        self.notesToolbar.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
       })
     } else {
       // Hide
       UIView.animateWithDuration(0.3, animations: {
-        let frame = self.shareButton.frame
-        self.shareButton.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
+        let frame = self.notesToolbar.frame
+        self.notesToolbar.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
       })
     }
   }

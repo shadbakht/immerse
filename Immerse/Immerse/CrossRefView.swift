@@ -11,6 +11,8 @@ import KYDrawerController
 
 class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
+  @IBOutlet weak var crossRefToolbar: UIToolbar!
+  
   var crossRefViewModel : CrossRefViewModel? = nil
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
@@ -125,6 +127,33 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
       drawerController.setDrawerState(.Opened, animated: true)
+    }
+  }
+  
+  @IBAction func toggleEdit(sender: UIBarButtonItem) {
+    if sender.tag == 0 {
+      displayToolBar(true)
+      sender.tag = 1
+    } else {
+      displayToolBar(false)
+      sender.tag = 0
+    }
+  }
+  
+  func displayToolBar(show:Bool) {
+    if show {
+      // Show
+      UIView.animateWithDuration(0.3, animations: {
+        let correctHeight = self.view.frame.height - 44
+        let frame = self.crossRefToolbar.frame
+        self.crossRefToolbar.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
+      })
+    } else {
+      // Hide
+      UIView.animateWithDuration(0.3, animations: {
+        let frame = self.crossRefToolbar.frame
+        self.crossRefToolbar.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
+      })
     }
   }
   
