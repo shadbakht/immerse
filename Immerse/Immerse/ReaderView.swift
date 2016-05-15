@@ -285,27 +285,39 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   }
   
   @IBAction func addCrossRef(sender: AnyObject) {
-    let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
   }
   
   @IBAction func addNote(sender: AnyObject) {
-    let create = CreateNoteView(nibName: "CreateNoteView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateNoteView(nibName: "CreateNoteView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
   }
   
   @IBAction func addTag(sender: AnyObject) {
-    let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
+  }
+  
+  private func hasValues() -> Bool {
+    if (self.selectedRange == nil && self.selectedRecord == nil) {
+      let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+      self.presentViewController(alert, animated: true, completion: nil)
+      return false
+    }
+    return true
   }
 
 }
