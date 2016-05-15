@@ -504,6 +504,9 @@
                                 <items>
                                     <barButtonItem title="Share All" id="rRY-Yx-icw">
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="share:" destination="pUy-Fu-qOI" id="kPb-ca-TAG"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2FC-TX-ICL"/>
                                     <barButtonItem title="Delete All" id="6hR-5d-A9W">
@@ -558,9 +561,11 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="deleteButton" destination="6hR-5d-A9W" id="fbP-Gh-VdJ"/>
                         <outlet property="editButton" destination="dQ6-DB-eJ2" id="97f-PT-W6j"/>
                         <outlet property="notesTableView" destination="omC-Kn-u2I" id="Yhd-W4-qP9"/>
                         <outlet property="notesToolbar" destination="bqk-bz-Rcc" id="KOr-ht-Kjd"/>
+                        <outlet property="shareButton" destination="rRY-Yx-icw" id="z2G-ae-fLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZR-F1-0Xp" userLabel="First Responder" sceneMemberID="firstResponder"/>

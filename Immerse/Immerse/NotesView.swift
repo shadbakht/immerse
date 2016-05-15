@@ -15,6 +15,8 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var notesToolbar: UIToolbar!
   @IBOutlet weak var editButton: UIBarButtonItem!
+  @IBOutlet weak var shareButton: UIBarButtonItem!
+  @IBOutlet weak var deleteButton: UIBarButtonItem!
   
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
@@ -38,6 +40,10 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
 
   //
+  
+  func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    return UITableViewCellEditingStyle.Insert
+  }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     switch sorting {
@@ -95,26 +101,37 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Select it if it's already selected
     if selectedNotes.contains(cell.note!) {
-      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+      cell.setSelected(true, animated: false)
     }
     
     return cell
   }
   
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    switch editingStyle {
+    case UITableViewCellEditingStyle.Insert:
+      let cell =  tableView.cellForRowAtIndexPath(indexPath) as! NotesCell
+      if cell.selected {
+        self.selectedNotes.removeObject(cell.note!)
+        cell.setSelected(false, animated: true)
+      } else {
+        self.selectedNotes.append(cell.note!)
+        cell.setSelected(true, animated: true)
+      }
+      updateToolBar()
+    default:
+      return
+    }
+  }
+  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let cell = tableView.cellForRowAtIndexPath(indexPath) as! NotesCell
-    if cell.accessoryType == UITableViewCellAccessoryType.None {
-      cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-      self.selectedNotes.append(cell.note!)
-    } else {
-      cell.accessoryType = UITableViewCellAccessoryType.None
-      self.selectedNotes.removeObject(cell.note!)
-    }
-    
-    if self.selectedNotes.count > 0 {
-    } else {
-    }
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
+  
+  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -193,9 +210,11 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @IBAction func toggleEdit(sender: UIBarButtonItem) {
     if sender.tag == 0 {
       displayToolBar(true)
+      self.notesTableView.setEditing(true, animated: true)
       sender.tag = 1
     } else {
       displayToolBar(false)
+      self.notesTableView.setEditing(false, animated: true)
       sender.tag = 0
     }
   }
@@ -217,14 +236,38 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
   }
   
+  func updateToolBar() {
+    // Change the TExt Type
+    if self.selectedNotes.count > 0 {
+      shareButton.title = "Share"
+      deleteButton.title = "Delete"
+    } else {
+      shareButton.title = "Share All"
+      deleteButton.title = "Delete All"
+    }
+  }
+  
   @IBAction func share(sender: AnyObject) {
-    let noteText = selectedNotes.map({
-      "NOTE: \($0.note_comment)\n" + "FROM: \($0.creation_date)\n" + "\(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length)))\n\n"
-    })
-    let final = NSArray(array: noteText).componentsJoinedByString("--------------------")
-    shareTextImageAndURL(final)
-    self.selectedNotes.removeAll()
-    self.notesTableView.reloadData()
+    if selectedNotes.count > 0 {
+      // Selected Notes Are Shared
+      let noteText = selectedNotes.map({
+        "NOTE: \($0.note_comment)\n" + "FROM: \($0.creation_date)\n" + "\(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length)))\n\n"
+      })
+      let final = NSArray(array: noteText).componentsJoinedByString("--------------------")
+      shareTextImageAndURL(final)
+      self.selectedNotes.removeAll()
+      self.notesTableView.reloadData()
+    } else {
+      // All Notes Are Shared
+      let noteText = noteViewModel?.notes!.map({
+        "NOTE: \($0.note_comment)\n" + "FROM: \($0.creation_date)\n" + "\(($0.record!.record_text as NSString).substringWithRange(NSMakeRange($0.start_position, $0.length)))\n\n"
+      })
+      let final = NSArray(array: noteText!).componentsJoinedByString("--------------------")
+      shareTextImageAndURL(final)
+      self.selectedNotes.removeAll()
+      self.notesTableView.reloadData()
+
+    }
 
   }
 }
