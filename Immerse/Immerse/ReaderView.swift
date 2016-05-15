@@ -224,7 +224,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     return selectedColor.2
   }
   
-  func textWasSelected(range: NSRange, record: Record) {
+  func textWasSelected(range: NSRange?, record: Record?) {
     selectedRange = range
     selectedRecord = record
     if (hidden) {
@@ -313,7 +313,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   
   private func hasValues() -> Bool {
     if (self.selectedRange == nil && self.selectedRecord == nil) {
-      let alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+      let alert = UIAlertController(title: "No Text Selected", message: "Please select some text before creating an annotation.", preferredStyle: UIAlertControllerStyle.Alert)
+      let okay = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+      alert.addAction(okay)
       self.presentViewController(alert, animated: true, completion: nil)
       return false
     }

@@ -92,12 +92,12 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
     return 1.0
   }
   func getTextColor() -> UIColor {
-    return UIColor.greenColor()
+    return UIColor.darkGrayColor()
   }
   func getBackgroundColor() -> UIColor {
     return UIColor.clearColor()
   }
-  func textWasSelected(range: NSRange, record: Record) {
+  func textWasSelected(range: NSRange?, record: Record?) {
     selectedRange = range
     selectedRecord = record
   }

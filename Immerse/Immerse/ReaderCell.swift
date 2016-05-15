@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol ReaderCellDelegate {
-  func textWasSelected(range:NSRange, record:Record)
+  func textWasSelected(range:NSRange?, record:Record?)
   func getTextSizeMultiplier() -> CGFloat
   func getTextColor() -> UIColor
   func getBackgroundColor() -> UIColor
@@ -74,6 +74,8 @@ class ReaderCell: UITableViewCell, UITextViewDelegate {
     let range = textView.selectedRange
     if range.length != 0 {
       delegate?.textWasSelected(range, record: record!)
+    } else {
+      delegate?.textWasSelected(nil, record: nil)
     }
   }
 }
