@@ -15,6 +15,8 @@ class TagsView: UIViewController {
   @IBOutlet var tagListView: JCTagListView!
   
   @IBOutlet weak var tagToolbar: UIToolbar!
+  @IBOutlet weak var shareToolbarButton: UIBarButtonItem!
+  @IBOutlet weak var deleteToolbarButton: UIBarButtonItem!
 
   var tagViewModel : TagViewModel? = nil
   
@@ -40,11 +42,11 @@ class TagsView: UIViewController {
       
       // On Select
       if !self.tagListView.canSelectTags {
+        // Open the New View
         let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
         vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
         self.navigationController?.pushViewController(vc, animated: true)
       } else {
-        
       }
     })
     
@@ -53,6 +55,8 @@ class TagsView: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
+  
+  // Actions
   
   @IBAction func menuOpen(sender: UIBarButtonItem) {
     if let drawerController = navigationController?.parentViewController as? KYDrawerController {
@@ -102,6 +106,8 @@ class TagsView: UIViewController {
       sender.tag = 1
     } else {
       displayToolBar(false)
+      self.shareToolbarButton.title = "Share All"
+      self.deleteToolbarButton.title = "Delete All"
       tagListView.canSelectTags = false
       tagListView.selectedTags.removeAllObjects()
       tagListView.collectionView.reloadData()
@@ -124,6 +130,14 @@ class TagsView: UIViewController {
         self.tagToolbar.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
       })
     }
+  }
+  
+  @IBAction func shareTags(sender: UIBarButtonItem) {
+  
+  }
+  
+  @IBAction func deleteTags(sender: UIBarButtonItem) {
+  
   }
   
   @IBAction func sortTags(sender: AnyObject) {

@@ -324,6 +324,9 @@
                                 <items>
                                     <barButtonItem title="Share All" id="Zzp-pf-mzD">
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="shareTags:" destination="Nfx-eS-lPc" id="HPY-kE-9sz"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NuG-rd-k2w"/>
                                     <barButtonItem systemItem="add" id="DXy-uw-co7">
@@ -335,6 +338,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Wwh-7u-9J3"/>
                                     <barButtonItem title="Delete All" id="VWj-3g-1pG">
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deleteTags:" destination="Nfx-eS-lPc" id="IBD-dz-ffq"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -374,6 +380,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteToolbarButton" destination="VWj-3g-1pG" id="Ha7-qd-mhv"/>
+                        <outlet property="shareToolbarButton" destination="Zzp-pf-mzD" id="NJm-i3-3d9"/>
                         <outlet property="tagListView" destination="Jbo-tK-9Ke" id="tes-8f-ZdN"/>
                         <outlet property="tagToolbar" destination="O9T-xj-Isc" id="zOL-pY-esr"/>
                     </connections>
