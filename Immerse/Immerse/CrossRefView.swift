@@ -234,13 +234,15 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   }
   
   @IBAction func share(sender: UIBarButtonItem) {
+    // Share Button Selected
+    
   }
 
   @IBAction func deleteAction(sender: UIBarButtonItem) {
   }
   
   func updateToolBar() {
-    // Change the TExt Type
+    // Change the Text Type
     if self.selectedCrossRefs.count > 0 {
       shareButton.title = "Share"
       deleteButton.title = "Delete"
