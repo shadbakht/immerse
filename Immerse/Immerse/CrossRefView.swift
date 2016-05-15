@@ -235,7 +235,21 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   @IBAction func share(sender: UIBarButtonItem) {
     // Share Button Selected
-    
+    var text : String = ""
+    if selectedCrossRefs.count > 0 {
+      // Selected Notes Are Shared
+      selectedCrossRefs.map({
+        return "Created: \($0.creation_date) / Source Ref: \($0.source_ref!.book!.name) / Destination Ref: \($0.destination_ref!.book!.name)\n\n" +
+        "Source Text: \($0.sourceText) / Destination Text: \($0.destinationText)"
+      })
+    } else {
+      // All CrossRefs Are Shared
+    }
+    shareTextImageAndURL(text)
+
+    crossRefTableView.setEditing(false, animated: true)
+    self.selectedCrossRefs.removeAll()
+    self.crossRefTableView.reloadData()
   }
 
   @IBAction func deleteAction(sender: UIBarButtonItem) {

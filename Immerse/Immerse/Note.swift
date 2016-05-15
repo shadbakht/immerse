@@ -38,4 +38,12 @@ class Note: Object {
   dynamic var note_comment : String = ""
   dynamic var creation_date : NSDate = NSDate()
   
+  var recordText : String {
+    get {
+      let text = record!.text as NSString
+      let range = NSMakeRange(start_position, length)
+      return text.substringWithRange(range)
+    }
+  }
+
 }

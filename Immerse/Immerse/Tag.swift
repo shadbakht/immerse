@@ -67,4 +67,11 @@ class Tag: Object {
   dynamic var length : Int = 0
   dynamic var creation_date : NSDate = NSDate()
   
+  var recordText : String {
+    get {
+      let text = record!.text as NSString
+      let range = NSMakeRange(start_position, length)
+      return text.substringWithRange(range)
+    }
+  }
 }

@@ -41,4 +41,20 @@ class CrossRef: Object {
   dynamic var destination_length : Int = 0
   dynamic var creation_date : NSDate = NSDate()
 
+  var sourceText : String {
+    get {
+      let text = source_ref!.record_text as NSString
+      let range = NSMakeRange(source_index, source_length)
+      return text.substringWithRange(range)
+    }
+  }
+  
+  var destinationText : String {
+    get {
+      let text = destination_ref!.record_text as NSString
+      let range = NSMakeRange(destination_index, destination_length)
+      return text.substringWithRange(range)
+    }
+  }
+
 }
