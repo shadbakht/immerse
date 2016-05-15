@@ -238,10 +238,11 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
     var text : String = ""
     if selectedCrossRefs.count > 0 {
       // Selected Notes Are Shared
-      selectedCrossRefs.map({
+      let compiled = selectedCrossRefs.map({
         return "Created: \($0.creation_date) / Source Ref: \($0.source_ref!.book!.name) / Destination Ref: \($0.destination_ref!.book!.name)\n\n" +
         "Source Text: \($0.sourceText) / Destination Text: \($0.destinationText)"
       })
+      text = NSArray(array: compiled).componentsJoinedByString("--------------------")
     } else {
       // All CrossRefs Are Shared
     }

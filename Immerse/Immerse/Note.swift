@@ -40,7 +40,7 @@ class Note: Object {
   
   var recordText : String {
     get {
-      let text = record!.text as NSString
+      let text = record!.record_text as NSString
       let range = NSMakeRange(start_position, length)
       return text.substringWithRange(range)
     }
