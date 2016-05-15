@@ -17,7 +17,10 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   private var sorting : SortOption = SortOption.None
   private var uniqueBooks : [Book] = []
   private var uniqueAuthors : [Author] = []
+  private var selectedCrossRefs : [CrossRef] = []
   @IBOutlet var crossRefTableView: UITableView!
+  @IBOutlet weak var shareButton: UIBarButtonItem!
+  @IBOutlet weak var deleteButton: UIBarButtonItem!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,6 +44,10 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   //
   
+  func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    return UITableViewCellEditingStyle.Insert
+  }
+
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     switch sorting {
     case SortOption.BookAlphabetical:
@@ -70,6 +77,7 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
       return crossRefViewModel!.crossRefs!.count
     }
   }
+  
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
@@ -111,7 +119,33 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
       return nil
     }
   }
+  
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    switch editingStyle {
+    case UITableViewCellEditingStyle.Insert:
+      let cell =  tableView.cellForRowAtIndexPath(indexPath) as! CrossRefCell
+      if cell.selected {
+        self.selectedCrossRefs.removeObject(cell.crossRef!)
+        cell.setSelected(false, animated: true)
+      } else {
+        self.selectedCrossRefs.append(cell.crossRef!)
+        cell.setSelected(true, animated: true)
+      }
+      updateToolBar()
+    default:
+      return
+    }
+  }
+
+  
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let detail = CrossRefDetailView(nibName: "CrossRefDetailView", bundle: nil)
+    self.showViewController(detail, sender: self)
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -132,9 +166,11 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   
   @IBAction func toggleEdit(sender: UIBarButtonItem) {
     if sender.tag == 0 {
+      self.crossRefTableView.setEditing(true, animated: true)
       displayToolBar(true)
       sender.tag = 1
     } else {
+      self.crossRefTableView.setEditing(false, animated: true)
       displayToolBar(false)
       sender.tag = 0
     }
@@ -197,6 +233,22 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
   }
   
+  @IBAction func share(sender: UIBarButtonItem) {
+  }
+
+  @IBAction func deleteAction(sender: UIBarButtonItem) {
+  }
+  
+  func updateToolBar() {
+    // Change the TExt Type
+    if self.selectedCrossRefs.count > 0 {
+      shareButton.title = "Share"
+      deleteButton.title = "Delete"
+    } else {
+      shareButton.title = "Share All"
+      deleteButton.title = "Delete All"
+    }
+  }
 
   
 }

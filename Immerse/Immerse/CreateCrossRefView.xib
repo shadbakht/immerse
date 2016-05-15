@@ -25,6 +25,7 @@
                     <items>
                         <navigationItem title="ADD CROSS-REFERENCES" id="J5C-Y5-epy">
                             <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ita-oK-dUp">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="dismiss:" destination="-1" id="kZA-3g-Z9D"/>
                                 </connections>
@@ -60,7 +61,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJR-Dy-zF4">
                     <rect key="frame" x="8" y="153" width="190" height="35"/>
-                    <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="7ca-Yc-5yp"/>
                         <constraint firstAttribute="height" constant="45" id="SFy-ek-erV"/>
@@ -81,7 +82,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vha-fL-vfX">
                     <rect key="frame" x="205" y="153" width="190" height="35"/>
-                    <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="1b0-7y-dfe"/>
                         <constraint firstAttribute="height" constant="35" id="V2U-fy-jeC"/>
@@ -105,7 +106,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynk-WR-dfU">
                     <rect key="frame" x="402" y="153" width="190" height="35"/>
-                    <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="RM4-8A-RxL"/>
                         <constraint firstAttribute="height" constant="45" id="eRs-ZH-u6I"/>

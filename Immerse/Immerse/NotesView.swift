@@ -129,9 +129,9 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-  }
-  
-  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    let detail = NoteDetailView(nibName: "NoteDetailView", bundle: nil)
+    self.showViewController(detail, sender: self)
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -248,6 +248,7 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   @IBAction func share(sender: AnyObject) {
+
     if selectedNotes.count > 0 {
       // Selected Notes Are Shared
       let noteText = selectedNotes.map({
@@ -255,8 +256,6 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       })
       let final = NSArray(array: noteText).componentsJoinedByString("--------------------")
       shareTextImageAndURL(final)
-      self.selectedNotes.removeAll()
-      self.notesTableView.reloadData()
     } else {
       // All Notes Are Shared
       let noteText = noteViewModel?.notes!.map({
@@ -264,10 +263,10 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
       })
       let final = NSArray(array: noteText!).componentsJoinedByString("--------------------")
       shareTextImageAndURL(final)
-      self.selectedNotes.removeAll()
-      self.notesTableView.reloadData()
-
     }
 
+    notesTableView.setEditing(false, animated: true)
+    self.selectedNotes.removeAll()
+    self.notesTableView.reloadData()
   }
 }

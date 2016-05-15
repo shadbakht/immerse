@@ -803,10 +803,16 @@
                                 <items>
                                     <barButtonItem title="Share All" id="keG-ky-hNy">
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="share:" destination="v3v-eA-ZZw" id="R8v-rs-str"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TaH-dL-n95"/>
                                     <barButtonItem title="Delete All" id="bKl-IK-1Dh">
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="v3v-eA-ZZw" id="59v-Gi-kzD"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -850,6 +856,8 @@
                     <connections>
                         <outlet property="crossRefTableView" destination="pWB-5U-WAZ" id="DUT-tO-cT0"/>
                         <outlet property="crossRefToolbar" destination="UrB-Bo-gDa" id="sqM-Sx-Icc"/>
+                        <outlet property="deleteButton" destination="bKl-IK-1Dh" id="o8i-XG-J8k"/>
+                        <outlet property="shareButton" destination="keG-ky-hNy" id="AnD-qv-fL1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSO-HA-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>

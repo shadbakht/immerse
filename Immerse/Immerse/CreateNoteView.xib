@@ -25,6 +25,7 @@
                     <items>
                         <navigationItem title="CREATE NOTE" id="dQe-BZ-35H">
                             <barButtonItem key="rightBarButtonItem" systemItem="stop" id="rqd-RG-pDD">
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="dismiss:" destination="-1" id="oND-Xu-XhH"/>
                                 </connections>

@@ -65,6 +65,10 @@
 		546795061BD0CFF20062FAFB /* NavTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795051BD0CFF20062FAFB /* NavTray.swift */; };
 		546795081BD0D00E0062FAFB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546795071BD0D00E0062FAFB /* Util.swift */; };
 		5467950A1BD1EC9E0062FAFB /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 546795091BD1EC9E0062FAFB /* menu.png */; };
+		547C5A8A1CE8519600CE5EE6 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C5A881CE8519600CE5EE6 /* NoteDetailView.swift */; };
+		547C5A8B1CE8519600CE5EE6 /* NoteDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547C5A891CE8519600CE5EE6 /* NoteDetailView.xib */; };
+		547C5A8E1CE851AE00CE5EE6 /* CrossRefDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C5A8C1CE851AE00CE5EE6 /* CrossRefDetailView.swift */; };
+		547C5A8F1CE851AE00CE5EE6 /* CrossRefDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547C5A8D1CE851AE00CE5EE6 /* CrossRefDetailView.xib */; };
 		5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5483BED01B95FAA70037359C /* AppDelegate.swift */; };
 		5483BED61B95FAA70037359C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED41B95FAA70037359C /* Main.storyboard */; };
 		5483BED81B95FAA70037359C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5483BED71B95FAA70037359C /* Images.xcassets */; };
@@ -171,6 +175,10 @@
 		546795051BD0CFF20062FAFB /* NavTray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTray.swift; sourceTree = "<group>"; };
 		546795071BD0D00E0062FAFB /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		546795091BD1EC9E0062FAFB /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		547C5A881CE8519600CE5EE6 /* NoteDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		547C5A891CE8519600CE5EE6 /* NoteDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteDetailView.xib; sourceTree = "<group>"; };
+		547C5A8C1CE851AE00CE5EE6 /* CrossRefDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossRefDetailView.swift; sourceTree = "<group>"; };
+		547C5A8D1CE851AE00CE5EE6 /* CrossRefDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrossRefDetailView.xib; sourceTree = "<group>"; };
 		5483BECB1B95FAA70037359C /* Immerse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Immerse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483BECF1B95FAA70037359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5483BED01B95FAA70037359C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +283,8 @@
 				5447981D1CD0941500CA391E /* CreateNoteView.swift */,
 				544798211CD099B500CA391E /* CreateCrossRefView.swift */,
 				544798191CD08DED00CA391E /* TagTypeDetailView.swift */,
+				547C5A881CE8519600CE5EE6 /* NoteDetailView.swift */,
+				547C5A8C1CE851AE00CE5EE6 /* CrossRefDetailView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -290,6 +300,8 @@
 				5447981E1CD0941500CA391E /* CreateNoteView.xib */,
 				544798221CD099B500CA391E /* CreateCrossRefView.xib */,
 				5447981A1CD08DED00CA391E /* TagTypeDetailView.xib */,
+				547C5A891CE8519600CE5EE6 /* NoteDetailView.xib */,
+				547C5A8D1CE851AE00CE5EE6 /* CrossRefDetailView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -542,6 +554,7 @@
 				54E5D7531BDD6930009F3665 /* Icon-60@3x.png in Resources */,
 				54E5D74F1BDD6930009F3665 /* Icon-40.png in Resources */,
 				54E5D7561BDD6930009F3665 /* Icon-Small.png in Resources */,
+				547C5A8F1CE851AE00CE5EE6 /* CrossRefDetailView.xib in Resources */,
 				5447981C1CD08DED00CA391E /* TagTypeDetailView.xib in Resources */,
 				54E5D7551BDD6930009F3665 /* Icon-76@2x.png in Resources */,
 				54E5D7581BDD6930009F3665 /* Icon-Small@3x.png in Resources */,
@@ -551,6 +564,7 @@
 				546342FC1CD27E73001DCEF9 /* TagTypeDetail.xib in Resources */,
 				54C2B35A1CD45F0C00F7B862 /* CrossRefCell.xib in Resources */,
 				54E5D7501BDD6930009F3665 /* Icon-40@2x.png in Resources */,
+				547C5A8B1CE8519600CE5EE6 /* NoteDetailView.xib in Resources */,
 				54E5D7571BDD6930009F3665 /* Icon-Small@2x.png in Resources */,
 				54E5D7541BDD6930009F3665 /* Icon-76.png in Resources */,
 				54B038541CE2C40700D930C1 /* menu-2.png in Resources */,
@@ -637,6 +651,7 @@
 				54C2B3591CD45F0C00F7B862 /* CrossRefCell.swift in Sources */,
 				5424A87A1CBB1D2800AF6B43 /* NoteViewModel.swift in Sources */,
 				544AA71E1CC1C009005118AA /* ReaderView.swift in Sources */,
+				547C5A8A1CE8519600CE5EE6 /* NoteDetailView.swift in Sources */,
 				545AE30C1C951C4300A46F5F /* Author.swift in Sources */,
 				546794F91BD0CCD40062FAFB /* Tag.swift in Sources */,
 				54E5D75C1BE33463009F3665 /* Test.m in Sources */,
@@ -671,6 +686,7 @@
 				546795001BD0CD370062FAFB /* ShareService.swift in Sources */,
 				5483BED11B95FAA70037359C /* AppDelegate.swift in Sources */,
 				546342F41CD27593001DCEF9 /* NotesCell.swift in Sources */,
+				547C5A8E1CE851AE00CE5EE6 /* CrossRefDetailView.swift in Sources */,
 				54D822121CE00726007FEBB0 /* Progress.swift in Sources */,
 				5424A8821CBB1DD200AF6B43 /* GenericModelInterface.swift in Sources */,
 				5424A8761CBB1D1100AF6B43 /* BookViewModel.swift in Sources */,

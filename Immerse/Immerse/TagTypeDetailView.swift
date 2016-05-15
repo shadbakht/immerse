@@ -23,6 +23,8 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
     tagList.delegate = self
     tagList.dataSource = self
     tagList.tableFooterView = UIView(frame: CGRectZero)
+    
+    self.title = tagType?.name
 
     super.viewDidLoad()
 
