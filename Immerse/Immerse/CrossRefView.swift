@@ -245,6 +245,11 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
       text = NSArray(array: compiled).componentsJoinedByString("--------------------")
     } else {
       // All CrossRefs Are Shared
+      let compiled = crossRefViewModel.crossRefs.map({
+        return "Created: \($0.creation_date) / Source Ref: \($0.source_ref!.book!.name) / Destination Ref: \($0.destination_ref!.book!.name)\n\n" +
+          "Source Text: \($0.sourceText) / Destination Text: \($0.destinationText)"
+      })
+      text = NSArray(array: compiled).componentsJoinedByString("--------------------")
     }
     shareTextImageAndURL(text)
 
