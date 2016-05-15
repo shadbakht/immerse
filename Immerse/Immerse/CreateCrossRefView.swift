@@ -114,7 +114,15 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
       record!, sourceRange: range!,
       destinationRecord: selectedRecord!, destinationRange: selectedRange!
     )
-    dismiss(self.view)
+    
+    // Show Alert for Cross Reference
+    let alert = UIAlertController(title: "Cross-Ref Created", message: "Your cross-reference was successfully created!", preferredStyle: UIAlertControllerStyle.Alert)
+    let okay = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {
+      finished in
+      self.dismissViewControllerAnimated(true, completion:nil)
+    })
+    alert.addAction(okay)
+    super.presentViewController(alert, animated: true, completion: nil)
   }
   
   @IBAction func launchFaithSelect(sender: AnyObject) {
@@ -158,6 +166,25 @@ class CreateCrossRefView: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   @IBAction func launchChapterSelect(sender: AnyObject) {
+    let chapterHeaders = self.selectedBookRecords?.filter({$0.record_type == "chapter"})
+    let chapterNames = chapterHeaders!.map({$0.record_text})
+    let action = ActionSheetStringPicker(
+      title: "Select a Chapter",
+      rows: chapterNames,
+      initialSelection: 0,
+      doneBlock:{
+        finished in
+        let headerIndex = finished.1
+        let chapterHeader = chapterHeaders![headerIndex]
+        let index = chapterHeader.record_textCount
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        self.secondWritingReader.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+      },
+      cancelBlock: {
+        finished in
+      }, origin: self.view)
+    action.showActionSheetPicker()
+
   }
   
 }

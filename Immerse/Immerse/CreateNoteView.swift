@@ -45,9 +45,16 @@ class CreateNoteView: UIViewController, UITextViewDelegate {
 
   @IBAction func createNote(sender: AnyObject) {
     noteViewModel?.createNote(record!, range: range!, text: textView.text)
-    self.dismissViewControllerAnimated(true, completion: {
-      
+
+    // Show the Alert Confirmation
+    let alert = UIAlertController(title: "Note Created", message: "Your note was successfully created!", preferredStyle: UIAlertControllerStyle.Alert)
+    let okay = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {
+      finished in
+      self.dismissViewControllerAnimated(true, completion:nil)
     })
+    alert.addAction(okay)
+    super.presentViewController(alert, animated: true, completion: nil)
+
   }
   
   func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {

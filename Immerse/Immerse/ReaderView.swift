@@ -281,7 +281,6 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
         finished in
       }, origin: self.view)
     action.showActionSheetPicker()
-
   }
   
   @IBAction func addCrossRef(sender: AnyObject) {
