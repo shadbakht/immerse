@@ -116,7 +116,6 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -125,6 +124,18 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   
   func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
+  }
+  
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    let count = tableView.visibleCells.count
+    print(count)
+    
+    if count > 0 {
+      let record = (tableView.visibleCells.last! as! ReaderCell).record!
+      print(record.record_textCount)
+    }
+//    let record = (cell as! ReaderCell).record
+//    print(record?.record_textCount)
   }
   
   func getTextColor() -> UIColor {
