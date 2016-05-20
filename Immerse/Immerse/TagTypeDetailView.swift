@@ -17,12 +17,15 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     self.navigationController?.navigationItem.title = tagType!.name
     
-    tagList.delegate = self
-    tagList.dataSource = self
-    
+    // Setup The TableView
     let nib = UINib(nibName: "TagTypeDetail", bundle: nil)
     tagList.registerNib(nib, forCellReuseIdentifier: "TagTypeDetail")
+    tagList.delegate = self
+    tagList.dataSource = self
+    tagList.tableFooterView = UIView(frame: CGRectZero)
     
+    self.title = tagType?.name
+
     super.viewDidLoad()
 
   }
@@ -51,7 +54,11 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   }
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return 125
+    return UITableViewAutomaticDimension
+  }
+  
+  func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
   }
   
   //

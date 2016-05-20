@@ -14,7 +14,10 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
   var tagTypes : [TagType] = []
   
   func setup() {
-    tagTypes = TagTypeInterface.getAllTagTypes()
+    tagTypes = TagTypeInterface.getAllTagTypes().sort({
+      $0.0.name < $0.1.name
+    })
+    tags = TagInterface.getAllTags()
   }
   
   func createTagType(name:String) -> Bool {

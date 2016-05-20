@@ -16,15 +16,21 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBOutlet var settingsToolBar: UIView!
   @IBOutlet var readerTable: UITableView!
   
+  
+  @IBOutlet weak var settingSize: UISlider!
+  @IBOutlet weak var settingTheme: UISegmentedControl!
+  
   private var book : Book? = nil
   private var records : [Record]? = nil
   private var hidden : Bool = false
-  private var settingsHidden : Bool = false
+  private var settingsHidden : Bool = true
   private var selectedRecord : Record? = nil
   private var selectedRange : NSRange? = nil
+  private var progressViewModel : ProgressViewModel? = nil
   
   // Set the Color Themes
-  private let multiplierTextSizes : [(String, CGFloat)] = [("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
+  private let multiplierTextSizes : [(String, CGFloat)] = [
+    ("Small",0.7), ("Normal", 1.0), ("Large",1.5), ("Larger",2.0), ("Largest", 4.0)]
   private let textBackgroundColors = [
     ("Regular",UIColor.blackColor(), UIColor.whiteColor()),
     ("Midnight",UIColor.whiteColor(), UIColor.blackColor()),
@@ -37,19 +43,42 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    readerTable.delegate = self
-    readerTable.dataSource = self
-    
+    // Setup Reader Settings
+    if let theme = UserService.fetchValue(DefaultKey.ReaderTheme) as? String,
+      let size = UserService.fetchValue(DefaultKey.ReaderSize) as? String
+    {
+      configureReader(theme, size:size)
+    } else {
+      UserService.setValue(DefaultKey.ReaderTheme, value: "Regular")
+      UserService.setValue(DefaultKey.ReaderSize, value: "Normal")
+      configureReader("Regular", size: "Normal")
+    }
+
+    // Setup the Reader
     let nib = UINib(nibName: "ReaderCell", bundle: nil)
     readerTable.registerNib(nib, forCellReuseIdentifier: "ReaderCell")
-    
+    readerTable.delegate = self
+    readerTable.dataSource = self
+
+    // Setup the Toggle
     let tap = UITapGestureRecognizer(target: self, action: #selector(toggleTools))
     tap.numberOfTapsRequired = 1
     readerTable.addGestureRecognizer(tap)
+    
+    // Setup Progress
+    progressViewModel = ProgressViewModel(viewController: self)
+    progressViewModel?.setup()
   }
-
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    
+    // Reload the Progress
+    let progress = progressViewModel!.getProgress(book!)
+    let indexPath = NSIndexPath(forRow: progress.row, inSection: 0)
+    self.readerTable.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
   }
   
   func load(book:Book) {
@@ -57,8 +86,9 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     records = book.records
   }
   
-  func toggleTools() {
-    if (hidden) {
+  func toggleTools(hide:Bool=false) {
+    // hide will try to override whateve
+    if (hidden && !hide) {
       // Show
       hidden = false
       UIView.animateWithDuration(0.3, animations: {
@@ -83,19 +113,74 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
       settingsHidden = false
       UIView.animateWithDuration(0.3, animations: {
         self.settingsToolBar.frame.setY(44)
+        self.settingsToolBar.alpha = 1.0
       })
     } else {
       settingsHidden = true
       UIView.animateWithDuration(0.3, animations: {
-        self.settingsToolBar.frame.setY(-88)
+        self.settingsToolBar.frame.setY(-132)
+        self.settingsToolBar.alpha = 0.0
       })
 
     }
   }
   
+  func configureReader(value:String, size:String) {
+    let chosenTheme = textBackgroundColors.filter({$0.0 == value})
+    let chosenSize = multiplierTextSizes.filter({$0.0 == size})
+    if let theme = chosenTheme.first, let size = chosenSize.first {
+      if let indexTheme = textBackgroundColors.indexOf({
+        $0.0 == theme.0
+      }) {
+        settingTheme.selectedSegmentIndex = indexTheme
+      }
+      if let indexSize = multiplierTextSizes.indexOf({
+        $0.0 == size.0
+      }) {
+        settingSize.value = Float(indexSize.successor()-1)
+      }
+      
+      selectedColor = theme
+      selectedTextSize = size
+    }
+  }
+
+  
   @IBAction func close(sender: UIBarButtonItem) {
     self.dismissViewControllerAnimated(true, completion: {
     })
+  }
+  
+  // MARK:-SCROLL PROTOCOL
+  
+  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    print("Stopped Moving")
+    toggleTools(true)
+    
+    let cell = readerTable.visibleCells.last as! ReaderCell
+    let record = cell.record
+    let indexPath = readerTable.indexPathForCell(cell)
+    progressViewModel!.createProgress(record!, row: indexPath!.row)
+    
+    // Update Progress View
+    let progress = progressViewModel!.getProgress(book!).percent
+    print(progress)
+  }
+  
+  func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    print("Stopped Dragging")
+    if !decelerate {
+      toggleTools(true)
+
+      let cell = readerTable.visibleCells.last as! ReaderCell
+      let record = cell.record
+      let indexPath = readerTable.indexPathForCell(cell)
+      progressViewModel!.createProgress(record!, row: indexPath!.row)
+      
+      // Update Progress View
+      let progress = progressViewModel!.getProgress(book!).percent
+      print(progress)
+    }
   }
   
   // MARK:-PROTOCOLS
@@ -150,7 +235,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
     return selectedColor.2
   }
   
-  func textWasSelected(range: NSRange, record: Record) {
+  func textWasSelected(range: NSRange?, record: Record?) {
     selectedRange = range
     selectedRecord = record
     if (hidden) {
@@ -163,6 +248,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
   @IBAction func textColorSelected(sender: UISegmentedControl) {
     let index = sender.selectedSegmentIndex
     selectedColor = textBackgroundColors[index]
+    UserService.setValue(DefaultKey.ReaderTheme, value: selectedColor.0)
     readerTable.reloadData()
   }
   
@@ -179,6 +265,7 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
       sender.value = 4
     }
     selectedTextSize = multiplierTextSizes[Int(sender.value)]
+    UserService.setValue(DefaultKey.ReaderSize, value: selectedTextSize.0)
     readerTable.reloadData()
   }
   
@@ -205,31 +292,44 @@ class ReaderView: UIViewController , UITableViewDataSource, UITableViewDelegate,
         finished in
       }, origin: self.view)
     action.showActionSheetPicker()
-
   }
   
   @IBAction func addCrossRef(sender: AnyObject) {
-    let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateCrossRefView(nibName: "CreateCrossRefView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
   }
   
   @IBAction func addNote(sender: AnyObject) {
-    let create = CreateNoteView(nibName: "CreateNoteView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateNoteView(nibName: "CreateNoteView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
   }
   
   @IBAction func addTag(sender: AnyObject) {
-    let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
-    create.record = self.selectedRecord
-    create.range = self.selectedRange
-    self.presentViewController(create, animated: true, completion: {
-    })
+    if hasValues() {
+      let create = CreateTagView(nibName: "CreateTagView", bundle: nil)
+      create.record = self.selectedRecord
+      create.range = self.selectedRange
+      self.presentViewController(create, animated: true, completion: nil)
+    }
+  }
+  
+  private func hasValues() -> Bool {
+    if (self.selectedRange == nil && self.selectedRecord == nil) {
+      let alert = UIAlertController(title: "No Text Selected", message: "Please select some text before creating an annotation.", preferredStyle: UIAlertControllerStyle.Alert)
+      let okay = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+      alert.addAction(okay)
+      self.presentViewController(alert, animated: true, completion: nil)
+      return false
+    }
+    return true
   }
 
 }

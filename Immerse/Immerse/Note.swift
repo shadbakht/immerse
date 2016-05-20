@@ -16,7 +16,6 @@ class NoteInterface : GenericModelInterface {
   
   class func createNote(record:Record, range:NSRange, text:String) {
     let note = Note()
-    note.id = String.unique()
     note.record = record
     note.start_position = range.location
     note.length = range.length
@@ -32,11 +31,19 @@ class Note: Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var record : Record?
   dynamic var start_position : Int = 0
   dynamic var length : Int = 0
   dynamic var note_comment : String = ""
   dynamic var creation_date : NSDate = NSDate()
   
+  var recordText : String {
+    get {
+      let text = record!.record_text as NSString
+      let range = NSMakeRange(start_position, length)
+      return text.substringWithRange(range)
+    }
+  }
+
 }

@@ -36,4 +36,15 @@ class TagTypeDetail: UITableViewCell {
     let recordString = (tag.record!.record_text as NSString).substringWithRange(NSMakeRange(tag.start_position, tag.length))
     taggedText.text = recordString
   }
+  
+  func textViewDidChange(textView: UITextView) {
+    let fixedWidth = textView.frame.size.width
+    textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+    let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.max))
+    var newFrame = textView.frame
+    newFrame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+    textView.frame = newFrame
+  }
+  
+
 }

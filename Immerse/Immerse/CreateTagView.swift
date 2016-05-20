@@ -56,7 +56,7 @@ class CreateTagView: UIViewController {
     let ok = UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: {
       finished in
       if let textField = alert.textFields?.first {
-        if self.tagViewModel!.createTagType(textField.text!) {
+        if self.tagViewModel!.createTagType(textField.text!.uppercaseString) {
           
           // Update the TagListView
           self.tagViewModel?.setup()
@@ -97,14 +97,17 @@ class CreateTagView: UIViewController {
     
     // Create the Tag
     tagViewModel?.createTag(record!, range: range!, types: tags as! [TagType])
-    
-    self.dismissViewControllerAnimated(true, completion: {
+
+    // Show the Alert Confirmation
+    let alert = UIAlertController(title: "Tag Created", message: "Your tag was successfully created!", preferredStyle: UIAlertControllerStyle.Alert)
+    let okay = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {
+      finished in
+      self.dismissViewControllerAnimated(true, completion:nil)
     })
-//    tagViewModel.createTag(record, text:"", selectedTagTypes)
-    
-    
-    
+    alert.addAction(okay)
+    super.presentViewController(alert, animated: true, completion: nil)
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

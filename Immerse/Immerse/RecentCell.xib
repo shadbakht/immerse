@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentCell" rowHeight="72" id="8zP-sc-Bhc" customClass="RecentCell" customModule="Immerse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8zP-sc-Bhc" id="GT1-qv-UkL">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a book title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHn-0I-cfu">
+                        <rect key="frame" x="8" y="8" width="584" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.2784313725" green="0.2666666667" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 TAGS, 12 NOTES, 13 X-REFS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBH-B2-Qkq">
+                        <rect key="frame" x="8" y="31" width="584" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="vB4-jH-M31"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.2784313725" green="0.2666666667" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cxR-23-IQg">
+                        <rect key="frame" x="8" y="60" width="584" height="2"/>
+                        <color key="progressTintColor" red="0.36470588240000001" green="0.47058823529999999" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFZ-yt-PqU">
+                        <rect key="frame" x="16" y="30" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="buq-ml-GOD"/>
+                            <constraint firstAttribute="height" constant="21" id="zjq-Z7-llG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                        <color key="textColor" red="0.36470588240000001" green="0.47058823529999999" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUe-Uc-U1A">
+                        <rect key="frame" x="0.0" y="70" width="600" height="1"/>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.71764705880000002" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="m8q-xG-rmb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="FFZ-yt-PqU" firstAttribute="leading" secondItem="GT1-qv-UkL" secondAttribute="leadingMargin" constant="8" id="AdJ-Lx-Xlh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cxR-23-IQg" secondAttribute="trailing" id="I2t-9g-e9a"/>
+                    <constraint firstAttribute="topMargin" secondItem="AHn-0I-cfu" secondAttribute="top" id="KKW-LW-IsY"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="KBH-B2-Qkq" secondAttribute="leading" id="NjE-0N-O5h"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NUe-Uc-U1A" secondAttribute="trailing" constant="-8" id="YpK-sj-6wF"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="NUe-Uc-U1A" secondAttribute="bottom" constant="-8" id="a3c-qI-ffI"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="AHn-0I-cfu" secondAttribute="leading" id="aGd-yb-7S0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KBH-B2-Qkq" secondAttribute="trailing" id="aR2-Gm-YyU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="AHn-0I-cfu" secondAttribute="trailing" id="fQi-Nl-Kgd"/>
+                    <constraint firstItem="FFZ-yt-PqU" firstAttribute="centerY" secondItem="GT1-qv-UkL" secondAttribute="centerY" constant="5" id="nzG-9h-vFb"/>
+                    <constraint firstItem="KBH-B2-Qkq" firstAttribute="top" secondItem="GT1-qv-UkL" secondAttribute="topMargin" constant="23" id="oTe-eP-eiW"/>
+                    <constraint firstItem="cxR-23-IQg" firstAttribute="leading" secondItem="GT1-qv-UkL" secondAttribute="leadingMargin" id="vQT-zF-bHf"/>
+                    <constraint firstItem="cxR-23-IQg" firstAttribute="top" secondItem="GT1-qv-UkL" secondAttribute="topMargin" constant="52" id="yXB-Uc-Huz"/>
+                    <constraint firstItem="NUe-Uc-U1A" firstAttribute="leading" secondItem="GT1-qv-UkL" secondAttribute="leadingMargin" constant="-8" id="zCC-Dg-uJ5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="bookProgress" destination="cxR-23-IQg" id="iVL-Q8-sRg"/>
+                <outlet property="bookProgressLabel" destination="FFZ-yt-PqU" id="ypk-xo-nJG"/>
+                <outlet property="bookSub" destination="KBH-B2-Qkq" id="BNl-2x-Kvu"/>
+                <outlet property="bookTitle" destination="AHn-0I-cfu" id="5T6-2l-rvD"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

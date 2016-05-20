@@ -13,7 +13,9 @@ class CrossRefViewModel: GenericViewModel, ViewModelProtocol {
   var crossRefs : [CrossRef]? = nil
   
   func setup() {
-    crossRefs = CrossRefInterface.getAllCrossRefs()
+    crossRefs = CrossRefInterface.getAllCrossRefs().sort({
+      return($0.0.creation_date.timeIntervalSince1970 < $0.1.creation_date.timeIntervalSince1970)
+    })
   }
   
   func createCrossReference(sourceRecord:Record, sourceRange: NSRange, destinationRecord:Record, destinationRange:NSRange) {

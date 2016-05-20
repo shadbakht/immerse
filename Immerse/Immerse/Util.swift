@@ -34,15 +34,20 @@ extension NSFileManager {
     let source = NSFileManager.localPath + "/" + name
     let destination = NSFileManager.documentsPath + "/" + name
     do {
-      try NSFileManager.defaultManager().removeItemAtPath(destination)
+      if NSFileManager.defaultManager().fileExistsAtPath(destination) {
+        try NSFileManager.defaultManager().removeItemAtPath(destination)
+        print("REMOVED!")
+      }
       try NSFileManager.defaultManager().copyItemAtPath(source, toPath: destination)
+      print("COPIED:")
+      print(NSFileManager.defaultManager().fileExistsAtPath(destination))
     } catch let error as NSError {
       print(error)
     }
   }
   
   class func fileExistsInDocumentDirectory(name:String) -> Bool {
-    let path = NSFileManager.documentsPath + "\\" + name
+    let path = NSFileManager.documentsPath + "/" + name
     return NSFileManager.defaultManager().fileExistsAtPath(path)
   }
 }
@@ -82,6 +87,33 @@ extension CGRect {
     self = CGRectMake(origin.x, val, width, height)
   }
 }
+
+extension Int {
+  func stringValue() -> String {
+    return "\(self)"
+  }
+}
+
+extension UIViewController {
+  func shareTextImageAndURL(sharingText: String) {
+    var sharingItems = [AnyObject]()
+    sharingItems.append(sharingText)
+    let activityViewController = UIActivityViewController(activityItems: sharingItems, applicationActivities: nil)
+    self.presentViewController(activityViewController, animated: true, completion: nil)
+  }
+
+}
+
+extension RangeReplaceableCollectionType where Generator.Element : Equatable {
+  
+  // Remove first collection element that is equal to the given `object`:
+  mutating func removeObject(object : Generator.Element) {
+    if let index = self.indexOf(object) {
+      self.removeAtIndex(index)
+    }
+  }
+}
+
 class Util: NSObject {
   
   //MARK: Traverse Bundle
@@ -121,5 +153,4 @@ class Util: NSObject {
   class func removeObserve(target:AnyObject, named:String) {
     NSNotificationCenter.defaultCenter().removeObserver(target, name: named, object: nil)
   }
-
 }

@@ -11,7 +11,6 @@ import RealmSwift
 class CrossRefInterface : GenericModelInterface {
   class func createCrossRef(src:Record, srcRange:NSRange, dest:Record, destRange:NSRange) {
     let cross = CrossRef()
-    cross.id = String.unique()
     cross.source_ref = src
     cross.source_index = srcRange.location
     cross.source_length = srcRange.length
@@ -33,7 +32,7 @@ class CrossRef: Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var source_ref : Record?
   dynamic var destination_ref : Record?
   dynamic var source_index : Int = 0
@@ -41,5 +40,21 @@ class CrossRef: Object {
   dynamic var destination_index : Int = 0
   dynamic var destination_length : Int = 0
   dynamic var creation_date : NSDate = NSDate()
+
+  var sourceText : String {
+    get {
+      let text = source_ref!.record_text as NSString
+      let range = NSMakeRange(source_index, source_length)
+      return text.substringWithRange(range)
+    }
+  }
+  
+  var destinationText : String {
+    get {
+      let text = destination_ref!.record_text as NSString
+      let range = NSMakeRange(destination_index, destination_length)
+      return text.substringWithRange(range)
+    }
+  }
 
 }

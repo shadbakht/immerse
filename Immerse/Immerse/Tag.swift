@@ -12,7 +12,6 @@ class TagTypeInterface : GenericModelInterface {
   class func createTag(name:String) -> Bool {
     let tag = TagType()
     tag.name = name
-    tag.id = String.unique()
     RealmService.createObject(tag)
     return true
   }
@@ -29,7 +28,7 @@ class TagType : Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var name : String = ""
   dynamic var parent : TagType?
   
@@ -43,13 +42,16 @@ class TagType : Object {
 class TagInterface : GenericModelInterface {
   class func createTag(record:Record, range:NSRange, type:TagType) {
     let tag = Tag()
-    tag.id = String.unique()
     tag.record = record
     tag.start_position = range.location
     tag.length = range.length
     tag.type = type
     RealmService.createObject(tag)
   }
+  class func getAllTags() -> [Tag] {
+    return RealmService.allObjects(Tag.self) as! [Tag]
+  }
+
 }
 
 class Tag: Object {
@@ -58,11 +60,18 @@ class Tag: Object {
     return "id"
   }
 
-  dynamic var id : String = ""
+  dynamic var id : String = String.unique()
   dynamic var type : TagType?
   dynamic var record : Record?
   dynamic var start_position : Int = 0
   dynamic var length : Int = 0
   dynamic var creation_date : NSDate = NSDate()
   
+  var recordText : String {
+    get {
+      let text = record!.record_text as NSString
+      let range = NSMakeRange(start_position, length)
+      return text.substringWithRange(range)
+    }
+  }
 }
