@@ -271,20 +271,20 @@
 		5431DBB91C94912000756842 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
-				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
-				5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */,
-				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
-				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
-				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
-				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
-				544AA71C1CC1C009005118AA /* ReaderView.swift */,
-				5423FE761CCDE3630042933F /* CreateTagView.swift */,
-				5447981D1CD0941500CA391E /* CreateNoteView.swift */,
 				544798211CD099B500CA391E /* CreateCrossRefView.swift */,
-				544798191CD08DED00CA391E /* TagTypeDetailView.swift */,
-				547C5A881CE8519600CE5EE6 /* NoteDetailView.swift */,
+				5447981D1CD0941500CA391E /* CreateNoteView.swift */,
+				5423FE761CCDE3630042933F /* CreateTagView.swift */,
 				547C5A8C1CE851AE00CE5EE6 /* CrossRefDetailView.swift */,
+				546794BE1BD0CAC20062FAFB /* CrossRefView.swift */,
+				546794B61BD0CA6A0062FAFB /* HomeView.swift */,
+				5424A8921CBB55B500AF6B43 /* LibrarySubView.swift */,
+				546794B81BD0CA8A0062FAFB /* LibraryView.swift */,
+				547C5A881CE8519600CE5EE6 /* NoteDetailView.swift */,
+				546794BC1BD0CAAF0062FAFB /* NotesView.swift */,
+				544AA71C1CC1C009005118AA /* ReaderView.swift */,
+				546794C01BD0CAD10062FAFB /* SettingsView.swift */,
+				546794BA1BD0CA9C0062FAFB /* TagsView.swift */,
+				544798191CD08DED00CA391E /* TagTypeDetailView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

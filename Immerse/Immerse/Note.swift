@@ -23,6 +23,18 @@ class NoteInterface : GenericModelInterface {
     RealmService.createObject(note)
   }
   
+  class func deleteNote(note:Note) {
+    RealmService.deleteObject(note)
+  }
+  
+  class func deleteAllNotes() {
+    RealmService.deleteObjects(getAllNotes())
+  }
+  
+  class func updateNote(note:Note, text:String) {
+    RealmService.updateObject(Note.self, pid: note.id, keys: ["note_comment"], values: [text])
+  }
+  
 }
 
 class Note: Object {

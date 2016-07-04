@@ -21,5 +21,15 @@ class NoteViewModel: GenericViewModel, ViewModelProtocol {
   func createNote(record:Record, range:NSRange, text:String) {
     NoteInterface.createNote(record, range:range, text:text)
   }
+  
+  func updateNoteText(note:Note, text:String) {
+    NoteInterface.updateNote(note, text:text)
+  }
+  func deleteNote(note:Note) {
+    NoteInterface.deleteNote(note)
+  }
+  func deleteAllNotes() {
+    NoteInterface.deleteAllNotes()
+  }
 
 }

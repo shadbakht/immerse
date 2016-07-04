@@ -39,6 +39,10 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   }
 
+  override func viewWillAppear(animated: Bool) {
+    noteViewModel?.setup()
+    notesTableView.reloadData()
+  }
   //
   
   func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
@@ -129,7 +133,9 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath) as! NotesCell
     let detail = NoteDetailView(nibName: "NoteDetailView", bundle: nil)
+    detail.note = cell.note
     self.showViewController(detail, sender: self)
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
@@ -268,5 +274,31 @@ class NotesView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     notesTableView.setEditing(false, animated: true)
     self.selectedNotes.removeAll()
     self.notesTableView.reloadData()
+  }
+  
+  @IBAction func deletePressed(sender: UIBarButtonItem) {
+    let control = UIAlertController(title: "Are You Sure?", message: "Delete?", preferredStyle: UIAlertControllerStyle.Alert)
+    let delete = UIAlertAction(title: "DELETE", style: UIAlertActionStyle.Destructive, handler: {
+      finished in
+
+      if self.selectedNotes.count == 0 {
+        // Delete ALl Notes
+        self.noteViewModel?.deleteAllNotes()
+      } else {
+        // Delete Some Notes
+        _ = self.selectedNotes.map({
+          let note = $0
+          self.noteViewModel?.deleteNote(note)
+        })
+      }
+      
+      self.noteViewModel?.setup()
+      self.notesTableView.reloadData()
+      
+    })
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    control.addAction(delete)
+    control.addAction(ok)
+    self.presentViewController(control, animated: true, completion: nil)
   }
 }
