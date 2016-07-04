@@ -12,6 +12,7 @@ class TagTypeDetail: UITableViewCell {
 
   @IBOutlet var taggedText: UITextView!
   @IBOutlet var tagLabel: UILabel!
+  var tagObj : Tag? = nil
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -24,7 +25,7 @@ class TagTypeDetail: UITableViewCell {
   }
   
   func loadTag(tag:Tag) {
-    
+    self.tagObj = tag
     let faith = tag.record!.faith!.name
     let author = tag.record!.author!.name
     let book = tag.record!.book!.name

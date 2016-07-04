@@ -44,7 +44,8 @@ class TagsView: UIViewController {
       if !self.tagListView.canSelectTags {
         // Open the New View
         let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
-        vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
+        let tagType = self.tagViewModel!.tagTypes[index]
+        vc.tagType = tagType // set the tagType
         self.navigationController?.pushViewController(vc, animated: true)
       } else {
       }

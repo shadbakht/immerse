@@ -74,4 +74,10 @@ class Tag: Object {
       return text.substringWithRange(range)
     }
   }
+  
+  var shareText : String {
+    get {
+      return recordText
+    }
+  }
 }
