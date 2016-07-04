@@ -59,7 +59,10 @@ class TagInterface : GenericModelInterface {
   }
   
   class func deleteTagsOfType(type:TagType) {
-    let objs = RealmService.objectsWhere(Tag.self, query: "type = \(type)")
+    let objs = RealmService.allObjects(Tag).filter({
+      let tag = $0 as! Tag
+      return tag.type == type
+    })
     RealmService.deleteObjects(objs)
   }
   
