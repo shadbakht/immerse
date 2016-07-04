@@ -33,4 +33,11 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
     })
   }
   
+  func deleteTag(tag:Tag) {
+    TagInterface.deleteTag(tag)
+  }
+  
+  func deleteTags(tagType:TagType) {
+    TagInterface.deleteTagsOfType(tagType)
+  }
 }

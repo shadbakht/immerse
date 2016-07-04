@@ -19,7 +19,6 @@ class TagTypeInterface : GenericModelInterface {
   class func getAllTagTypes() -> [TagType] {
     return RealmService.allObjects(TagType.self) as! [TagType]
   }
-
 }
 
 class TagType : Object {
@@ -48,10 +47,22 @@ class TagInterface : GenericModelInterface {
     tag.type = type
     RealmService.createObject(tag)
   }
+  
   class func getAllTags() -> [Tag] {
     return RealmService.allObjects(Tag.self) as! [Tag]
   }
-
+  
+  class func deleteTag(tag:Tag? = nil) {
+    if let t = tag {
+      RealmService.deleteObject(t)
+    }
+  }
+  
+  class func deleteTagsOfType(type:TagType) {
+    let objs = RealmService.objectsWhere(Tag.self, query: "type = \(type)")
+    RealmService.deleteObjects(objs)
+  }
+  
 }
 
 class Tag: Object {

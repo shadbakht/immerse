@@ -15,7 +15,7 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   private var edit : UIBarButtonItem? = nil
   private var selectedTags : [Tag] = []
   private var editSelected : Bool = false
-  
+  private var tagViewModel : TagViewModel? = nil
   var tagType : TagType? = nil
   
   @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -24,6 +24,9 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   override func viewDidLoad() {
     
     self.navigationController?.navigationItem.title = tagType?.name
+    
+    tagViewModel = TagViewModel(viewController: self)
+    tagViewModel?.setup()
     
     // Setup The TableView
     let nib = UINib(nibName: "TagTypeDetail", bundle: nil)
@@ -41,9 +44,10 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   }
 
   func toggleEdit() {
+    editSelected = !editSelected
     tagList.setEditing(editSelected, animated: editSelected)
     displayToolBar(editSelected)
-    editSelected = !editSelected
+
   }
   
   func displayToolBar(show:Bool) {
@@ -150,7 +154,23 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   }
   
   @IBAction func deletePressed(sender: AnyObject) {
-    
+    let control = UIAlertController(title: "Are You Sure?", message: "Delete?", preferredStyle: UIAlertControllerStyle.Alert)
+    let delete = UIAlertAction(title: "DELETE", style: UIAlertActionStyle.Destructive, handler: {
+      finished in
+      if self.selectedTags.count == 0 {
+        self.tagViewModel?.deleteTags(self.tagType!)
+      } else {
+        _ = self.selectedTags.map({
+          self.tagViewModel?.deleteTag($0)
+        })
+      }
+      self.tagList.reloadData()
+    })
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    control.addAction(delete)
+    control.addAction(ok)
+    self.presentViewController(control, animated: true, completion: nil)
+
   }
   
 }
