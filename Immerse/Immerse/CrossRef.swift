@@ -23,6 +23,15 @@ class CrossRefInterface : GenericModelInterface {
   class func getAllCrossRefs() -> [CrossRef] {
     return RealmService.allObjects(CrossRef.self) as! [CrossRef]
   }
+  
+  class func deleteCrossRef(crossRef:CrossRef) {
+    RealmService.deleteObject(crossRef)
+  }
+  
+  class func deleteAllCrossRef() {
+    let objects = getAllCrossRefs()
+    RealmService.deleteObjects(objects)
+  }
 
 }
 
