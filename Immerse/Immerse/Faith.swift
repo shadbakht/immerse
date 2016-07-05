@@ -38,17 +38,10 @@ class Faith: Object {
   dynamic var id : String = ""
   dynamic var name : String = ""
   
-  var authors: [Author] {
-    return linkingObjects(Author.self, forProperty: "faith")
-  }
+  var authors: [Author] = Array(LinkingObjects(fromType: Author.self, property: "faith"))
+  var records : [Record] = Array(LinkingObjects(fromType: Record.self, property: "author"))
+  var books : [Book] = Array(LinkingObjects(fromType: Book.self, property: "faith"))
   
-  var records : [Record] {
-    return linkingObjects(Record.self, forProperty: "author")
-  }
-  
-  var books : [Book] {
-    return linkingObjects(Book.self, forProperty: "faith")
-  }
   
   static func getAllFaiths() -> [Faith] {
     do {

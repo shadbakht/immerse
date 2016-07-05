@@ -78,7 +78,7 @@ class DBBuilder: NSObject {
    */
   private func setupRealm(path:String) -> Realm.Configuration {
     var config = Realm.Configuration()
-    config.path = path
+    config.fileURL = NSURL(string: path)
     
     let migrationBlock: MigrationBlock = { migration, oldSchemaVersion in
       if (oldSchemaVersion < 1) {

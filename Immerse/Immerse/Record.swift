@@ -36,15 +36,12 @@ class Record: Object {
   dynamic var record_text : String = ""
   dynamic var record_textCount : Int = 0
 
-  var tags: [Tag] {
-    return linkingObjects(Tag.self, forProperty: "record")
-  }
-  var notes: [Note] {
-    return linkingObjects(Note.self, forProperty: "record")
-  }
+  var tags : [Tag] = Array(LinkingObjects(fromType: Tag.self, property: "record"))
+  var notes : [Note] = Array(LinkingObjects(fromType: Note.self, property: "record"))
+
   var refs : [CrossRef] {
-    let source = linkingObjects(CrossRef.self, forProperty: "source_ref")
-    let destination = linkingObjects(CrossRef.self, forProperty: "destination_ref")
+    let source = Array(LinkingObjects(fromType:CrossRef.self, property: "source_ref"))
+    let destination = Array(LinkingObjects(fromType:CrossRef.self, property: "destination_ref"))
     var new : [CrossRef] = []
     new.appendContentsOf(source)
     new.appendContentsOf(destination)

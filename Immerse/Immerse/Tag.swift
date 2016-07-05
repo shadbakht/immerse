@@ -41,9 +41,7 @@ class TagType : Object {
   dynamic var name : String = ""
   dynamic var parent : TagType?
   
-  var tags: [Tag] {
-    return linkingObjects(Tag.self, forProperty: "type")
-  }
+  var tags : [Tag] = Array(LinkingObjects(fromType: Tag.self, property: "type"))
 
 }
 
