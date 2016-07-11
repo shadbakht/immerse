@@ -11,11 +11,22 @@ import UIKit
 class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var tagList: UITableView!
-  
+  @IBOutlet weak var tagDetailToolbar: UIToolbar!
+  private var edit : UIBarButtonItem? = nil
+  private var selectedTags : [Tag] = []
+  private var editSelected : Bool = false
+  private var tagViewModel : TagViewModel? = nil
   var tagType : TagType? = nil
+  
+  @IBOutlet weak var shareButton: UIBarButtonItem!
+  @IBOutlet weak var deleteButton: UIBarButtonItem!
+  
   override func viewDidLoad() {
     
-    self.navigationController?.navigationItem.title = tagType!.name
+    self.navigationController?.navigationItem.title = tagType?.name
+    
+    tagViewModel = TagViewModel(viewController: self)
+    tagViewModel?.setup()
     
     // Setup The TableView
     let nib = UINib(nibName: "TagTypeDetail", bundle: nil)
@@ -26,16 +37,79 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     self.title = tagType?.name
 
+    edit = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: #selector(toggleEdit))
+    self.navigationItem.rightBarButtonItem = edit
     super.viewDidLoad()
 
   }
 
+  func toggleEdit() {
+    editSelected = !editSelected
+    tagList.setEditing(editSelected, animated: editSelected)
+    displayToolBar(editSelected)
+
+  }
+  
+  func displayToolBar(show:Bool) {
+    if show {
+      // Show
+      UIView.animateWithDuration(0.3, animations: {
+        let correctHeight = self.view.frame.height - 44
+        let frame = self.tagDetailToolbar.frame
+        self.tagDetailToolbar.frame = CGRectMake(frame.origin.x, correctHeight, frame.width, frame.height)
+      })
+    } else {
+      // Hide
+      UIView.animateWithDuration(0.3, animations: {
+        let frame = self.tagDetailToolbar.frame
+        self.tagDetailToolbar.frame = CGRectMake(frame.origin.x, self.view.frame.height, frame.width, frame.height)
+      })
+    }
+  }
+  
+  func updateToolBar() {
+    // Change the TExt Type
+    if self.selectedTags.count > 0 {
+      shareButton.title = "Share"
+      deleteButton.title = "Delete"
+    } else {
+      shareButton.title = "Share All"
+      deleteButton.title = "Delete All"
+    }
+  }
+
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
   // 
   
+  func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    return UITableViewCellEditingStyle.Insert
+  }
+
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    switch editingStyle {
+    case UITableViewCellEditingStyle.Insert:
+      let cell =  tableView.cellForRowAtIndexPath(indexPath) as! TagTypeDetail
+      if cell.selected {
+        self.selectedTags.removeObject(cell.tagObj!)
+        cell.setSelected(false, animated: true)
+      } else {
+        self.selectedTags.append(cell.tagObj!)
+        cell.setSelected(true, animated: true)
+      }
+      updateToolBar()
+    default:
+      return
+    }
+  }
+
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tagType!.tags.count
   }
@@ -62,4 +136,41 @@ class TagTypeDetailView: UIViewController, UITableViewDelegate, UITableViewDataS
   }
   
   //
+  
+  @IBAction func sharePressed(sender: AnyObject) {
+    if selectedTags.count > 0 {
+      let texts = selectedTags.map({
+        $0.shareText
+      })
+      let item = NSArray(array: texts).componentsJoinedByString("\n\n")
+      shareTextImageAndURL(item)
+    } else {
+      let texts = tagType!.tags.map({
+        $0.shareText
+      })
+      let item = NSArray(array: texts).componentsJoinedByString("\n\n")
+      shareTextImageAndURL(item)
+    }
+  }
+  
+  @IBAction func deletePressed(sender: AnyObject) {
+    let control = UIAlertController(title: "Are You Sure?", message: "Delete?", preferredStyle: UIAlertControllerStyle.Alert)
+    let delete = UIAlertAction(title: "DELETE", style: UIAlertActionStyle.Destructive, handler: {
+      finished in
+      if self.selectedTags.count == 0 {
+        self.tagViewModel?.deleteTags(self.tagType!)
+      } else {
+        _ = self.selectedTags.map({
+          self.tagViewModel?.deleteTag($0)
+        })
+      }
+      self.tagList.reloadData()
+    })
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    control.addAction(delete)
+    control.addAction(ok)
+    self.presentViewController(control, animated: true, completion: nil)
+
+  }
+  
 }

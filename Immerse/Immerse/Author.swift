@@ -29,11 +29,6 @@ class Author: Object {
   dynamic var name : String = ""
   dynamic var faith : Faith?
   
-  var books: [Book] {
-    return linkingObjects(Book.self, forProperty: "author")
-  }
-  
-  var records : [Record] {
-    return linkingObjects(Record.self, forProperty: "author")
-  }
+  let books : [Book] = Array(LinkingObjects(fromType: Book.self, property: "author"))
+  let records : [Record] = Array(LinkingObjects(fromType: Record.self, property: "author"))  
 }

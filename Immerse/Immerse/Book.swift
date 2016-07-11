@@ -32,7 +32,7 @@ class Book : Object {
   
   var records: [Record] {
     // Ensure that records is in order
-    let records = linkingObjects(Record.self, forProperty: "book")
+    let records = LinkingObjects(fromType:Record.self, property: "book")
     return records.sort({ recordsTuple in
       return recordsTuple.0.record_textCount < recordsTuple.1.record_textCount
     })

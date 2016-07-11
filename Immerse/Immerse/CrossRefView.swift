@@ -245,7 +245,7 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
       text = NSArray(array: compiled).componentsJoinedByString("--------------------")
     } else {
       // All CrossRefs Are Shared
-      let compiled = crossRefViewModel.crossRefs.map({
+      let compiled = crossRefViewModel!.crossRefs!.map({
         return "Created: \($0.creation_date) / Source Ref: \($0.source_ref!.book!.name) / Destination Ref: \($0.destination_ref!.book!.name)\n\n" +
           "Source Text: \($0.sourceText) / Destination Text: \($0.destinationText)"
       })
@@ -259,6 +259,26 @@ class CrossRefView: UIViewController, UITableViewDelegate, UITableViewDataSource
   }
 
   @IBAction func deleteAction(sender: UIBarButtonItem) {
+    let control = UIAlertController(title: "Are You Sure?", message: "Delete?", preferredStyle: UIAlertControllerStyle.Alert)
+    let delete = UIAlertAction(title: "DELETE", style: UIAlertActionStyle.Destructive, handler: {
+      finished in
+      if self.selectedCrossRefs.count == 0 {
+        // Delete ALl Notes
+        self.crossRefViewModel?.deleteCrossRef(nil)
+      } else {
+        // Delete Some Notes
+        _ = self.selectedCrossRefs.map({
+          self.crossRefViewModel?.deleteCrossRef($0)
+        })
+      }
+      self.crossRefViewModel?.setup()
+      self.crossRefTableView.reloadData()
+    })
+    
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    control.addAction(delete)
+    control.addAction(ok)
+    self.presentViewController(control, animated: true, completion: nil)
   }
   
   func updateToolBar() {

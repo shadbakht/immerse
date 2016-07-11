@@ -80,6 +80,18 @@ class RealmService: NSObject {
       }
     }
   }
+  
+  class func deleteObjects(objects:[Object]) {
+    if let realm = try? Realm () {
+      do {
+        try! realm.write {
+          _ = objects.map({
+            realm.delete($0)
+          })
+        }
+      }
+    }
+  }
 
   
 }

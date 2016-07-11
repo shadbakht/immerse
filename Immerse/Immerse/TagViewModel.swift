@@ -20,6 +20,16 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
     tags = TagInterface.getAllTags()
   }
   
+  func getAllTags(type:TagType? = nil) -> [Tag] {
+    if type == nil {
+      return TagInterface.getAllTags()
+    } else {
+      return TagInterface.getAllTags().filter({
+        return $0.type == type
+      })
+    }
+  }
+  
   func createTagType(name:String) -> Bool {
     
     TagTypeInterface.createTag(name)
@@ -33,4 +43,16 @@ class TagViewModel: GenericViewModel, ViewModelProtocol  {
     })
   }
   
+  func deleteTag(tag:Tag) {
+    TagInterface.deleteTag(tag)
+  }
+  
+  func deleteTags(tagType:TagType) {
+    TagInterface.deleteTagsOfType(tagType)
+  }
+  
+  func deleteTagTypeAndTags(tagType:TagType?=nil) {
+    TagTypeInterface.deleteTagType(tagType)
+    TagInterface.deleteTagsOfType(tagType)
+  }
 }

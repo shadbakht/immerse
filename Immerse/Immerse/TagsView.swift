@@ -18,6 +18,8 @@ class TagsView: UIViewController {
   @IBOutlet weak var shareToolbarButton: UIBarButtonItem!
   @IBOutlet weak var deleteToolbarButton: UIBarButtonItem!
 
+  private var selectedTagTypes : [TagType] = []
+  
   var tagViewModel : TagViewModel? = nil
   
   override func viewDidLoad() {
@@ -44,9 +46,17 @@ class TagsView: UIViewController {
       if !self.tagListView.canSelectTags {
         // Open the New View
         let vc = TagTypeDetailView(nibName: "TagTypeDetailView", bundle: nil)
-        vc.tagType = self.tagViewModel!.tagTypes[index] // set the tagType
+        let tagType = self.tagViewModel!.tagTypes[index]
+        vc.tagType = tagType // set the tagType
         self.navigationController?.pushViewController(vc, animated: true)
       } else {
+        let tagType = self.tagViewModel!.tagTypes[index]
+        if self.selectedTagTypes.contains(tagType) {
+          self.selectedTagTypes.removeObject(tagType)
+        } else {
+          self.selectedTagTypes.append(tagType)
+        }
+        self.updateToolBar()
       }
     })
     
@@ -132,12 +142,62 @@ class TagsView: UIViewController {
     }
   }
   
+  func updateToolBar() {
+    // Change the TExt Type
+    if self.selectedTagTypes.count > 0 {
+      shareToolbarButton.title = "Share"
+      deleteToolbarButton.title = "Delete"
+    } else {
+      shareToolbarButton.title = "Share All"
+      deleteToolbarButton.title = "Delete All"
+    }
+  }
+
   @IBAction func shareTags(sender: UIBarButtonItem) {
-  
+    if selectedTagTypes.count == 0 {
+      let tags = tagViewModel!.getAllTags()
+      let text = tags.map({
+        return $0.shareText
+      })
+      let share = NSArray(array: text).componentsJoinedByString("\n\n")
+      shareTextImageAndURL(share)
+    } else {
+      var types : [Tag] = []
+      _ = selectedTagTypes.map({
+        let results = self.tagViewModel!.getAllTags($0)
+        types.appendContentsOf(results)
+      })
+      let text = types.map({
+        return $0.shareText
+      })
+      let share = NSArray(array: text).componentsJoinedByString("\n\n")
+      shareTextImageAndURL(share)
+    }
   }
   
   @IBAction func deleteTags(sender: UIBarButtonItem) {
-  
+    let control = UIAlertController(title: "Are You Sure?", message: "Delete?", preferredStyle: UIAlertControllerStyle.Alert)
+    let delete = UIAlertAction(title: "DELETE", style: UIAlertActionStyle.Destructive, handler: {
+      finished in
+      if self.selectedTagTypes.count == 0 {
+        self.tagViewModel?.deleteTagTypeAndTags()
+      } else {
+        _ = self.selectedTagTypes.map({
+          self.tagViewModel?.deleteTagTypeAndTags($0)
+        })
+      }
+      self.tagViewModel?.setup()
+      if let tagTypes = self.tagViewModel?.tagTypes {
+        let strings = tagTypes.map({$0.name})
+        self.tagListView.tags.addObjectsFromArray(strings)
+      }
+    })
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+    control.addAction(delete)
+    control.addAction(ok)
+    self.presentViewController(control, animated: true, completion: nil)
+    
+
   }
   
   @IBAction func sortTags(sender: AnyObject) {

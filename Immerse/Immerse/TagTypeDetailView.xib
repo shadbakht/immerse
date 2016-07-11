@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagTypeDetailView" customModule="Immerse" customModuleProvider="target">
             <connections>
+                <outlet property="deleteButton" destination="IZZ-UP-Iz4" id="qSI-o5-teq"/>
+                <outlet property="shareButton" destination="8gu-HI-H2y" id="GGL-70-f5w"/>
+                <outlet property="tagDetailToolbar" destination="eCG-5j-Rfq" id="yRH-9Q-kCQ"/>
                 <outlet property="tagList" destination="Ahq-pd-51o" id="lnW-hW-cca"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,34 +19,36 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCG-5j-Rfq">
-                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                    <items>
-                        <barButtonItem title="Share" id="8gu-HI-H2y">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="WxH-Qp-C2z"/>
-                        <barButtonItem title="Edit" id="l09-aQ-fMZ">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gxn-x0-OwS"/>
-                        <barButtonItem title="Delete" id="IZZ-UP-Iz4">
-                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </items>
-                </toolbar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-pd-51o">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahq-pd-51o">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCG-5j-Rfq">
+                    <rect key="frame" x="0.0" y="600" width="600" height="44"/>
+                    <items>
+                        <barButtonItem title="Share All" id="8gu-HI-H2y">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sharePressed:" destination="-1" id="9nc-nB-oP6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="WxH-Qp-C2z"/>
+                        <barButtonItem title="Delete All" id="IZZ-UP-Iz4">
+                            <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="-1" id="vK9-bP-A0M"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="eCG-5j-Rfq" secondAttribute="trailing" id="37Y-ZN-EnY"/>
                 <constraint firstAttribute="bottom" secondItem="Ahq-pd-51o" secondAttribute="bottom" id="B5R-Og-Ciy"/>
                 <constraint firstItem="Ahq-pd-51o" firstAttribute="top" secondItem="eCG-5j-Rfq" secondAttribute="bottom" id="OTB-lR-FOP"/>
-                <constraint firstAttribute="bottom" secondItem="eCG-5j-Rfq" secondAttribute="bottom" id="PzA-ye-70q"/>
+                <constraint firstAttribute="bottom" secondItem="eCG-5j-Rfq" secondAttribute="bottom" constant="-44" id="PzA-ye-70q"/>
                 <constraint firstAttribute="trailing" secondItem="eCG-5j-Rfq" secondAttribute="trailing" id="XZP-NO-1CW"/>
                 <constraint firstItem="eCG-5j-Rfq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aMr-2F-jRH"/>
                 <constraint firstItem="Ahq-pd-51o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dvR-j8-KYX"/>

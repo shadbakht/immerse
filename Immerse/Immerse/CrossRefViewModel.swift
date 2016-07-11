@@ -21,4 +21,12 @@ class CrossRefViewModel: GenericViewModel, ViewModelProtocol {
   func createCrossReference(sourceRecord:Record, sourceRange: NSRange, destinationRecord:Record, destinationRange:NSRange) {
     CrossRefInterface.createCrossRef(sourceRecord, srcRange: sourceRange, dest: destinationRecord, destRange: destinationRange)
   }
+  
+  func deleteCrossRef(crossRef:CrossRef?=nil) {
+    if crossRef == nil {
+      CrossRefInterface.deleteAllCrossRef()
+    } else {
+      CrossRefInterface.deleteCrossRef(crossRef!)
+    }
+  }
 }

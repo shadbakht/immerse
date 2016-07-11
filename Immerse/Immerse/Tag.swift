@@ -19,7 +19,16 @@ class TagTypeInterface : GenericModelInterface {
   class func getAllTagTypes() -> [TagType] {
     return RealmService.allObjects(TagType.self) as! [TagType]
   }
-
+  
+  class func deleteTagType(tagType:TagType? = nil) {
+    if tagType == nil {
+      let types = getAllTagTypes()
+      RealmService.deleteObjects(types)
+    } else {
+      RealmService.deleteObject(tagType!)
+    }
+  }
+  
 }
 
 class TagType : Object {
@@ -32,9 +41,7 @@ class TagType : Object {
   dynamic var name : String = ""
   dynamic var parent : TagType?
   
-  var tags: [Tag] {
-    return linkingObjects(Tag.self, forProperty: "type")
-  }
+  var tags : [Tag] = Array(LinkingObjects(fromType: Tag.self, property: "type"))
 
 }
 
@@ -48,10 +55,29 @@ class TagInterface : GenericModelInterface {
     tag.type = type
     RealmService.createObject(tag)
   }
+  
   class func getAllTags() -> [Tag] {
     return RealmService.allObjects(Tag.self) as! [Tag]
   }
-
+  
+  class func deleteTag(tag:Tag? = nil) {
+    if let t = tag {
+      RealmService.deleteObject(t)
+    }
+  }
+  
+  class func deleteTagsOfType(type:TagType?=nil) {
+    if type == nil {
+      RealmService.deleteObjects(getAllTags())
+      return
+    }
+    let objs = RealmService.allObjects(Tag).filter({
+      let tag = $0 as! Tag
+      return tag.type == type
+    })
+    RealmService.deleteObjects(objs)
+  }
+  
 }
 
 class Tag: Object {
@@ -72,6 +98,12 @@ class Tag: Object {
       let text = record!.record_text as NSString
       let range = NSMakeRange(start_position, length)
       return text.substringWithRange(range)
+    }
+  }
+  
+  var shareText : String {
+    get {
+      return recordText
     }
   }
 }
