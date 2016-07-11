@@ -1,20 +1,14 @@
 platform :ios, '9.1'
-use_frameworks!
-pod 'RealmSwift'
-pod 'KYDrawerController'
-pod 'XLPagerTabStrip', '~> 5.0'
-pod 'JCTagListView'
-pod 'ActionSheetPicker-3.0', '~> 2.0.5'
 
+def myPods
+  use_frameworks!
+  pod 'RealmSwift'
+  pod 'KYDrawerController'
+  pod 'XLPagerTabStrip'
+  pod 'JCTagListView'
+  pod 'ActionSheetPicker-3.0'
+end
 
-
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.1'
-use_frameworks!
-
-# @TODO: At some point we'll expand to use these as well, but for the time being
-# they aren't exactly very useful. Commented out for now until we find a need.
-#
-# pod 'SDWebImage'
-# pod 'Alamofire'
-# pod 'CNPPopupController'
+target 'Immerse' do
+  myPods
+end

@@ -1,7 +1,7 @@
 PODS:
   - ActionSheetPicker-3.0 (2.0.5)
   - JCTagListView (0.0.9)
-  - KYDrawerController (1.1.5)
+  - KYDrawerController (1.1.3)
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -10,18 +10,20 @@ PODS:
   - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0 (~> 2.0.5)
+  - ActionSheetPicker-3.0
   - JCTagListView
   - KYDrawerController
   - RealmSwift
-  - XLPagerTabStrip (~> 5.0)
+  - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 8312778b6815578e6a86d630fbcf31dc94c534e7
   JCTagListView: b22dee25da69bd71e848a030bf061107a845481a
-  KYDrawerController: 98eb8f8c53164de1098b3ca5c6789f3d8aa86c3e
+  KYDrawerController: 3bb920220cb1d1ff7d86d40c61d5848ed647d385
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 340329c1e14f834aac5a0b7b5e30c3bd4fed0d94
+
+COCOAPODS: 1.0.1
